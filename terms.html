@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用條款 - uiduid.com</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #242424;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff8c00;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-btn {
+            padding: 6px 10px;
+            border: 1px solid #ff8c00;
+            border-radius: 4px;
+            color: #ff8c00;
+            text-decoration: none;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: #ff8c00;
+            color: #fff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            font-size: 18px;
+            color: #ff8c00;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section p {
+            color: #ccc;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #242424;
+            padding: 15px 0;
+            text-align: center;
+            border-top: 2px solid #ff8c00;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            z-index: 998;
+        }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .footer-text {
+            color: #ccc;
+            font-size: 12px;
+        }
+        .footer-text span {
+            color: #ff8c00;
+            font-weight: bold;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: #ff8c00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(255,140,0,0.5);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #ff6700;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="index.html" class="logo"><i class="fas fa-gamepad"></i> uiduid.com</a>
+        <a href="index.html" class="nav-btn">返回首頁</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title"><i class="fas fa-file-contract"></i> 使用條款</h1>
+
+        <div class="section">
+            <h2><i class="fas fa-user-check"></i> 1. 接受條款</h2>
+            <p>當您使用 uiduid.com（以下簡稱「本商城」）所提供之服務時，即表示您已閱讀、理解並同意遵守本使用條款之所有內容。若您不同意本條款，請勿使用本服務。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-ban"></i> 2. 禁止行為</h2>
+            <p>用戶不得利用本服務從事任何違法、侵害他人權益或違反公序良俗之行為，包括但不限於：</p>
+            <p>• 提供虛假個人資料或冒用他人身份</p>
+            <p>• 利用系統漏洞進行詐欺或獲取不當利益</p>
+            <p>• 轉售、轉讓或濫用所購商品</p>
+            <p>• 散播病毒、惡意程式或干擾本服務正常運作</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-exchange-alt"></i> 3. 商品性質</h2>
+            <p>本商城僅提供遊戲點卡、及遊戲代充服務，所有商品均為數位虛擬產品，一經發放儲值成功即視為完成交付，除系統錯誤外，恕不接受退換。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-shield-alt"></i> 4. 免責聲明</h2>
+            <p>因不可抗力（如天災、戰爭、網路中斷等）導致服務中斷或延遲，本商城不承擔責任。用戶應自行確保遊戲其帳號安全。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-sync"></i> 5. 條款修改</h2>
+            <p>本商城保留隨時修訂本條款之權利，修訂後將公布於網站上。繼續使用本服務即視為接受最新版本條款。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>小票生成器 · www.uiduid.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === 輸入面板 === */
+    .input-panel {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #ff9800;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button {
+      background: #ff9800;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .items-preview {
+      margin-top: 20px;
+      padding: 12px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      min-height: 40px;
+      font-size: 14px;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0;
+    }
+
+    /* === 卡密彈窗 === */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .modal h2 {
+      margin-bottom: 16px;
+      color: #ff9800;
+    }
+
+    /* === 小票預覽 === */
+    .receipt-panel {
+      display: none;
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .item-row-receipt {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .item-label {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .item-value {
+      font-weight: 500;
+      color: #111;
+    }
+
+    .divider {
+      margin: 20px 0;
+      border-top: 1px solid #eee;
+    }
+
+    .product-item {
+      margin-bottom: 6px;
+    }
+
+    .product-name {
+      font-weight: 600;
+    }
+
+    .total-line {
+      font-weight: bold;
+      color: #ff9800;
+    }
+
+    .payment-method {
+      font-weight: 600;
+      margin-top: 16px;
+      color: #333;
+    }
+
+    .pin-section {
+      margin-top: 24px;
+      padding: 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .pin-title {
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .pin-code {
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #000;
+    }
+
+    .disclaimer {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+
+    .success-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      color: #4caf50;
+      font-weight: 600;
+    }
+
+    .checkmark {
+      margin-right: 8px;
+      color: #4caf50;
+      font-size: 18px;
+    }
+
+    .action-buttons {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .btn-secondary {
+      background: #666;
+      color: white;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 輸入面板 -->
+  <div id="inputPanel" class="input-panel">
+    <h1>www.uiduid.com</h1>
+
+    <div class="form-group">
+      <label for="phone">手提電話</label>
+      <input type="tel" id="phone" placeholder="+852 9876 5432">
+    </div>
+
+    <div class="form-group">
+      <label for="paymentMethod">付款方式</label>
+      <select id="paymentMethod">
+        <option value="fps">FPS 轉數快</option>
+        <option value="alipayhk">AlipayHK</option>
+        <option value="wechat">WeChat Pay</option>
+        <option value="balance">帳戶餘額</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="orderNo">訂單編號</label>
+      <input type="text" id="orderNo" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="productType">商品類型</label>
+      <select id="productType" onchange="updateProductList()">
+        <option value="card">點卡 (需卡號/卡密)</option>
+        <option value="game">遊戲儲值 (無需卡密)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="productName">商品名稱</label>
+      <select id="productName">
+        <option>載入中...</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="denomination">面額（可選）</label>
+      <input type="text" id="denomination" placeholder="例如：5500點 / HK$200">
+    </div>
+
+    <div class="form-group">
+      <label for="qty">數量</label>
+      <input type="number" id="qty" value="1" min="1">
+    </div>
+
+    <div class="form-group">
+      <label for="price">單價 (HKD)</label>
+      <input type="number" id="price" value="490" step="0.01" min="0">
+    </div>
+
+    <button onclick="addItem()">新增商品</button>
+
+    <div class="items-preview" id="itemsList">
+      尚未新增任何商品
+    </div>
+
+    <button onclick="generateReceipt()" style="margin-top: 20px; width: 100%;">生成小票</button>
+  </div>
+
+  <!-- 卡密輸入彈窗 -->
+  <div id="codeModal" class="modal">
+    <div class="modal-content">
+      <h2>請輸入卡密</h2>
+      <div class="form-group">
+        <label for="cardNumber">卡號（可留空）</label>
+        <input type="text" id="cardNumber" placeholder="如無可不填">
+      </div>
+      <div class="form-group">
+        <label for="cardPin">卡密（必填）</label>
+        <input type="text" id="cardPin" placeholder="例如：ABCD-EFGH-IJKL">
+      </div>
+      <button onclick="confirmAddItem()">確認新增</button>
+      <button onclick="closeModal()" class="btn-secondary" style="margin-left: 10px;">取消</button>
+    </div>
+  </div>
+
+  <!-- 小票預覽 -->
+  <div id="receiptPanel" class="receipt-panel">
+    <div id="receiptContent"></div>
+    <div class="action-buttons">
+      <button onclick="window.print()">列印小票</button>
+      <button onclick="location.reload()" class="btn-secondary">重新開始</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // === 工具函數 ===
+  const isHot = (item) => item.hot === true;
+  const safeOrder = (item) => typeof item.order === 'number' ? item.order : 999;
+
+  let items = [];
+  let tempItem = null;
+  let cardProducts = [];
+  let gameProducts = [];
+
+  // === 初始化 ===
+  document.addEventListener('DOMContentLoaded', () => {
+    generateOrderNumber();
+    loadProductLists();
+  });
+
+  function generateOrderNumber() {
+    const now = new Date();
+    const dateStr = now.toISOString().slice(0, 10).replace(/-/g, '');
+    const rand = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('orderNo').value = `UID${dateStr}-${rand}`;
+  }
+
+  async function loadProductLists() {
+    try {
+      const [cardsRes, gamesRes] = await Promise.all([
+        fetch('data/cards.json').catch(() => ({ json: () => [] })),
+        fetch('data/games.json').catch(() => ({ json: () => [] }))
+      ]);
+      cardProducts = await cardsRes.json();
+      gameProducts = await gamesRes.json();
+
+      const sort = (list) => list.sort((a, b) => {
+        if (isHot(a) && !isHot(b)) return -1;
+        if (!isHot(a) && isHot(b)) return 1;
+        return safeOrder(a) - safeOrder(b);
+      });
+
+      cardProducts = sort(cardProducts);
+      gameProducts = sort(gameProducts);
+
+      updateProductList();
+      document.getElementById('itemsList').textContent = '尚未新增任何商品';
+    } catch (err) {
+      console.error('載入失敗:', err);
+      alert('⚠️ 無法載入商品清單');
+    }
+  }
+
+  function updateProductList() {
+    const type = document.getElementById('productType').value;
+    const list = type === 'card' ? cardProducts : gameProducts;
+    const sel = document.getElementById('productName');
+    sel.innerHTML = '';
+
+    if (list.length === 0) {
+      sel.innerHTML = '<option>無商品</option>';
+      return;
+    }
+
+    list.forEach(item => {
+      const opt = document.createElement('option');
+      opt.value = item.name;
+      opt.textContent = (isHot(item) ? '★ ' : '') + item.name;
+      sel.appendChild(opt);
+    });
+  }
+
+  function addItem() {
+    const type = document.getElementById('productType').value;
+    const name = document.getElementById('productName').value;
+    const denom = document.getElementById('denomination').value.trim();
+    const qty = parseInt(document.getElementById('qty').value) || 1;
+    const price = parseFloat(document.getElementById('price').value) || 0;
+
+    if (!name || name === '無商品') {
+      alert('請選擇有效商品');
+      return;
+    }
+    if (price <= 0) {
+      alert('價格無效');
+      return;
+    }
+
+    const fullName = denom ? `${name} (${denom})` : name;
+
+    if (type === 'card') {
+      tempItem = { name: fullName, qty, price };
+      document.getElementById('codeModal').style.display = 'flex';
+      document.getElementById('cardPin').focus();
+    } else {
+      addItemToList(fullName, qty, price, false, '', '');
+    }
+  }
+
+  function confirmAddItem() {
+    const pin = document.getElementById('cardPin').value.trim();
+    if (!pin) { alert('卡密不能為空'); return; }
+    const num = document.getElementById('cardNumber').value.trim();
+    addItemToList(tempItem.name, tempItem.qty, tempItem.price, true, num, pin);
+    closeModal();
+  }
+
+  function closeModal() {
+    document.getElementById('codeModal').style.display = 'none';
+    tempItem = null;
+    document.getElementById('cardNumber').value = '';
+    document.getElementById('cardPin').value = '';
+  }
+
+  function addItemToList(name, qty, price, isCard, cardNumber, cardPin) {
+    const subtotal = (qty * price).toFixed(2);
+    items.push({ name, qty, price, isCard, cardNumber, cardPin, subtotal });
+    renderItemsList();
+    document.getElementById('denomination').value = '';
+    document.getElementById('qty').value = '1';
+    document.getElementById('price').value = '490';
+  }
+
+  function renderItemsList() {
+    const el = document.getElementById('itemsList');
+    if (items.length === 0) {
+      el.textContent = '尚未新增任何商品';
+      return;
+    }
+    el.innerHTML = items.map(item => `
+      <div class="item-row">
+        <span>${item.name}</span>
+        <span>${item.qty} × $${item.price} = $${item.subtotal}</span>
+      </div>
+    `).join('');
+  }
+
+  function getPaymentMethodText(method) {
+    const map = {
+      fps: 'FPS 轉數快',
+      alipayhk: 'AlipayHK',
+      wechat: 'WeChat Pay',
+      balance: '帳戶餘額'
+    };
+    return map[method] || method;
+  }
+
+  function generateReceipt() {
+    if (items.length === 0) {
+      alert('請至少新增一項商品');
+      return;
+    }
+
+    const phone = document.getElementById('phone').value || '未提供';
+    const orderNo = document.getElementById('orderNo').value;
+    const paymentMethod = document.getElementById('paymentMethod').value;
+    const time = new Date().toLocaleString('zh-HK', { timeZone: 'Asia/Hong_Kong' });
+    const total = items.reduce((sum, i) => sum + parseFloat(i.subtotal), 0).toFixed(2);
+
+    let itemsHTML = '';
+    items.forEach(item => {
+      let codeHTML = '';
+      if (item.isCard) {
+        if (item.cardNumber) {
+          codeHTML += `<div class="pin-code">卡號: ${item.cardNumber}</div>`;
+        }
+        codeHTML += `<div class="pin-code">${item.pinLabel || '卡密'}: ${item.cardPin}</div>`;
+      } else {
+        codeHTML = '<div style="color:#666;font-style:italic;">無需卡密</div>';
+      }
+
+      itemsHTML += `
+        <div class="product-item">
+          <div class="item-row-receipt">
+            <span class="product-name">${item.name}</span>
+            <span class="item-value">$${item.subtotal}</span>
+          </div>
+        </div>
+      `;
+    });
+
+    let pinSection = '';
+    const hasPinItems = items.some(i => i.isCard);
+    if (hasPinItems) {
+      let pinCodes = '';
+      items.forEach(item => {
+        if (item.isCard) {
+          if (item.cardNumber) {
+            pinCodes += `<div class="pin-code">卡號: ${item.cardNumber}</div>`;
+          }
+          pinCodes += `<div class="pin-code">卡密: ${item.cardPin}</div>`;
+        }
+      });
+      pinSection = `
+        <div class="divider"></div>
+        <div class="pin-section">
+          <div class="pin-title">【產品序號 / PIN碼】</div>
+          ${pinCodes}
+        </div>
+      `;
+    }
+
+    document.getElementById('receiptContent').innerHTML = `
+      <div class="header">www.uiduid.com</div>
+
+      <div class="section">
+        <div class="item-row-receipt">
+          <span class="item-label">手提電話</span>
+          <span class="item-value">${phone}</span>
+        </div>
+        <div class="item-row-receipt">
+          <span class="item-label">訂單編號</span>
+          <span class="item-value">${orderNo}</span>
+        </div>
+        <div class="item-row-receipt">
+          <span class="item-label">交易時間</span>
+          <span class="item-value">${time}</span>
+        </div>
+      </div>
+
+      <div class="section">
+        ${itemsHTML}
+      </div>
+
+      <div class="divider"></div>
+      <div class="section">
+        <div class="item-row-receipt">
+          <span class="item-label">總金額</span>
+          <span class="item-value total-line">HKD ${total}</span>
+        </div>
+        <div class="item-row-receipt">
+          <span class="item-label">實際應付金額</span>
+          <span class="item-value total-line">HKD ${total}</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="payment-method">支付方式：${getPaymentMethodText(paymentMethod)}</div>
+      </div>
+
+      ${pinSection}
+
+      <div class="divider"></div>
+      <div class="disclaimer">
+        <strong>【點卡/序號 購買須知與免責申明】</strong><br>
+        <strong>正品保證：</strong> 本店保證所有點卡均為官方正規管道獲取，來源合法，卡號密碼真實有效。<br>
+        <strong>發貨不退：</strong> 點卡屬虛擬商品，具備唯一性與即時性。<strong>序號一旦發出，概不接受退換或退款。</strong><br>
+        <strong>核對責任：</strong> 購買前請務必確認商品名稱、面值及適用地區，買錯或無法使用，損失由客戶自負。<br>
+        <strong>防範詐騙：</strong> 請勿代他人購買。如因受騙或受指使下單，本店恕不負責。<strong>付款即視為同意以上所有條款。</strong>
+            </div>
+
+            <div class="divider"></div>
+            <div class="disclaimer">
+              <strong>【遊戲儲值/免責聲明】</strong><br>
+              <strong>重要提示：</strong> 本店僅受託代為辦理儲值，非遊戲官方合作商。客戶下單前須知悉。<br>
+              <strong>官方風險：</strong> 遊戲官方嚴禁第三方充值，客戶須自行承擔由此產生的帳號封鎖、禁言、貨幣回收、倒扣、限制登入等一切處分風險。<br>
+              <strong>責任終止：</strong> 儲值入帳成功後，本店義務即告履行完畢。後續因官方清算、追緝、規則變更導致的任何帳號異常或損失，本店<strong>不予退款、不予補償，亦不承擔任何法律與經濟責任。</strong><br>
+              <strong>溯及既往：</strong> 本店保證資金來源合法。如因客戶過往違規紀錄導致本次儲值受限，後果由客戶自負。。
+      </div>
+
+      <div class="footer">HOGAME ONLINE ENTERTAINMENT LIMITED</div>
+      <div class="success-badge">
+        <span class="checkmark">✓</span> 付款已完成，謝謝惠顧
+      </div>
+    `;
+
+    document.getElementById('inputPanel').style.display = 'none';
+    document.getElementById('receiptPanel').style.display = 'block';
+  }
+
+  window.onclick = (e) => {
+    if (e.target.id === 'codeModal') closeModal();
+  };
+</script>
+
+</body>
+</html>

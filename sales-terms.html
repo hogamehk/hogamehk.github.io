@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>銷售條款 - uiduid.com</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* 複用相同樣式 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #242424;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff8c00;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-btn {
+            padding: 6px 10px;
+            border: 1px solid #ff8c00;
+            border-radius: 4px;
+            color: #ff8c00;
+            text-decoration: none;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: #ff8c00;
+            color: #fff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            font-size: 18px;
+            color: #ff8c00;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section p {
+            color: #ccc;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #242424;
+            padding: 15px 0;
+            text-align: center;
+            border-top: 2px solid #ff8c00;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            z-index: 998;
+        }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .footer-text {
+            color: #ccc;
+            font-size: 12px;
+        }
+        .footer-text span {
+            color: #ff8c00;
+            font-weight: bold;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: #ff8c00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(255,140,0,0.5);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #ff6700;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="https://www.uiduid.com" class="logo"><i class="fas fa-gamepad"></i> uiduid.com</a>
+        <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title"><i class="fas fa-receipt"></i> 銷售條款</h1>
+
+        <div class="section">
+            <h2><i class="fas fa-tag"></i> 1. 商品性質</h2>
+            <p>本商城所售商品均為數位虛擬產品（如遊戲點卡、虛擬貨幣、代充服務），一經人工或系統自動發放即視為完成交付，非因本商城錯誤，恕不接受退換或退款。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-clock"></i> 2. 發放時間</h2>
+            <p>98% 以上訂單可在付款成功後 5 分鐘內會發放成功。若超過 30 分鐘未收到，請立即聯繫客服並提供付款記錄以供查詢。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> 3. 用戶責任</h2>
+            <p>用戶須確保提供之遊戲帳號、伺服器、角色名等資訊正確無誤。因填寫錯誤導致充值失敗或發放至錯誤帳號，本商城客服不承擔責任。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-hand-holding-usd"></i> 4. 價格與促銷</h2>
+            <p>所有價格以網站顯示為準，可能因市場波動調整。促銷活動和贈送活動僅限指定時間與條件，本公司保留最終解釋權。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-redo"></i> 5. 退款政策</h2>
+            <p>僅在以下情況可申請退款：</p>
+            <p>• 系統故障導致未發放商品且無法補發</p>
+            <p>• 重複支付的訂單</p>
+            <p>退款將原路退回至支付帳戶，處理時間約 1–30 個工作天。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>

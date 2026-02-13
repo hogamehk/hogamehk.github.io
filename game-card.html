@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>遊戲點卡.GameTopup - uiduid.com</title>
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+ <link rel="stylesheet" href="css/gametopups.css" />   
+</head>
+<body>
+    <div class="top-nav">
+    <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+        <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title"><i class="fas fa-ticket-alt"></i> 遊戲點卡</h1>
+
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜商品（如：GASH）..." />
+            </div>
+            <select class="filter-select" id="regionFilter">
+                <option value="">全部地區</option>
+                <option value="hkmo">港澳</option>
+                <option value="tw">台灣</option>
+                <option value="jp">日本</option>
+                <option value="my">馬來西亞</option>
+                <option value="global">全球通用</option>
+            </select>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid">
+       <!-- 商品將從 cards.json 載入 -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <script src="js/game_cards.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>禁止內容政策 - uiduid.com</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        /* 頂部導航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #242424;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff8c00;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .nav-btn {
+            padding: 6px 10px;
+            border: 1px solid #ff8c00;
+            border-radius: 4px;
+            color: #ff8c00;
+            text-decoration: none;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: #ff8c00;
+            color: #fff;
+        }
+
+        /* 主內容區 */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 政策內容 */
+        .policy-section {
+            background: #242424;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .policy-content {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .policy-content ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .policy-content li {
+            margin-bottom: 8px;
+        }
+
+        /* 尾部 */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #242424;
+            padding: 15px 0;
+            text-align: center;
+            border-top: 2px solid #ff8c00;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 998;
+        }
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .footer-text {
+            color: #ccc;
+            font-size: 12px;
+        }
+        .footer-text span {
+            color: #ff8c00;
+            font-weight: bold;
+        }
+
+        /* 回到頂部 */
+        .back-to-top {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: #ff8c00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(255, 140, 0, 0.5);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #ff6700;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 頂部導航 -->
+    <div class="top-nav">
+        <a href="https://uiduid.com" class="logo"><i class="fas fa-gamepad"></i> uiduid.com</a>
+        <div class="nav-actions">
+            <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
+        </div>
+    </div>
+
+    <!-- 主內容 -->
+    <div class="container">
+        <h1 class="page-title"><i class="fas fa-ban"></i> 禁止內容政策</h1>
+
+        <div class="policy-section">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> 政策目的</h2>
+            <div class="policy-content">
+                <p>
+                    uiduid.com 致力於提供安全、合法、可靠的遊戲點卡與虛擬商品代充服務。為維護平台秩序及用戶權益，所有用戶在使用本服務時，必須遵守以下禁止內容政策。
+                </p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title"><i class="fas fa-times-circle"></i> 嚴格禁止行為</h2>
+            <div class="policy-content">
+                <ul>
+                    <li><strong>違法或詐騙活動：</strong> 利用本平台進行洗錢、盜號、詐欺、盜刷信用卡等非法行為。</li>
+                    <li><strong>侵犯知識產權：</strong> 上傳、交易或宣傳未經授權的盜版遊戲帳號、外掛、破解工具或仿冒商品。</li>
+                    <li><strong>騷擾與濫用：</strong> 對客服或其他用戶進行辱罵、威脅、人身攻擊或惡意投訴。</li>
+                    <li><strong>虛假資訊：</strong> 提供錯誤的帳號、伺服器、角色名稱等導致充值失敗，並以此要求退款或賠償。</li>
+                    <li><strong>轉售或分銷：</strong> 未經書面許可，將本平台購買的商品用於商業轉售或批量分發。</li>
+                    <li><strong>違反遊戲規則：</strong> 購買用於作弊、腳本、自動掛機等違反遊戲官方條款的服務。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> 處理措施</h2>
+            <div class="policy-content">
+                <p>
+                    若發現用戶違反本政策，我們保留以下權利：
+                </p>
+                <ul>
+                    <li>立即停止對你的所有交易</li>
+                    <li>取消未完成訂單且不退款</li>
+                    <li>拒絕未來所有交易請求</li>
+                    <li>向相關遊戲公司或執法機構通報違規行為</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title"><i class="fas fa-headset"></i> 問題回報</h2>
+            <div class="policy-content">
+                <p>
+                    如您發現任何可疑或違規行為，請立即透過以下方式聯繫我們：
+                </p>
+                <ul>
+                    <li>24 小時客服 WhatsApp / WeChat / Email</li>
+                    <li>電子郵件：<a href="mailto:support@uiduid.com" style="color:#ff8c00;">uiduid.com@gmail.com</a></li>
+                    <li>WhatsApp：<a href="https://wa.me/85255360181" style="color:#ff8c00;">+852 55360181</a></li>
+                </ul>
+                <p style="margin-top:10px;">
+                    感謝您共同維護 uiduid.com 的誠信與安全環境。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 尾部 -->
+    <div class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
+        </div>
+    </div>
+
+    <!-- 回到頂部按鈕 -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // 回到頂部功能
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>

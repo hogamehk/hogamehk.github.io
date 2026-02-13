@@ -1,106 +1,221 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-HK">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>付款確認 | 官方授權點卡儲值</title>
-    <style>
-        :root { --brand-color: #ff9800; --brand-dark: #e68a00; }
-        body { font-family: "PingFang HK", sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; padding: 15px; margin: 0; }
-        .card { max-width: 450px; margin: 10px auto; background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255,152,0,0.1); border-top: 8px solid var(--brand-color); }
-        h2 { color: var(--brand-color); text-align: center; font-size: 22px; margin-bottom: 20px; }
-        
-        .legal-notice { background: #fff9f0; border: 1px solid #ffe8cc; padding: 18px; border-radius: 15px; margin-bottom: 20px; font-size: 14px; color: #5d4037; }
-        .legal-notice strong { color: #d35400; display: block; margin-bottom: 8px; font-size: 16px; }
-        
-        .fps-area { display: none; background: #fff; border: 2px solid var(--brand-color); padding: 20px; border-radius: 18px; margin-top: 20px; animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .data-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
-        .data-row:last-of-type { border-bottom: none; }
-        .label { color: #888; font-size: 13px; }
-        .value { font-weight: bold; color: #222; font-size: 17px; }
-        
-        .copy-btn { background: var(--brand-color); color: white; border: none; padding: 8px 16px; border-radius: 50px; font-size: 12px; cursor: pointer; font-weight: bold; }
-        
-        .agree-section { margin: 25px 0; padding: 15px; background: #fafafa; border-radius: 12px; }
-        #agreeCheck { transform: scale(1.4); margin-right: 12px; accent-color: var(--brand-color); cursor: pointer; }
-        .agree-label { font-size: 15px; color: #444; cursor: pointer; font-weight: 500; }
-        
-        .primary-btn { width: 100%; background: var(--brand-color); color: white; border: none; padding: 18px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,152,0,0.3); }
-        .primary-btn:disabled { background: #ddd; box-shadow: none; cursor: not-allowed; color: #999; }
-        
-        .wa-btn { display: none; text-align: center; background: #25D366; color: white; text-decoration: none; padding: 16px; border-radius: 50px; margin-top: 20px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
-        .hint { font-size: 12px; color: #bbb; text-align: center; margin-top: 20px; }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>uiduid.com - 專業遊戲點卡充值商城</title>
+    <link rel="stylesheet" href="images/fontawesome/css/all.min.css" />
+    <!-- 外部 CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<div class="card">
-    <h2>FPS 安全支付結算</h2>
-
-<div class="legal-notice">
-    <strong>📜 重要法律免責聲明：</strong>
-    1. <strong>不適用鑑賞期：</strong>本商品屬「非以有形媒介提供之數位內容」，依消保法規定，發貨後即排除 7 天鑑賞期，<strong>不設退換</strong><br>
-    2. <strong>代儲風險自負：</strong>本店僅受託代辦儲值。入帳成功後，因官方政策導致的封號、扣金或回收，由買家自負，本店不設補償<br>
-    3. <strong>嚴禁三方詐騙：</strong>嚴禁受他人指使代購。付款即視為本人操作，若涉及非法資金，買家須承擔全部法律責任。
-</div>
-
-
-    <div class="agree-section">
-        <label class="agree-label">
-            <input type="checkbox" id="agreeCheck"> 我已確認並同意上述交易聲明
-        </label>
+<!-- 頂部導航 -->
+<div class="top-nav">
+    <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+    <div class="menu-btn">☰</div>
+    <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="搜商品">
+        <!-- 👇 搜尋下拉容器 -->
+        <div class="search-dropdown" id="searchDropdown"></div>
     </div>
-
-    <button id="showPayBtn" class="primary-btn" disabled>獲取 FPS 付款資料</button>
-
-    <div id="fpsSection" class="fps-area">
-        <div class="data-row">
-            <div><span class="label">FPS 電話/ID</span><br><span class="value" id="fpsPhone">2287134</span></div>
-            <button class="copy-btn" onclick="copyText('fpsPhone', '電話')">複製</button>
-        </div>
-        <div class="data-row">
-            <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
-        </div>
-        <div class="data-row">
-            <div><span class="label">轉帳備註 (Message)</span><br><span class="value" id="fpsMsg" style="color:#d35400;">買點卡不退款</span></div>
-            <button class="copy-btn" onclick="copyText('fpsMsg', '備註')">複製</button>
-        </div>
-        
-        <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
-        
-        <!-- 請將下方的 85291234567 替換為你的 WhatsApp 號碼 -->
-        <a href="https://wa.me/85255360181?text=我已完成 FPS 轉帳，以下是截圖：" class="wa-btn" id="waBtn">傳送轉帳截圖</a>
-    </div>
-
-    <div class="hint">確認付款即視為雙方電子契約成立，受《電子交易條例》及相關商務法律監管。
-        <br>如有惡意詐騙或非法資金行為，本店將保留追究法律責任之權利。
+    <div class="nav-actions">
+        <a href="news.html" class="nav-btn">公告新聞</a>
     </div>
 </div>
 
-<script>
-    const checkbox = document.getElementById('agreeCheck');
-    const btn = document.getElementById('showPayBtn');
-    const fpsSection = document.getElementById('fpsSection');
-    const waBtn = document.getElementById('waBtn');
+<!-- 側邊欄 -->
+<div class="sidebar">
+    <div class="nav-group">
+        <div class="nav-group-title">商品分類</div>
+        <a href="game-card.html">🎮 遊戲點卡</a>
+        <a href="hot-topup.html">🔥 最近熱充</a>
+    </div>
+    <div class="nav-group">
+        <div class="nav-group-title">政策條款</div>
+        <a href="payment.html" id="payment-link">💳 支付方式</a>
+        <a href="terms.html">📜 使用條款</a>
+        <a href="sales-terms.html">🛒 銷售條款</a>
+        <a href="privacy.html">🔒 隱私政策</a>
+        <a href="content-policy.html">🚫 禁止內容政策</a>
+    </div>
+</div>
 
-    checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
+<!-- 輪播圖 -->
+<div class="carousel">
+    <div class="carousel-inner" id="carouselInner"></div>
+    <div class="carousel-indicators" id="carouselIndicators"></div>
+</div>
 
-    btn.addEventListener('click', () => {
-        fpsSection.style.display = 'block';
-        waBtn.style.display = 'block';
-        btn.style.display = 'none';
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    });
+<!-- 核心業務入口 -->
+<div class="services">
+    <div class="service-card">
+        <div class="service-icon">🎮</div>
+        <div class="service-title">遊戲點卡</div>
+        <div class="service-desc">MyCard、iTunes、DMM等，立即發</div>
+    </div>
+    <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <div class="service-title">最近熱充</div>
+        <div class="service-desc">熱門手遊秒充到賬，官網渠道，超值得</div>
+    </div>
+    <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <div class="service-title">安全保障</div>
+        <div class="service-desc">無需注冊，不存資金，即買即得，放心買</div>
+    </div>
+    <div class="service-card">
+        <div class="service-icon">💬</div>
+        <div class="service-title">24h客服</div>
+        <div class="service-desc">全天候在線，隨時為你遊戲服務</div>
+    </div>
+</div>
 
-    function copyText(elementId, label) {
-        const text = document.getElementById(elementId).innerText;
-        navigator.clipboard.writeText(text).then(() => {
-            alert('✅ ' + label + '已複製\n請在轉帳時貼上備註');
-        });
-    }
-</script>
+<!-- 熱門遊戲點卡 -->
+<div class="hot-products">
+    <div class="section-title">
+        熱門遊戲點卡
+        <a href="game-card.html" class="see-more">查看更多</a>
+    </div>
+    <div class="products-grid">
+        <div class="product-card" data-key="mycard" data-img="images/twmycard.webp">
+            <div class="product-card-img">🎫</div>
+            <div class="product-card-info">
+                <div class="product-card-name">MyCard 10000點</div>
+                <div class="product-card-desc">適用於所有MyCard合作遊戲，官方正品</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$2625</span>
+                    <span class="product-card-discount-price">HK$2235</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card" data-key="steam" data-img="images/hksteam.webp">
+            <div class="product-card-img">🎮</div>
+            <div class="product-card-info">
+                <div class="product-card-name">香港 Steam 充值卡</div>
+                <div class="product-card-desc">全球通用，支援多幣別，即時發碼</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$1000</span>
+                    <span class="product-card-discount-price">HK$970</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card" data-key="psn" data-img="images/hkpsn.webp">
+            <div class="product-card-img">🔷</div>
+            <div class="product-card-info">
+                <div class="product-card-name">PSN港服充值卡<span class="hot-tag">熱門</span></div>
+                <div class="product-card-desc">PlayStation Network港服專用，官方正版卡密</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$750</span>
+                    <span class="product-card-discount-price">HK$698</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card" data-key="日本 iTunes Gift Card" data-img="images/jpitunes.webp">
+            <div class="product-card-img">🟩</div>
+            <div class="product-card-info">
+                <div class="product-card-name">日本iTunes10000日圓</div>
+                <div class="product-card-desc">官方卡密，穩定可靠，支持所有AppleID戶口</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$540</span>
+                    <span class="product-card-discount-price">HK$490</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 最近熱充遊戲 -->
+<div class="hot-products">
+    <div class="section-title">
+        最近熱充遊戲
+        <a href="hot-topup.html" class="see-more">查看更多</a>
+    </div>
+    <div class="products-grid">
+        <div class="product-card" data-key="王者榮燿" data-img="images/wzry.png">
+            <div class="product-card-img">👑</div>
+            <div class="product-card-info">
+                <div class="product-card-name">王者榮燿<span class="hot-tag">熱門</span></div>
+                <div class="product-card-desc">秒充到賬，穩定可靠，支持所有伺服器</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$12</span>
+                    <span class="product-card-discount-price">HK$10</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card" data-key="Ro仙境傳說世界之旅" data-img="images/roxjcssjzl.webp">
+            <div class="product-card-img">🕊️</div>
+            <div class="product-card-info">
+                <div class="product-card-name">Ro仙境傳說世界之旅<span class="hot-tag">熱門</span></div>
+                <div class="product-card-desc">大額MyCard扣點，秒充到賬，支持所有伺服器</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$2650</span>
+                    <span class="product-card-discount-price">HK$2355</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card" data-key="燕雲十六聲"data-img="images/wherewindsmeetgame.webp">
+            <div class="product-card-img">✨</div>
+            <div class="product-card-info">
+                <div class="product-card-name">燕雲十六聲<span class="hot-tag">熱門</span></div>
+                <div class="product-card-desc">秒充到賬，穩定可靠，支持所有伺服器</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$788</span>
+                    <span class="product-card-discount-price">HK$690</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card" data-key="傳説對決" data-img="images/csdj.png">
+            <div class="product-card-img">🌌</div>
+            <div class="product-card-info">
+                <div class="product-card-name">傳説對決</div>
+                <div class="product-card-desc">秒充到賬，官方卡密，支持所有伺服器</div>
+                <div class="product-card-price">
+                    <span class="product-card-original-price">HK$12</span>
+                    <span class="product-card-discount-price">HK$10</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 平台優勢 -->
+<div class="advantages">
+    <div class="advantage-card">
+        <div class="advantage-icon">⚡</div>
+        <div class="advantage-title">秒充到賬</div>
+        <div class="advantage-desc">絕大部分商品實現即買即發、API充值，無需等待，秒級到賬</div>
+    </div>
+    <div class="advantage-card">
+        <div class="advantage-icon">🛡️</div>
+        <div class="advantage-title">安全可靠</div>
+        <div class="advantage-desc">多年行業經驗，正規渠道貨源，保障賬號安全，無風險充值</div>
+    </div>
+    <div class="advantage-card">
+        <div class="advantage-icon">💰</div>
+        <div class="advantage-title">價格優惠</div>
+        <div class="advantage-desc">廠商直供，省去中間環節，價格優於自充，實惠給到玩家</div>
+    </div>
+    <div class="advantage-card">
+        <div class="advantage-icon">🕒</div>
+        <div class="advantage-title">24小時服務</div>
+        <div class="advantage-desc">全年無休，24小時在線，隨時解答您的購買和充值</div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</div>
+        <div class="footer-desc">本商城僅提供虛擬商品代充服務，所有商標及版權歸原廠所有</div>
+    </div>
+</div>
+
+<!-- ✅ 引入本地 JS（取代 Firebase） -->
+<script src="js/home.js"></script>
+<!-- 保留原有 main.js（如側邊欄開關等） -->
+<script src="js/main.js"></script>
 
 </body>
 </html>

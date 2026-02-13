@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>付款確認 | 官方授權點卡儲值</title>
+    <style>
+        :root { --brand-color: #ff9800; --brand-dark: #e68a00; }
+        body { font-family: "PingFang HK", sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; padding: 15px; margin: 0; }
+        .card { max-width: 450px; margin: 10px auto; background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255,152,0,0.1); border-top: 8px solid var(--brand-color); }
+        h2 { color: var(--brand-color); text-align: center; font-size: 22px; margin-bottom: 20px; }
+        
+        .legal-notice { background: #fff9f0; border: 1px solid #ffe8cc; padding: 18px; border-radius: 15px; margin-bottom: 20px; font-size: 14px; color: #5d4037; }
+        .legal-notice strong { color: #d35400; display: block; margin-bottom: 8px; font-size: 16px; }
+        
+        .fps-area { display: none; background: #fff; border: 2px solid var(--brand-color); padding: 20px; border-radius: 18px; margin-top: 20px; animation: slideUp 0.4s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .data-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+        .data-row:last-of-type { border-bottom: none; }
+        .label { color: #888; font-size: 13px; }
+        .value { font-weight: bold; color: #222; font-size: 17px; }
+        
+        .copy-btn { background: var(--brand-color); color: white; border: none; padding: 8px 16px; border-radius: 50px; font-size: 12px; cursor: pointer; font-weight: bold; }
+        
+        .agree-section { margin: 25px 0; padding: 15px; background: #fafafa; border-radius: 12px; }
+        #agreeCheck { transform: scale(1.4); margin-right: 12px; accent-color: var(--brand-color); cursor: pointer; }
+        .agree-label { font-size: 15px; color: #444; cursor: pointer; font-weight: 500; }
+        
+        .primary-btn { width: 100%; background: var(--brand-color); color: white; border: none; padding: 18px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,152,0,0.3); }
+        .primary-btn:disabled { background: #ddd; box-shadow: none; cursor: not-allowed; color: #999; }
+        
+        .wa-btn { display: none; text-align: center; background: #25D366; color: white; text-decoration: none; padding: 16px; border-radius: 50px; margin-top: 20px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
+        .hint { font-size: 12px; color: #bbb; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>FPS 安全支付結算</h2>
+
+<div class="legal-notice">
+    <strong>📜 重要法律免責聲明：</strong>
+    1. <strong>不適用鑑賞期：</strong>本商品屬「非以有形媒介提供之數位內容」，依消保法規定，發貨後即排除 7 天鑑賞期，<strong>不設退換</strong><br>
+    2. <strong>代儲風險自負：</strong>本店僅受託代辦儲值。入帳成功後，因官方政策導致的封號、扣金或回收，由買家自負，本店不設補償<br>
+    3. <strong>嚴禁三方詐騙：</strong>嚴禁受他人指使代購。付款即視為本人操作，若涉及非法資金，買家須承擔全部法律責任。
+</div>
+
+
+    <div class="agree-section">
+        <label class="agree-label">
+            <input type="checkbox" id="agreeCheck"> 我已確認並同意上述交易聲明
+        </label>
+    </div>
+
+    <button id="showPayBtn" class="primary-btn" disabled>獲取 FPS 付款資料</button>
+
+    <div id="fpsSection" class="fps-area">
+        <div class="data-row">
+            <div><span class="label">FPS 電話/ID</span><br><span class="value" id="fpsPhone">2287134</span></div>
+            <button class="copy-btn" onclick="copyText('fpsPhone', '電話')">複製</button>
+        </div>
+        <div class="data-row">
+            <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
+        </div>
+        <div class="data-row">
+            <div><span class="label">轉帳備註 (Message)</span><br><span class="value" id="fpsMsg" style="color:#d35400;">買點卡不退款</span></div>
+            <button class="copy-btn" onclick="copyText('fpsMsg', '備註')">複製</button>
+        </div>
+        
+        <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
+        
+        <!-- 請將下方的 85291234567 替換為你的 WhatsApp 號碼 -->
+        <a href="https://wa.me/85255360181?text=我已完成 FPS 轉帳，以下是截圖：" class="wa-btn" id="waBtn">傳送轉帳截圖</a>
+    </div>
+
+    <div class="hint">確認付款即視為雙方電子契約成立，受《電子交易條例》及相關商務法律監管。
+        <br>如有惡意詐騙或非法資金行為，本店將保留追究法律責任之權利。
+    </div>
+</div>
+
+<script>
+    const checkbox = document.getElementById('agreeCheck');
+    const btn = document.getElementById('showPayBtn');
+    const fpsSection = document.getElementById('fpsSection');
+    const waBtn = document.getElementById('waBtn');
+
+    checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
+
+    btn.addEventListener('click', () => {
+        fpsSection.style.display = 'block';
+        waBtn.style.display = 'block';
+        btn.style.display = 'none';
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+
+    function copyText(elementId, label) {
+        const text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('✅ ' + label + '已複製\n請在轉帳時貼上備註');
+        });
+    }
+</script>
+
+</body>
+</html>
