@@ -3,9 +3,9 @@ async function initHomepage() {
   try {
     // 同時載入 cards.json 與 games.json（結構需一致）
     const [cardsRes, gamesRes, carouselRes] = await Promise.all([
-      fetch('/data/cards.json'),
-      fetch('/data/games.json'),
-      fetch('/data/carousel.json')
+      fetch('data/cards.json'),
+      fetch('data/games.json'),
+      fetch('data/carousel.json')
     ]);
 
     if (!cardsRes.ok || !gamesRes.ok || !carouselRes.ok) {
@@ -122,4 +122,5 @@ function renderCarousel(images) {
 }
 
 // ========== 啟動 ==========
+
 document.addEventListener('DOMContentLoaded', initHomepage);
