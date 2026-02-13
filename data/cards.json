@@ -1,9 +1,9 @@
 [
-  { "name": "日本 iTunes Gift Card", "image": "/images/jpitunes.webp", "region": "jp", "hot": true, "order": 1, "link": "jpitunes.html" },
-  { "name": "中國 App Store 充值卡", "image": "/images/cnitunes.webp", "region": "global", "hot": true, "order": 2, "link": "cnitunes.html" },
-  { "name": "香港 iTunes Gift Card", "image": "/images/hkitunes.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hkitunes.html" },
-  { "name": "美國 iTunes Gift Card", "image": "/images/itunescard.webp", "region": "us", "hot": true, "order": 3, "link": "itunescard.html" },
-  { "name": "台灣 iTunes Gift Card", "image": "/images/twitunescard.webp", "region": "tw", "hot": true, "order": 3, "link": "twitunes.html" },
+  { "name": "日本 iTunes Gift Card", "image": "images/jpitunes.webp", "region": "jp", "hot": true, "order": 1, "link": "jpitunes.html" },
+  { "name": "中國 App Store 充值卡", "image": "images/cnitunes.webp", "region": "global", "hot": true, "order": 2, "link": "cnitunes.html" },
+  { "name": "香港 iTunes Gift Card", "image": "images/hkitunes.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hkitunes.html" },
+  { "name": "美國 iTunes Gift Card", "image": "images/itunescard.webp", "region": "us", "hot": true, "order": 3, "link": "itunescard.html" },
+  { "name": "台灣 iTunes Gift Card", "image": "images/twitunescard.webp", "region": "tw", "hot": true, "order": 3, "link": "twitunes.html" },
   { "name": "台灣 MyCard", "image": "/images/twmycard.webp", "region": "tw", "hot": false, "order": 4, "link": "mycard.html" },
   { "name": "香港 MyCard", "image": "/images/hkmycard.webp", "region": "hkmo", "hot": true, "order": 5, "link": "hkmycard.html" },
   { "name": "香港 Steam wallet卡", "image": "/images/hksteam.webp", "region": "hkmo", "hot": true, "order": 6, "link": "hksteam.html" },
@@ -40,4 +40,5 @@
   { "name": "NetEase Pay", "image": "/images/neteasepay.webp", "region": "global", "hot": true, "order": 13, "link": "neteasepay.html" }, 
   { "name": "PikPak 會員", "image": "/images/pikpak.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak.html" }, 
   { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
+
 ]
