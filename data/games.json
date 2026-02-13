@@ -1,0 +1,8 @@
+[
+  { "name": "王者榮耀",           "image": "/images/wzry.webp","region": "global","hot": true,  "order": 1, "link": "wzry.html" },
+  { "name": "崩壞：星穹鐵道", "image": "/images/honkai.webp", "region": "global","hot": true,  "order": 2, "link": "honkai.html" },
+  { "name": "Aion2",       "image": "/images/aion2.webp", "region": "tw", "hot": true,  "order": 5, "link": "aion2.html" },
+  { "name": "燕雲十六聲",       "image": "/images/wherewindsmeetgame.webp", "region": "tw", "hot": true,  "order": 6, "link": "wherewindsmeetgame.html" },
+  { "name": "RO仙境傳說：世界之旅",       "image": "/images/rosjzl.webp", "region": "tw", "hot": true,  "order": 1, "link": "rosjzl.html" },
+  { "name": "PUBG MOBILE",       "image": "/images/pubg.webp", "region": "global", "hot": true,  "order": 1, "link": "pubg.html" }
+]

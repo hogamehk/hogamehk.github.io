@@ -1,0 +1,9 @@
+[
+  { "name": "GASH", "desc": "台灣 Gash 點卡", "link": "twgash.html" },
+  { "name": "香港MyCard", "desc": "港澳 MyCard 點卡", "link": "hkmycard.html" },
+  { "name": "日本iTunes兌換碼", "desc": "日本 iTunes 10000 日圓", "link": "jpitunes.html" },
+  { "name": "香港Steam", "desc": "Steam 充值卡", "link": "hksteam.html" },
+  { "name": "王者榮耀", "desc": "熱門手遊秒充", "link": "wzry.html" },
+  { "name": "傳説對決", "desc": "傳說對決充值", "link": "csdj.html" },
+  { "name": "原神", "desc": "原神遊戲充值", "link": "genshin.html" },
+]
