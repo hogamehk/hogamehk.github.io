@@ -38,7 +38,7 @@ function renderCards(data) {
 async function loadProducts() {
   const container = document.getElementById('cardsGrid');
   try {
-    const res = await fetch('/data/games.json');
+    const res = await fetch('data/games.json');
     if (!res.ok) throw new Error('載入失敗');
     allProducts = await res.json();
     allProducts.sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -70,4 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
+
 });
