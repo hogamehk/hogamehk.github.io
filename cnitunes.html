@@ -367,11 +367,12 @@
 
     <div id="floating-cart">
         <div class="floating-cart-header">
-            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 中國 iTunes（總價）</div>
+            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 大陸蘋果卡（總價）</div>
             <div class="floating-total">HK $  0</div>
         </div>
         <div class="floating-items" id="floatingItemsList">
         </div>
+        <button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button>
     </div>
 
     <div class="footer">
@@ -393,6 +394,40 @@
                 !sidebar.contains(e.target) && 
                 !menuBtn.contains(e.target)) {
                 sidebar.classList.remove('active');
+            }
+        });
+
+        // 結賬按鈕功能：將選中商品資訊帶到fpspay.html
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', function() {
+                    const selectedItems = document.querySelectorAll('.price-item-row.selected');
+                    if (selectedItems.length === 0) {
+                        alert('請先選擇商品');
+                        return;
+                    }
+                    // 收集所有選中商品
+                    const products = [];
+                    selectedItems.forEach(item => {
+                        const name = item.querySelector('.price-item-name').textContent.trim();
+                        const priceText = item.querySelector('.price-item-discount').textContent;
+                        const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
+                        const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
+                        const subtotal = Math.round(price * qty);
+                        products.push({ name, qty, price, subtotal });
+                    });
+                    // 主商品名稱（如已選 中國 iTunes）
+                    let mainProduct = '';
+                    const cartTitle = document.querySelector('.floating-cart-title');
+                    if (cartTitle) {
+                        // 取「已選 XXX」
+                        mainProduct = cartTitle.textContent.replace(/^[^已]*已選\s*/,'').replace(/（.*$/,'').trim();
+                    }
+                    const productsStr = encodeURIComponent(JSON.stringify(products));
+                    const url = `fpspay.html?products=${productsStr}` + (mainProduct ? `&mainProduct=${encodeURIComponent(mainProduct)}` : '');
+                    window.location.href = url;
+                });
             }
         });
 
