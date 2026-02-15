@@ -23,7 +23,7 @@
   { "name": "日本 Nintendo 任天堂 eShop", "image": "/images/jpnintendo.webp", "region": "jp", "hot": true, "order": 11, "link": "jpnintendo.html" },
   { "name": "香港 Nintendo 任天堂 eShop", "image": "/images/hknintendo.webp", "hot": true, "region": "hkmo", "order": 11, "link": "hknintendo.html" },
   { "name": "美國 任天堂點卡", "image": "/images/usnintendo.webp", "region": "us",  "order": 11, "link": "usnintendo.html" },
-  { "name": "日本 DMM Point Code", "image": "/images/dmm.webp", "region": "jp", "hot": true, "order": 12, "link": "dmm.html" },
+  { "name": "日本 DMM Point Code", "image": "japan-dmm-points.webp", "region": "jp", "hot": true, "order": 12, "link": "japan-dmm-points.html" },
     { "name": "日本 DLsite 點數卡", "image": "/images/dlsite.webp", "region": "jp","order": 12, "link": "dlsite.html" },
   { "name": "貝殼幣Garena", "image": "/images/Garena.webp", "region": "tw", "hot": true, "order": 13, "link": "garena.html" },
   { "name": "元氣卡", "image": "/images/xlegend.webp", "region": "tw",  "order": 14, "link": "xlegend.html" },
@@ -41,3 +41,4 @@
   { "name": "PikPak 會員", "image": "/images/pikpak.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak.html" }, 
   { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
 ]
+
