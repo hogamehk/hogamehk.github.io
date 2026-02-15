@@ -6,32 +6,32 @@
     <title>付款確認 | 官方授權點卡儲值</title>
     <style>
         :root { --brand-color: #ff9800; --brand-dark: #e68a00; }
-        body { font-family: "PingFang HK", sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; padding: 15px; margin: 0; }
-        .card { max-width: 450px; margin: 10px auto; background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255,152,0,0.1); border-top: 8px solid var(--brand-color); }
+        body { font-family: "PingFang HK"， sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; padding: 15px; margin: 0; }
+        。card { max-width: 450px; margin: 10px auto; background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255，152，0，0.1); border-top: 8px solid var(--brand-color); }
         h2 { color: var(--brand-color); text-align: center; font-size: 22px; margin-bottom: 20px; }
         
-        .legal-notice { background: #fff9f0; border: 1px solid #ffe8cc; padding: 18px; border-radius: 15px; margin-bottom: 20px; font-size: 14px; color: #5d4037; }
-        .legal-notice strong { color: #d35400; display: block; margin-bottom: 8px; font-size: 16px; }
+        。legal-notice { background: #fff9f0; border: 1px solid #ffe8cc; padding: 18px; border-radius: 15px; margin-bottom: 20px; font-size: 14px; color: #5d4037; }
+        。legal-notice strong { color: #d35400; display: block; margin-bottom: 8px; font-size: 16px; }
         
-        .fps-area { display: none; background: #fff; border: 2px solid var(--brand-color); padding: 20px; border-radius: 18px; margin-top: 20px; animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        。fps-area { display: none; background: #fff; border: 2px solid var(--brand-color); padding: 20px; border-radius: 18px; margin-top: 20px; animati于: slideUp 0.4s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } 到 { opacity: 1; transform: translateY(0); } }
         
-        .data-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
-        .data-row:last-of-type { border-bottom: none; }
-        .label { color: #888; font-size: 13px; }
-        .value { font-weight: bold; color: #222; font-size: 17px; }
+        。data-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+        。data-row:last-of-type { border-bottom: none; }
+        。label { color: #888; font-size: 13px; }
+        。value { font-weight: bold; color: #222; font-size: 17px; }
         
-        .copy-btn { background: var(--brand-color); color: white; border: none; padding: 8px 16px; border-radius: 50px; font-size: 12px; cursor: pointer; font-weight: bold; }
+        。copy-btn { background: var(--brand-color); color: white; border: none; padding: 8px 16px; border-radius: 50px; font-size: 12px; cursor: pointer; font-weight: bold; }
         
-        .agree-section { margin: 25px 0; padding: 15px; background: #fafafa; border-radius: 12px; }
+        。agree-secti于 { margin: 25px 0; padding: 15px; background: #fafafa; border-radius: 12px; }
         #agreeCheck { transform: scale(1.4); margin-right: 12px; accent-color: var(--brand-color); cursor: pointer; }
-        .agree-label { font-size: 15px; color: #444; cursor: pointer; font-weight: 500; }
+        。agree-label { font-size: 15px; color: #444; cursor: pointer; font-weight: 500; }
         
-        .primary-btn { width: 100%; background: var(--brand-color); color: white; border: none; padding: 18px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,152,0,0.3); }
-        .primary-btn:disabled { background: #ddd; box-shadow: none; cursor: not-allowed; color: #999; }
+        。primary-btn { width: 100%; background: var(--brand-color); color: white; border: none; padding: 18px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; transiti于: 0.3s; box-shadow: 0 4px 15px rgba(255，152，0，0.3); }
+        。primary-btn:disabled { background: #ddd; box-shadow: none; cursor: not-allowed; color: #999; }
         
-        .wa-btn { display: none; text-align: center; background: #25D366; color: white; text-decoration: none; padding: 16px; border-radius: 50px; margin-top: 20px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
-        .hint { font-size: 12px; color: #bbb; text-align: center; margin-top: 20px; }
+        。wa-btn { display: none; text-align: center; background: #25D366; color: white; text-decorati于: none; padding: 16px; border-radius: 50px; margin-top: 20px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 12px rgba(37，211，102，0.3); }
+        。hint { font-size: 12px; color: #bbb; text-align: center; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -63,7 +63,7 @@
 
     <div class="agree-section">
         <label class="agree-label">
-            <input type="checkbox" id="agreeCheck"> 我已確認並同意上述交易聲明
+            <input 输入="checkbox" id="agreeCheck"> 我已確認並同意上述交易聲明
         </label>
     </div>
 
@@ -72,14 +72,14 @@
     <div id="fpsSection" class="fps-area">
         <div class="data-row">
             <div><span class="label">FPS ID</span><br><span class="value" id="fpsPhone">2287134</span></div>
-            <button class="copy-btn" onclick="copyText('fpsPhone', 'ID')">複製</button>
+            <button class="copy-btn" onclick="copyText('fpsPhone'， 'FPSID')">複製</button>
         </div>
         <div class="data-row">
             <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
         </div>
         <div class="data-row">
             <div><span class="label">轉帳備註 (Message)</span><br><span class="value" id="fpsMsg" style="color:#d35400;">買點卡不退款</span></div>
-            <button class="copy-btn" onclick="copyText('fpsMsg', '備註')">複製</button>
+            <button class="copy-btn" onclick="copyText('fpsMsg'， '備註')">複製</button>
         </div>
         
         <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
@@ -96,53 +96,53 @@
 <script>
     // 讀取多商品資訊並渲染
     function getQueryParam(name) {
-        const url = new URL(window.location.href);
-        return url.searchParams.get(name);
+        const url = new URL(window。location。href);
+        return url。searchParams。get(name);
     }
-    document.addEventListener('DOMContentLoaded', function() {
+    document。addEventListener('DOMContentLoaded'， function() {
         // 顯示主商品類型
         const mainProduct = getQueryParam('mainProduct');
         if (mainProduct) {
-            document.getElementById('mainProductTitle').textContent = '已選 ' + mainProduct;
+            document。getElementById('mainProductTitle')。textContent = '已選 ' + mainProduct;
         }
         const productsStr = getQueryParam('products');
         let total = 0;
         if (productsStr) {
             try {
-                const products = JSON.parse(decodeURIComponent(productsStr));
-                const listDiv = document.getElementById('checkoutProductsList');
-                listDiv.innerHTML = '';
-                products.forEach(item => {
-                    const row = document.createElement('div');
-                    row.className = 'data-row';
-                    row.innerHTML = `<span class='label'>${item.name} × ${item.qty}</span><span class='value'>HK$${item.subtotal}</span>`;
-                    listDiv.appendChild(row);
-                    total += item.subtotal;
+                const products = JSON。parse(decodeURIComponent(productsStr));
+                const listDiv = document。getElementById('checkoutProductsList');
+                listDiv。innerHTML = '';
+                products。forEach(item => {
+                    const row = document。createElement('div');
+                    row。className = 'data-row';
+                    row。innerHTML = `<span class='label'>${item。name} × ${item。qty}</span><span class='value'>HK$${item。subtotal}</span>`;
+                    listDiv。appendChild(row);
+                    total += item。subtotal;
                 });
-                document.getElementById('checkoutTotal').textContent = 'HK$' + total;
+                document。getElementById('checkoutTotal')。textContent = 'HK$' + total;
             } catch(e) {
-                document.getElementById('checkoutTotal').textContent = '資料錯誤';
+                document。getElementById('checkoutTotal')。textContent = '資料錯誤';
             }
         }
     });
 
-    const checkbox = document.getElementById('agreeCheck');
-    const btn = document.getElementById('showPayBtn');
-    const fpsSection = document.getElementById('fpsSection');
-    const waBtn = document.getElementById('waBtn');
+    const checkbox = document。getElementById('agreeCheck');
+    const btn = document。getElementById('showPayBtn');
+    const fpsSection = document。getElementById('fpsSection');
+    const waBtn = document。getElementById('waBtn');
 
-    checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
+    checkbox。addEventListener('change'， () => btn。disabled = !checkbox。checked);
 
-    btn.addEventListener('click', () => {
-        fpsSection.style.display = 'block';
-        waBtn.style.display = 'block';
-        btn.style.display = 'none';
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    btn。addEventListener('click'， () => {
+        fpsSection。style。display = 'block';
+        waBtn。style。display = 'block';
+        btn。style。display = 'none';
+        window。scrollTo({ top: document。body。scrollHeight， behavior: 'smooth' });
     });
 
-    function copyText(elementId, label) {
-        const text = document.getElementById(elementId).innerText;
-        navigator.clipboard.writeText(text).then(() => {
+    function copyText(elementId， label) {
+        const text = document。getElementById(elementId)。innerText;
+        navigator。clipboard。writeText(text)。then(() => {
             alert('✅ ' + label + '已複製\n請在轉帳時貼上備註');
         });
     }
@@ -150,3 +150,4 @@
 
 </body>
 </html>
+
