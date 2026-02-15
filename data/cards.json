@@ -16,7 +16,7 @@
   { "name": "台灣 GASH卡", "image": "images/twgash.webp", "region": "tw", "hot": true, "order": 8, "link": "gash.html" },
   { "name": "香港 GASH卡", "image": "images/hkgash.webp", "region": "hkmo", "hot": true, "order": 9, "link": "hkgash.html" },
   { "name": "香港 PlayStation兌換碼 (PSN)", "image": "images/hkpsn.webp", "region": "hkmo", "hot": true, "order": 10, "link": "hkpsn.html" },
-  { "name": "日本 PlayStation兌換碼 (PSN)", "image": "images/jppsn.webp", "region": "jp", "hot": true, "order": 10, "link": "jppsn.html" },  
+  { "name": "日本 PlayStation兌換碼 (PSN)", "image": "images/jp-psn-gift-card.webp", "region": "jp", "hot": true, "order": 10, "link": "japan-psn-gift-card.html" },  
   { "name": "美國 PlayStation兌換碼 (PSN)", "image": "images/uspsn.webp", "region": "us", "order": 10, "link": "uspsn.html" },
   { "name": "英國 PlayStation兌換碼 (PSN)", "image": "images/ukpsn.webp", "region": "uk",  "order": 10, "link": "ukpsn.html" },
   { "name": "馬來 PlayStation兌換碼 (PSN)", "image": "images/mypsn.webp", "region": "my","order": 10, "link": "mypsn.html" },
@@ -42,5 +42,6 @@
   { "name": "roblox 點數卡", "image": "images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
 
 ]
+
 
 
