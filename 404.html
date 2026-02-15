@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=https://www.uiduid.com">
+    <title>頁面不存在 - 正在跳轉中</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #fffbe6 0%, #ffe0b2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .error-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(255,152,0,0.13), 0 1.5px 8px rgba(0,0,0,0.07);
+            padding: 48px 32px 36px 32px;
+            max-width: 400px;
+            width: 95vw;
+            text-align: center;
+            animation: fadeIn 0.7s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .error-icon {
+            color: #ff9800;
+            font-size: 60px;
+            margin-bottom: 18px;
+            animation: shake 1.2s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: rotate(-6deg); }
+            100% { transform: rotate(6deg); }
+        }
+        .error-title {
+            color: #ff9800;
+            font-size: 2.7rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .error-msg {
+            color: #333;
+            font-size: 1.18rem;
+            margin-bottom: 10px;
+        }
+        .loading {
+            color: #888;
+            font-size: 0.98rem;
+            margin-bottom: 18px;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #ff9800;
+            color: #fff;
+            border-radius: 24px;
+            padding: 10px 32px;
+            font-size: 1.08rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+            box-shadow: 0 2px 12px rgba(255,152,0,0.13);
+            transition: background 0.18s, box-shadow 0.18s;
+        }
+        .back-btn:hover {
+            background: #e67c00;
+            box-shadow: 0 4px 18px rgba(255,152,0,0.18);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-card">
+        <div class="error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="error-title">404</div>
+        <div class="error-msg">抱歉，您訪問的頁面已更新或已下架。</div>
+        <div class="loading">系統將在 3 秒後自動帶您回到 uiduid.com 商城首頁...</div>
+        <a href="https://www.uiduid.com" class="back-btn"><i class="fas fa-home"></i> 返回首頁</a>
+    </div>
+</body>
+</html>
