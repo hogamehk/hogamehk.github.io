@@ -1,7 +1,7 @@
 [
   { "name": "日本 iTunes Gift Card", "image": "images/jpitunes.webp", "region": "jp", "hot": true, "order": 1, "link": "jpitunes.html" },
   { "name": "中國 App Store 充值卡", "image": "images/cnitunes.webp", "region": "global", "hot": true, "order": 2, "link": "cnitunes.html" },
-  { "name": "香港 iTunes Gift Card", "image": "images/hkitunes.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hkitunes.html" },
+  { "name": "香港 iTunes Gift Card", "image": "images/hk-apple-gift-card.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hk-apple-gift-card.html" },
   { "name": "美國 iTunes Gift Card", "image": "images/itunescard.webp", "region": "us", "hot": true, "order": 3, "link": "itunescard.html" },
   { "name": "台灣 iTunes Gift Card", "image": "images/twitunescard.webp", "region": "tw", "hot": true, "order": 3, "link": "twitunes.html" },
   { "name": "台灣 MyCard", "image": "images/twmycard.webp", "region": "tw", "hot": false, "order": 4, "link": "mycard.html" },
@@ -42,4 +42,5 @@
   { "name": "roblox 點數卡", "image": "images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
 
 ]
+
 
