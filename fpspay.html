@@ -72,14 +72,14 @@
     <div id="fpsSection" class="fps-area">
         <div class="data-row">
             <div><span class="label">FPS ID</span><br><span class="value" id="fpsPhone">2287134</span></div>
-            <button class="copy-btn" onclick="copyText('fpsPhone'， 'ID')">複製</button>
+            <button class="copy-btn" onclick="copyText('fpsPhone', 'ID')">複製</button>
         </div>
         <div class="data-row">
             <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
         </div>
         <div class="data-row">
             <div><span class="label">轉帳備註 (Message)</span><br><span class="value" id="fpsMsg" style="color:#d35400;">買點卡不退款</span></div>
-            <button class="copy-btn" onclick="copyText('fpsMsg'， '備註')">複製</button>
+            <button class="copy-btn" onclick="copyText('fpsMsg', '備註')">複製</button>
         </div>
         
         <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
@@ -96,53 +96,53 @@
 <script>
     // 讀取多商品資訊並渲染
     function getQueryParam(name) {
-        const url = new URL(window。location。href);
-        return url。searchParams。get(name);
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
     }
-    document。addEventListener('DOMContentLoaded'， function() {
+    document.addEventListener('DOMContentLoaded', function() {
         // 顯示主商品類型
         const mainProduct = getQueryParam('mainProduct');
         if (mainProduct) {
-            document。getElementById('mainProductTitle')。textContent = '已選 ' + mainProduct;
+            document.getElementById('mainProductTitle').textContent = '已選 ' + mainProduct;
         }
         const productsStr = getQueryParam('products');
         let total = 0;
         if (productsStr) {
             try {
-                const products = JSON。parse(decodeURIComponent(productsStr));
-                const listDiv = document。getElementById('checkoutProductsList');
-                listDiv。innerHTML = '';
-                products。forEach(item => {
-                    const row = document。createElement('div');
-                    row。className = 'data-row';
-                    row。innerHTML = `<span class='label'>${item。name} × ${item。qty}</span><span class='value'>HK$${item。subtotal}</span>`;
-                    listDiv。appendChild(row);
-                    total += item。subtotal;
+                const products = JSON.parse(decodeURIComponent(productsStr));
+                const listDiv = document.getElementById('checkoutProductsList');
+                listDiv.innerHTML = '';
+                products.forEach(item => {
+                    const row = document.createElement('div');
+                    row.className = 'data-row';
+                    row.innerHTML = `<span class='label'>${item.name} × ${item.qty}</span><span class='value'>HK$${item.subtotal}</span>`;
+                    listDiv.appendChild(row);
+                    total += item.subtotal;
                 });
-                document。getElementById('checkoutTotal')。textContent = 'HK$' + total;
+                document.getElementById('checkoutTotal').textContent = 'HK$' + total;
             } catch(e) {
-                document。getElementById('checkoutTotal')。textContent = '資料錯誤';
+                document.getElementById('checkoutTotal').textContent = '資料錯誤';
             }
         }
     });
 
-    const checkbox = document。getElementById('agreeCheck');
-    const btn = document。getElementById('showPayBtn');
-    const fpsSection = document。getElementById('fpsSection');
-    const waBtn = document。getElementById('waBtn');
+    const checkbox = document.getElementById('agreeCheck');
+    const btn = document.getElementById('showPayBtn');
+    const fpsSection = document.getElementById('fpsSection');
+    const waBtn = document.getElementById('waBtn');
 
-    checkbox。addEventListener('change'， () => btn。disabled = !checkbox。checked);
+    checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
 
-    btn。addEventListener('click'， () => {
-        fpsSection。style。display = 'block';
-        waBtn。style。display = 'block';
-        btn。style。display = 'none';
-        window。scrollTo({ top: document。body。scrollHeight， behavior: 'smooth' });
+    btn.addEventListener('click', () => {
+        fpsSection.style.display = 'block';
+        waBtn.style.display = 'block';
+        btn.style.display = 'none';
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
 
-    function copyText(elementId， label) {
-        const text = document。getElementById(elementId)。innerText;
-        navigator。clipboard。writeText(text)。then(() => {
+    function copyText(elementId, label) {
+        const text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(() => {
             alert('✅ ' + label + '已複製\n請在轉帳時貼上備註');
         });
     }
