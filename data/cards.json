@@ -21,7 +21,7 @@
   { "name": "英國 PlayStation兌換碼 (PSN)"， "image": "images/ukpsn.webp"， "region": "uk"，  "order": 10， "link": "ukpsn.html" }，
   { "name": "馬來 PlayStation兌換碼 (PSN)"， "image": "images/mypsn.webp"， "region": "my"，"order": 10， "link": "mypsn.html" }，
   { "name": "日本 Nintendo 任天堂 eShop"， "image": "images/jpnintendo.webp"， "region": "jp"， "hot": true， "order": 11， "link": "jpnintendo.html" }，
-  { "name": "香港 Nintendo 任天堂 eShop"， "image": "images/hknintendo.webp", "hot": true， "region": "hkmo"， "order": 11， "link": "hknintendo.html" }，
+  { "name": "香港 Nintendo 任天堂 eShop"， "image": "images/hknintendo.webp"， "hot": true， "region": "hkmo"， "order": 11， "link": "hknintendo.html" }，
   { "name": "美國 任天堂點卡"， "image": "images/usnintendo.webp"， "region": "us"，  "order": 11， "link": "usnintendo.html" }，
   { "name": "日本 DMM Point Code"， "image": "images/dmm.webp"， "region": "jp"， "hot": true， "order": 12， "link": "dmm.html" }，
     { "name": "日本 DLsite 點數卡"， "image": "images/dlsite.webp"， "region": "jp"，"order": 12， "link": "dlsite.html" }，
@@ -42,6 +42,7 @@
   { "name": "roblox 點數卡"， "image": "images/roblox.webp"， "region": "tw"， "hot": true， "order": 17， "link": "roblox.html" }
 
 ]
+
 
 
 
