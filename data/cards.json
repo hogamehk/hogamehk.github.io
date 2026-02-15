@@ -38,9 +38,10 @@
   { "name": "騰訊QQ卡", "image": "/images/qqcard.webp", "region": "global", "hot": true, "order": 13, "link": "qqcard.html" }, 
   { "name": "NetEase Pay（日本）", "image": "/images/jpneteasepay.webp", "region": "jp", "hot": true, "order": 13, "link": "jpneteasepay.html" }, 
   { "name": "NetEase Pay", "image": "/images/neteasepay.webp", "region": "global", "hot": true, "order": 13, "link": "neteasepay.html" }, 
-  { "name": "PikPak 會員", "image": "/images/pikpak.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak.html" }, 
+  { "name": "PikPak 會員", "image": "/images/pikpak-membership.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak-membership.html" }, 
   { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
 ]
+
 
 
 
