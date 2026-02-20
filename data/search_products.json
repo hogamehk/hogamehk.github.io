@@ -1,0 +1,14 @@
+[
+  {"name": "台灣MyCard", "link": "hk-mycard.html"},
+ {"name": "香港MyCard", "link": "taiwan-mycard.html"},
+  {"name": "香港 Steam 充值卡", "link": "hksteam.html"},
+  {"name": "日本PSN充值卡", "link": "japan-psn-gift-card.html"},
+  {"name": "王者榮耀", "link": "wzry.html"},
+  {"name": "Ro仙境傳說世界之旅", "link": "rosjzl.html"},
+  {"name": "燕雲十六聲", "link": "wherewindsmeetgame.html"},
+  {"name": "傳說對決", "link": "taiwan-garena-shells.html"},
+ {"name": "香港 iTunes Gift Card", "link": "hk-apple-gift-card.html"},
+   {"name": "美國 iTunes Gift Card", "link": "us-itunes-gift-card.html"},
+
+  {"name": "日本 iTunes Gift Card", "link": "japan-itunes-gift-card.html"}
+]
