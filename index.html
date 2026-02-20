@@ -79,8 +79,10 @@
         <a href="game-card.html" class="see-more">查看更多</a>
     </div>
     <div class="products-grid">
-        <div class="product-card" data-key="mycard" data-img="images/twmycard.webp">
-            <div class="product-card-img">🎫</div>
+        <div class="product-card" data-key="mycard" data-img="images/japan-itunes-gift-card.webp">
+            <a href="product-detail.html?product=mycard" class="product-card-img" style="display:block;text-decoration:none;">
+                <img src="images/japan-itunes-gift-card.webp" alt="MyCard 10000點" style="width:100%;height:100%;object-fit:cover;">
+            </a>
             <div class="product-card-info">
                 <div class="product-card-name">MyCard 10000點</div>
                 <div class="product-card-desc">適用於所有MyCard合作遊戲，官方正品</div>
@@ -90,8 +92,10 @@
                 </div>
             </div>
         </div>
-        <div class="product-card" data-key="steam" data-img="images/hksteam.webp">
-            <div class="product-card-img">🎮</div>
+        <div class="product-card" data-key="mycard" data-img="images/japan-itunes-gift-card.webp">
+            <a href="product-detail.html?product=mycard" class="product-card-img" style="display:block;text-decoration:none;">
+                <img src="images/japan-itunes-gift-card.webp" alt="MyCard 10000點" style="width:100%;height:100%;object-fit:cover;">
+            </a>
             <div class="product-card-info">
                 <div class="product-card-name">香港 Steam 充值卡</div>
                 <div class="product-card-desc">全球通用，支援多幣別，即時發碼</div>
@@ -101,8 +105,10 @@
                 </div>
             </div>
         </div>
-        <div class="product-card" data-key="psn" data-img="images/hkpsn.webp">
-            <div class="product-card-img">🔷</div>
+        <div class="product-card" data-key="mycard" data-img="images/japan-itunes-gift-card.webp">
+            <a href="product-detail.html?product=mycard" class="product-card-img" style="display:block;text-decoration:none;">
+                <img src="images/japan-itunes-gift-card.webp" alt="MyCard 10000點" style="width:100%;height:100%;object-fit:cover;">
+            </a>
             <div class="product-card-info">
                 <div class="product-card-name">PSN港服充值卡<span class="hot-tag">熱門</span></div>
                 <div class="product-card-desc">PlayStation Network港服專用，官方正版卡密</div>
@@ -112,9 +118,12 @@
                 </div>
             </div>
         </div>
-        <div class="product-card" data-key="日本 iTunes Gift Card" data-img="images/jpitunes.webp">
-            <div class="product-card-img">🟩</div>
+        <div class="product-card" data-key="mycard" data-img="images/japan-itunes-gift-card.webp">
+            <a href="product-detail.html?product=mycard" class="product-card-img" style="display:block;text-decoration:none;">
+                <img src="images/japan-itunes-gift-card.webp" alt="MyCard 10000點" style="width:100%;height:100%;object-fit:cover;">
+            </a>
             <div class="product-card-info">
+            <div class="product-card-name">日本iTunes<span class="hot-tag">熱</span></div>    
                 <div class="product-card-name">日本iTunes10000日圓</div>
                 <div class="product-card-desc">官方卡密，穩定可靠，支持所有AppleID戶口</div>
                 <div class="product-card-price">
@@ -213,8 +222,43 @@
 </div>
 
 <!-- ✅ 引入本地 JS（取代 Firebase） -->
+<script>
+// 搜索產品自動完成
+let searchData = [];
+fetch('data/search_products.json')
+    .then(res => res.json())
+    .then(data => { searchData = data; });
+
+const searchInput = document.querySelector('.search-input');
+const searchDropdown = document.getElementById('searchDropdown');
+
+searchInput.addEventListener('input', function() {
+    const val = this.value.trim().toLowerCase();
+    if (!val) {
+        searchDropdown.innerHTML = '';
+        searchDropdown.classList.remove('show');
+        return;
+    }
+    const results = searchData.filter(item => item.name.toLowerCase().includes(val));
+    if (results.length === 0) {
+        searchDropdown.innerHTML = '<div class="search-result-item">無匹配商品</div>';
+        searchDropdown.classList.add('show');
+        return;
+    }
+    searchDropdown.innerHTML = results.map(item =>
+        `<a class="search-result-item" href="${item.link}">${item.name}</a>`
+    ).join('');
+    searchDropdown.classList.add('show');
+});
+
+// 點擊外部隱藏下拉
+document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+        searchDropdown.classList.remove('show');
+    }
+});
+</script>
 <script src="js/home.js"></script>
-<!-- 保留原有 main.js（如側邊欄開關等） -->
 <script src="js/main.js"></script>
 
 </body>
