@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="images/fontawesome/css/all.min.css" />
     <!-- 外部 CSS -->
     <link rel="stylesheet" href="css/style.css" />
+        <!-- Font Awesome -->
+    <link rel="stylesheet" href="images/fontawesome/css/all.min.css">
 </head>
 <body>
 
@@ -31,6 +33,7 @@
         <div class="nav-group-title">商品分類</div>
         <a href="game-card.html">🎮 遊戲點卡</a>
         <a href="hot-topup.html">🔥 最近熱充</a>
+        
     </div>
     <div class="nav-group">
         <div class="nav-group-title">政策條款</div>
@@ -260,6 +263,33 @@ document.addEventListener('click', function(e) {
 </script>
 <script src="js/home.js"></script>
 <script src="js/main.js"></script>
+<script>
+// 👇 補上主頁缺失的側邊欄開關功能
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('active');
+    }
+}
 
+// 點擊漢堡按鈕時觸發
+document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.querySelector('.menu-btn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', toggleSidebar);
+    }
+
+    // 點擊外部關閉側邊欄
+    document.addEventListener('click', function (e) {
+        const sidebar = document.querySelector('.sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+        if (sidebar && sidebar.classList.contains('active') &&
+            !sidebar.contains(e.target) && 
+            !menuBtn?.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+});
+</script>
 </body>
 </html>
