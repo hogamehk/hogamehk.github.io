@@ -21,7 +21,7 @@ function renderCards(data) {
     el.target = '_blank';
     el.className = 'card-item';
 
-    let badgeHTML = hot ? '<div class="hot-badge">熱銷</div>' : '';
+    let badgeHTML = hot ? '<div class="hot-badge">HOT</div>' : '';
 
     el.innerHTML = `
       <div class="card-image">
@@ -38,7 +38,7 @@ function renderCards(data) {
 async function loadProducts() {
   const container = document.getElementById('cardsGrid');
   try {
-    const res = await fetch('data/cards.json');
+    const res = await fetch('/data/cards.json');
     if (!res.ok) throw new Error('載入失敗');
     allProducts = await res.json();
     allProducts.sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -70,5 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
-
 });

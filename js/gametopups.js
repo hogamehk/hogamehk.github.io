@@ -38,7 +38,7 @@ function renderCards(data) {
 
     let badgeHTML = '';
     if (hot) {
-      badgeHTML = '<div class="hot-badge">熱銷</div>';
+      badgeHTML = '<div class="hot-badge">HOT</div>';
     }
 
     // ✅ 修正：移除多餘空格，補齊引號
