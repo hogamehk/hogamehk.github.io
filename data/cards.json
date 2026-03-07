@@ -28,7 +28,7 @@
   { "name": "貝殼幣Garena", "image": "/images/taiwan-garena-shells.webp", "region": "tw", "hot": true, "order": 13, "link": "taiwan-garena-shells.html" },
   { "name": "元氣卡", "image": "/images/xlegend.webp", "region": "tw",  "order": 14, "link": "xlegend.html" },
   { "name": "香港 Google Play 卡", "image": "/images/google-play-gift-card-hk-all-denominations.webp", "region": "hkmo", "order": 15, "link": "buy-google-play-gift-card-hong-kong.html" },
-  { "name": "雷爵通用卡", "image": "/images/ezcard.webp", "region": "tw", "hot": true, "order": 16, "link": "lager.html" },
+  { "name": "雷爵通用卡", "image": "/images/lager-ez-point-card.webp", "region": "tw", "hot": true, "order": 16, "link": "buy-lager-ez-card-online.html" },
   { "name": "大馬Garena Shells", "image": "/images/mygarena.webp", "region": "my", "hot": true, "order": 13, "link": "mygarena.html" },  
   { "name": "Razer Gold (MY)", "image": "/images/myrazergold.webp", "region": "my", "order": 13, "link": "myrazergold.html" },
    { "name": "Razer Gold (US)", "image": "/images/usrazergold.webp", "region": "global", "order": 13, "link": "usrazergold.html" },
@@ -41,6 +41,7 @@
   { "name": "PikPak 會員", "image": "/images/pikpak-membership.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak-membership.html" }, 
   { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
 ]
+
 
 
 
