@@ -38,16 +38,24 @@
 
 <div class="card">
     <h2>FPS 安全支付結算</h2>
+<div class="legal-notice" style="line-height: 1.6; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+    <strong style="font-size: 1.1em; color: #333;">📜 購買須知｜Important Notice</strong><br><br>
 
+    <strong style="color: #d9534f;">✅ 官方正貨｜Official Source</strong><br>
+    全經由正規管道進貨，保證即時到帳，帳號長期安全。<br>
+    <small style="color: #777;">100% official codes. Safe and reliable.</small><br><br>
 
-<div class="legal-notice">
-    <strong>📜購買須知｜誠信經營：</strong>
-    <strong>正規渠道：</strong>全部經由官方或授權管道進貨，保證儲值即時到帳。正規渠道，確保帳號長期安全穩固！<br>
-    <strong>不設退換：</strong>虛擬點數卡一經發出，就無得退換喇（全行規矩嚟，因為發咗出嚟就攞唔返）。落單前記得睇清楚有無買錯，多謝合作！<br>
-    <strong>風險說明：</strong>鑑於遊戲官方政策嚴謹，所有代儲均存在風險。若因官方政策變動導致封號或扣點，需由買家自負（此為全行共識）</strong><br>
-    <strong>交易保障：</strong>我哋重視每一位客戶嘅資金安全。若因本小店操作失誤（如發錯卡號、技術問題導致無法儲值），我哋承諾 100% 全額退款。承諾即時處理，絕不推諉。<br>
-    <strong>介紹朋友嚟落單：</strong>帶埋朋友嚟入 code/落單，你同朋友 每人即減 $10！保證官方正路貨，同好兄弟一齊穩陣儲值！<br>
+    <strong>🚫 不設退換｜No Refund</strong><br>
+    虛擬產品具即時性及不可逆轉性，<strong>一旦發貨，不論任何理由均不設退換。</strong><br>
+    <small style="color: #777;">Digital goods are non-refundable once issued for any reason.</small><br><br>
+
+    <strong style="color: #d9534f;">⚠️ 嚴防詐騙｜Fraud Alert</strong><br>
+    <b>切勿代他人或陌生人購買！</b>若涉及「網上交友」、「浪漫陷阱」或「見面保證金」，「買點卡解凍帳戶資金」請立即停止下單。本店恕不承擔任何詐騙損失。<br>
+    <small style="color: #d9534f;"><b>DO NOT</b> buy for strangers! Stop immediately if asked for "Dating/Romance Scams", "Meeting Deposits", or "Account Unblocking". We are NOT liable for any scam losses.
+</small>
 </div>
+
+
 
 <!-- 結賬資訊區塊 -->
 <div class="checkout-info" style="background:#fffbe7; border:1px solid #ffe082; border-radius:15px; padding:18px; margin-bottom:22px;">
@@ -77,10 +85,20 @@
         <div class="data-row">
             <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
         </div>
-        <div class="data-row">
-            <div><span class="label">轉帳備註 (Message)</span><br><span class="value" id="fpsMsg" style="color:#d35400;">買點卡不退款</span></div>
-            <button class="copy-btn" onclick="copyText('fpsMsg', '備註')">複製</button>
-        </div>
+<!-- 找到這一段並替換 -->
+<div class="data-row">
+    <div style="flex: 1;">
+        <span class="label">轉帳備註 (Message / Remark)</span><br>
+        <span class="value" id="fpsMsg" style="color:#d35400; font-size: 15px;">買點數卡不退款</span>
+        <span style="color: #888; font-size: 14px;">或</span>
+        <span class="value" id="fpsMsgEn" style="color:#d35400; font-size: 15px;">No Refund</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+        <button class="copy-btn" onclick="copyText('fpsMsg', '中文備註')">複製中文</button>
+        <button class="copy-btn" onclick="copyText('fpsMsgEn', '英文備註')" style="background: #666;">複製英文</button>
+    </div>
+</div>
+
         
         <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
         
