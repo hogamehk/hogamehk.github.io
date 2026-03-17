@@ -36,7 +36,50 @@ body::before {
     background: rgba(0, 0, 0, 0.75);
     z-index: -1;
 }
+/* 賣點三格 - CSS Grid 版 */
+.selling-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
 
+.sell-point {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px 12px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 153, 0, 0.2);
+    color: #ff9900;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sell-point:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 153, 0, 0.15);
+}
+
+/* 行動端優化（手機自動變單欄更舒服） */
+@media (max-width: 480px) {
+    .sell-point {
+        font-size: 13px;
+        padding: 14px 10px;
+    }
+}
+
+/* 暗黑模式自動適配（未來加這個就行） */
+@media (prefers-color-scheme: dark) {
+    .sell-point {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 153, 0, 0.25);
+    }
+}
 /* 頂部導航 */
 .top-nav {
     display: flex;
