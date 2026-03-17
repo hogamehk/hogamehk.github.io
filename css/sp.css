@@ -1,0 +1,125 @@
+        .product-detail .faq-section {
+            margin-top: 24px;
+            padding: 22px 18px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(255, 140, 0, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 140, 0, 0.28);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+        }
+        .product-detail .faq-section #faq-title {
+            font-size: 1.32rem;
+            color: #ff9800;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .product-detail .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+        .product-detail .faq-item {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-left: 3px solid #ff9800;
+            border-radius: 10px;
+            padding: 14px 14px 12px;
+            transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+        }
+        .product-detail .faq-item:hover {
+            transform: translateY(-1px);
+            background: rgba(0, 0, 0, 0.48);
+            border-color: rgba(255, 140, 0, 0.55);
+        }
+        .product-detail .faq-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #ffffff;
+            line-height: 1.5;
+            font-size: 1.02rem;
+            margin-bottom: 7px;
+        }
+        .product-detail .faq-question i {
+            color: #ff9800;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .product-detail .faq-item p {
+            margin: 0;
+            color: #e0e0e0;
+            line-height: 1.75;
+            padding-left: 24px;
+            font-size: 0.96rem;
+        }
+        @media (max-width: 768px) {
+            .product-detail .faq-section {
+                padding: 18px 14px;
+            }
+            .product-detail .faq-section #faq-title {
+                font-size: 1.16rem;
+            }
+            .product-detail .faq-item {
+                padding: 12px;
+            }
+            .product-detail .faq-item p {
+                padding-left: 22px;
+            }
+        }
+
+        .top-nav .nav-btn {
+            font-size: 13px;
+            padding: 7px 12px;
+        }
+        .product-detail {
+            font-size: 15px;
+        }
+        .product-detail .back-link {
+            font-size: 14px;
+        }
+        .product-detail .price-item-name {
+            font-size: 16px;
+        }
+        .product-detail .price-item-discount-tag,
+        .product-detail .price-item-stock,
+        .product-detail .price-item-qty-btn {
+            font-size: 13px;
+        }
+        .product-detail .notice-list li {
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+        .product-detail .contact-desc ul,
+        .product-detail .contact-desc li,
+        .product-detail .contact-desc p {
+            font-size: 15px;
+            line-height: 1.75;
+        }
+        .product-detail .contact-section {
+            margin-top: 10px;
+        }
+        #floating-cart .floating-cart-title {
+            font-size: 15px;
+        }
+        #floating-cart .floating-items {
+            font-size: 13px;
+        }
+        .footer .footer-text {
+            font-size: 13px;
+        }
+        .footer .footer-desc {
+            font-size: 12px;
+            line-height: 1.55;
+        }
+        @media (max-width: 768px) {
+            .product-detail {
+                font-size: 14px;
+            }
+            .product-detail .notice-list li,
+            .product-detail .contact-desc ul,
+            .product-detail .contact-desc li,
+            .product-detail .contact-desc p {
+                font-size: 14px;
+            }
+        }
