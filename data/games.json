@@ -4,6 +4,6 @@
   { "name": "Aion2",       "image": "/images/aion2.webp", "region": "tw", "hot": true,  "order": 5, "link": "aion2.html" },
   { "name": "燕雲十六聲",       "image": "/images/wherewindsmeetgame.webp", "region": "tw", "hot": true,  "order": 6, "link": "wherewindsmeetgame.html" },
   { "name": "RO仙境傳說：世界之旅",       "image": "/images/rosjzl.webp", "region": "tw", "hot": true,  "order": 1, "link": "rosjzl.html" },
-  { "name": "Honor of Kings Tokens王者榮耀國際服",       "image": "/images/buy-honor-of-kings-tokens-top-up.webp", "region": "global", "hot": true,  "order": 1, "link": "buy-honor-of-kings-tokens-top-up.html" },
+  { "name": "Honor of Kings Tokens",       "image": "/images/buy-honor-of-kings-tokens-top-up.webp", "region": "global", "hot": true,  "order": 1, "link": "buy-honor-of-kings-tokens-top-up.html" },
   { "name": "PUBG MOBILE",       "image": "/images/pubg.webp", "region": "global", "hot": true,  "order": 1, "link": "pubg.html" }
 ]
