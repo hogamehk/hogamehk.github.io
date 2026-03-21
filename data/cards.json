@@ -35,7 +35,7 @@
   { "name": "Riot Games Gift Card", "image": "/images/myriotgiftcard.webp", "region": "my", "hot": true, "order": 13, "link": "myriotgiftcard.html" },  
   { "name": "TNG Reload Pin", "image": "/images/tngreload.webp", "region": "my", "hot": true, "order": 13, "link": "tngreload.html" }, 
   { "name": "Riot 點數卡", "image": "/images/riotgames.webp", "region": "global", "hot": true, "order": 13, "link": "riotgames.html" }, 
-  { "name": "韓國 Culture Land", "image": "/images/korea-cultureland-gift-card.webp", "region": "global", "hot": true, "order": 13, "link": "buy-korea-cultureland-gift-card.html" }, 
+  { "name": "韓國 Culture Land", "image": "/images/korea-cultureland-gift-card.webp", "region": "kr", "hot": true, "order": 13, "link": "buy-korea-cultureland-gift-card.html" }, 
   { "name": "騰訊QQ卡", "image": "/images/qqcard.webp", "region": "global", "hot": true, "order": 13, "link": "qqcard.html" }, 
   { "name": "NetEase Pay（日本）", "image": "/images/jpneteasepay.webp", "region": "jp", "hot": true, "order": 13, "link": "jpneteasepay.html" }, 
   { "name": "NetEase Pay", "image": "/images/neteasepay.webp", "region": "global", "hot": true, "order": 13, "link": "neteasepay.html" }, 
