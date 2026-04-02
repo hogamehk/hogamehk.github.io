@@ -1,6 +1,6 @@
 [
   { "name": "日本 iTunes Gift Card", "image": "/images/buy-japan-itunes-gift-card-hk-mo.webp", "region": "jp", "hot": true, "order": 1, "link": "buy-japan-itunes-gift-card.html" },
-  { "name": "中國 App Store 充值卡", "image": "/images/cnitunes.webp", "region": "global", "hot": true, "order": 2, "link": "cnitunes.html" },
+  { "name": "中國 App Store 充值卡", "image": "/images/apple-gift-card-china.webp", "region": "global", "hot": true, "order": 2, "link": "buy-apple-card-china.html" },
   { "name": "香港 iTunes Gift Card", "image": "/images/hk-apple-gift-card.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hk-apple-gift-card.html" },
   { "name": "美國 iTunes Gift Card", "image": "/images/itunescard.webp", "region": "us", "hot": true, "order": 3, "link": "itunescard.html" },
   { "name": "台灣 iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "tw", "hot": true, "order": 3, "link": "buy-apple-gift-card-taiwan.html" },
