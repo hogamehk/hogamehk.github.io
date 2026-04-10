@@ -37,6 +37,7 @@
   { "name": "Riot 點數卡", "image": "/images/riotgames.webp", "region": "global", "hot": true, "order": 13, "link": "riotgames.html" }, 
   { "name": "韓國 Culture Land", "image": "/images/korea-cultureland-gift-card.webp", "region": "kr", "hot": true, "order": 13, "link": "buy-korea-cultureland-gift-card.html" }, 
   { "name": "騰訊QQ卡", "image": "/images/qqcard.webp", "region": "global", "hot": true, "order": 13, "link": "qqcard.html" }, 
+    { "name": "香港戲谷卡", "image": "/images/buy-funtown-point-card.webp", "region": "hk", "hot": true, "order": 6, "link": "buy-funtown-point-card.html" },
   { "name": "NetEase Pay（日本）", "image": "/images/jpneteasepay.webp", "region": "jp", "hot": true, "order": 13, "link": "jpneteasepay.html" }, 
   { "name": "NetEase Pay", "image": "/images/neteasepay.webp", "region": "global", "hot": true, "order": 13, "link": "neteasepay.html" }, 
   { "name": "PikPak 會員", "image": "/images/pikpak-membership.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak-membership.html" }, 
