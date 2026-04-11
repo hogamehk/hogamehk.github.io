@@ -14,7 +14,7 @@
   { "name": "馬來西亞 Steam wallet卡", "image": "/images/mysteam.webp", "region": "my", "hot": true, "order": 6, "link": "mysteam.html" },
   { "name": "日本Bitcash卡", "image": "/images/bitcash-hong-kong-buy.webp", "region": "jp", "hot": true, "order": 7, "link": "buy-bitcash-hk.html" },
   { "name": "台灣 GASH卡", "image": "/images/twgash.webp", "region": "tw", "hot": true, "order": 8, "link": "gash.html" },
-  { "name": "香港 GASH卡", "image": "/images/hkgash.webp", "region": "hkmo", "hot": true, "order": 9, "link": "hkgash.html" },
+  { "name": "香港 GASH卡", "image": "/images/buy-hong-kong-gash-point.webp", "region": "hkmo", "hot": true, "order": 9, "link": "buy-hong-kong-gash-point.html" },
   { "name": "香港 PlayStation兌換碼 (PSN)", "image": "/images/hong-kong-psn-card.webp", "region": "hkmo", "hot": true, "order": 10, "link": "hong-kong-psn-card.html" },
   { "name": "日本 PlayStation兌換碼 (PSN)", "image": "/images/jp-psn-gift-card.webp", "region": "jp", "hot": true, "order": 10, "link": "japan-psn-gift-card.html" },  
   { "name": "美國 PlayStation兌換碼 (PSN)", "image": "/images/uspsn.webp", "region": "us", "order": 10, "link": "uspsn.html" },
