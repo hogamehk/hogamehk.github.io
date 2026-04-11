@@ -44,7 +44,7 @@
         "@type": "AggregateOffer",
         "priceCurrency": "HKD",
         "lowPrice": "7",
-        "highPrice": "2190",
+        "highPrice": "2188",
         "offerCount": "19",
         "offers": [
           {"@type": "Offer", "price": "7",     "priceCurrency": "HKD", "name": "30 點",     "availability": "https://schema.org/InStock"},
@@ -56,16 +56,17 @@
           {"@type": "Offer", "price": "79",    "priceCurrency": "HKD", "name": "350 點",    "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "90",    "priceCurrency": "HKD", "name": "400 點",    "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "101",   "priceCurrency": "HKD", "name": "450 點",    "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "112",   "priceCurrency": "HKD", "name": "500 點",    "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "168",   "priceCurrency": "HKD", "name": "750 點",    "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "223",   "priceCurrency": "HKD", "name": "1000 點",   "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "price": "111",   "priceCurrency": "HKD", "name": "500 點",    "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "price": "167",   "priceCurrency": "HKD", "name": "750 點",    "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "price": "221",   "priceCurrency": "HKD", "name": "1000 點",   "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "256",   "priceCurrency": "HKD", "name": "1150 點",   "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "331",   "priceCurrency": "HKD", "name": "1490 點",   "availability": "https://schema.org/InStock"},
+          {"@type": "Offer", "price": "376",   "priceCurrency": "HKD", "name": "1690 點",   "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "442",   "priceCurrency": "HKD", "name": "2000 點",   "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "660",   "priceCurrency": "HKD", "name": "3000 點",   "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "723",   "priceCurrency": "HKD", "name": "3290 點",   "availability": "https://schema.org/InStock"},
           {"@type": "Offer", "price": "1095",  "priceCurrency": "HKD", "name": "5000 點",   "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "2190",  "priceCurrency": "HKD", "name": "10000 點",  "availability": "https://schema.org/InStock"}
+          {"@type": "Offer", "price": "2188",  "priceCurrency": "HKD", "name": "10000 點",  "availability": "https://schema.org/InStock"}
         ],
         "seller": {"@type": "Organization", "name": "uiduid.com"}
       }
@@ -81,7 +82,7 @@
         {
           "@type": "Question",
           "name": "香港 MyCard 點數卡多少錢？",
-          "acceptedAnswer": {"@type": "Answer", "text": "30點 HK$7、50點 HK$12、150點 HK$34、500點 HK$112、1000點 HK$223、3000點 HK$660、5000點 HK$1,095、10000點 HK$2,190（完整價格請參考頁面列表）。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "30點 HK$7、50點 HK$12、150點 HK$34、500點 HK$111、1000點 HK$221、1690點 HK$376、3000點 HK$660、5000點 HK$1,095、10000點 HK$2,188（完整價格請參考頁面列表）。"}
         },
         {
           "@type": "Question",
@@ -127,7 +128,7 @@
 
     <!-- 價格更新日期 -->
     <p style="text-align:center; color:#ff8c00; font-size:1rem; margin:10px 0 20px;">
-        價格最後更新：2026年02月15日
+        價格最後更新：2026年04月11日
     </p>
 
     <!-- 側邊欄 -->
@@ -181,7 +182,7 @@
                 </a>
             </p>
 
-            <!-- 面額選擇（完整按你提供的價格） -->
+            <!-- 面額選擇 -->
             <div class="spec-section">
                 <h2 class="spec-title"><i class="fas fa-tags"></i> 選擇面額</h2>
                 <div class="price-list-container">
@@ -191,7 +192,7 @@
                             <span class="price-item-discount">HK $ 7</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -206,7 +207,7 @@
                             <span class="price-item-discount">HK $ 12</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -221,7 +222,7 @@
                             <span class="price-item-discount">HK $ 21</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -236,7 +237,7 @@
                             <span class="price-item-discount">HK $ 34</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -251,7 +252,7 @@
                             <span class="price-item-discount">HK $ 38</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -266,7 +267,7 @@
                             <span class="price-item-discount">HK $ 68</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -281,7 +282,7 @@
                             <span class="price-item-discount">HK $ 79</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -296,7 +297,7 @@
                             <span class="price-item-discount">HK $ 90</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -311,7 +312,7 @@
                             <span class="price-item-discount">HK $ 101</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -323,10 +324,10 @@
                     <div class="price-item-row" onclick="selectItem(this)">
                         <div class="price-item-name">500 點</div>
                         <div class="price-item-prices">
-                            <span class="price-item-discount">HK $ 112</span>
+                            <span class="price-item-discount">HK $ 111</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -338,10 +339,10 @@
                     <div class="price-item-row" onclick="selectItem(this)">
                         <div class="price-item-name">750 點</div>
                         <div class="price-item-prices">
-                            <span class="price-item-discount">HK $ 168</span>
+                            <span class="price-item-discount">HK $ 167</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -353,10 +354,10 @@
                     <div class="price-item-row" onclick="selectItem(this)">
                         <div class="price-item-name">1000 點</div>
                         <div class="price-item-prices">
-                            <span class="price-item-discount">HK $ 223</span>
+                            <span class="price-item-discount">HK $ 221</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -371,7 +372,7 @@
                             <span class="price-item-discount">HK $ 256</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -386,7 +387,22 @@
                             <span class="price-item-discount">HK $ 331</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
+                                <div class="price-item-qty">
+                                    <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
+                                    <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
+                                    <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="price-item-row" onclick="selectItem(this)">
+                        <div class="price-item-name">1690 點</div>
+                        <div class="price-item-prices">
+                            <span class="price-item-discount">HK $ 376</span>
+                            <span class="price-item-discount-tag">卡密</span>
+                            <div class="price-item-actions">
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -398,10 +414,10 @@
                     <div class="price-item-row" onclick="selectItem(this)">
                         <div class="price-item-name">2000 點</div>
                         <div class="price-item-prices">
-                            <span class="price-item-discount">HK $ 442</span>
+                            <span class="price-item-discount">HK $ 440</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -416,7 +432,7 @@
                             <span class="price-item-discount">HK $ 660</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -431,7 +447,7 @@
                             <span class="price-item-discount">HK $ 723</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -443,10 +459,10 @@
                     <div class="price-item-row" onclick="selectItem(this)">
                         <div class="price-item-name">5000 點</div>
                         <div class="price-item-prices">
-                            <span class="price-item-discount">HK $ 1,095</span>
+                            <span class="price-item-discount">HK $ 1095</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
@@ -458,10 +474,10 @@
                     <div class="price-item-row" onclick="selectItem(this)">
                         <div class="price-item-name">10000 點</div>
                         <div class="price-item-prices">
-                            <span class="price-item-discount">HK $ 2,190</span>
+                            <span class="price-item-discount">HK $ 2188</span>
                             <span class="price-item-discount-tag">卡密</span>
                             <div class="price-item-actions">
-                                <span class="price-item-stock">有貨</span>
+                                <span class="price-item-stock">有</span>
                                 <div class="price-item-qty">
                                     <button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button>
                                     <input type="number" class="price-item-qty-input" value="1" min="1" readonly>
