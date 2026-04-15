@@ -1,0 +1,313 @@
+.spec-section .price-list-container {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+}
+
+.spec-section .price-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(8, 12, 24, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.spec-section .price-table caption {
+    caption-side: top;
+    text-align: left;
+    color: #f2f2f2;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 2px 12px;
+}
+
+.spec-section .price-table thead th {
+    background: linear-gradient(135deg, #ff9800, #ff7a00);
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.2px;
+    font-size: 14px;
+}
+
+.spec-section .price-table th,
+.spec-section .price-table td {
+    padding: 12px 10px !important;
+    vertical-align: middle;
+}
+
+.spec-section .price-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.spec-section .price-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.spec-section .price-table tbody tr:hover {
+    background: rgba(255, 152, 0, 0.12);
+}
+
+/* Force semantic table layout and neutralize global flex row styles */
+.spec-section .price-table tr.price-item-row {
+    display: table-row !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.spec-section .price-table tr.price-item-row::before {
+    content: none !important;
+    display: none !important;
+}
+
+.spec-section .price-table th .price-item-name {
+    flex: initial;
+    padding-left: 0;
+}
+
+.spec-section .price-table .price-item-name {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 152, 0, 0.12);
+    border: 1px solid rgba(255, 152, 0, 0.35);
+    color: #ffe4ba;
+    font-weight: 700;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.spec-section .price-table .price-item-discount {
+    display: inline-block;
+    min-width: 90px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.spec-section .price-table .price-item-discount-tag {
+    display: none;
+    padding: 3px 6px;
+    border-radius: 8px;
+    margin-right: 5px;
+    font-size: 11px;
+    color: #d1d5db;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.spec-section .price-table .price-item-stock {
+    display: none;
+    padding: 3px 9px;
+    border-radius: 999px;
+    color: #dcfce7;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.45);
+    font-weight: 700;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.spec-section .price-table .price-item-qty {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.spec-section .price-table .price-item-qty-btn {
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff9800, #ff7a00);
+    cursor: pointer;
+}
+
+.spec-section .price-table .price-item-qty-input {
+    width: 32px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+}
+
+.spec-section .price-table .price-item-qty-input:focus {
+    outline: none;
+}
+
+.spec-section .price-table .price-item-row.selected {
+    background: rgba(255, 152, 0, 0.2) !important;
+    box-shadow: inset 3px 0 0 #ff9800;
+}
+
+.spec-section .price-table .price-item-row th[scope="row"] {
+    position: relative;
+}
+
+.spec-section .price-table .price-item-row.selected th[scope="row"]::after {
+    content: "√";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    box-shadow: 0 2px 6px rgba(22, 101, 52, 0.25);
+}
+
+@media (min-width: 769px) {
+    .product-detail {
+        max-width: 1280px;
+    }
+
+    .product-info {
+        padding: 24px;
+    }
+
+    .spec-section .price-table {
+        width: 100% !important;
+        min-width: 840px !important;
+    }
+
+    .spec-section .price-table caption {
+        font-size: 17px;
+        font-weight: 800;
+        padding: 10px 4px 14px;
+    }
+
+    .spec-section .price-table th,
+    .spec-section .price-table td {
+        padding: 15px 14px !important;
+    }
+
+    .spec-section .price-table thead th {
+        font-size: 16px;
+    }
+
+    .spec-section .price-table tbody th[scope="row"] {
+        text-align: center;
+    }
+
+    .spec-section .price-table .price-item-name {
+        padding: 8px 14px;
+        font-size: 16px;
+        min-width: 110px;
+        text-align: center;
+    }
+
+    .spec-section .price-table .price-item-discount {
+        min-width: 138px;
+        padding: 8px 12px;
+        font-size: 1.1rem;
+    }
+
+    .spec-section .price-table .price-item-qty {
+        padding: 6px 10px;
+        gap: 8px;
+    }
+
+    .spec-section .price-table .price-item-qty-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 15px;
+    }
+
+    .spec-section .price-table .price-item-qty-input {
+        width: 34px;
+        min-width: 34px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spec-section .price-list-container {
+        overflow-x: visible;
+    }
+
+    .spec-section .price-table {
+        width: 100% !important;
+        min-width: 0 !important;
+        table-layout: auto;
+    }
+
+    .spec-section .price-table th,
+    .spec-section .price-table td {
+        padding: 10px 8px !important;
+    }
+
+    .spec-section .price-table thead th {
+        font-size: 13px;
+    }
+
+    .spec-section .price-table .price-item-name {
+        font-size: 12px;
+        padding: 5px 9px;
+    }
+
+    .spec-section .price-table .price-item-discount {
+        min-width: 86px;
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .spec-section .price-table .price-item-discount-tag {
+        display: none;
+    }
+
+    .spec-section .price-table .price-item-stock {
+        font-size: 11px;
+        padding: 2px 7px;
+    }
+
+    .spec-section .price-table .price-item-qty {
+        gap: 4px;
+        padding: 3px 6px;
+    }
+
+    .spec-section .price-table .price-item-qty-btn {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        font-size: 12px;
+        line-height: 22px;
+    }
+
+    .spec-section .price-table .price-item-qty-input {
+        width: 24px;
+        min-width: 24px;
+        font-size: 12px;
+    }
+
+    .spec-section .price-table th:last-child,
+    .spec-section .price-table td:last-child {
+        white-space: nowrap;
+    }
+}
