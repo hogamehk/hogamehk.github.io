@@ -174,35 +174,47 @@
 }
 </script>
 
-    <!-- FAQPage Schema -->
-    <script type="application/ld+json">
+<!-- FAQPage Schema（常見問題頁面） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "香港 iTunes Gift Card 多少錢？",
-          "acceptedAnswer": {"@type": "Answer", "text": "50點 HK$50、150點 HK$150、200點 HK$200、500點 HK$495、650點 HK$640、1000點 HK$985、1500點 HK$1485、2000點 HK$1980、2500點 HK$2475、3000點 HK$2970、4000點 HK$3960（實際價格以頁面為準）。"}
-        },
-        {
-          "@type": "Question",
-          "name": "這張卡可以用在哪個地區？",
-          "acceptedAnswer": {"@type": "Answer", "text": "僅限香港地區 Apple ID（香港 App Store）使用，大陸、台灣、美國等其他地區帳號無法兌換。"}
-        },
-        {
-          "@type": "Question",
-          "name": "如何兌換香港 iTunes Gift Card 到香港 Apple ID？",
-          "acceptedAnswer": {"@type": "Answer", "text": "開啟香港 App Store → 右上角頭像 → 兌換禮品卡或代碼 → 輸入16位兌換碼，即可完成香港 Apple ID 儲值。"}
-        },
-        {
-          "@type": "Question",
-          "name": "下單後多久收到兌換碼？",
-          "acceptedAnswer": {"@type": "Answer", "text": "付款完成後系統立即發送，通常30秒內到帳。"}
-        }
-      ]
+      "@type": "Question",
+      "name": "香港 iTunes Gift Card 多少錢？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "50點 HK$50、150點 HK$150、200點 HK$200、500點 HK$495、650點 HK$640、1000點 HK$985、1500點 HK$1485、2000點 HK$1980、2500點 HK$2475、3000點 HK$2970、4000點 HK$3960（實際價格以頁面為準）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "這張卡可以用在哪個地區？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "僅限香港地區 Apple ID（香港 App Store）使用，大陸、台灣、美國等其他地區帳號無法兌換。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何兌換香港 iTunes Gift Card 到香港 Apple ID？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "開啟香港 App Store → 右上角頭像 → 兌換禮品卡或代碼 → 輸入16位兌換碼，即可完成香港 Apple ID 儲值。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "下單後多久收到兌換碼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "付款完成後系統立即發送，通常30秒內到帳。"
+      }
     }
-    </script>
+  ]
+}
+</script>
 
 <!-- Breadcrumb Schema（路徑問題） -->
 <script type="application/ld+json">
