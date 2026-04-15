@@ -7,7 +7,7 @@
     
     <!-- SEO & AI 搜尋極致優化 -->
     <title>香港 iTunes Gift Card（香港 App Store 儲值專用） - 香港 Apple ID 即時發卡 | uiduid.com</title>
-    <meta name="description" content="香港 iTunes Gift Card（香港 App Store 儲值專用），適用香港 Apple ID，支援50/150/200/500/650/1000/1500/2000/2500/3000/4000元多面額。下單後立即發兌換碼，安全快速，正規管道。">
+    <meta name="description" content="香港 iTunes Gift Card（香港 App Store 儲值專用），適用香港 Apple ID，支援50/150/200/500/650/1000/1500/2000/2500/3000/4000點多面額。下單後立即發兌換碼，安全快速，正規管道。">
     
     <!-- Canonical（統一版本） -->
     <link rel="canonical" href="https://www.uiduid.com/hk-apple-gift-card.html">
@@ -24,336 +24,155 @@
     
     <!-- 自訂 CSS -->
     <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        .spec-section .price-list-container {
-            display: block;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            border-radius: 14px;
-        }
-
-        .spec-section .price-table {
-            width: 100%;
-            min-width: 640px;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: rgba(8, 12, 24, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-        }
-
-        .spec-section .price-table caption {
-            caption-side: top;
-            text-align: left;
-            color: #f2f2f2;
-            font-size: 14px;
-            font-weight: 700;
-            padding: 8px 2px 12px;
-        }
-
-        .spec-section .price-table thead th {
-            background: linear-gradient(135deg, #ff9800, #ff7a00);
-            color: #fff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            letter-spacing: 0.2px;
-            font-size: 14px;
-        }
-
-        .spec-section .price-table th,
-        .spec-section .price-table td {
-            padding: 12px 10px !important;
-            vertical-align: middle;
-        }
-
-        .spec-section .price-table tbody tr {
-            transition: background-color 0.2s ease;
-        }
-
-        .spec-section .price-table tbody tr:nth-child(even) {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .spec-section .price-table tbody tr:hover {
-            background: rgba(255, 152, 0, 0.12);
-        }
-
-        /* Force semantic table layout and neutralize global flex row styles */
-        .spec-section .price-table tr.price-item-row {
-            display: table-row !important;
-            padding: 0 !important;
-            min-height: 0 !important;
-            border: 0 !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-        }
-
-        .spec-section .price-table tr.price-item-row::before {
-            content: none !important;
-            display: none !important;
-        }
-
-        .spec-section .price-table th .price-item-name {
-            flex: initial;
-            padding-left: 0;
-        }
-
-        .spec-section .price-table .price-item-name {
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: rgba(255, 152, 0, 0.12);
-            border: 1px solid rgba(255, 152, 0, 0.35);
-            color: #ffe4ba;
-            font-weight: 700;
-            font-size: 13px;
-            white-space: nowrap;
-        }
-
-        .spec-section .price-table .price-item-discount {
-            display: inline-block;
-            min-width: 90px;
-            padding: 6px 10px;
-            border-radius: 10px;
-            text-align: center;
-            background: rgba(15, 23, 42, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            color: #fff;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .spec-section .price-table .price-item-discount-tag {
-            display: none;
-            padding: 3px 6px;
-            border-radius: 8px;
-            margin-right: 5px;
-            font-size: 11px;
-            color: #d1d5db;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .spec-section .price-table .price-item-stock {
-            display: none;
-            padding: 3px 9px;
-            border-radius: 999px;
-            color: #dcfce7;
-            background: rgba(34, 197, 94, 0.2);
-            border: 1px solid rgba(34, 197, 94, 0.45);
-            font-weight: 700;
-            font-size: 12px;
-            white-space: nowrap;
-        }
-
-        .spec-section .price-table .price-item-qty {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 8px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .spec-section .price-table .price-item-qty-btn {
-            width: 26px;
-            height: 26px;
-            border: none;
-            border-radius: 50%;
-            color: #fff;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ff9800, #ff7a00);
-            cursor: pointer;
-        }
-
-        .spec-section .price-table .price-item-qty-input {
-            width: 32px;
-            border: none;
-            background: transparent;
-            color: #fff;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .spec-section .price-table .price-item-qty-input:focus {
-            outline: none;
-        }
-
-        .spec-section .price-table .price-item-row.selected {
-            background: rgba(255, 152, 0, 0.2) !important;
-            box-shadow: inset 3px 0 0 #ff9800;
-        }
-
-        @media (min-width: 769px) {
-            .product-detail {
-                max-width: 1280px;
-            }
-
-            .product-info {
-                padding: 24px;
-            }
-
-            .spec-section .price-table {
-                width: 100% !important;
-                min-width: 840px !important;
-            }
-
-            .spec-section .price-table caption {
-                font-size: 17px;
-                font-weight: 800;
-                padding: 10px 4px 14px;
-            }
-
-            .spec-section .price-table th,
-            .spec-section .price-table td {
-                padding: 15px 14px !important;
-            }
-
-            .spec-section .price-table thead th {
-                font-size: 16px;
-            }
-
-            .spec-section .price-table tbody th[scope="row"] {
-                text-align: center;
-            }
-
-            .spec-section .price-table .price-item-name {
-                padding: 8px 14px;
-                font-size: 16px;
-                min-width: 110px;
-                text-align: center;
-            }
-
-            .spec-section .price-table .price-item-discount {
-                min-width: 138px;
-                padding: 8px 12px;
-                font-size: 1.1rem;
-            }
-
-            .spec-section .price-table .price-item-qty {
-                padding: 6px 10px;
-                gap: 8px;
-            }
-
-            .spec-section .price-table .price-item-qty-btn {
-                width: 28px;
-                height: 28px;
-                min-width: 28px;
-                font-size: 15px;
-            }
-
-            .spec-section .price-table .price-item-qty-input {
-                width: 34px;
-                min-width: 34px;
-                font-size: 17px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .spec-section .price-list-container {
-                overflow-x: visible;
-            }
-
-            .spec-section .price-table {
-                width: 100% !important;
-                min-width: 0 !important;
-                table-layout: auto;
-            }
-
-            .spec-section .price-table th,
-            .spec-section .price-table td {
-                padding: 10px 8px !important;
-            }
-
-            .spec-section .price-table thead th {
-                font-size: 13px;
-            }
-
-            .spec-section .price-table .price-item-name {
-                font-size: 12px;
-                padding: 5px 9px;
-            }
-
-            .spec-section .price-table .price-item-discount {
-                min-width: 86px;
-                font-size: 12px;
-                padding: 6px 8px;
-            }
-
-            .spec-section .price-table .price-item-discount-tag {
-                display: none;
-            }
-
-            .spec-section .price-table .price-item-stock {
-                font-size: 11px;
-                padding: 2px 7px;
-            }
-
-            .spec-section .price-table .price-item-qty {
-                gap: 4px;
-                padding: 3px 6px;
-            }
-
-            .spec-section .price-table .price-item-qty-btn {
-                width: 22px;
-                height: 22px;
-                min-width: 22px;
-                font-size: 12px;
-                line-height: 22px;
-            }
-
-            .spec-section .price-table .price-item-qty-input {
-                width: 24px;
-                min-width: 24px;
-                font-size: 12px;
-            }
-
-            .spec-section .price-table th:last-child,
-            .spec-section .price-table td:last-child {
-                white-space: nowrap;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/678-page.css">
 
     <!-- Schema.org Product + AggregateOffer -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-    "name": "香港 iTunes Gift Card（香港 App Store 儲值專用）",
-      "image": "https://www.uiduid.com/images/hk-apple-gift-card.webp",
-    "description": "香港 iTunes Gift Card 適用香港 Apple ID，可作香港 App Store 儲值，用於購買 App、遊戲、音樂、電影、Apple Music、iCloud 等服務。正版即時發兌換碼。",
-      "brand": {"@type": "Brand", "name": "Apple"},
-      "sku": "HK-APPLE-GIFTCARD",
-            "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "928"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "香港 iTunes Gift Card（香港 App Store 儲值專用）",
+  "image": "https://www.uiduid.com/images/hk-apple-gift-card.webp",
+  "description": "香港 iTunes Gift Card 適用香港 Apple ID，可作香港 App Store 儲值，用於購買 App、遊戲、音樂、電影、Apple Music、iCloud 等服務。正版即時發兌換碼。",
+  "brand": {"@type": "Brand", "name": "Apple"},
+  "sku": "HK-APPLE-GIFTCARD",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "928"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "HKD",
+    "lowPrice": "50",
+    "highPrice": "3960",
+    "offerCount": "11",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "50",
         "priceCurrency": "HKD",
-        "lowPrice": "50",
-        "highPrice": "3960",
-        "offerCount": "11",
-        "offers": [
-          {"@type": "Offer", "price": "50",    "priceCurrency": "HKD", "name": "50 元",    "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "150",   "priceCurrency": "HKD", "name": "150 元",   "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "200",   "priceCurrency": "HKD", "name": "200 元",   "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "495",   "priceCurrency": "HKD", "name": "500 點",   "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "640",   "priceCurrency": "HKD", "name": "650 元",   "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "985",   "priceCurrency": "HKD", "name": "1000 元",  "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "1485",  "priceCurrency": "HKD", "name": "1500 元",  "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "1980",  "priceCurrency": "HKD", "name": "2000 元",  "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "1475",  "priceCurrency": "HKD", "name": "2500 元",  "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "2970",  "priceCurrency": "HKD", "name": "3000 元",  "availability": "https://schema.org/InStock"},
-          {"@type": "Offer", "price": "3960",  "priceCurrency": "HKD", "name": "4000 元",  "availability": "https://schema.org/InStock"}
-        ],
+        "name": "50 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "150",
+        "priceCurrency": "HKD",
+        "name": "150 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "HKD",
+        "name": "200 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "495",
+        "priceCurrency": "HKD",
+        "name": "500 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "640",
+        "priceCurrency": "HKD",
+        "name": "650 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "985",
+        "priceCurrency": "HKD",
+        "name": "1000 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "1485",
+        "priceCurrency": "HKD",
+        "name": "1500 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "1980",
+        "priceCurrency": "HKD",
+        "name": "2000 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "2475",
+        "priceCurrency": "HKD",
+        "name": "2500 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "2970",
+        "priceCurrency": "HKD",
+        "name": "3000 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {"@type": "Organization", "name": "uiduid.com"}
+      },
+      {
+        "@type": "Offer",
+        "price": "3960",
+        "priceCurrency": "HKD",
+        "name": "4000 點",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.uiduid.com/hk-apple-gift-card.html",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
         "seller": {"@type": "Organization", "name": "uiduid.com"}
       }
-    }
-    </script>
+    ]
+  }
+}
+</script>
 
     <!-- FAQPage Schema -->
     <script type="application/ld+json">
@@ -364,7 +183,7 @@
         {
           "@type": "Question",
           "name": "香港 iTunes Gift Card 多少錢？",
-          "acceptedAnswer": {"@type": "Answer", "text": "50元 HK$50、150元 HK$150、200元 HK$200、500元 HK$495、650元 HK$640、1000元 HK$985、1500元 HK$1485、2000元 HK$1980、2500元 HK$1475、3000元 HK$2970、4000元 HK$3960（實際價格以頁面為準）。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "50點 HK$50、150點 HK$150、200點 HK$200、500點 HK$495、650點 HK$640、1000點 HK$985、1500點 HK$1485、2000點 HK$1980、2500點 HK$2475、3000點 HK$2970、4000點 HK$3960（實際價格以頁面為準）。"}
         },
         {
           "@type": "Question",
@@ -439,7 +258,7 @@
             <!-- 頂部醒目介紹框（AI Overviews 最愛摘錄） -->
             <div style="background:rgba(0,0,0,0.6); color:#fff; padding:20px; margin:20px 0; border-radius:12px; text-align:center; font-size:1.1em; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
                 <strong style="font-size:1.4em; color:#ff9800;">（香港 App Store 專用）</strong><br><br>
-                官方正版禮品卡，支援香港 Apple ID 儲值，50-4000 元多面額<br>
+                官方正版禮品卡，支援香港 Apple ID 儲值，50-4000點多面額<br>
                 下單後 <strong>30 秒立即發兌換碼</strong>，最低 <strong>HK$50 起</strong>，全網低價<br>
                 ⚠️ 僅適用於：香港 App Store 儲值、App 下載、遊戲課金及訂閱服務（如 iCloud、Apple Music）<br><br>
                 安全可靠 · 正規管道 · 24小時客服在線
@@ -456,15 +275,13 @@
                 <a href="https://support.apple.com/zh-hk/118242?device-type=iphone" target="_blank" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:15px;">
                     <i class="fas fa-gift" style="margin-right:6px;"></i>官方教你兌換頁面
                 </a>
-                <br><span style="display:inline-block; margin-top:10px; color:#f3f0ed;">適用於香港 Apple ID 的香港 iTunes Gift Card，快速完成香港 App Store 儲值。</span>
-            </p>
 
             <!-- 面額選擇（按你提供的價格） -->
             <div class="spec-section">
                 <h2 class="spec-title"><i class="fas fa-tags"></i> 選擇面額</h2>
                 <div class="price-list-container" style="overflow-x:auto;">
                     <table class="price-table" aria-label="香港 iTunes Gift Card 價格表" style="width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed;">
-                       <caption>香港 iTunes Gift Card 即時價格表（HKD） - 2026年04月12日更新</caption>
+                       <caption>香港 iTunes Gift Card 即時價格表（HKD） - 2026年04月16日更新</caption>
                       <colgroup>
                             <col style="width:30%;">
                             <col style="width:28%;">
@@ -472,9 +289,9 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th scope="col" style="text-align:left; padding:12px 10px;">面額</th>
+                                <th scope="col" style="text-align:center; padding:12px 10px;">面額</th>
                                 <th scope="col" style="text-align:center; padding:12px 10px;">價格（HKD）</th>
-                                <th scope="col" style="text-align:center; padding:12px 10px;">購買數量</th>
+                                <th scope="col" style="text-align:center; padding:12px 10px;">數量</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -520,7 +337,7 @@
                             </tr>
                             <tr class="price-item-row" onclick="selectItem(this)">
                                 <th scope="row" style="padding:12px 10px;"><div class="price-item-name">2500 點</div></th>
-                                <td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 1475</span></td>
+                                <td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 2475</span></td>
                                 <td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td>
                             </tr>
                             <tr class="price-item-row" onclick="selectItem(this)">
@@ -657,7 +474,7 @@
     <!-- 浮動購物車 -->
     <div id="floating-cart">
         <div class="floating-cart-header">
-            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 香港 iTunes Gift Card（總價）</div>
+            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 香港 iTunes（總價）</div>
             <div class="floating-total">HK $ 0</div>
         </div>
         <div class="floating-items" id="floatingItemsList"></div>
