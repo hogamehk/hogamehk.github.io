@@ -6,7 +6,7 @@
   { "name": "台灣 iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "tw", "hot": true, "order": 3, "link": "buy-apple-gift-card-taiwan.html" },
   { "name": "台灣 MyCard", "image": "/images/taiwan-mycard.webp", "region": "tw", "hot": false, "order": 4, "link": "taiwan-mycard.html" },
   { "name": "香港 MyCard", "image": "/images/hk-mycard.webp", "region": "hkmo", "hot": true, "order": 5, "link": "hk-mycard.html" },
-  { "name": "Tinder會員", "image": "/images/buy-tinder-gold.webp", "region": "hkmo", "hot": true, "order": 5, "link": "buy-tinder-gold.html" },
+  { "name": "Tinder會員", "image": "/images/buy-tinder-gold.webp", "region": "global", "hot": true, "order": 5, "link": "buy-tinder-gold.html" },
   { "name": "香港 Steam wallet卡", "image": "/images/hksteam.webp", "region": "hkmo", "hot": true, "order": 6, "link": "hksteam.html" },
   { "name": "台灣 Steam wallet卡", "image": "/images/twsteam.webp", "region": "tw", "hot": true, "order": 6, "link": "twsteam.html" },
   { "name": "日本 Steam wallet卡", "image": "/images/jpsteam.webp", "region": "jp","order": 6, "link": "jpsteam.html" },
