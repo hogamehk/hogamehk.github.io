@@ -57,6 +57,29 @@
             text-align: left;
         }
 
+        .spec-section .price-table tbody tr td {
+            background: transparent !important;
+        }
+
+        .spec-section .price-table tbody tr td:nth-child(2) {
+            padding-right: 30px;
+        }
+
+        .spec-section .price-table tbody tr td:nth-child(3) {
+            padding-left: 30px;
+        }
+
+        .spec-section .price-table .price-item-discount {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: transparent;
+        }
+
+        .spec-section .price-table .price-item-row.selected .price-item-discount {
+            color: #ff9800;
+        }
+
         @media (max-width: 768px) {
             .spec-section .price-table .price-item-name {
                 font-size: 13px;
@@ -105,64 +128,64 @@
 </script>
 
     <!-- FAQPage Schema -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Tinder Gold會員多少錢？",
-          "acceptedAnswer": {"@type": "Answer", "text": "Tinder Plus 週$32 / 月$59 / 半年$170；Tinder Gold 週$59 / 月$86 / 半年$260；Tinder Platinum 周$80 / 月$120 / 半年$460；15次 Super Like $360 / 30次 $450；10次 Boost $290 / 20次 $490（實際價格以頁面為準）。"}
-        },
-        {
-          "@type": "Question",
-          "name": "這張卡可以用在哪個地區？",
-          "acceptedAnswer": {"@type": "Answer", "text": "全球 Tinder 帳號皆可開通，無地區限制。"}
-        },
-        {
-          "@type": "Question",
-          "name": "如何開通 Tinder Gold / Plus 會員？",
-          "acceptedAnswer": {"@type": "Answer", "text": "付款成功後我們會立即為你開通會員，無需提供帳號密碼，系統自動到賬。開通後請勿修改綁定手機或郵箱。"}
-        },
-        {
-          "@type": "Question",
-          "name": "下單後多久收到會員？",
-          "acceptedAnswer": {"@type": "Answer", "text": "付款完成後系統立即開通，通常30秒內到賬。"}
-                },
-                {
-                    "@type": "Question",
-                    "name": "下單後我需要提供哪些資料？",
-                    "acceptedAnswer": {"@type": "Answer", "text": "請在下單後透過聊聊提供您「註冊 Tinder 的手機號碼」以及「備用電子信箱」。我們將由專人登入為您完成儲值手續。"}
-                },
-                {
-                    "@type": "Question",
-                    "name": "開通需要多長時間？",
-                    "acceptedAnswer": {"@type": "Answer", "text": "收到您的資料後，我們通常會在 10 分鐘內完成開通。若遇訂單較多時，最晚不會超過 30 分鐘，請您耐心稍候。"}
-                },
-                {
-                    "@type": "Question",
-                    "name": "儲值完成後，我什麼時候可以重新登入？",
-                    "acceptedAnswer": {"@type": "Answer", "text": "為確保帳號安全並避免系統偵測到短時間內頻繁異地登入，請在我們通知儲值完成的 10 分鐘後，再重新開啟 App 登入。"}
-                },
-                {
-                    "@type": "Question",
-                    "name": "開通期間我需要把 Tinder 登出或關閉嗎？",
-                    "acceptedAnswer": {"@type": "Answer", "text": "是的。在我們作業期間，請務必先將 Tinder App 完全關閉且不要嘗試登入，以免造成系統衝突導致開通失敗。"}
-                },
-                {
-                    "@type": "Question",
-                    "name": "為什麼開通後我看不到誰喜歡我的功能？",
-                    "acceptedAnswer": {"@type": "Answer", "text": "請先確認 App 已更新至最新版本。若仍未顯示，請先完全關閉 App 並重啟。有時系統同步需要 1-3 分鐘，請稍作等待。"}
-                },
-                {
-                    "@type": "Question",
-                    "name": "我原本已經有會員了，還可以加購嗎？",
-                    "acceptedAnswer": {"@type": "Answer", "text": "若您目前的會員尚未到期，無法直接加購疊加。建議等現有會員過期後，再聯繫我們進行續費開通。"}
-        }
-      ]
+      "@type": "Question",
+      "name": "Tinder Gold會員多少錢？",
+      "acceptedAnswer": {"@type": "Answer", "text": "Tinder Plus 週$32 / 月$59 / 半年$170；Tinder Gold 週$59 / 月$86 / 半年$260；Tinder Platinum 周$80 / 月$120 / 半年$460；15次 Super Like $360 / 30次 $450；10次 Boost $290 / 20次 $490（實際價格以頁面為準）。"}
+    },
+    {
+      "@type": "Question",
+      "name": "這張卡可以用在哪個地區？",
+      "acceptedAnswer": {"@type": "Answer", "text": "全球 Tinder 帳號皆可開通，無地區限制。"}
+    },
+    {
+      "@type": "Question",
+      "name": "如何開通 Tinder Gold / Plus 會員？",
+      "acceptedAnswer": {"@type": "Answer", "text": "付款成功後我們會立即為你開通會員，無需提供帳號密碼，系統自動到賬。開通後請勿修改綁定手機或郵箱。"}
+    },
+    {
+      "@type": "Question",
+      "name": "下單後多久收到會員？",
+      "acceptedAnswer": {"@type": "Answer", "text": "付款完成後系統立即開通，通常30秒內到賬。"}
+    },
+    {
+      "@type": "Question",
+      "name": "下單後我需要提供哪些資料？",
+      "acceptedAnswer": {"@type": "Answer", "text": "請在下單後透過聊聊提供您「註冊 Tinder 的手機號碼」以及「備用電子信箱」。我們將由專人登入為您完成儲值手續。"}
+    },
+    {
+      "@type": "Question",
+      "name": "開通需要多長時間？",
+      "acceptedAnswer": {"@type": "Answer", "text": "收到您的資料後，我們通常會在 10 分鐘內完成開通。若遇訂單較多時，最晚不會超過 30 分鐘，請您耐心稍候。"}
+    },
+    {
+      "@type": "Question",
+      "name": "儲值完成後，我什麼時候可以重新登入？",
+      "acceptedAnswer": {"@type": "Answer", "text": "為確保帳號安全並避免系統偵測到短時間內頻繁異地登入，請在我們通知儲值完成的 10 分鐘後，再重新開啟 App 登入。"}
+    },
+    {
+      "@type": "Question",
+      "name": "開通期間我需要把 Tinder 登出或關閉嗎？",
+      "acceptedAnswer": {"@type": "Answer", "text": "是的。在我們作業期間，請務必先將 Tinder App 完全關閉且不要嘗試登入，以免造成系統衝突導致開通失敗。"}
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼開通後我看不到誰喜歡我的功能？",
+      "acceptedAnswer": {"@type": "Answer", "text": "請先確認 App 已更新至最新版本。若仍未顯示，請先完全關閉 App 並重啟。有時系統同步需要 1-3 分鐘，請稍作等待。"}
+    },
+    {
+      "@type": "Question",
+      "name": "我原本已經有會員了，還可以加購嗎？",
+      "acceptedAnswer": {"@type": "Answer", "text": "若您目前的會員尚未到期，無法直接加購疊加。建議等現有會員過期後，再聯繫我們進行續費開通。"}
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -253,19 +276,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Plus 週會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 32</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Plus 月會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 59</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Plus 半年會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 170</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Gold 週會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 59</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Gold 月會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 86</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Gold 半年會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 260</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Platinum 周會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 80</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Platinum 月會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 120</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Platinum 半年會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 460</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">15次 Super Like</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 360</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">30次 Super Like</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 450</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">10次 Boost</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 290</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">20次 Boost</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HKD $ 490</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Plus 週會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 32</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Plus 月會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 59</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Plus 半年會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 170</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Gold 週會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 59</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Gold 月會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 86</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Gold 半年會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 260</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Platinum 周會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 80</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Platinum 月會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 120</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Tinder Platinum 半年會員</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 460</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">15次 Super Like</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 360</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">30次 Super Like</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 450</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">10次 Boost</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 290</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">20次 Boost</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 490</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
                         </tbody>
                     </table>
                 </div>
