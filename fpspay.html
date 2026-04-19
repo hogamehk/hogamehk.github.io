@@ -66,6 +66,11 @@
     <div id="otpError" class="otp-error"></div>
     <div id="otpSuccess" class="otp-success"></div>
 
+    <p style="font-size:12px; color:#777; margin:0 0 12px; text-align:center;">
+        如未設定後端，可先點
+        <a href="#" id="configApiLink" style="color:#e68a00; font-weight:bold;">設定驗證服務網址</a>
+    </p>
+
     <button id="verifyOtpBtn" type="button" class="primary-btn">確認驗證並進入付款頁</button>
 </div>
 
@@ -149,9 +154,14 @@
 
 <script>
     const queryApiBase = new URLSearchParams(window.location.search).get('api') || '';
-    const OTP_API_BASE = (window.OTP_API_BASE || queryApiBase || '').replace(/\/$/, '');
+    const savedApiBase = localStorage.getItem('otp_api_base') || '';
+    const OTP_API_BASE = (window.OTP_API_BASE || queryApiBase || savedApiBase || '').replace(/\/$/, '');
     const SMS_API_SEND_URL = (OTP_API_BASE || '') + '/api/sms/send-otp';
     const SMS_API_VERIFY_URL = (OTP_API_BASE || '') + '/api/sms/verify-otp';
+
+    if (queryApiBase) {
+        localStorage.setItem('otp_api_base', OTP_API_BASE);
+    }
 
     const otpGate = document.getElementById('otpGate');
     const appContent = document.getElementById('appContent');
@@ -159,6 +169,7 @@
     const otpInput = document.getElementById('otpInput');
     const sendOtpBtn = document.getElementById('sendOtpBtn');
     const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+    const configApiLink = document.getElementById('configApiLink');
     const otpError = document.getElementById('otpError');
     const otpSuccess = document.getElementById('otpSuccess');
 
@@ -194,6 +205,28 @@
         otpSuccess.style.display = 'none';
     }
 
+    function configureApiBase() {
+        const current = OTP_API_BASE || 'https://';
+        const input = window.prompt('請輸入 OTP 後端網址（例如 https://your-app.onrender.com）', current);
+        if (!input) return;
+
+        const normalized = input.trim().replace(/\/$/, '');
+        if (!/^https?:\/\//i.test(normalized)) {
+            showOtpError('網址格式不正確，請輸入 http:// 或 https:// 開頭');
+            return;
+        }
+
+        localStorage.setItem('otp_api_base', normalized);
+        const url = new URL(window.location.href);
+        url.searchParams.set('api', normalized);
+        window.location.href = url.toString();
+    }
+
+    configApiLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        configureApiBase();
+    });
+
     function setSendButtonState() {
         if (resendSeconds > 0) {
             sendOtpBtn.disabled = true;
@@ -225,7 +258,7 @@
         clearOtpMessage();
         const phone = normalizePhone(phoneInput.value.trim());
         if (!OTP_API_BASE) {
-            showOtpError('尚未設定 OTP_API_BASE，請先填入後端網址（例如 https://你的服務.onrender.com）');
+            showOtpError('尚未設定驗證服務網址，請先點「設定驗證服務網址」');
             return;
         }
         if (!isValidPhone(phone)) {
@@ -264,7 +297,7 @@
         const otp = otpInput.value.trim();
 
         if (!OTP_API_BASE) {
-            showOtpError('尚未設定 OTP_API_BASE，請先填入後端網址（例如 https://你的服務.onrender.com）');
+            showOtpError('尚未設定驗證服務網址，請先點「設定驗證服務網址」');
             return;
         }
 
