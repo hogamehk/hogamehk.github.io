@@ -8,25 +8,33 @@ require('dotenv').config();
 
 const app = express();
 
-const PORT = Number(process.env.PORT || 3000);
-const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
+function readEnv(name, fallback = '') {
+  const value = process.env[name];
+  if (value === undefined || value === null) {
+    return fallback;
+  }
+  return String(value).trim();
+}
 
-const OTP_LENGTH = Number(process.env.OTP_LENGTH || 6);
-const OTP_TTL_SECONDS = Number(process.env.OTP_TTL_SECONDS || 300);
-const OTP_RESEND_COOLDOWN_SECONDS = Number(process.env.OTP_RESEND_COOLDOWN_SECONDS || 60);
-const OTP_MAX_VERIFY_ATTEMPTS = Number(process.env.OTP_MAX_VERIFY_ATTEMPTS || 5);
-const OTP_LOCK_MINUTES = Number(process.env.OTP_LOCK_MINUTES || 15);
-const OTP_SIGNING_SECRET = process.env.OTP_SIGNING_SECRET || 'change-this-secret';
+const PORT = Number(readEnv('PORT', '3000'));
+const CORS_ORIGIN = readEnv('CORS_ORIGIN', '*');
 
-const SMS_PROVIDER = (process.env.SMS_PROVIDER || 'mock').toLowerCase();
-const SMS_SENDER = process.env.SMS_SENDER || 'TXUID';
-const EXPOSE_TEST_OTP = String(process.env.EXPOSE_TEST_OTP || '').toLowerCase() === 'true';
+const OTP_LENGTH = Number(readEnv('OTP_LENGTH', '6'));
+const OTP_TTL_SECONDS = Number(readEnv('OTP_TTL_SECONDS', '300'));
+const OTP_RESEND_COOLDOWN_SECONDS = Number(readEnv('OTP_RESEND_COOLDOWN_SECONDS', '60'));
+const OTP_MAX_VERIFY_ATTEMPTS = Number(readEnv('OTP_MAX_VERIFY_ATTEMPTS', '5'));
+const OTP_LOCK_MINUTES = Number(readEnv('OTP_LOCK_MINUTES', '15'));
+const OTP_SIGNING_SECRET = readEnv('OTP_SIGNING_SECRET', 'change-this-secret');
 
-const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID || '';
-const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN || '';
-const TWILIO_FROM = process.env.TWILIO_FROM || process.env.TWILIO_PHONE_NUMBER || '';
+const SMS_PROVIDER = readEnv('SMS_PROVIDER', 'mock').toLowerCase();
+const SMS_SENDER = readEnv('SMS_SENDER', 'TXUID');
+const EXPOSE_TEST_OTP = readEnv('EXPOSE_TEST_OTP').toLowerCase() === 'true';
 
-const redisUrl = process.env.REDIS_URL || '';
+const TWILIO_ACCOUNT_SID = readEnv('TWILIO_ACCOUNT_SID');
+const TWILIO_AUTH_TOKEN = readEnv('TWILIO_AUTH_TOKEN');
+const TWILIO_FROM = readEnv('TWILIO_FROM') || readEnv('TWILIO_PHONE_NUMBER');
+
+const redisUrl = readEnv('REDIS_URL');
 const redis = redisUrl ? new Redis(redisUrl, { lazyConnect: true, maxRetriesPerRequest: 1 }) : null;
 
 const memoryStore = new Map();
@@ -139,7 +147,14 @@ const smsLimiter = rateLimit({
 app.use('/api/sms', smsLimiter);
 
 app.get('/health', (_req, res) => {
-  res.json({ success: true, provider: SMS_PROVIDER, redis: !!redis });
+  res.json({
+    success: true,
+    provider: SMS_PROVIDER,
+    redis: !!redis,
+    twilioConfigured: !!(TWILIO_ACCOUNT_SID && TWILIO_AUTH_TOKEN && TWILIO_FROM),
+    corsOrigin: CORS_ORIGIN,
+    exposeTestOtp: EXPOSE_TEST_OTP
+  });
 });
 
 app.post('/api/sms/send-otp', async (req, res) => {
