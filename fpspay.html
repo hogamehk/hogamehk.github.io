@@ -154,13 +154,45 @@
 
 <script>
     const queryApiBase = new URLSearchParams(window.location.search).get('api') || '';
-    const savedApiBase = localStorage.getItem('otp_api_base') || '';
+    function safeGetStorage(key) {
+        try {
+            return localStorage.getItem(key) || '';
+        } catch (error) {
+            return '';
+        }
+    }
+
+    function safeSetStorage(key, value) {
+        try {
+            localStorage.setItem(key, value);
+        } catch (error) {
+            // Ignore storage errors in restricted browsers/privacy mode.
+        }
+    }
+
+    function safeGetSession(key) {
+        try {
+            return sessionStorage.getItem(key) || '';
+        } catch (error) {
+            return '';
+        }
+    }
+
+    function safeSetSession(key, value) {
+        try {
+            sessionStorage.setItem(key, value);
+        } catch (error) {
+            // Ignore storage errors in restricted browsers/privacy mode.
+        }
+    }
+
+    const savedApiBase = safeGetStorage('otp_api_base');
     const OTP_API_BASE = (window.OTP_API_BASE || queryApiBase || savedApiBase || '').replace(/\/$/, '');
     const SMS_API_SEND_URL = (OTP_API_BASE || '') + '/api/sms/send-otp';
     const SMS_API_VERIFY_URL = (OTP_API_BASE || '') + '/api/sms/verify-otp';
 
     if (queryApiBase) {
-        localStorage.setItem('otp_api_base', OTP_API_BASE);
+        safeSetStorage('otp_api_base', OTP_API_BASE);
     }
 
     const otpGate = document.getElementById('otpGate');
@@ -216,16 +248,18 @@
             return;
         }
 
-        localStorage.setItem('otp_api_base', normalized);
+        safeSetStorage('otp_api_base', normalized);
         const url = new URL(window.location.href);
         url.searchParams.set('api', normalized);
         window.location.href = url.toString();
     }
 
-    configApiLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        configureApiBase();
-    });
+    if (configApiLink) {
+        configApiLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            configureApiBase();
+        });
+    }
 
     function setSendButtonState() {
         if (resendSeconds > 0) {
@@ -326,7 +360,7 @@
             showOtpSuccess('手機驗證成功，正在開啟付款頁...');
             appContent.style.display = 'block';
             otpGate.style.display = 'none';
-            sessionStorage.setItem('fpspay_verified_phone', phone);
+            safeSetSession('fpspay_verified_phone', phone);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } catch (error) {
             if (error && error.name === 'TypeError') {
@@ -348,7 +382,7 @@
     phoneInput.addEventListener('input', clearOtpMessage);
     otpInput.addEventListener('input', clearOtpMessage);
 
-    const verifiedPhone = sessionStorage.getItem('fpspay_verified_phone');
+    const verifiedPhone = safeGetSession('fpspay_verified_phone');
     if (verifiedPhone && isValidPhone(verifiedPhone)) {
         appContent.style.display = 'block';
         otpGate.style.display = 'none';
