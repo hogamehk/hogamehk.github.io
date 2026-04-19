@@ -148,7 +148,8 @@
 </div>
 
 <script>
-    const OTP_API_BASE = (window.OTP_API_BASE || '').replace(/\/$/, '');
+    const queryApiBase = new URLSearchParams(window.location.search).get('api') || '';
+    const OTP_API_BASE = (window.OTP_API_BASE || queryApiBase || '').replace(/\/$/, '');
     const SMS_API_SEND_URL = (OTP_API_BASE || '') + '/api/sms/send-otp';
     const SMS_API_VERIFY_URL = (OTP_API_BASE || '') + '/api/sms/verify-otp';
 
@@ -223,6 +224,10 @@
     async function sendOtp() {
         clearOtpMessage();
         const phone = normalizePhone(phoneInput.value.trim());
+        if (!OTP_API_BASE) {
+            showOtpError('尚未設定 OTP_API_BASE，請先填入後端網址（例如 https://你的服務.onrender.com）');
+            return;
+        }
         if (!isValidPhone(phone)) {
             showOtpError('請輸入正確手機號碼（8-15位數字，可含 + 國碼）');
             return;
@@ -238,12 +243,16 @@
             });
             const data = await response.json().catch(() => ({}));
             if (!response.ok || data.success === false) {
-                throw new Error(data.message || '驗證碼發送失敗，請稍後重試');
+                throw new Error((data.message || '驗證碼發送失敗') + '（API: ' + SMS_API_SEND_URL + '）');
             }
             showOtpSuccess(data.message || '驗證碼已發送，請查收 SMS');
             startResendCountdown(60);
         } catch (error) {
-            showOtpError(error.message || '系統繁忙，請稍後再試');
+            if (error && error.name === 'TypeError') {
+                showOtpError('無法連線到驗證服務，請檢查後端網址/CORS/服務是否啟動（API: ' + SMS_API_SEND_URL + '）');
+            } else {
+                showOtpError(error.message || '系統繁忙，請稍後再試');
+            }
             resendSeconds = 0;
             setSendButtonState();
         }
@@ -253,6 +262,11 @@
         clearOtpMessage();
         const phone = normalizePhone(phoneInput.value.trim());
         const otp = otpInput.value.trim();
+
+        if (!OTP_API_BASE) {
+            showOtpError('尚未設定 OTP_API_BASE，請先填入後端網址（例如 https://你的服務.onrender.com）');
+            return;
+        }
 
         if (!isValidPhone(phone)) {
             showOtpError('請先輸入正確手機號碼');
@@ -273,7 +287,7 @@
             });
             const data = await response.json().catch(() => ({}));
             if (!response.ok || data.success === false) {
-                throw new Error(data.message || '驗證碼錯誤或已失效');
+                throw new Error((data.message || '驗證碼錯誤或已失效') + '（API: ' + SMS_API_VERIFY_URL + '）');
             }
 
             showOtpSuccess('手機驗證成功，正在開啟付款頁...');
@@ -282,7 +296,11 @@
             sessionStorage.setItem('fpspay_verified_phone', phone);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } catch (error) {
-            showOtpError(error.message || '驗證失敗，請重試');
+            if (error && error.name === 'TypeError') {
+                showOtpError('無法連線到驗證服務，請檢查後端網址/CORS/服務是否啟動（API: ' + SMS_API_VERIFY_URL + '）');
+            } else {
+                showOtpError(error.message || '驗證失敗，請重試');
+            }
         } finally {
             verifyOtpBtn.disabled = false;
             verifyOtpBtn.textContent = '確認驗證並進入付款頁';
