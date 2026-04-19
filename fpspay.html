@@ -32,9 +32,44 @@
         
         .wa-btn { display: none; text-align: center; background: #25D366; color: white; text-decoration: none; padding: 16px; border-radius: 50px; margin-top: 20px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
         .hint { font-size: 12px; color: #bbb; text-align: center; margin-top: 20px; }
+
+        .otp-card { max-width: 450px; margin: 10px auto; background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255,152,0,0.1); border-top: 8px solid var(--brand-color); }
+        .otp-title { color: var(--brand-color); text-align: center; font-size: 22px; margin-bottom: 8px; }
+        .otp-subtitle { text-align: center; color: #666; font-size: 14px; margin: 0 0 20px; }
+        .field-label { display: block; font-size: 13px; color: #666; margin-bottom: 6px; }
+        .field-input { width: 100%; box-sizing: border-box; border: 1px solid #ddd; border-radius: 12px; padding: 12px 14px; font-size: 16px; outline: none; margin-bottom: 14px; }
+        .field-input:focus { border-color: var(--brand-color); box-shadow: 0 0 0 3px rgba(255,152,0,0.15); }
+        .otp-row { display: flex; gap: 10px; margin-bottom: 14px; }
+        .otp-row .field-input { margin-bottom: 0; }
+        .secondary-btn { background: #fff3e0; border: 1px solid #ffd699; color: #a86200; border-radius: 12px; padding: 0 14px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+        .secondary-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .otp-error { display: none; color: #c62828; font-size: 13px; margin: 6px 0 10px; }
+        .otp-success { display: none; color: #2e7d32; font-size: 13px; margin: 6px 0 10px; }
+        .app-content { display: none; }
     </style>
 </head>
 <body>
+
+<div id="otpGate" class="otp-card">
+    <h2 class="otp-title">手機驗證</h2>
+    <p class="otp-subtitle">請先完成手機號碼與驗證碼確認，才可查看付款資料</p>
+
+    <label class="field-label" for="phoneInput">手機號碼</label>
+    <input id="phoneInput" class="field-input" type="tel" inputmode="numeric" placeholder="例如：85291234567">
+
+    <label class="field-label" for="otpInput">驗證碼（4-6位數字）</label>
+    <div class="otp-row">
+        <input id="otpInput" class="field-input" type="text" inputmode="numeric" maxlength="6" placeholder="輸入驗證碼">
+        <button id="sendOtpBtn" type="button" class="secondary-btn">獲取驗證碼</button>
+    </div>
+
+    <div id="otpError" class="otp-error"></div>
+    <div id="otpSuccess" class="otp-success"></div>
+
+    <button id="verifyOtpBtn" type="button" class="primary-btn">確認驗證並進入付款頁</button>
+</div>
+
+<div id="appContent" class="app-content">
 
 <div class="card">
     <h2>FPS 安全支付結算</h2>
@@ -110,8 +145,164 @@
         <br>如有惡意詐騙或非法資金行為，本店將保留追究法律責任之權利。
     </div>
 </div>
+</div>
 
 <script>
+    const OTP_API_BASE = (window.OTP_API_BASE || '').replace(/\/$/, '');
+    const SMS_API_SEND_URL = (OTP_API_BASE || '') + '/api/sms/send-otp';
+    const SMS_API_VERIFY_URL = (OTP_API_BASE || '') + '/api/sms/verify-otp';
+
+    const otpGate = document.getElementById('otpGate');
+    const appContent = document.getElementById('appContent');
+    const phoneInput = document.getElementById('phoneInput');
+    const otpInput = document.getElementById('otpInput');
+    const sendOtpBtn = document.getElementById('sendOtpBtn');
+    const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+    const otpError = document.getElementById('otpError');
+    const otpSuccess = document.getElementById('otpSuccess');
+
+    let resendSeconds = 0;
+    let resendTimer = null;
+
+    function normalizePhone(phone) {
+        return phone.replace(/[\s-]/g, '');
+    }
+
+    function isValidPhone(phone) {
+        return /^\+?\d{8,15}$/.test(phone);
+    }
+
+    function isValidOtp(otp) {
+        return /^\d{4,6}$/.test(otp);
+    }
+
+    function showOtpError(message) {
+        otpError.textContent = message;
+        otpError.style.display = 'block';
+        otpSuccess.style.display = 'none';
+    }
+
+    function showOtpSuccess(message) {
+        otpSuccess.textContent = message;
+        otpSuccess.style.display = 'block';
+        otpError.style.display = 'none';
+    }
+
+    function clearOtpMessage() {
+        otpError.style.display = 'none';
+        otpSuccess.style.display = 'none';
+    }
+
+    function setSendButtonState() {
+        if (resendSeconds > 0) {
+            sendOtpBtn.disabled = true;
+            sendOtpBtn.textContent = '重發(' + resendSeconds + 's)';
+        } else {
+            sendOtpBtn.disabled = false;
+            sendOtpBtn.textContent = '獲取驗證碼';
+        }
+    }
+
+    function startResendCountdown(seconds) {
+        resendSeconds = seconds;
+        setSendButtonState();
+        if (resendTimer) {
+            clearInterval(resendTimer);
+        }
+        resendTimer = setInterval(() => {
+            resendSeconds -= 1;
+            if (resendSeconds <= 0) {
+                clearInterval(resendTimer);
+                resendTimer = null;
+                resendSeconds = 0;
+            }
+            setSendButtonState();
+        }, 1000);
+    }
+
+    async function sendOtp() {
+        clearOtpMessage();
+        const phone = normalizePhone(phoneInput.value.trim());
+        if (!isValidPhone(phone)) {
+            showOtpError('請輸入正確手機號碼（8-15位數字，可含 + 國碼）');
+            return;
+        }
+
+        sendOtpBtn.disabled = true;
+        sendOtpBtn.textContent = '發送中...';
+        try {
+            const response = await fetch(SMS_API_SEND_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ phone: phone })
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || data.success === false) {
+                throw new Error(data.message || '驗證碼發送失敗，請稍後重試');
+            }
+            showOtpSuccess(data.message || '驗證碼已發送，請查收 SMS');
+            startResendCountdown(60);
+        } catch (error) {
+            showOtpError(error.message || '系統繁忙，請稍後再試');
+            resendSeconds = 0;
+            setSendButtonState();
+        }
+    }
+
+    async function verifyOtp() {
+        clearOtpMessage();
+        const phone = normalizePhone(phoneInput.value.trim());
+        const otp = otpInput.value.trim();
+
+        if (!isValidPhone(phone)) {
+            showOtpError('請先輸入正確手機號碼');
+            return;
+        }
+        if (!isValidOtp(otp)) {
+            showOtpError('請輸入 4-6 位數字驗證碼');
+            return;
+        }
+
+        verifyOtpBtn.disabled = true;
+        verifyOtpBtn.textContent = '驗證中...';
+        try {
+            const response = await fetch(SMS_API_VERIFY_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ phone: phone, otp: otp })
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || data.success === false) {
+                throw new Error(data.message || '驗證碼錯誤或已失效');
+            }
+
+            showOtpSuccess('手機驗證成功，正在開啟付款頁...');
+            appContent.style.display = 'block';
+            otpGate.style.display = 'none';
+            sessionStorage.setItem('fpspay_verified_phone', phone);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (error) {
+            showOtpError(error.message || '驗證失敗，請重試');
+        } finally {
+            verifyOtpBtn.disabled = false;
+            verifyOtpBtn.textContent = '確認驗證並進入付款頁';
+        }
+    }
+
+    sendOtpBtn.addEventListener('click', sendOtp);
+    verifyOtpBtn.addEventListener('click', verifyOtp);
+    otpInput.addEventListener('input', () => {
+        otpInput.value = otpInput.value.replace(/\D/g, '').slice(0, 6);
+    });
+    phoneInput.addEventListener('input', clearOtpMessage);
+    otpInput.addEventListener('input', clearOtpMessage);
+
+    const verifiedPhone = sessionStorage.getItem('fpspay_verified_phone');
+    if (verifiedPhone && isValidPhone(verifiedPhone)) {
+        appContent.style.display = 'block';
+        otpGate.style.display = 'none';
+    }
+
     // 讀取多商品資訊並渲染
     function getQueryParam(name) {
         const url = new URL(window.location.href);
