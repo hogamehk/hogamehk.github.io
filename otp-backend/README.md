@@ -33,6 +33,7 @@ Edit `.env` values:
 - `SMS_PROVIDER=mock` for local testing
 - `SMS_PROVIDER=twilio` for production SMS sending
 - fill Twilio keys when using Twilio
+- set `TWILIO_FROM` (or `TWILIO_PHONE_NUMBER`) to your Twilio sender number
 - set strong `OTP_SIGNING_SECRET`
 - set `CORS_ORIGIN` to your frontend domain
 
