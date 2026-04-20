@@ -45,12 +45,12 @@
         .secondary-btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .otp-error { display: none; color: #c62828; font-size: 13px; margin: 6px 0 10px; }
         .otp-success { display: none; color: #2e7d32; font-size: 13px; margin: 6px 0 10px; }
-        .app-content { display: none; }
+        .app-content { display: block; }
     </style>
 </head>
 <body>
 
-<div id="otpGate" class="otp-card">
+<div id="otpGate" class="otp-card" style="display:none;">
     <h2 class="otp-title">手機驗證</h2>
     <p class="otp-subtitle">請先完成手機號碼與驗證碼確認，才可查看付款資料</p>
 
@@ -69,6 +69,8 @@
     <p style="font-size:12px; color:#777; margin:0 0 12px; text-align:center;">
         如未設定後端，可先點
         <a href="#" id="configApiLink" style="color:#e68a00; font-weight:bold;">設定驗證服務網址</a>
+        ｜
+        <a href="#" id="resetSettingsLink" style="color:#c62828; font-weight:bold;">取消本頁設定</a>
     </p>
 
     <button id="verifyOtpBtn" type="button" class="primary-btn">確認驗證並進入付款頁</button>
@@ -186,6 +188,22 @@
         }
     }
 
+    function safeRemoveStorage(key) {
+        try {
+            localStorage.removeItem(key);
+        } catch (error) {
+            // Ignore storage errors in restricted browsers/privacy mode.
+        }
+    }
+
+    function safeRemoveSession(key) {
+        try {
+            sessionStorage.removeItem(key);
+        } catch (error) {
+            // Ignore storage errors in restricted browsers/privacy mode.
+        }
+    }
+
     const savedApiBase = safeGetStorage('otp_api_base');
     const OTP_API_BASE = (window.OTP_API_BASE || queryApiBase || savedApiBase || '').replace(/\/$/, '');
     const SMS_API_SEND_URL = (OTP_API_BASE || '') + '/api/sms/send-otp';
@@ -202,6 +220,7 @@
     const sendOtpBtn = document.getElementById('sendOtpBtn');
     const verifyOtpBtn = document.getElementById('verifyOtpBtn');
     const configApiLink = document.getElementById('configApiLink');
+    const resetSettingsLink = document.getElementById('resetSettingsLink');
     const otpError = document.getElementById('otpError');
     const otpSuccess = document.getElementById('otpSuccess');
 
@@ -254,10 +273,35 @@
         window.location.href = url.toString();
     }
 
+    function resetPageSettings() {
+        const confirmed = window.confirm('確定要取消本頁已保存的設定嗎？此操作會清除驗證服務網址與驗證狀態。');
+        if (!confirmed) return;
+
+        safeRemoveStorage('otp_api_base');
+        safeRemoveSession('fpspay_verified_phone');
+
+        phoneInput.value = '';
+        otpInput.value = '';
+        clearOtpMessage();
+        appContent.style.display = 'none';
+        otpGate.style.display = 'block';
+
+        const cleanUrl = new URL(window.location.href);
+        cleanUrl.searchParams.delete('api');
+        window.location.href = cleanUrl.toString();
+    }
+
     if (configApiLink) {
         configApiLink.addEventListener('click', (event) => {
             event.preventDefault();
             configureApiBase();
+        });
+    }
+
+    if (resetSettingsLink) {
+        resetSettingsLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            resetPageSettings();
         });
     }
 
