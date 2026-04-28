@@ -276,6 +276,8 @@ document.addEventListener('click', function(e) {
 <script src="js/main.js"></script>
 <script>
 // 24h 客服入口：點擊文案卡片可直接打開 Tawk 聊天窗
+const TAWK_CHAT_URL = 'https://tawk.to/chat/5e145a9527773e0d832c3ff6/default';
+
 function openLiveChat() {
     if (window.Tawk_API) {
         if (typeof window.Tawk_API.maximize === 'function') {
@@ -287,7 +289,9 @@ function openLiveChat() {
             return;
         }
     }
-    alert('客服系統載入中，請稍後再試。');
+
+    // 若第三方腳本被攔截或尚未載入，使用官方聊天連結兜底。
+    window.open(TAWK_CHAT_URL, '_blank', 'noopener,noreferrer');
 }
 
 function bindLiveChatTriggers() {
@@ -337,6 +341,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.onLoad = function() {
+    console.log('Tawk chat loaded');
+};
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
