@@ -68,7 +68,7 @@
         <div class="service-title">安全保障</div>
         <div class="service-desc">無需注冊，不存資金，即買即得，放心買</div>
     </div>
-    <div class="service-card">
+    <div class="service-card" data-chat-trigger="true" role="button" tabindex="0" aria-label="開啟24h客服聊天">
         <div class="service-icon">💬</div>
         <div class="service-title">24h客服</div>
         <div class="service-desc">全天候在線，隨時為你遊戲服務</div>
@@ -220,7 +220,7 @@
         <div class="advantage-title">價格優惠</div>
         <div class="advantage-desc">廠商直供，省去中間環節，價格優於自充，實惠給到玩家</div>
     </div>
-    <div class="advantage-card">
+    <div class="advantage-card" data-chat-trigger="true" role="button" tabindex="0" aria-label="開啟24小時客服聊天">
         <div class="advantage-icon">🕒</div>
         <div class="advantage-title">24小時服務</div>
         <div class="advantage-desc">全年無休，24小時在線，隨時解答您的購買和充值</div>
@@ -275,6 +275,35 @@ document.addEventListener('click', function(e) {
 <script src="js/home.js"></script>
 <script src="js/main.js"></script>
 <script>
+// 24h 客服入口：點擊文案卡片可直接打開 Tawk 聊天窗
+function openLiveChat() {
+    if (window.Tawk_API) {
+        if (typeof window.Tawk_API.maximize === 'function') {
+            window.Tawk_API.maximize();
+            return;
+        }
+        if (typeof window.Tawk_API.toggle === 'function') {
+            window.Tawk_API.toggle();
+            return;
+        }
+    }
+    alert('客服系統載入中，請稍後再試。');
+}
+
+function bindLiveChatTriggers() {
+    const triggers = document.querySelectorAll('[data-chat-trigger="true"]');
+    triggers.forEach(function (el) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', openLiveChat);
+        el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLiveChat();
+            }
+        });
+    });
+}
+
 // 👇 補上主頁缺失的側邊欄開關功能
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
@@ -285,6 +314,8 @@ function toggleSidebar() {
 
 // 點擊漢堡按鈕時觸發
 document.addEventListener('DOMContentLoaded', function () {
+    bindLiveChatTriggers();
+
     const menuBtn = document.querySelector('.menu-btn');
     if (menuBtn) {
         menuBtn.addEventListener('click', toggleSidebar);
@@ -302,5 +333,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e145a9527773e0d832c3ff6/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
