@@ -61,6 +61,55 @@
             color: #ff9800;
             font-weight: 700;
         }
+
+        .spec-section .price-item-row {
+            cursor: pointer;
+        }
+
+        /* 保持選中時不要改變整行背景 */
+        .spec-section .price-table .price-item-row.selected {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        /* 將勾選符號放在商品文字外側，不進入商品名稱底色內 */
+        .spec-section .price-table .price-item-row th[scope="row"] {
+            position: relative;
+        }
+
+        .spec-section .price-table .price-item-row.selected th[scope="row"]::after {
+            content: '✓' !important;
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #22c55e;
+            font-size: 16px;
+            font-weight: 800;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            width: auto;
+            height: auto;
+            display: inline;
+        }
+
+        .spec-section .price-item-row.selected::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 
     <!-- Schema.org Product + AggregateOffer -->
@@ -145,7 +194,7 @@
         <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
         <div class="menu-btn" onclick="toggleSidebar()">☰</div>
         <div class="nav-actions">
-            <button class="nav-btn" id="openPaymentModal">官網儲值</button>
+            <button class="nav-btn" id="openPaymentModal">儲值頁面</button>
         </div>
     </div>
 
@@ -189,18 +238,12 @@
             <!-- 商品主圖 -->
             <img src="/images/MonsterStrikeGash.webp" alt="怪物彈珠專用卡 商品圖 - Monster Strike Gash 正版點數卡" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
 
-            <p class="product-desc" style="text-align:center; color:#ccc; font-size:14px; margin:10px 0 25px;">
-                <a href="https://mwpayment-monster-strike.gashpoint.com/MiddleWareWeb" target="_blank" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:15px;">
-                    <i class="fas fa-globe-asia" style="margin-right:6px;"></i>怪物彈珠儲值頁面
-                </a>
-            </p>
-
             <!-- 面額選擇 -->
             <div class="spec-section">
                 <h2 class="spec-title"><i class="fas fa-tags"></i> 選擇面額</h2>
                 <div class="price-list-container" style="overflow-x:auto;">
                     <table class="price-table" aria-label="怪物彈珠專用卡 價格表" style="width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed;">
-                       <caption>怪物彈珠專用卡 即時價格表（HKD） - 2026年04月20日更新</caption>
+                        <caption class="sr-only">怪物彈珠專用卡即時價格表，單位為 HKD</caption>
                       <colgroup>
                             <col style="width:30%;">
                             <col style="width:28%;">
@@ -320,8 +363,8 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
-            <p class="footer-desc">本商城僅提供虛擬商品代充服務，所有商標及版權歸原廠所有</p>
+            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
+            <p class="footer-desc">本商城僅提供數位商品之交付與兌換，所有商標及版權歸原廠所有</p>
         </div>
     </footer>
 
@@ -342,12 +385,17 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const ENABLE_OFFICIAL_TOPUP = true; // 是否啟用官方儲值頁面按鈕啟用填寫true或false
             const officialTopupUrl = 'https://mwpayment-monster-strike.gashpoint.com/MiddleWareWeb';
             const openPaymentModalBtn = document.getElementById('openPaymentModal');
             if (openPaymentModalBtn) {
-                openPaymentModalBtn.addEventListener('click', function () {
-                    window.open(officialTopupUrl, '_blank', 'noopener,noreferrer');
-                });
+                if (ENABLE_OFFICIAL_TOPUP) {
+                    openPaymentModalBtn.addEventListener('click', function () {
+                        window.open(officialTopupUrl, '_blank', 'noopener,noreferrer');
+                    });
+                } else {
+                    openPaymentModalBtn.title = '官網儲值暫時關閉';
+                }
             }
 
             const checkoutBtn = document.getElementById('checkoutBtn');
