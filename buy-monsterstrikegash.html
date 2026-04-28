@@ -145,7 +145,7 @@
         <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
         <div class="menu-btn" onclick="toggleSidebar()">☰</div>
         <div class="nav-actions">
-            <button class="nav-btn" id="openPaymentModal">官方渠道</button>
+            <button class="nav-btn" id="openPaymentModal">官網儲值</button>
         </div>
     </div>
 
@@ -342,6 +342,14 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const officialTopupUrl = 'https://mwpayment-monster-strike.gashpoint.com/MiddleWareWeb';
+            const openPaymentModalBtn = document.getElementById('openPaymentModal');
+            if (openPaymentModalBtn) {
+                openPaymentModalBtn.addEventListener('click', function () {
+                    window.open(officialTopupUrl, '_blank', 'noopener,noreferrer');
+                });
+            }
+
             const checkoutBtn = document.getElementById('checkoutBtn');
             if (checkoutBtn) {
                 checkoutBtn.addEventListener('click', function() {
@@ -423,5 +431,20 @@
             floatingCart.classList.add('show');
         }
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5e145a9527773e0d832c3ff6/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
 </body>
 </html>
