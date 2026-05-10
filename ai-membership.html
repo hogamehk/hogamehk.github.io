@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow">
+    
+    <!-- SEO 優化 -->
+    <title>AI Token 充值 - ChatGPT / Claude / Gemini 點數 | uiduid.com</title>
+    <meta name="description" content="購買 AI Token：ChatGPT Credit、Claude Token、Google Gemini 點數等。支援 FPS 轉數快、PayMe、Alipay HK，即時發碼，安全便捷。">
+    <meta name="keywords" content="AI Token,ChatGPT Credit,Claude Token,Gemini,AI 點數,AI 充值,香港">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://uiduid.com/ai-membership.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Token 充值 - ChatGPT / Claude 點數">
+    <meta property="og:description" content="購買 AI Token 點數，即時發碼。支援多種香港支付方式，安全快速。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uiduid.com/ai-membership.html">
+    
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="css/gametopups.css" />
+    
+    <style>
+        .ai-membership-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+        
+        .filter-select {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+        <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">
+            <i class="fas fa-brain"></i> AI會員訂閱
+            <span class="ai-membership-badge">新上線</span>
+        </h1>
+
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜商品（如：ChatGPT、Claude Token）..." />
+            </div>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid">
+            <!-- 商品將從 ai_memberships.json 載入 -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2026 <span>uiduid.com</span> AI Token 充值商城 版權所有</p>
+            <p style="margin-top: 10px; color: #999; font-size: 12px;">
+                本商城提供 AI Token 充值服務，所有商標及版權歸原廠商所有
+            </p>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script src="js/ai_memberships.js"></script>
+</body>
+</html>
