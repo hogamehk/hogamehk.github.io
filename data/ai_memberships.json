@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ChatGPT Credit",
+    "image": "/images/ai-chatgpt-credit.webp",
+    "link": "/buy-chatgpt-credit.html",
+    "hot": true,
+    "order": 1
+  },
+  {
+    "name": "Claude Token",
+    "image": "/images/ai-claude-token.webp",
+    "link": "/buy-claude-token.html",
+    "hot": true,
+    "order": 2
+  },
+  {
+    "name": "Google Gemini Points",
+    "image": "/images/ai-gemini-points.webp",
+    "link": "/buy-gemini-points.html",
+    "hot": false,
+    "order": 3
+  },
+  {
+    "name": "Copilot Credit",
+    "image": "/images/ai-copilot-credit.webp",
+    "link": "/buy-copilot-credit.html",
+    "hot": false,
+    "order": 4
+  },
+  {
+    "name": "Perplexity Token",
+    "image": "/images/ai-perplexity-token.webp",
+    "link": "/buy-perplexity-token.html",
+    "hot": false,
+    "order": 5
+  },
+  {
+    "name": "Midjourney Credits",
+    "image": "/images/ai-midjourney-credits.webp",
+    "link": "/buy-midjourney-credits.html",
+    "hot": false,
+    "order": 6
+  }
+]
