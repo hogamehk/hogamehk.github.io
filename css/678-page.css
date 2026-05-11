@@ -75,6 +75,8 @@
 .spec-section .price-table .price-item-name {
     display: inline-block;
     padding: 6px 10px;
+    padding-left: 6px !important;
+    text-align: left !important;
     border-radius: 999px;
     background: rgba(255, 152, 0, 0.12);
     border: 1px solid rgba(255, 152, 0, 0.35);
@@ -84,9 +86,17 @@
     white-space: nowrap;
 }
 
+.spec-section .price-table tbody td:nth-child(2) {
+    padding-right: 16px !important;
+}
+
+.spec-section .price-table tbody td:nth-child(3) {
+    padding-left: 16px !important;
+}
+
 .spec-section .price-table .price-item-discount {
     display: inline-block;
-    min-width: 90px;
+    min-width: calc(90px - 2ch);
     padding: 6px 10px;
     border-radius: 10px;
     text-align: center;
@@ -160,6 +170,8 @@
 
 .spec-section .price-table .price-item-row th[scope="row"] {
     position: relative;
+    text-align: left;
+    padding-left: 0 !important;
 }
 
 .spec-section .price-table .price-item-row.selected th[scope="row"]::after {
@@ -212,7 +224,8 @@
     }
 
     .spec-section .price-table tbody th[scope="row"] {
-        text-align: center;
+        text-align: left;
+        padding-left: 0 !important;
     }
 
     .spec-section .price-table .price-item-name {
@@ -223,7 +236,7 @@
     }
 
     .spec-section .price-table .price-item-discount {
-        min-width: 138px;
+        min-width: calc(138px - 2ch);
         padding: 8px 12px;
         font-size: 1.1rem;
     }
@@ -346,8 +359,8 @@
     margin-left: 0;
     position: relative;
     left: 0;
-    padding-left: calc(14px + 1.2ch) !important;
-    padding-inline-start: calc(14px + 1.2ch) !important;
+    padding-left: 14px !important;
+    padding-inline-start: 14px !important;
 }
 
 .spec-section .price-table .price-item-name::before,
@@ -452,8 +465,8 @@
         max-height: none;
         overflow: visible;
         word-break: break-word;
-        padding-left: calc(14px + 1.4ch) !important;
-        padding-inline-start: calc(14px + 1.4ch) !important;
+        padding-left: 14px !important;
+        padding-inline-start: 14px !important;
         font-size: 13px;
     }
 }
