@@ -10,7 +10,7 @@
   { "name": "香港 Steam wallet卡", "image": "/images/hksteam.webp", "region": "hkmo", "hot": true, "order": 6, "link": "hksteam.html" },
   { "name": "台灣 Steam wallet卡", "image": "/images/twsteam.webp", "region": "tw", "hot": true, "order": 6, "link": "twsteam.html" },
   { "name": "日本 Steam wallet卡", "image": "/images/jpsteam.webp", "region": "jp","order": 6, "link": "jpsteam.html" },
-  { "name": "美國 Steam wallet卡", "image": "/images/ussteam.webp", "region": "us", "hot": true, "order": 6, "link": "ussteam.html" },
+  { "name": "美國 Steam wallet卡", "image": "/images/buy-steam-gift-card.webp", "region": "us", "hot": true, "order": 6, "link": "buy-steam-gift-card.html" },
   { "name": "中國 Steam wallet卡", "image": "/images/cnsteam.webp", "region": "global", "hot": true, "order": 6, "link": "cnsteam.html" },
   { "name": "馬來西亞 Steam wallet卡", "image": "/images/mysteam.webp", "region": "my", "hot": true, "order": 6, "link": "mysteam.html" },
   { "name": "日本Bitcash卡", "image": "/images/bitcash-hong-kong-buy.webp", "region": "jp", "hot": true, "order": 7, "link": "buy-bitcash-hk.html" },
