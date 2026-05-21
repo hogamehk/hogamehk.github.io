@@ -363,8 +363,7 @@
     padding-inline-start: 14px !important;
 }
 
-.spec-section .price-table .price-item-name::before,
-.spec-section .price-table .price-item-name::after {
+.spec-section .price-table .price-item-name::before {
     content: none !important;
     display: none !important;
 }
@@ -390,6 +389,9 @@
 .spec-section .price-table .price-item-discount {
     display: inline-flex;
     align-items: center;
+    width: 7ch;
+    min-width: 7ch;
+    justify-content: center;
     padding: 6px 12px;
     border-radius: 6px;
     background: transparent;
@@ -406,13 +408,13 @@
     box-shadow: inset 0 0 0 1px rgba(255, 152, 0, 0.18);
 }
 
-/* Show checkmark for selected items */
-.spec-section .price-table .price-item-row.selected .price-item-discount::before {
-    content: '✓';
+/* Show checkmark after selected item name */
+.spec-section .price-table .price-item-row.selected .price-item-name::after {
+    content: ' ✓' !important;
+    display: inline !important;
     color: #22c55e;
     font-size: 14px;
     font-weight: 800;
-    margin-right: 6px;
     line-height: 1;
 }
 
