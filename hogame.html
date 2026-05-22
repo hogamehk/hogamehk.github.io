@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOGAME Invoice</title>
+    <style>
+        :root {
+            --ink: #1d2b38;
+            --muted: #5a6773;
+            --line: #d6dde5;
+            --paper: #fffdf8;
+            --accent: #0c4a7a;
+            --accent-soft: #eef5fb;
+            --gold: #b58a3a;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Trebuchet MS", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+        }
+        body {
+            background:
+                radial-gradient(circle at 15% 15%, #ffffff 0%, #eef3f8 40%, #e8edf3 100%);
+            padding: 28px 16px;
+            color: var(--ink);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #fffefb 0%, var(--paper) 100%);
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            box-shadow: 0 16px 36px rgba(25, 45, 65, 0.14);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: "INVOICE";
+            position: absolute;
+            right: -22px;
+            top: 24px;
+            font-size: 78px;
+            letter-spacing: 6px;
+            font-family: "Times New Roman", "Noto Serif TC", serif;
+            color: rgba(12, 74, 122, 0.05);
+            transform: rotate(-8deg);
+            pointer-events: none;
+        }
+        .invoice-title {
+            font-size: 30px;
+            font-family: "Times New Roman", "Noto Serif TC", serif;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            text-align: left;
+            color: var(--accent);
+        }
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 24px;
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px 14px;
+            background: linear-gradient(90deg, var(--accent-soft), #f7fbff);
+        }
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--accent);
+            font-family: "Times New Roman", "Noto Serif TC", serif;
+            letter-spacing: 0.8px;
+        }
+        .company-contact {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+        .receipt-top {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 22px;
+            font-size: 14px;
+        }
+        .field-box {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 10px;
+            background: #fff;
+        }
+        .field-box label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: 0.4px;
+        }
+        input {
+            padding: 8px 9px;
+            border: 1px solid #c9d4df;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            background: #fff;
+            color: var(--ink);
+        }
+        input:focus {
+            outline: 2px solid #cde1f2;
+            border-color: #8eb4d4;
+        }
+        .section-title {
+            margin: 4px 0 12px;
+            font-size: 16px;
+            color: var(--accent);
+            letter-spacing: 0.6px;
+        }
+        .items-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .items-table th, .items-table td {
+            border-bottom: 1px solid #e6edf4;
+            padding: 10px;
+            text-align: center;
+        }
+        .items-table th {
+            background: #f1f6fb;
+            color: var(--accent);
+            font-weight: 700;
+            border-bottom: 1px solid #c9d8e6;
+        }
+        .items-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .items-table button {
+            border: 1px solid #ddb7b7;
+            background: #fff2f2;
+            color: #9c3d3d;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn {
+            background: linear-gradient(180deg, #1670af, #0b4d7d);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 8px;
+            box-shadow: 0 8px 16px rgba(22, 112, 175, 0.22);
+        }
+        .btn:hover {
+            background: linear-gradient(180deg, #0f629a, #08446f);
+        }
+        .actions {
+            margin-bottom: 8px;
+        }
+        .total-section {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            padding-top: 15px;
+            border-top: 2px dashed #a6b8c8;
+            margin-top: 15px;
+        }
+        .total-amount {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 20px 26px;
+            min-width: 320px;
+            justify-content: flex-end;
+            border: 1px solid #d9c89c;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #fffef7, #fff9eb);
+        }
+        .stamp-overlay {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            width: 220px;
+            height: 220px;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+        .total-text {
+            position: relative;
+            z-index: 1;
+            color: #162635;
+            letter-spacing: 0.6px;
+        }
+        .notice {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #e7d29f;
+            border-left: 5px solid var(--gold);
+            border-radius: 8px;
+            background: #fff7df;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #5c4a21;
+        }
+        .preview {
+            margin-top: 30px;
+            padding: 25px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            display: none;
+        }
+        .preview-invoice-title {
+            font-size: 28px;
+            font-family: "Times New Roman", "Noto Serif TC", serif;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+            color: var(--accent);
+        }
+        .preview-header {
+            text-align: center;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 12px;
+        }
+        .preview-info {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .preview-info div {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 8px;
+            background: #fafcff;
+        }
+        .preview-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .preview-table th, .preview-table td {
+            border-bottom: 1px solid #e4ebf2;
+            padding: 8px;
+            text-align: center;
+        }
+        .preview-table th {
+            background: #f1f6fb;
+            color: var(--accent);
+            border-bottom: 1px solid #c9d8e6;
+        }
+        .preview-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .preview-total {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 14px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .preview-notice {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            border: 1px solid #e7d29f;
+            border-left: 5px solid var(--gold);
+            border-radius: 8px;
+            padding: 12px;
+            background: #fff7df;
+            color: #5c4a21;
+        }
+        .print-btn {
+            background: linear-gradient(180deg, #1e4d5e, #123746);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 18px;
+            }
+            .invoice-title,
+            .preview-invoice-title {
+                font-size: 24px;
+            }
+            .receipt-top,
+            .preview-info {
+                grid-template-columns: 1fr 1fr;
+            }
+            .actions {
+                display: grid;
+                gap: 8px;
+            }
+            .btn {
+                width: 100%;
+                margin-right: 0;
+            }
+            .total-amount {
+                width: 100%;
+                min-width: auto;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .receipt-top,
+            .preview-info {
+                grid-template-columns: 1fr;
+            }
+            .items-table th,
+            .items-table td,
+            .preview-table th,
+            .preview-table td {
+                font-size: 12px;
+                padding: 7px 4px;
+            }
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .preview, .preview * {
+                visibility: visible;
+            }
+            .preview {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: none;
+                border-radius: 0;
+                padding: 0;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="invoice-title">Invoice</div>
+
+    <div class="receipt-header">
+        <div class="company-name">HOGAME ONLINE ENTERTAINMENT LIMITED</div>
+        <div class="company-contact">
+            WhatsApp: +852 55360181<br>
+            Web: www.hogame.hk
+        </div>
+    </div>
+
+    <div class="receipt-top">
+        <div class="field-box">
+            <label>客戶</label>
+            <input type="text" id="customer" placeholder="輸入客戶名稱">
+        </div>
+        <div class="field-box">
+            <label>日期</label>
+            <input type="date" id="date" value="2025-12-04">
+        </div>
+        <div class="field-box">
+            <label>Invoice No.</label>
+            <input type="text" id="invoice" readonly>
+        </div>
+        <div class="field-box">
+            <label>支付狀態</label>
+            <input type="text" id="status" value="Paid" readonly>
+        </div>
+    </div>
+
+    <h4 class="section-title">商品明細</h4>
+    <table class="items-table" id="itemsTable">
+        <thead>
+            <tr>
+                <th>商品名稱</th>
+                <th>卡密 / 序號</th>
+                <th>單價 HKD</th>
+                <th>數量</th>
+                <th>小計 HKD</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="itemName" placeholder="商品名稱"></td>
+                <td><input type="text" class="itemCode" placeholder="卡密/序號"></td>
+                <td><input type="number" class="itemPrice" placeholder="單價" min="0"></td>
+                <td><input type="number" class="itemQty" value="1" min="1"></td>
+                <td><input type="text" class="itemTotal" readonly></td>
+                <td><button onclick="del(this)">刪除</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="actions">
+        <button class="btn" onclick="addItem()">新增商品</button>
+        <button class="btn" onclick="makeReceipt()">生成收據</button>
+    </div>
+
+    <div class="total-section">
+        <div class="total-amount">
+            <svg class="stamp-overlay" viewBox="0 0 260 260" aria-hidden="true">
+                <g font-weight='bold' fill="#8216db" fill-opacity="1">
+                    <g id="shapebg" display="inline">
+                        <path fill="#FFFFFF" stroke="#fff" stroke-width="1" d="M 10,80 h240 v100 h-240 z"></path>
+                    </g>
+                    <g>
+                        <g stroke="#8216db" stroke-width="2" stroke-opacity="1">
+                            <path stroke-dasharray="2,2" d="M 10,165 h240"></path>
+                        </g>
+                    </g>
+                    <g>
+                        <g class="gtxt">
+                            <text font-size="12" font-weight="600" letter-spacing="0" x="12" y="102">HOGAME ONLINE ENTERTAINMENT LIMITED</text>
+                            <text font-size="17" font-weight="600" letter-spacing="2" x="12" y="120">火龍在線有限公司</text>
+                        </g>
+                        <g>
+                            <text font-size="11" font-style="italic" letter-spacing="0" x="12" y="91">For and on behalf of</text>
+                            <text font-size="11" font-style="italic" letter-spacing="0" x="116" y="176">Authorized Signature(s)</text>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <div class="total-text">總金額：<span id="total">0</span> HKD</div>
+        </div>
+    </div>
+
+    <div class="notice">
+        <strong>客戶須知:</strong><br>
+        1. 虛擬商品兌換成功，貨品售出恕不退換。
+    </div>
+
+    <div class="preview" id="preview">
+        <div class="preview-invoice-title">Invoice</div>
+        <div class="preview-header">
+            <h3>HOGAME ONLINE ENTERTAINMENT LIMITED</h3>
+            <p>WhatsApp: +852 55360181 | Web: www.hogame.hk</p>
+        </div>
+        <div class="preview-info">
+            <div>客戶：<span id="pCustomer"></span></div>
+            <div>日期：<span id="pDate"></span></div>
+            <div>Invoice No.：<span id="pInvoice"></span></div>
+            <div>狀態：<span id="pStatus"></span></div>
+        </div>
+
+        <table class="preview-table">
+            <thead>
+                <tr>
+                    <th>商品名稱</th>
+                    <th>卡密 / 序號</th>
+                    <th>單價 HKD</th>
+                    <th>數量</th>
+                    <th>小計 HKD</th>
+                </tr>
+            </thead>
+            <tbody id="pItems"></tbody>
+        </table>
+
+        <div class="preview-total">
+            <div class="total-amount">
+                <svg class="stamp-overlay" viewBox="0 0 260 260" aria-hidden="true">
+                    <g font-weight='bold' fill="#8216db" fill-opacity="1">
+                        <g id="shapebg" display="inline">
+                            <path fill="#FFFFFF" stroke="#fff" stroke-width="1" d="M 10,80 h240 v100 h-240 z"></path>
+                        </g>
+                        <g>
+                            <g stroke="#8216db" stroke-width="2" stroke-opacity="1">
+                                <path stroke-dasharray="2,2" d="M 10,165 h240"></path>
+                            </g>
+                        </g>
+                        <g>
+                            <g class="gtxt">
+                                <text font-size="12" font-weight="600" letter-spacing="0" x="12" y="102">HOGAME ONLINE ENTERTAINMENT LIMITED</text>
+                                <text font-size="17" font-weight="600" letter-spacing="2" x="12" y="120">火龍在線有限公司</text>
+                            </g>
+                            <g>
+                                <text font-size="11" font-style="italic" letter-spacing="0" x="12" y="91">For and on behalf of</text>
+                                <text font-size="11" font-style="italic" letter-spacing="0" x="116" y="176">Authorized Signature(s)</text>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div class="total-text">總金額：<span id="pTotal"></span> HKD</div>
+            </div>
+        </div>
+
+        <div class="preview-notice">
+            <strong>客戶須知:</strong><br>
+            1. 虛擬商品兌換成功，貨品售出恕不退換。
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+            <button class="print-btn" onclick="window.print()">列印 / 儲存PDF</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function generateInvoiceNo() {
+    let now = new Date();
+    let pad = (n, len = 2) => String(n).padStart(len, '0');
+    let yyyy = now.getFullYear();
+    let mm = pad(now.getMonth() + 1);
+    let dd = pad(now.getDate());
+    let hh = pad(now.getHours());
+    let min = pad(now.getMinutes());
+    let ss = pad(now.getSeconds());
+    let ms = pad(now.getMilliseconds(), 3);
+    return `HG${yyyy}${mm}${dd}${hh}${min}${ss}${ms}`;
+}
+
+function refreshInvoiceNo() {
+    document.getElementById('invoice').value = generateInvoiceNo();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    refreshInvoiceNo();
+});
+
+document.addEventListener('input', e => {
+    if (e.target.classList.contains('itemPrice') || e.target.classList.contains('itemQty')) {
+        let row = e.target.closest('tr');
+        let price = parseFloat(row.querySelector('.itemPrice').value) || 0;
+        let qty = parseInt(row.querySelector('.itemQty').value) || 0;
+        row.querySelector('.itemTotal').value = (price * qty).toFixed(2);
+        calcTotal();
+    }
+});
+
+function addItem() {
+    let tbody = document.querySelector('#itemsTable tbody');
+    let tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td><input type="text" class="itemName" placeholder="商品名稱"></td>
+        <td><input type="text" class="itemCode" placeholder="卡密/序號"></td>
+        <td><input type="number" class="itemPrice" placeholder="單價" min="0"></td>
+        <td><input type="number" class="itemQty" value="1" min="1"></td>
+        <td><input type="text" class="itemTotal" readonly></td>
+        <td><button onclick="del(this)">刪除</button></td>
+    `;
+    tbody.appendChild(tr);
+}
+
+function del(btn) {
+    let tbody = document.querySelector('#itemsTable tbody');
+    if (tbody.children.length > 1) btn.closest('tr').remove();
+    calcTotal();
+}
+
+function calcTotal() {
+    let sum = 0;
+    document.querySelectorAll('.itemTotal').forEach(i => sum += parseFloat(i.value) || 0);
+    document.getElementById('total').innerText = sum.toFixed(2);
+}
+
+function makeReceipt() {
+    refreshInvoiceNo();
+    document.getElementById('preview').style.display = 'block';
+    document.getElementById('pCustomer').innerText = document.getElementById('customer').value || '未填寫';
+    document.getElementById('pDate').innerText = document.getElementById('date').value;
+    document.getElementById('pInvoice').innerText = document.getElementById('invoice').value;
+    document.getElementById('pStatus').innerText = document.getElementById('status').value;
+    document.getElementById('pTotal').innerText = document.getElementById('total').innerText;
+
+    let pItems = document.getElementById('pItems');
+    pItems.innerHTML = '';
+    
+    document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
+        let name = row.querySelector('.itemName').value || '未命名';
+        let code = row.querySelector('.itemCode').value || '-';
+        let price = parseFloat(row.querySelector('.itemPrice').value) || 0;
+        let qty = parseInt(row.querySelector('.itemQty').value) || 0;
+        let total = (price * qty).toFixed(2);
+        
+        let tr = pItems.insertRow();
+        tr.innerHTML = `
+            <td>${name}</td>
+            <td>${code}</td>
+            <td>${price.toFixed(2)}</td>
+            <td>${qty}</td>
+            <td>${total}</td>
+        `;
+    });
+}
+</script>
+</body>
+</html>
