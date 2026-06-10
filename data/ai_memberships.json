@@ -6,5 +6,10 @@
     "hot": true,
     "order": 1
   },
-    { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
+  { "name": "JP iTunes Gift Card", "image": "/images/buy-japan-itunes-gift-card-hk-mo.webp", "region": "jp", "hot": true, "order": 1, "link": "buy-japan-itunes-gift-card.html" },
+  { "name": "CN App Store 充值卡", "image": "/images/apple-gift-card-china.webp", "region": "global", "hot": true, "order": 2, "link": "buy-apple-card-china.html" },
+  { "name": "HK iTunes Gift Card", "image": "/images/hk-apple-gift-card.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hk-apple-gift-card.html" },
+  { "name": "US iTunes Gift Card", "image": "/images/itunescard.webp", "region": "us", "hot": true, "order": 3, "link": "itunescard.html" },
+  { "name": "TW iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "tw", "hot": true, "order": 3, "link": "buy-apple-gift-card-taiwan.html" },
+  { "name": "TR iTunes Gift Card", "image": "/images/turkey-apple-gift-card-all-denominations-comparison.webp", "region": "tw", "hot": true, "order": 3, "link": "turkish-apple-gift-cards-multiple-amounts.html" },
 ]
