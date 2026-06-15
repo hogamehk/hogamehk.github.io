@@ -6,10 +6,10 @@
     "hot": true,
     "order": 1
   },
-  { "name": "JP iTunes Gift Card", "image": "/images/buy-japan-itunes-gift-card-hk-mo.webp", "region": "jp", "hot": true, "order": 1, "link": "buy-japan-itunes-gift-card.html" },
-  { "name": "CN App Store 充值卡", "image": "/images/apple-gift-card-china.webp", "region": "global", "hot": true, "order": 2, "link": "buy-apple-card-china.html" },
-  { "name": "HK iTunes Gift Card", "image": "/images/hk-apple-gift-card.webp", "region": "hkmo", "hot": true, "order": 3, "link": "hk-apple-gift-card.html" },
-  { "name": "US iTunes Gift Card", "image": "/images/itunescard.webp", "region": "us", "hot": true, "order": 3, "link": "itunescard.html" },
-  { "name": "TW iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "tw", "hot": true, "order": 3, "link": "buy-apple-gift-card-taiwan.html" },
-  { "name": "TR iTunes Gift Card", "image": "/images/turkey-apple-gift-card-all-denominations-comparison.webp", "region": "tw", "hot": true, "order": 3, "link": "turkish-apple-gift-cards-multiple-amounts.html" },
+  { "name": "JP iTunes Gift Card", "image": "/images/buy-japan-itunes-gift-card-hk-mo.webp", "region": "jp", "hot": true, "order": 2, "link": "buy-japan-itunes-gift-card.html" },
+  { "name": "CN App Store 充值卡", "image": "/images/apple-gift-card-china.webp", "region": "global", "hot": true, "order": 3, "link": "buy-apple-card-china.html" },
+  { "name": "HK iTunes Gift Card", "image": "/images/hk-apple-gift-card.webp", "region": "hkmo", "hot": true, "order": 4, "link": "hk-apple-gift-card.html" },
+  { "name": "US iTunes Gift Card", "image": "/images/itunescard.webp", "region": "us", "hot": true, "order": 5, "link": "itunescard.html" },
+  { "name": "TW iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "tw", "hot": true, "order": 6, "link": "buy-apple-gift-card-taiwan.html" },
+  { "name": "TR iTunes Gift Card", "image": "/images/turkey-apple-gift-card-all-denominations-comparison.webp", "region": "tw", "hot": true, "order": 7, "link": "turkish-apple-gift-cards-multiple-amounts.html" }
 ]
