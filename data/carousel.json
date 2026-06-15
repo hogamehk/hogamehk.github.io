@@ -1,6 +1,5 @@
 [
-  { "imageUrl": "/images/sg.jepg", "alt": "ro", "order": 1 },
-  { "imageUrl": "/images/2.webp", "alt": "ro", "order": 2 },
+  { "imageUrl": "/images/sg.webp", "alt": "ro", "order": 2 },
   { "imageUrl": "/images/1.webp", "alt": "pubg", "order": 3 },
   { "imageUrl": "/images/3.webp", "alt": "mycard", "order": 4 }
 ]
