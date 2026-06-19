@@ -46,5 +46,5 @@
   { "name": "NetEase Pay", "image": "/images/neteasepay.webp", "region": "global", "hot": true, "order": 13, "link": "neteasepay.html" }, 
   { "name": "PikPak 會員", "image": "/images/pikpak-membership.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak-membership.html" }, 
    { "name": "Telegram 星星", "image": "/images/buytelegramstars.webp", "hot": true, "region": "global", "order": 11, "link": "buy-telegram-stars.html" },
-  { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "tw", "hot": true, "order": 17, "link": "roblox.html" }
+  { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "global", "hot": true, "order": 17, "link": "roblox.html" }
 ]
