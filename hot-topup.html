@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>遊戲儲值.Games Topup - uiduid.com</title>
+    <title>遊戲儲值-Games Topup - uiduid.com</title>
     <link rel="stylesheet" href="css/fontawesome/all.min.css">
  <link rel="stylesheet" href="css/gametopups.css" />   
 </head>
@@ -20,14 +20,25 @@
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="搜遊戲（如：原神）..." />
             </div>
-            <select class="filter-select" id="regionFilter">
-                <option value="">全部地區</option>
-                <option value="hkmo">港澳</option>
-                <option value="tw">台灣</option>
-                <option value="jp">日本</option>
-                <option value="my">馬來西亞</option>
-                <option value="global">全球通用</option>
-            </select>
+<select class="filter-select" id="regionFilter">
+    <option value="">全部地區</option>
+    <option value="global">國際服 (Global)</option>
+    <!-- 主要核心市場 -->
+    <option value="twhkmo">TW/HK/MO</option>
+    <option value="hkmo">港澳服 (HK/MO)</option>
+    <option value="tw">台服 (TW)</option>
+    
+    <!-- 亞洲熱門伺服器 -->
+    <option value="jp">日服 (JP)</option>
+    <option value="kr">韓服 (KR)</option>
+    <option value="sea">東南亞服 (SEA)</option>
+    <option value="cn">陸服 (CN)</option>
+
+    <!-- 歐美/國際伺服器 -->
+    <option value="na">美服 (NA)</option> 
+    <option value="eu">歐服 (EU)</option> 
+    
+</select>
         </div>
 
         <div class="cards-grid" id="cardsGrid">
