@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>遊戲儲值-Games Topup - uiduid.com</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="uiduid.com 遊戲儲值專區，提供崩壞：星穹鐵道、漫威爭鋒 Marvel Rivals、寒霜啟示錄、原神等熱門遊戲官方代充服務。支援 TW/HK/MO 及國際服，即買即充，24小時快速到貨。">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="遊戲儲值-Games Topup - uiduid.com">
+    <meta property="og:description" content="熱門遊戲官方儲值代充，星穹鐵道、Marvel Rivals、寒霜啟示錄等，即買即充。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uiduid.com/hot-topup.html">
+    
+    <link rel="canonical" href="https://uiduid.com/hot-topup.html">
+    
     <link rel="stylesheet" href="css/fontawesome/all.min.css">
- <link rel="stylesheet" href="css/gametopups.css" />   
+    <link rel="stylesheet" href="css/gametopups.css" />
+
+    <!-- JSON-LD 結構化資料（遊戲儲值） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "遊戲儲值商品列表",
+      "description": "uiduid.com 提供多款熱門遊戲官方儲值代充服務",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"崩壞：星穹鐵道 星瓊儲值","url":"https://uiduid.com/honkai-star-rail-topup.html"}},
+        {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"漫威爭鋒 Marvel Rivals 晶格儲值","url":"https://uiduid.com/marvel-rivals-lattice-topup.html"}},
+        {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"寒霜啟示錄 Whiteout Survival 儲值","url":"https://uiduid.com/whiteout-survival-topup.html"}},
+        {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"原神 儲值代充","url":"https://uiduid.com/genshin-impact-topup.html"}},
+        {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"王者榮耀 點券儲值","url":"https://uiduid.com/honor-of-kings-topup.html"}},
+        {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"第五人格 儲值","url":"https://uiduid.com/identity-v-topup.html"}},
+        {"@type":"ListItem","position":7,"item":{"@type":"Product","name":"鳴潮 儲值","url":"https://uiduid.com/wuthering-waves-topup.html"}},
+        {"@type":"ListItem","position":8,"item":{"@type":"Product","name":"絕區零 儲值","url":"https://uiduid.com/zenless-zone-zero-topup.html"}}
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="top-nav">
-    <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+        <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
         <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
     </div>
 
@@ -20,29 +54,23 @@
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="搜遊戲（如：原神）..." />
             </div>
-<select class="filter-select" id="regionFilter">
-    <option value="">全部地區</option>
-    <option value="global">國際服 (Global)</option>
-    <!-- 主要核心市場 -->
-    <option value="twhkmo">TW/HK/MO</option>
-    <option value="hkmo">港澳服 (HK/MO)</option>
-    <option value="tw">台服 (TW)</option>
-    
-    <!-- 亞洲熱門伺服器 -->
-    <option value="jp">日服 (JP)</option>
-    <option value="kr">韓服 (KR)</option>
-    <option value="sea">東南亞服 (SEA)</option>
-    <option value="cn">陸服 (CN)</option>
-
-    <!-- 歐美/國際伺服器 -->
-    <option value="na">美服 (NA)</option> 
-    <option value="eu">歐服 (EU)</option> 
-    
-</select>
+            <select class="filter-select" id="regionFilter">
+                <option value="">全部地區</option>
+                <option value="global">國際服 (Global)</option>
+                <option value="twhkmo">TW/HK/MO</option>
+                <option value="hkmo">港澳服 (HK/MO)</option>
+                <option value="tw">台服 (TW)</option>
+                <option value="jp">日服 (JP)</option>
+                <option value="kr">韓服 (KR)</option>
+                <option value="sea">東南亞服 (SEA)</option>
+                <option value="cn">陸服 (CN)</option>
+                <option value="na">美服 (NA)</option> 
+                <option value="eu">歐服 (EU)</option> 
+            </select>
         </div>
 
         <div class="cards-grid" id="cardsGrid">
-       <!-- 商品將從 js/game_list.js 載入 -->
+            <!-- 商品將從 js/game_list.js 載入 -->
         </div>
     </div>
 
