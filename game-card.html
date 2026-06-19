@@ -3,37 +3,82 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>遊戲點卡-Game Cards - uiduid.com</title>
+    
+    <!-- 新增 Meta Description-->
+    <meta name="description" content="uiduid.com 遊戲點卡專區，提供台灣MyCard、香港MyCard、GASH、FunTown、日本iTunes、美國iTunes、Steam卡、PlayStation、Nintendo eShop、Roblox、Riot點數等多種官方遊戲點卡。即買即發，支援多種付款方式。">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="遊戲點卡-Game Cards - uiduid.com">
+    <meta property="og:description" content="官方正版遊戲點卡，涵蓋多地區多品牌，即買即發。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uiduid.com/game-card.html">
+    
+    <link rel="canonical" href="https://uiduid.com/game-card.html">
+    
     <link rel="stylesheet" href="css/fontawesome/all.min.css">
- <link rel="stylesheet" href="css/gametopups.css" />   
+    <link rel="stylesheet" href="css/gametopups.css" />
+    
+<!-- JSON-LD 結構化資料 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "遊戲點卡商品列表",
+  "description": "uiduid.com 提供多款官方遊戲點卡，包括MyCard、GASH、iTunes、Steam、PlayStation、Nintendo等",
+  "numberOfItems": 20,
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"MyCard港澳版","url":"https://uiduid.com/hk-mycard.html"}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"台灣 MyCard 點數卡","url":"https://uiduid.com/taiwan-mycard.html"}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"日本 iTunes Gift Card","url":"https://uiduid.com/buy-japan-itunes-gift-card.html"}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"台灣 GASH","url":"https://uiduid.com/gash.html"}},
+    {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"香港 GASH","url":"https://uiduid.com/buy-hong-kong-gash-point.html"}},
+    {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"Roblox 充值卡","url":"https://uiduid.com/roblox.html"}},
+    {"@type":"ListItem","position":7,"item":{"@type":"Product","name":"香港 STEAM 卡","url":"https://uiduid.com/hksteam.html"}},
+    {"@type":"ListItem","position":8,"item":{"@type":"Product","name":"日本 Nintendo eShop Card","url":"https://uiduid.com/jpnintendo.html"}},
+    {"@type":"ListItem","position":9,"item":{"@type":"Product","name":"香港 PlayStation兌換碼","url":"https://uiduid.com/hong-kong-psn-card.html"}},
+    {"@type":"ListItem","position":10,"item":{"@type":"Product","name":"香港戲谷卡","url":"https://uiduid.com/buy-funtown-point-card.html"}},
+    {"@type":"ListItem","position":11,"item":{"@type":"Product","name":"美國 iTunes Gift Card","url":"https://uiduid.com/itunescard.html"}},
+    {"@type":"ListItem","position":12,"item":{"@type":"Product","name":"日本 BitCash","url":"https://uiduid.com/buy-bitcash-hk.html"}},
+    {"@type":"ListItem","position":13,"item":{"@type":"Product","name":"日本 DMM Point Code","url":"https://uiduid.com/japan-dmm-points.html"}},
+    {"@type":"ListItem","position":14,"item":{"@type":"Product","name":"中國 Steam 卡","url":"https://uiduid.com/cnsteam.html"}},
+    {"@type":"ListItem","position":15,"item":{"@type":"Product","name":"日本 PSN 禮品卡","url":"https://uiduid.com/japan-psn-gift-card.html"}},
+    {"@type":"ListItem","position":16,"item":{"@type":"Product","name":"Riot Games Gift Card","url":"https://uiduid.com/myriotgiftcard.html"}},
+    {"@type":"ListItem","position":17,"item":{"@type":"Product","name":"Tinder Gold會員","url":"https://uiduid.com/buy-tinder-gold.html"}},
+    {"@type":"ListItem","position":18,"item":{"@type":"Product","name":"EZ通用卡","url":"https://uiduid.com/buy-lager-ez-card-online.html"}},
+    {"@type":"ListItem","position":19,"item":{"@type":"Product","name":"Telegram Stars","url":"https://uiduid.com/buy-telegram-stars.html"}},
+    {"@type":"ListItem","position":20,"item":{"@type":"Product","name":"美國 Razer Gold","url":"https://uiduid.com/usrazergold.html"}}
+  ]
+}
+</script>
 </head>
 <body>
     <div class="top-nav">
-    <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+        <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
         <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
     </div>
 
     <div class="container">
         <h1 class="page-title"><i class="fas fa-ticket-alt"></i> 遊戲點卡</h1>
 
-        <div class="filters">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="搜商品（如：GASH..." />
-            </div>
-            <select class="filter-select" id="regionFilter">
-                <option value="">全部地區</option>
-                <option value="hkmo">港澳</option>
-                <option value="tw">台灣</option>
-                <option value="jp">日本</option>
-                <option value="my">東南亞</option>
-                <option value="us">美國</option>
-                <option value="kr">韓國</option>
-                <option value="global">其他區</option>
-            </select>
-        </div>
+<div class="filters">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜點卡（如：GASH、PSN）..." />
+    </div>
+    <select class="filter-select" id="regionFilter">
+        <option value="">全部地區</option>
+        <option value="twhkmo">台港澳</option> <!-- 核心（MyCard/GASH） -->
+        <option value="jp">日本</option>    <!-- 熱門（Steam日元卡、任天堂、iTunes） -->
+        <option value="kr">韓國</option>    <!-- 新增：專攻韓服（Culture Land文化券、Nexon卡） -->
+        <option value="cn">中國</option>    <!-- 熱門（網易卡、騰訊Q幣卡） -->
+        <option value="sea">東南亞</option> <!-- 通用（Razer Gold、Garena貝殼幣） -->
+        <option value="global">全球通用</option> <!-- 涵蓋美國/歐美及其他跨區商品 -->
+    </select>
+</div>
 
         <div class="cards-grid" id="cardsGrid">
-       <!-- 商品將從 cards.json 載入 -->
+            <!-- 商品將從 cards.json 載入 -->
         </div>
     </div>
 
