@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/678-page.css">
 
-    <!-- 手機專用美化 CSS -->
+    <!-- 手機專用美化 CSS + 折疊式 Accordion -->
     <style>
         .features-grid {
             display: grid;
@@ -71,6 +71,128 @@
             .feature-card i {
                 font-size: 2.2rem;
             }
+        }
+
+        /* ========== 折疊式 Accordion 美化 (Google 精選摘要 + AI 友好) ========== */
+        .accordion {
+            margin: 24px 0 32px 0;
+        }
+        .accordion-item {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-item[open] {
+            box-shadow: 0 10px 30px rgba(255,152,0,0.12);
+            border-color: rgba(255,152,0,0.45);
+            background: rgba(255,255,255,0.09);
+        }
+        .accordion-item summary {
+            padding: 18px 22px;
+            font-size: 1.08em;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            list-style: none;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+        .accordion-item summary:hover {
+            background: rgba(255,152,0,0.08);
+        }
+        .accordion-item summary::-webkit-details-marker,
+        .accordion-item summary::marker {
+            display: none;
+        }
+        .accordion-item summary::after {
+            content: '＋';
+            margin-left: auto;
+            font-size: 1.65em;
+            font-weight: 300;
+            color: #ff9800;
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        .accordion-item[open] summary::after {
+            content: '－';
+            transform: rotate(180deg);
+        }
+        .accordion-item.warning summary {
+            color: #ffcc80;
+        }
+        .accordion-item.warning summary i {
+            color: #ff9800;
+        }
+        .accordion-content {
+            padding: 6px 22px 22px 58px;
+            color: #e8e8e8;
+            font-size: 1.02em;
+            line-height: 1.75;
+        }
+        .accordion-content p {
+            margin: 10px 0;
+        }
+        .accordion-content ul {
+            margin: 12px 0;
+            padding-left: 8px;
+        }
+        .accordion-content li {
+            margin-bottom: 9px;
+        }
+        .accordion-content strong {
+            color: #fff;
+        }
+
+        /* 步驟教學美化 */
+        .redeem-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 10px 0;
+        }
+        .redeem-steps li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 58px;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            line-height: 1.65;
+        }
+        .redeem-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25em;
+            box-shadow: 0 6px 16px rgba(255,152,0,0.45);
+            z-index: 1;
+        }
+        .redeem-steps li::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 42px;
+            bottom: -12px;
+            width: 3px;
+            background: rgba(255,152,0,0.25);
+        }
+        .redeem-steps li:last-child::after {
+            display: none;
         }
     </style>
 
@@ -121,6 +243,64 @@
       ]
     }
     </script>
+
+    <!-- FAQ Schema for Google Featured Snippets & AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "美國 iTunes Gift Card 可以在香港或台灣的 Apple ID 兌換嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不可以。美國 iTunes Gift Card 僅限美國地區 Apple ID / US App Store 使用，香港、台灣、中國大陸或其他地區的 Apple ID 無法成功兌換。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何兌換美國 iTunes Gift Card？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "使用美國 Apple ID 登入 App Store 或 iTunes Store → 點擊右上角頭像 → 選擇「兌換禮品卡或代碼」 → 輸入收到的禮品卡序號 → 確認提交即可。兌換成功後餘額會即時顯示在帳戶中。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "美國 iTunes Gift Card 兌換後可以轉給別人使用嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "禮品卡序號本身可以轉讓，但兌換後的餘額會綁定該 Apple ID，無法轉移到其他帳戶。建議只給信任的親友使用，卡密售出後恕不退換。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "購買美國 iTunes Gift Card 後多久會收到序號？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "付款成功後 1~5 分鐘內，禮品卡序號會自動發送到您的 WhatsApp、WeChat 或 Line，即買即發。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "美國 iTunes Gift Card 可以用來買什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可在 US App Store 購買 App、遊戲內購、Apple Music 訂閱、iCloud 儲存空間、Apple TV+ 等服務。無法用於購買 Apple 硬件產品。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "美國 iTunes Gift Card 有有效期嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "禮品卡序號本身通常有較長有效期，兌換後的 Apple ID 餘額一般無固定有效期，建議盡快使用。"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body style="background-image: url('/images/apple.webp'); background-size: cover; background-attachment: fixed;">
 
@@ -129,7 +309,7 @@
         <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
         <div class="menu-btn" onclick="toggleSidebar()">☰</div>
         <div class="nav-actions">
-            <button class="nav-btn" id="openPaymentModal">官方渠道</button>
+            <button class="nav-btn" id="openPaymentModal">庫存充足</button>
         </div>
     </div>
 
@@ -228,7 +408,7 @@
                 </div>
             </div>
 
-            <!-- 購買注意事項 -->
+            <!-- 購買注意事項 (KYC 保留，重要合規) -->
             <div class="notice-section">
                 <h2 class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買須知與交易安全聲明</h2>
                 <ul class="notice-list">
@@ -238,10 +418,10 @@
                         <ul style="margin: 8px 0; padding-left: 20px;">
                             <li style="color: #ff6b6b; font-weight: 600;">⚠️ <strong>觸發條件</strong>：單筆或當天累計交易滿 <span style="background: #fff3cd; padding: 2px 6px; border-radius: 4px; font-weight: bold;">HK$10,000 或以上</span></li>
                             
-                            <li><strong>HK$10,000 至 HK$19,999：</strong> 需提供有效身份文件（只需首次提交）</li>
+                            <li><strong>HK$10,000 至 HK$19,999：</strong> 需提供有效身份文件。</li>
                             
                             <li>
-                                <strong>HK$20,000 或以上：</strong> 需手持身份證自拍 + 手寫日期紙條（只需首次提交）
+                                <strong>HK$20,000 或以上：</strong> 需手持身份證自拍 + 手寫日期紙條
                                 <div style="margin-top:10px;">
                                     <a href="https://uiduid.com/images/hkid.webp" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-decoration:none;">
                                         <img src="https://uiduid.com/images/hkid.webp" alt="身份證與手寫日期紙條示例" loading="lazy" style="max-width:240px; width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.25); box-shadow:0 6px 14px rgba(0,0,0,0.25);" />
@@ -252,7 +432,7 @@
                             
                             <li>轉數快 (FPS) 付款人姓名必須與核實證件姓名 100% 吻合</li>
                             
-                            <li style="color: #28a745; font-weight: 600;">✓ 首次核實成功後，日後大額購買無需重複提交。如有需要，本店保留要求再次提交文件進行核實的權利。</li>
+                            <li style="color: #28a745; font-weight: 600;">✓ 首次身份核實成功後，日後大額購買無需重複提交。如有需要，本店保留要求再次提交文件進行核實的權利。</li>
                         </ul>
                     </li>
                     
@@ -260,82 +440,136 @@
                 </ul>
             </div>
 
-            <!-- 產品特色優勢 -->
-            <h2 style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> 產品特色優勢</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>即買即發</h3>
-                    <p>付款成功後1~5分鐘發送禮品卡序號至您的 WhatsApp、WeChat、Line</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-building"></i>
-                    <h3>香港合法公司</h3>
-                    <p>由 HOGAME ONLINE ENTERTAINMENT LIMITED 營運</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>100% 正規渠道</h3>
-                    <p>全新未啟用美國官方 iTunes Gift Card，安全有保障</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>多種付款方式</h3>
-                    <p>支援香港 FPS 轉數快、Alipay HK、WeChat Pay HK、澳門中銀 等</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>24小時客服</h3>
-                    <p>任何問題立即協助，專業售後服務</p>
-                </div>
+<!-- 產品特色優勢 -->
+<h2 style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> 產品特色優勢</h2>
+<div class="features-grid">
+    <div class="feature-card">
+        <i class="fas fa-bolt"></i>
+        <h3>即買即發</h3>
+        <p>付款成功後1~5分鐘發送禮品卡序號至您的 WhatsApp、WeChat、Line</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-building"></i>
+        <h3>香港合法公司</h3>
+        <p>由 HOGAME ONLINE ENTERTAINMENT LIMITED 營運（BRN: 64818203）</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-check-circle"></i>
+        <h3>正規渠道採購</h3>
+        <p>全新未啟用美國官方 iTunes Gift Card</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-credit-card"></i>
+        <h3>多種付款方式</h3>
+        <p>支援香港 FPS 轉數快、Alipay HK、WeChat Pay HK、澳門中銀 等</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-headset"></i>
+        <h3>專業售後</h3>
+        <p>24小時內回覆，任何問題盡力協助</p>
+    </div>
+</div>
+
+            <!-- ========== 優化後：折疊式 使用限制 + 兌換教學 + FAQ (Google/AI 友好) ========== -->
+            <h2 style="margin-top:10px; text-align:center; color:#fff;"><i class="fas fa-exclamation-triangle"></i> 使用限制與重要注意事項（請務必詳閱）</h2>
+            
+            <div class="accordion">
+                <!-- 地區限制 -->
+                <details class="accordion-item warning" open>
+                    <summary><i class="fas fa-globe"></i> 地區限制</summary>
+                    <div class="accordion-content">
+                        <p><strong>美國 iTunes Gift Card 僅限美國 Apple ID / US App Store 使用。</strong></p>
+                        <p>香港、台灣、中國大陸或其他地區的 Apple ID <strong style="color:#ff6b6b;">無法兌換</strong>。購買前請務必確認您的 Apple ID 地區設定為「美國」。</p>
+                    </div>
+                </details>
+
+<!-- 兌換後限制與免責聲明 -->
+<details class="accordion-item warning">
+    <summary><i class="fas fa-lock"></i> 兌換後重要提醒與說明（必看）</summary>
+    <div class="accordion-content">
+        <p>禮品卡一經兌換即永久綁定該 Apple ID，<strong>餘額無法轉移至其他帳戶</strong>。</p>
+        
+        <p>兌換後餘額可用於 App Store 購買、遊戲內購、Apple Music、iCloud 儲存空間等服務。</p>
+
+        <p><strong>憑證與收據說明</strong></p>
+        <p>本店提供正版 16位電子禮品卡代碼，此代碼即為有效憑證。</p>
+        
+        <p><strong>收據相關</strong><br>
+        由於我們的採購模式，本店無法提供蘋果公司要求的零售店面紙質收據或官方發票，僅能開立本公司的銷售收據。</p>
+        
+        <p><strong>風險提醒</strong><br>
+        蘋果公司有嚴格的帳號風控機制，偶爾可能因各種原因導致帳號被鎖定。此類情況屬蘋果官方政策，與本店無關。</p>
+        
+        <p><strong>售後說明</strong><br>
+        若發生帳號鎖定、需提供收據等情況，本店不提供退款或補發。建議購買前確認您的 Apple ID 狀態正常。</p>
+        
+        <p style="margin-top:12px; color:#ff9800; font-weight:500;">下單即代表您已閱讀並同意以上說明。</p>
+        
+<p style="font-size:14px; color:#555;">
+    本店於 2015 年註冊成立（商業登記號碼：64818203），超過 10 年正版授權經營經驗。
+</p>
+    </div>
+</details>
             </div>
 
-            <!-- 重要使用限制 -->
-            <h2><i class="fas fa-exclamation-triangle"></i> 重要使用限制與注意事項（請務必詳閱）</h2>
-            <ul style="line-height:1.8; font-size:1.05em;">
-                <li><strong>美國地區專用</strong>：僅限<strong>美國 Apple ID / US App Store</strong> 兌換使用，<strong>香港、台灣或其他地區 Apple ID 無法兌換</strong></li>
-                <li><strong>兌換後用途</strong>：可用於 US App Store 購買 App、遊戲內購、Apple Music、iCloud 儲存空間、Apple TV+ 等</li>
-                <li><strong>不支援項目</strong>：無法用於購買 Apple 硬件產品、部分服務可能有額外限制</li>
-                <li><strong>版本對應</strong>：請確認您的 Apple ID 為美國地區帳號，否則無法成功兌換</li>
-            </ul>
+            <!-- 如何兌換-->
+            <h2><i class="fas fa-book"></i>  iPhone / iPad如何兌換美國 iTunes Gift Card（簡單教學）</h2>
+            <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:24px 22px; border:1px solid rgba(255,255,255,0.12); margin-top:16px;">
+                <ol class="redeem-steps">
+                    <li>使用<strong>美國 Apple ID</strong> 登入 App Store 或 iTunes Store。</li>
+                    <li>點擊右上角頭像 → 選擇「兌換禮品卡或代碼」。</li>
+                    <li>輸入收到的<strong>禮品卡序號</strong>（請勿加入多餘空格）。</li>
+                    <li>確認無誤後提交，即可成功兌換至帳戶餘額。</li>
+                    <li>兌換成功後，餘額會即時顯示在 Apple ID 帳戶中。</li>
+                </ol>
+                <p style="margin-top:16px; font-size:0.98em; color:#ffcc80;"><strong>小提醒：</strong> 請確保 Apple ID 地區為美國，輸入序號時請勿加入多餘空格。</p>
+            </div>
 
-            <!-- 如何兌換 -->
-            <h2><i class="fas fa-book"></i> 如何兌換美國 iTunes Gift Card（簡單教學）</h2>
-            <ol style="line-height:1.8; font-size:1.05em;">
-                <li>使用<strong>美國 Apple ID</strong> 登入 App Store 或 iTunes Store</li>
-                <li>點擊右上角頭像 → 選擇「兌換禮品卡或代碼」</li>
-                <li>輸入收到的<strong>禮品卡序號</strong></li>
-                <li>確認無誤後提交，即可成功兌換至帳戶餘額</li>
-                <li>兌換成功後餘額會即時顯示在 Apple ID 帳戶中</li>
-            </ol>
-            <p><strong>小提醒</strong>：請確保 Apple ID 地區為美國，輸入序號時請勿加入多餘空格。</p>
+            <!-- 常見問題 FAQ（折疊式 + FAQ Schema，已優化搜尋意圖） -->
+            <h2 style="margin-top:42px;"><i class="fas fa-question-circle"></i> 美國 iTunes Gift Card 常見問題（FAQ）</h2>
+            <div class="accordion">
+                <details class="accordion-item">
+                    <summary><i class="fas fa-question"></i> 美國 iTunes Gift Card 可以在香港或台灣的 Apple ID 兌換嗎？</summary>
+                    <div class="accordion-content">
+                        <p><strong>不可以。</strong>美國 iTunes Gift Card 僅限<strong>美國地區 Apple ID / US App Store</strong> 使用，香港、台灣、中國大陸或其他地區的 Apple ID 無法成功兌換。</p>
+                    </div>
+                </details>
 
-            <!-- 美國版 vs 其他地區 -->
-            <h2><i class="fas fa-info-circle"></i> 美國 iTunes Gift Card 注意事項</h2>
-            <ul style="line-height:1.8; font-size:1.05em;">
-                <li><strong>僅限美國 Apple ID</strong>：香港、台灣、中國大陸或其他地區 Apple ID 無法兌換</li>
-                <li>購買前請先確認您的 Apple ID 地區設定為「美國」</li>
-                <li>禮品卡一經兌換，餘額不可轉移至其他 Apple ID</li>
-            </ul>
+                <details class="accordion-item">
+                    <summary><i class="fas fa-question"></i> Mac如何兌換美國 iTunes Gift Card？</summary>
+                    <div class="accordion-content">
+                        <p>開啟電腦上的 App Store App 或 Apple Music App → 點擊左下角的個人姓名或「登入」按鈕 → 點選右上角的 Redeem Gift Card（兌換禮品卡） →輸入 16 位禮品卡代碼，點擊 Redeem 完成充值。</p>
+                    </div>
+                </details>
 
-            <!-- FAQ -->
-            <h2><i class="fas fa-question-circle"></i> 美國 iTunes Gift Card 常見問題（FAQ）</h2>
-            <ul style="line-height:1.8; font-size:1.05em; margin-bottom:30px;">
-                <li><strong>Q1: 可以用香港或台灣 Apple ID 兌換嗎？</strong><br>
-                A: 不可以。美國 iTunes Gift Card 僅限美國地區 Apple ID 兌換，香港/台灣 Apple ID 無法使用。</li>
-                
-                <li><strong>Q2: 兌換後餘額有效期多久？</strong><br>
-                A: 兌換後的 Apple ID 餘額一般無固定有效期，但建議盡快使用。禮品卡序號本身通常有較長有效期，請盡快兌換。</li>
-                
-                <li><strong>Q3: 可以用來買什麼？</strong><br>
-                A: 可在 US App Store 購買 App、遊戲內購、Apple Music 訂閱、iCloud 儲存空間、Apple TV+ 等服務。</li>
-                
-                <li><strong>Q4: 購買後多久可以收到禮品卡序號？</strong><br>
-                A: 付款成功後 1-5 分鐘內序號會發送至您的 WhatsApp、WeChat 或 Line，即買即發。</li>
-                
-                <li><strong>Q5: 是否可以轉讓給別人使用？</strong><br>
-                A: 禮品卡序號可轉讓（請勿給與陌生人,以免被騙，卡密售出不退款，不可以任何理由退換），只能給自己的親人使用兌換，兌換後的餘額綁定該 Apple ID，無法轉移。</li>
-            </ul>
+                <details class="accordion-item">
+                    <summary><i class="fas fa-question"></i> 美國 iTunes Gift Card 兌換後可以轉給別人使用嗎？</summary>
+                    <div class="accordion-content">
+                        <p>禮品卡序號本身可以轉讓，但<strong>兌換後的餘額會綁定該 Apple ID，無法轉移到其他帳戶</strong>。建議只給信任的親友使用，卡密售出後恕不退換。</p>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary><i class="fas fa-question"></i> 購買後多久會收到禮品卡序號？</summary>
+                    <div class="accordion-content">
+                        <p><strong>付款成功後 1~5 分鐘內</strong>，禮品卡序號會自動發送到您的 WhatsApp、WeChat 或 Line，即買即發。</p>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary><i class="fas fa-question"></i> 美國 iTunes Gift Card 可以用來買什麼？</summary>
+                    <div class="accordion-content">
+                        <p>可在 US App Store 購買 App、遊戲內購、Apple Music 訂閱、iCloud 儲存空間、Apple TV+ 等服務。<strong>無法用於購買 Apple 硬件產品</strong>。</p>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary><i class="fas fa-question"></i> 美國 iTunes Gift Card 有有效期嗎？</summary>
+                    <div class="accordion-content">
+                        <p>禮品卡序號本身通常有較長有效期，兌換後的 Apple ID 餘額一般<strong>無固定有效期</strong>，建議盡快使用。</p>
+                    </div>
+                </details>
+            </div>
 
             <!-- 聯繫客服 -->
             <div class="contact-section">
