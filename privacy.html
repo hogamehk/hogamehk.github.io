@@ -6,38 +6,31 @@
     <title>隱私政策 - uiduid.com</title>
     <link rel="stylesheet" href="https://bootcdn.net" />
     <style>
-        /* 複用上方相同樣式 */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body {
-            background: #1a1a1a;
-            color: #fff;
-            font-size: 14px;
-            line-height: 1.7;
-            padding-bottom: 80px;
-        }
-        .top-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px;
-            background: #242424;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            gap: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ff8c00;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .nav-btn {
-            padding: 6px 10px; border: 1px solid #ff8c00; border-radius: 4px; color: #ff8c00; text-decoration: none; font-size: 12px; white-space: nowrap; transition: all 0.3s; } .nav-btn:hover { background: #ff8c00; color: #fff; } .container { max-width: 900px; margin: 30px auto; padding: 0 15px; } .page-title { font-size: 24px; font-weight: bold; color: #ff8c00; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 10px; } .section { margin-bottom: 25px; } .section h2 { font-size: 18px; color: #ff8c00; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; } .section p { color: #ccc; margin-bottom: 12px; text-align: justify; } .footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #242424; padding: 15px 0; text-align: center; border-top: 2px solid #ff8c00; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 998; } .footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; } .footer-text { color: #ccc; font-size: 12px; } .footer-text span { color: #ff8c00; font-weight: bold; } .back-to-top { position: fixed; bottom: 70px; right: 20px; width: 45px; height: 45px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; cursor: pointer; box-shadow: 0 3px 10px rgba(255,140,0,0.5); transition: all 0.3s; opacity: 0; visibility: hidden; z-index: 999; } .back-to-top.show { opacity: 1; visibility: visible; } .back-to-top:hover { background: #ff6700; transform: translateY(-3px); } .notice-box { background: rgba(255, 140, 0, 0.05); border-left: 4px solid #ff8c00; padding: 15px; border-radius: 0 6px 6px 0; margin-top: 15px; } .notice-box p { margin-bottom: 8px !important; } .notice-box p:last-child { margin-bottom: 0 !important; } .text-highlight { color: #ff8c00; font-weight: bold; } </style>
+        body { background: #1a1a1a; color: #fff; font-size: 14px; line-height: 1.7; padding-bottom: 140px; }
+        .top-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: #242424; position: sticky; top: 0; z-index: 999; gap: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .logo { font-size: 18px; font-weight: bold; color: #ff8c00; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .nav-btn { padding: 6px 10px; border: 1px solid #ff8c00; border-radius: 4px; color: #ff8c00; text-decoration: none; font-size: 12px; white-space: nowrap; transition: all 0.3s; }
+        .nav-btn:hover { background: #ff8c00; color: #fff; }
+        .container { max-width: 900px; margin: 30px auto; padding: 0 15px; }
+        .page-title { font-size: 24px; font-weight: bold; color: #ff8c00; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 10px; }
+        .section { margin-bottom: 25px; }
+        .section h2 { font-size: 18px; color: #ff8c00; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .section p { color: #ccc; margin-bottom: 12px; text-align: justify; }
+        .notice-box { background: rgba(255, 140, 0, 0.05); border-left: 4px solid #ff8c00; padding: 15px; border-radius: 0 6px 6px 0; margin-top: 15px; }
+        .notice-box p { margin-bottom: 8px !important; }
+        .notice-box p:last-child { margin-bottom: 0 !important; }
+        .text-highlight { color: #ff8c00; font-weight: bold; }
+        
+        /* 設定固定底部版權聲明區塊強制全置中 */
+        .footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #242424; padding: 15px 0; border-top: 2px solid #ff8c00; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 998; }
+        .footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; text-align: center; }
+        .footer-text { color: #ccc; font-size: 12px; margin: 0; padding: 0; display: block; }
+        .footer-text span { color: #ff8c00; font-weight: bold; }
+        .back-to-top { position: fixed; bottom: 70px; right: 20px; width: 45px; height: 45px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; cursor: pointer; box-shadow: 0 3px 10px rgba(255,140,0,0.5); transition: all 0.3s; opacity: 0; visibility: hidden; z-index: 999; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: #ff6700; transform: translateY(-3px); }
+    </style>
 </head>
 <body>
     <div class="top-nav">
@@ -50,43 +43,33 @@
 
         <div class="section">
             <h2><i class="fas fa-lock"></i> 1. 資訊收集</h2>
-            <p>為提供服務，我們可能收集以下資訊：</p>
-            <p>• 你的手機號碼、名字、住址、使用者名稱</p>
-            <p>• 訂單資訊：購買紀錄、支付方式</p>
-            <p>• 裝置資訊：瀏覽器類型、作業系統</p>
+            <p>為提供服務，我們可能收集以下資訊：手機號碼、名字、使用者名稱、購買紀錄、支付方式及裝置資訊。</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-id-card"></i> 2. 大額交易安全身份驗證之特殊收集（Didit 驗證）</h2>
-            <p>當您在本商城進行大額或高風險交易時，基於風險控制、防範詐騙及契約履行之合法利益，我們將引進第三方專業安全技術服務商 <span class="text-highlight">Didit</span> 進行分級身份核驗。凡您的<span class="text-highlight">單筆訂單金額</span>或<span class="text-highlight">當日累計交易總金額</span>達到以下門檻，Didit 將代為收集以下特殊安全個資：</p>
+            <h2><i class="fas fa-id-card"></i> 2. 特殊安全核驗個資收集之場景（Didit 驗證）</h2>
+            <p>當您在本商城進行大額交易、高風險品類交易，或因觸發安全風控遭遇隨機抽查時，我們將引進第三方安全技術服務商 <span class="text-highlight">Didit</span> 進行身份安全核驗。凡滿足以下特定條件，Didit 將代為收集對應之安全隱私個資：</p>
             <div class="notice-box">
-                <p>• <span class="text-highlight">單筆或當日累計達港幣 10,000 元（含）以上</span>：Didit 將收集您所上傳的<span class="text-highlight">政府核發身份證明文件</span>（如香港身份證、護照或駕駛執照），用以識別交易者真實身份。</p>
-                <p>• <span class="text-highlight">點卡/禮品卡風險抽查機制</span>：點卡/禮品卡訂單即使未滿 HK$10,000，仍可能因系統風險控制或客服抽查而被要求進行 Didit 身份核驗；普通日常小額熟客交易可免除核驗。</p>
-                <p>• <span class="text-highlight">單筆或當日累計達港幣 20,000 元（含）以上</span>：Didit 將額外收集您的<span class="text-highlight">動態活體檢測（Liveness Check）數據與面部生物特徵比對數據</span>，用以即時判定是否為證件持有者本人親自操作。</p>
-                <p>• <span class="text-highlight">國際合規與零資料留存承諾</span>：Didit 乃符合香港及歐盟等國際私隱法規（如 GDPR、香港《個人資料（私隱）條例》）之合規安全認證技術機構。上述所有身份數據均直接透過 Didit 的獨立加密通道進行端到端傳輸與 AI 比對審核。<span class="text-highlight">本商城（uiduid.com）伺服器端絕不儲存、記錄或留存任何您的原始證件圖檔及生物特徵資料</span>，全力捍衛您的個人私隱。</p>
+                <p>• <span class="text-highlight">常規商品交易達港幣 10,000 元（含）以上</span>：Didit 將收集您所上傳的<span class="text-highlight">政府核發身份證明文件</span>（如香港身份證、護照或駕駛執照），用以識別交易者真實身份。</p>
+                <p>• <span class="text-highlight">常規商品交易達港幣 20,000 元（含）以上</span>：Didit 將額外收集您的<span class="text-highlight">動態活體檢測數據與面部生物特徵比對數據</span>。</p>
+                <p>• <span class="text-highlight">高風險品類與隨機抽查機制</span>：購買任何金額之【虛擬禮品卡、遊戲點卡】類商品，基於防範欺詐目的，<span class="text-highlight">本商城保留隨時隨機發起抽查、並要求進行 Didit 身份核驗的權利</span>。在此抽查場景下，同樣將經由 Didit 收集並安全處理您的政府核發身份證明文件個資。</p>
+                <p>• <span class="text-highlight">國際合規與零資料留存承諾</span>：所有身份數據均直接透過 Didit 的獨立加密通道進行端到端傳輸與比對審核。<span class="text-highlight">本商城（uiduid.com）伺服器端絕不儲存、記錄或留存任何您的原始證件圖檔及生物特徵資料</span>，全力捍衛您的個人私隱。</p>
             </div>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-cogs"></i> 3. 資訊使用</h2>
-            <p>所收集之資訊僅用於以下目的：</p>
-            <p>• 處理訂單與發放商品</p>
-            <p>• 改善網站功能與使用者體驗</p>
-            <p>• 防範詐騙與異常交易（包括透過 Didit 對大額或當日累計滿額交易進行身份比對）</p>
-            <p>• 發送重要通知（如訂單狀態更新）</p>
+            <p>所收集之資訊僅用於處理訂單、改善功能及防範詐騙與異常交易（包括透過 Didit 對大額交易或點卡類抽查交易進行身份比對）。</p>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-ban"></i> 4. 資訊共享</h2>
-            <p>我們絕不會出售或出租您的個人資料。僅在以下情況可能披露：</p>
-            <p>• 法律要求或政府機關合法請求</p>
-            <p>• 為保護本商城、用戶或公眾之合法權益</p>
-            <p>• 第三方服務提供商（如支付閘道及身份驗證服務商 Didit），但僅限必要範圍且須簽署保密協議</p>
+            <p>我們絕不會出售您的個人資料。僅在法律要求，或提供必要服務的第三方供應商（如 Didit）在保密協議限制下方能進行必要範圍披露。</p>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-key"></i> 5. 資訊安全</h2>
-            <p>我們採用 SSL 加密傳輸、本地存儲、定期安全審計等措施保護您的資料。你的常規交易信息（如訂單、手機號碼等）會本地存儲 90 天，到期自動清理。然而，網際網路傳輸無法保證 100% 安全，請妥善保管您的帳號密碼。再次重申，您的核心身份證件圖檔及人臉生物特徵均由國際合規機構 Didit 進行安全處理，本商城不作任何本地留存。</p>
+            <p>我們採用 SSL 加密與本地存儲保護常規交易紀錄（保留90天自動清理）。再次重申，您的核心身份證件圖檔及人臉生物特徵均由國際合規機構 Didit 進行安全處理，本商城不作任何本地留存。</p>
         </div>
 
         <div class="section">
@@ -97,19 +80,15 @@
 
     <div class="footer">
         <div class="footer-content">
-            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
+            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
+            <p class="footer-text" style="font-size: 11px; color: #8f8f8f; margin-top: 4px;">本商城僅提供數位商品，所有商標及版權歸原廠所有</p>
         </div>
     </div>
 
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
+    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
     <script>
         const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('show', window.scrollY > 300);
-        });
+        window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 300); });
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
 </body>
