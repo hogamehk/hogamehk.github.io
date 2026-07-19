@@ -107,6 +107,33 @@
             margin: 0 auto;
         }
 
+        /* 合規政策重點提示 */
+        .policy-banner {
+            background: linear-gradient(180deg, rgba(255, 140, 0, 0.12), rgba(255, 140, 0, 0.03));
+            border: 1px solid rgba(255, 140, 0, 0.42);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-main);
+        }
+        .policy-title {
+            color: var(--brand);
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .policy-text {
+            color: #e0e0e0;
+            font-size: 13px;
+            line-height: 1.75;
+        }
+        .policy-text strong {
+            color: #ffb14a;
+        }
+
         /* 支付方式網格 */
         .payment-methods {
             display: grid;
@@ -286,26 +313,96 @@
             color: var(--brand);
         }
 
-        /* 聯絡客服浮動按鈕 */
-        .contact-fab {
+        /* 多入口懸浮客服選單（同 cnitunes） */
+        .smart-customer-service {
             position: fixed;
-            bottom: 85px;
+            bottom: 92px;
             right: 20px;
-            background: linear-gradient(135deg, #25d366, #1db954);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            text-decoration: none;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .service-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 14px;
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.32s ease, transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1);
+            transform-origin: bottom right;
+        }
+        .smart-customer-service.active .service-menu {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        .service-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.38);
-            font-weight: bold;
-            z-index: 1000;
-            transition: transform 0.3s;
+            gap: 12px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+            backdrop-filter: blur(18px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(8px);
+            opacity: 0;
+            transition: transform 0.28s ease, background 0.24s ease, box-shadow 0.24s ease, opacity 0.24s ease;
         }
-        .contact-fab:hover {
-            transform: scale(1.05);
+        .smart-customer-service.active .service-item {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .smart-customer-service.active .service-item:nth-child(1) { transition-delay: 0.04s; }
+        .smart-customer-service.active .service-item:nth-child(2) { transition-delay: 0.08s; }
+        .smart-customer-service.active .service-item:nth-child(3) { transition-delay: 0.12s; }
+        .smart-customer-service.active .service-item:nth-child(4) { transition-delay: 0.16s; }
+        .service-item.whatsapp {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.88), rgba(22, 163, 74, 0.84));
+            border-color: rgba(167, 243, 208, 0.65);
+        }
+        .service-item.wechat {
+            background: linear-gradient(135deg, rgba(7, 193, 96, 0.88), rgba(5, 150, 105, 0.84));
+            border-color: rgba(167, 243, 208, 0.55);
+        }
+        .service-item.line {
+            background: linear-gradient(135deg, rgba(6, 199, 85, 0.9), rgba(5, 150, 70, 0.86));
+            border-color: rgba(187, 247, 208, 0.65);
+        }
+        .service-item.discord {
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.9), rgba(59, 130, 246, 0.85));
+            border-color: rgba(191, 219, 254, 0.65);
+        }
+        .service-main-btn {
+            position: relative;
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(17, 24, 39, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            animation: pulse-ring 2.4s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.38); }
+            70% { box-shadow: 0 0 0 14px rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
         }
 
         @media (max-width: 900px) {
@@ -321,7 +418,9 @@
             .method-card { padding: 20px 16px; }
             .page-title { font-size: 23px; }
             .process-box, .notes-section { padding: 18px 16px; }
-            .contact-fab { right: 14px; bottom: 80px; padding: 11px 16px; }
+            .smart-customer-service { right: 14px; bottom: 82px; }
+            .service-item { font-size: 13px; padding: 11px 16px; }
+            .service-main-btn { width: 52px; height: 52px; font-size: 21px; }
         }
     </style>
 </head>
@@ -337,7 +436,17 @@
     <div class="container">
         <div class="page-header">
             <h1 class="page-title">付款方式</h1>
+            <p class="page-subtitle">本商城採線下人工對帳與發卡，並引入 Didit 安全驗證機制，協助防範金融詐欺與異常交易風險。</p>
         </div>
+
+        <section class="policy-banner" aria-label="合規驗證政策">
+            <div class="policy-title"><i class="fas fa-user-shield"></i> 合規與驗證政策</div>
+            <p class="policy-text">
+                本商城採線下人工對帳與發卡，並引入 Didit 安全驗證防範金融詐欺。未滿 HK$10,000 之<strong>普通遊戲代充訂單</strong>可直接轉帳發卡；<strong>惟【虛擬禮品卡/遊戲點卡】類商品不受此限</strong>。
+                凡單筆或當日累計交易達 HK$10,000 或以上，<strong>或購買任意金額之禮品卡/點卡並經系統及客服隨機抽查者</strong>，均須依客服提示配合完成 Didit 國際合規身份核驗（常規小額老客戶及熟客可獲免除抽查）。
+                若因客戶拒絕配合核驗或非本商城原因引致取消交易退款，將強制扣除每筆 <strong>0.75% + HK$2.00</strong> 行政費用。
+            </p>
+        </section>
 
         <div class="payment-methods">
             <div class="method-card">
@@ -367,15 +476,19 @@
             <div class="step-list">
                 <div class="step-item">
                     <div class="step-num">1</div>
-                    <div>選擇商品並確認訂單金額後，聯絡客服獲取當前最新的收款賬號。</div>
+                    <div>選擇商品並確認訂單金額後，聯絡客服獲取當前最新收款賬號（本商城採線下人工對帳）。</div>
                 </div>
                 <div class="step-item">
                     <div class="step-num">2</div>
-                    <div>完成轉帳後，請<span class="highlight">務必截圖保存</span>支付憑證。</div>
+                    <div>單筆或當日累計滿 HK$10,000，或屬高風險抽查訂單，需依客服提示完成 Didit 國際合規身份核驗；普通日常小額熟客交易可免除核驗。</div>
                 </div>
                 <div class="step-item">
                     <div class="step-num">3</div>
-                    <div>將截圖發送給在線客服，我們將在 5 分鐘內為您發送點卡商品序號。</div>
+                    <div>完成轉帳後，請<span class="highlight">務必截圖保存</span>支付憑證並提交客服，人工核實後發送點卡序號。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>如因非本商城原因申請退款，將扣除 <span class="highlight">0.75% + HK$2.00</span> 行政費用。</div>
                 </div>
             </div>
         </div>
@@ -384,25 +497,74 @@
             <h2 class="notes-title"><i class="fas fa-shield-alt"></i> 2026 安全與合規聲明</h2>
             <ul class="notes-list">
                 <li><span class="highlight">正規貨源保障：</span>本站為官方渠道零售商，所有點卡商品均來自授權渠道。</li>
+                <li><span class="highlight">人工對帳與發卡：</span>採線下人工核對款項與訂單後發卡，確保交易資料一致。</li>
+                <li><span class="highlight">Didit 驗證規則：</span>單筆或當日累計滿 HK$10,000，或經系統及客服抽查之高風險訂單，需完成 Didit 國際合規身份核驗；普通日常小額熟客交易可免除核驗。</li>
                 <li><span class="highlight">法定貨幣結算：</span>為符合香港金融監管要求，本站僅接受法定貨幣（如港元、美元）結算。</li>
                 <li><span class="highlight">禁止洗錢提醒：</span>本商城不接受任何形式的第三方代付或非正式電子代幣（如各類虛擬貨幣轉帳）。</li>
                 <li><span class="highlight">支付安全：</span>本站所有頁面均經 SSL 加密，我們不會在網頁上直接索取您的帳戶密碼。</li>
+                <li><span class="highlight">退款行政費：</span>非本商城原因之退款，將扣除 0.75% + HK$2.00 行政費用。</li>
                 <li><span class="highlight">售後處理：</span>如遇兌換問題，請聯繫 24 小時在線客服，我們提供完整的售後跟進。</li>
             </ul>
         </div>
     </div>
 
-<!-- WhatsApp 浮動按鈕 -->
-<a href="https://wa.me/85255360181" class="contact-fab" target="_blank">
-    <i class="fab fa-whatsapp"></i> 聯絡客服
-</a>
+<!-- 多入口懸浮客服（同 cnitunes） -->
+<div class="smart-customer-service" id="smartService">
+    <div class="service-menu">
+        <a href="https://wa.me/85255360181" target="_blank" rel="noopener noreferrer" class="service-item whatsapp" aria-label="聯繫 WhatsApp 客服">
+            <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+        </a>
+        <div class="service-item wechat" onclick="copyText('HOGAME')" role="button" tabindex="0" aria-label="複製微信號 HOGAME" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyText('HOGAME');}">
+            <i class="fab fa-weixin" style="color:#07C160;"></i> 微信: HOGAME
+        </div>
+        <a href="https://line.me/ti/p/~HOGAME" target="_blank" rel="noopener noreferrer" class="service-item line" aria-label="聯繫 LINE HOGAME">
+            <i class="fab fa-line" style="color:#ffffff;"></i> LINE: HOGAME
+        </a>
+        <a href="https://discord.com/users/55360181" target="_blank" rel="noopener noreferrer" class="service-item discord" aria-label="聯繫 Discord @55360181">
+            <i class="fab fa-discord" style="color:#ffffff;"></i> Discord: @55360181
+        </a>
+    </div>
+    <div class="service-main-btn" onclick="toggleService()" role="button" tabindex="0" aria-label="開啟客服選單" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleService();}">
+        <i class="fas fa-headset"></i>
+    </div>
+</div>
 
 
     <div class="footer">
         <div class="footer-content">
-            <p class="footer-text">Copyright © 2026 <span>UIDUID GLOBAL</span>. All Rights Reserved.</p>
+            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
+            <p class="footer-desc">本商城僅提供數位商品，所有商標及版權歸原廠所有</p>
         </div>
     </div>
+
+    <script>
+        function toggleService() {
+            const service = document.getElementById('smartService');
+            if (!service) return;
+            service.classList.toggle('active');
+            const icon = service.querySelector('.service-main-btn i');
+            if (icon) {
+                icon.className = service.classList.contains('active') ? 'fas fa-xmark' : 'fas fa-headset';
+            }
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('微信號已複製：' + text);
+            }).catch(() => {
+                alert('複製失敗，請手動複製：' + text);
+            });
+        }
+
+        document.addEventListener('click', function (e) {
+            const smartService = document.getElementById('smartService');
+            if (smartService && smartService.classList.contains('active') && !smartService.contains(e.target)) {
+                smartService.classList.remove('active');
+                const icon = smartService.querySelector('.service-main-btn i');
+                if (icon) icon.className = 'fas fa-headset';
+            }
+        });
+    </script>
 
 </body>
 </html>
