@@ -499,20 +499,13 @@
             font-size: 24px;
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 25px rgba(17, 24, 39, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            box-shadow: 0 12px 26px rgba(17, 24, 39, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
             overflow: hidden;
             transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
-            animation: pulse-ring 2.4s infinite;
+            animation: none;
         }
         .service-main-btn::before {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
-            background: conic-gradient(from 180deg, rgba(249, 115, 22, 0.95), rgba(236, 72, 153, 0.92), rgba(99, 102, 241, 0.95), rgba(249, 115, 22, 0.95));
-            z-index: -1;
-            filter: blur(10px);
-            opacity: 0.75;
+            content: none;
         }
         .service-main-btn i {
             transition: transform 0.28s ease;
@@ -526,8 +519,8 @@
             transform: rotate(12deg) scale(1.05);
         }
         @keyframes pulse-ring {
-            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.38); }
-            70% { box-shadow: 0 0 0 14px rgba(236, 72, 153, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            70% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
             100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
         }
         @media (max-width: 768px) {
