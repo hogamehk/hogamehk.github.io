@@ -26,11 +26,19 @@
         .agree-section { margin: 25px 0; padding: 15px; background: #fafafa; border-radius: 12px; }
         #agreeCheck { transform: scale(1.4); margin-right: 12px; accent-color: var(--brand-color); cursor: pointer; }
         .agree-label { font-size: 15px; color: #444; cursor: pointer; font-weight: 500; }
+        .mandatory-agree { margin: 18px 0 12px; padding: 12px; background: #fff7ed; border: 1px solid #ffd8a8; border-radius: 12px; }
+        .mandatory-agree label { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #5d4037; line-height: 1.6; cursor: pointer; }
+        .mandatory-agree input[type="checkbox"] { transform: scale(1.15); margin-top: 3px; accent-color: var(--brand-color); cursor: pointer; }
+        .mandatory-agree a { color: #c26a00; font-weight: 700; text-decoration: none; }
+        .mandatory-agree a:hover { text-decoration: underline; }
+        .didit-note { margin-top: 10px; padding: 12px; border-radius: 10px; background: #fff; border: 1px solid #ffe0b2; color: #5d4037; font-size: 13px; line-height: 1.65; }
+        .didit-note strong { color: #8a4b00; }
         
         .primary-btn { width: 100%; background: var(--brand-color); color: white; border: none; padding: 18px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,152,0,0.3); }
         .primary-btn:disabled { background: #ddd; box-shadow: none; cursor: not-allowed; color: #999; }
         
         .wa-btn { display: none; text-align: center; background: #25D366; color: white; text-decoration: none; padding: 16px; border-radius: 50px; margin-top: 20px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
+        .wa-btn.disabled { opacity: 0.5; pointer-events: none; }
         .hint { font-size: 12px; color: #bbb; text-align: center; margin-top: 20px; }
 
         .otp-card { max-width: 450px; margin: 10px auto; background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255,152,0,0.1); border-top: 8px solid var(--brand-color); }
@@ -90,8 +98,8 @@
     <strong>🚫 不設退換｜No Refund</strong><br>
     虛擬產品具即時性及不可逆轉性，<strong>一旦發貨，不論任何理由均不設退換。</strong><br>
     <small style="color: #777;">Digital goods are non-refundable once issued for any reason.</small><br><br>
-
     <strong style="color: #d9534f;">⚠️ 嚴防詐騙｜Fraud Alert</strong><br>
+
     <b>切勿代他人或陌生人購買！</b>若涉及「網上交友」、「浪漫陷阱」或「見面保證金」，「買點卡解凍帳戶資金」請立即停止下單。本店恕不承擔任何詐騙損失。<br>
     <small style="color: #d9534f;"><b>DO NOT</b> buy for strangers! Stop immediately if asked for "Dating/Romance Scams", "Meeting Deposits", or "Account Unblocking". We are NOT liable for any scam losses.
 </small>
@@ -117,7 +125,18 @@
         </label>
     </div>
 
-    <button id="showPayBtn" class="primary-btn" disabled>獲取 FPS 付款資料</button>
+    <div class="mandatory-agree">
+        <label for="termsForceCheck">
+            <input type="checkbox" id="termsForceCheck">
+            <span>我已閱讀並同意 <a href="/sales-terms.html" target="_blank" rel="noopener noreferrer">銷售條款</a> 與 <a href="/privacy.html" target="_blank" rel="noopener noreferrer">隱私政策</a>，並理解單筆或當日累計交易滿 HK$10,000 須配合 Didit 身份核驗，否則取消交易將扣除 0.75% + HK$2.00 手續費。</span>
+        </label>
+        <div class="didit-note">
+            <strong>💡 為什麼需要 Didit 驗證？</strong><br>
+            Didit 是一家<strong>國際合規的第三方數碼身份驗證平台</strong>，專門為全球電商提供銀行級別的反洗錢（AML）與客戶身份審查（KYC）。uiduid.com 透過 Didit 進行加密比對，本站全程<strong>「零儲存」</strong>您的證件個資，安全且符合私隱條例，請安心完成驗證。
+        </div>
+    </div>
+
+    <button id="showPayBtn" class="primary-btn" disabled>前往付款</button>
 
     <div id="fpsSection" class="fps-area">
         <div class="data-row">
@@ -127,25 +146,11 @@
         <div class="data-row">
             <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
         </div>
-<!-- 找到這一段並替換 -->
-<div class="data-row">
-    <div style="flex: 1;">
-        <span class="label">轉帳備註 (Message / Remark)</span><br>
-        <span class="value" id="fpsMsg" style="color:#d35400; font-size: 15px;">買點數卡不退款</span>
-        <span style="color: #888; font-size: 14px;">或</span>
-        <span class="value" id="fpsMsgEn" style="color:#d35400; font-size: 15px;">No Refund</span>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 5px;">
-        <button class="copy-btn" onclick="copyText('fpsMsg', '中文備註')">複製中文</button>
-        <button class="copy-btn" onclick="copyText('fpsMsgEn', '英文備註')" style="background: #666;">複製英文</button>
-    </div>
-</div>
-
         
         <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
         
         <!-- 請將下方的 85291234567 替換為你的 WhatsApp 號碼 -->
-        <a href="https://wa.me/85255360181?text=我已完成 FPS 轉帳，以下是截圖：" class="wa-btn" id="waBtn">傳送轉帳截圖</a>
+        <a href="https://wa.me/85255360181?text=我已完成 FPS 轉帳，以下是截圖：" class="wa-btn" id="waBtn">提交線下訂單</a>
     </div>
 
     <div class="hint">確認付款即視為雙方電子契約成立，受《電子交易條例》及相關商務法律監管。
@@ -465,25 +470,31 @@
     });
 
     const checkbox = document.getElementById('agreeCheck');
+    const termsForceCheck = document.getElementById('termsForceCheck');
     const btn = document.getElementById('showPayBtn');
     const fpsSection = document.getElementById('fpsSection');
     const waBtn = document.getElementById('waBtn');
 
-    checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
+    function syncPaymentButtonState() {
+        btn.disabled = !(checkbox.checked && termsForceCheck.checked);
+    }
+
+    checkbox.addEventListener('change', syncPaymentButtonState);
+    termsForceCheck.addEventListener('change', syncPaymentButtonState);
+
+    function syncOfflineButtonState() {
+        waBtn.classList.toggle('disabled', !termsForceCheck.checked);
+    }
 
     btn.addEventListener('click', () => {
         fpsSection.style.display = 'block';
         waBtn.style.display = 'block';
+        syncOfflineButtonState();
         btn.style.display = 'none';
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
 
-    function copyText(elementId, label) {
-        const text = document.getElementById(elementId).innerText;
-        navigator.clipboard.writeText(text).then(() => {
-            alert('✅ ' + label + '已複製\n請在轉帳時貼上備註');
-        });
-    }
+    termsForceCheck.addEventListener('change', syncOfflineButtonState);
 </script>
 
 </body>
