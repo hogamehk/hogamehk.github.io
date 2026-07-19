@@ -6,7 +6,6 @@
     <title>銷售條款 - uiduid.com</title>
     <link rel="stylesheet" href="https://bootcdn.net" />
     <style>
-        /* 複用相同樣式 */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body {
             background: #1a1a1a;
@@ -135,8 +134,6 @@
             background: #ff6700;
             transform: translateY(-3px);
         }
-        
-        /* 專為大額驗證特別加強的提醒區塊樣式 */
         .notice-box {
             background: rgba(255, 140, 0, 0.05);
             border-left: 4px solid #ff8c00;
@@ -172,13 +169,13 @@
 
         <div class="section">
             <h2><i class="fas fa-shield-alt"></i> 2. 大額交易分級安全審核</h2>
-            <p>為防範第三方詐騙、洗錢、惡意信用卡盜刷及冒用人頭帳戶等違法行為，本商城實施嚴格的金額分級安全驗證。不論選擇何種支付方式，凡單筆訂單或當日累計交易金額達到以下門檻，客戶必須於發卡前配合完成驗證：</p>
+            <p>為防範第三方詐騙、洗錢、惡意信用卡盜刷及冒用人頭帳戶等違法行為，本商城實施嚴格的金額分級安全驗證。不論選擇何種支付方式，凡<span class="text-highlight">單筆訂單金額</span>或<span class="text-highlight">當日（00:00 - 24:00）累計交易總金額</span>達到以下門檻，客戶必須於發卡前配合完成驗證：</p>
             <div class="notice-box">
-                <p>• <span class="text-highlight">達港幣 10,000 元（含）以上</span>：客戶須配合完成 <span class="text-highlight">Didit 官方身份證件</span>（香港身份證或政府核發之有效身份證明文件）之上傳驗證。</p>
-                <p>• <span class="text-highlight">達港幣 20,000 元（含）以上</span>：安全風險升級，客戶除須上傳身份證件外，<span class="text-highlight">強制加做 Didit 活體檢測（Liveness Check）與人臉比對驗證</span>，以確保為證件持有人親自操作。</p>
+                <p>• <span class="text-highlight">單筆或當日累計達港幣 10,000 元（含）以上</span>：客戶須配合完成 <span class="text-highlight">Didit 官方身份證件</span>（香港身份證或政府核發之有效身份證明文件）之上傳驗證。</p>
+                <p>• <span class="text-highlight">單筆或當日累計達港幣 20,000 元（含）以上</span>：安全風險升級，客戶除須上傳身份證件外，<span class="text-highlight">強制加做 Didit 活體檢測（Liveness Check）與人臉比對驗證</span>，以確保為證件持有人親自操作。</p>
                 <p>• <span class="text-highlight">零資料留存承諾</span>：所有身份驗證均透過第三方專業安全服務商 Didit 進行端到端加密處理。<span class="text-highlight">本商城伺服器絕對不會記錄、儲存或留存</span>您的任何原始身份證圖檔及面部生物特徵，全力保障您的私隱安全。</p>
             </div>
-            <p style="margin-top: 12px;">若因客戶拒絕配合驗證、驗證未通過、或非本商城原因引致需要取消交易及退款，本商城將<span class="text-highlight">從退款金額中扣除每筆交易 0.75% + HK$2.00 的行政及平台操作手續費</span>。如因本商城自身技術故障或方原因導致無法發卡，則可獲豁免此手續費並安排全額退款。</p>
+            <p style="margin-top: 12px;">若因客戶拒絕配合驗證、驗證未通過、或非本商城原因引致需要取消交易及退款，本商城將<span class="text-highlight">從退款金額中扣除每筆交易 0.75% + HK$2.00 的行政及平台操作手續費</span>。如因本商城自身技術故障或我方原因導致無法發卡，則可獲豁免此手續費並安排全額退款。</p>
         </div>
 
         <div class="section">
@@ -198,9 +195,9 @@
 
         <div class="section">
             <h2><i class="fas fa-redo"></i> 6. 退款政策</h2>
-            <p>僅在以下情況可申請退款，退款將原路退回至支付帳戶，處理時間約 1–7 個工作天：</p>
+            <p>僅在以下情況可申請退款，退款將原路退回至支付帳戶，處理時間約 1–3 個工作天：</p>
             <p>• <span class="text-highlight">商城方原因（全額退款）</span>：系統故障導致未發放商品且無法補發、重複支付的訂單。此情況可獲<span class="text-highlight">免除手續費</span>。</p>
-            <p>• <span class="text-highlight">用戶方原因（扣除手續費）</span>：因客戶拒絕配合、未能通過 Didit 大額身份審核，或因個人原因申請取消訂單。此情況退款將<span class="text-highlight">強制扣除每筆交易金額的 0.75% 另加港幣 2.00 元（0.75% + HK$2.00）</span>作為行政操作手續費。</p>
+            <p>• <span class="text-highlight">用戶方原因（扣除手續費）</span>：因客戶拒絕配合、未能通過 Didit 大額/當日累計身份審核，或因個人原因申請取消訂單。此情況退款將<span class="text-highlight">強制扣除每筆交易金額的 0.75% 另加港幣 2.00 元（0.75% + HK$2.00）</span>作為行政操作手續費。</p>
         </div>
     </div>
 
