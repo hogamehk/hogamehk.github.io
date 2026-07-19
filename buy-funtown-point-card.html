@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     
-    <!-- SEO & AI 搜尋極致優化 -->
-    <title>香港戲谷卡 - 即買即發 | uiduid.com</title>
-    <meta name="description" content="在uiduid.com購買香港戲谷卡（戲谷 K-Fun / i-Fun），支持多種面額選擇，使用FPS轉數快、Alipay HK、WeChat Pay HK付款後即買即發，安全快速。香港合法公司營運，正規渠道，附詳細使用限制與儲值教學。">
+    <!-- 後台 SEO & AI 搜尋極致優化（保留完整關鍵字吸流量） -->
+    <title>香港戲谷卡儲值 - 50-3000點官方正規 K-Fun/i-Fun 充值 | uiduid.com</title>
+    <meta name="description" content="全網最快香港戲谷卡購買首選uiduid.com！支持50/150/300/450/600/1000/3000點面額。支援轉數快(FPS)、Alipay HK、WeChat Pay HK本地付款，下單後1-5分鐘即買即發碼。香港合法公司營運，100%官方正品保障。">
     
     <!-- Canonical（統一版本） -->
     <link rel="canonical" href="https://www.uiduid.com/buy-funtown-point-card.html">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="香港戲谷卡 - 即買即發">
-    <meta property="og:description" content="香港戲谷卡，支持多種面額選擇，FPS、Alipay HK、WeChat Pay 24小時處理，簡單安全最優惠。">
+    <meta property="og:title" content="香港戲谷卡儲值（戲谷 K-Fun / i-Fun）- 官方正規即時發卡 | uiduid.com">
+    <meta property="og:description" content="香港戲谷卡官方正版現貨，支持多種面額選擇，FPS、Alipay HK、WeChat Pay 24小時處理，下單1-5分鐘即買即發碼。">
     <meta property="og:image" content="https://www.uiduid.com/images/funtown-point-card-tw-hk.webp">
     <meta property="og:url" content="https://www.uiduid.com/buy-funtown-point-card.html">
     <meta property="og:type" content="product">
@@ -26,9 +26,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/678-page.css">
 
-    <!-- 手機專用美化 CSS（產品特色優勢區塊） -->
+    <!-- 手機專用美化與全新卡片佈局 CSS -->
     <style>
-        /* 手機專用特色優勢卡片 - 更美觀、觸控友好 */
+        /* 手機專用特色優勢卡片 */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -65,31 +65,291 @@
             line-height: 1.55;
             font-size: 1.02em;
         }
-        /* 手機小螢幕額外優化 */
-        @media (max-width: 480px) {
-            .feature-card {
-                padding: 18px 16px;
+
+        /* 全新卡片式面額佈局 - 確保完美橫向一排過且絕不撐爆螢幕 */
+        .price-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .price-card-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 20px 24px;
+            min-height: 90px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+        @media (max-width: 600px) {
+            .price-card-item {
+                padding: 16px 14px;
+                min-height: 80px;
+                gap: 8px;
             }
-            .feature-card i {
-                font-size: 2.2rem;
+        }
+        .price-card-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 152, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        .price-card-item.selected {
+            background: rgba(255, 152, 0, 0.12) !important;
+            border: 1px solid #ff9800 !important;
+            box-shadow: 0 4px 20px rgba(255, 152, 0, 0.25);
+        }
+        
+        /* 左側點數區：支持彈性縮小與省略號，確保小螢幕完美相容 */
+        .card-left {
+            flex: 1.5;
+            min-width: 0; /* 關鍵：防撐爆 */
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+        }
+        @media (max-width: 480px) {
+            .card-left {
+                font-size: 1.1em;
+            }
+        }
+        .price-item-name {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* 中間價格區 */
+        .card-center {
+            flex: 1.5;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 0 8px;
+        }
+        .card-price-row {
+            display: flex;
+            align-items: center;
+        }
+        .card-price {
+            font-size: 1.25em;
+            font-weight: 800;
+            color: #ff9800;
+            white-space: nowrap;
+        }
+        @media (max-width: 480px) {
+            .card-price {
+                font-size: 1.15em;
+            }
+        }
+
+        /* 右側數量按鈕區 */
+        .card-right {
+            flex: 0 0 auto; /* 固定大小不被壓縮 */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .price-item-qty {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            padding: 2px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .price-item-qty-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price-item-qty-input {
+            width: 35px;
+            text-align: center;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Apple 風格懸浮客服選單（進階美化） */
+        .smart-customer-service {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .service-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 14px;
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.32s ease, transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1);
+            transform-origin: bottom right;
+        }
+        .smart-customer-service.active .service-menu {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+            backdrop-filter: blur(18px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(8px);
+            opacity: 0;
+            transition: transform 0.28s ease, background 0.24s ease, box-shadow 0.24s ease, opacity 0.24s ease;
+        }
+        .smart-customer-service.active .service-item {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .smart-customer-service.active .service-item:nth-child(1) { transition-delay: 0.04s; }
+        .smart-customer-service.active .service-item:nth-child(2) { transition-delay: 0.08s; }
+        .smart-customer-service.active .service-item:nth-child(3) { transition-delay: 0.12s; }
+        .smart-customer-service.active .service-item:nth-child(4) { transition-delay: 0.16s; }
+        .service-item:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+        }
+        .service-item.whatsapp {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.88), rgba(22, 163, 74, 0.84));
+            border-color: rgba(167, 243, 208, 0.65);
+        }
+        .service-item.whatsapp:hover {
+            background: linear-gradient(135deg, rgba(52, 231, 123, 0.95), rgba(22, 163, 74, 0.9));
+        }
+        .service-item.wechat {
+            background: linear-gradient(135deg, rgba(7, 193, 96, 0.88), rgba(5, 150, 105, 0.84));
+            border-color: rgba(167, 243, 208, 0.55);
+        }
+        .service-item.wechat:hover {
+            background: linear-gradient(135deg, rgba(16, 216, 112, 0.95), rgba(5, 150, 105, 0.9));
+        }
+        .service-item.discord {
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.9), rgba(59, 130, 246, 0.85));
+            border-color: rgba(191, 219, 254, 0.65);
+        }
+        .service-item.discord:hover {
+            background: linear-gradient(135deg, rgba(112, 125, 255, 0.96), rgba(59, 130, 246, 0.92));
+        }
+        .service-item.line {
+            background: linear-gradient(135deg, rgba(6, 199, 85, 0.9), rgba(5, 150, 70, 0.86));
+            border-color: rgba(187, 247, 208, 0.65);
+        }
+        .service-item.line:hover {
+            background: linear-gradient(135deg, rgba(23, 218, 103, 0.96), rgba(5, 150, 70, 0.92));
+        }
+        .service-main-btn {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(17, 24, 39, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+            animation: pulse-ring 2.4s infinite;
+        }
+        .service-main-btn::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg, rgba(249, 115, 22, 0.95), rgba(236, 72, 153, 0.92), rgba(99, 102, 241, 0.95), rgba(249, 115, 22, 0.95));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.75;
+        }
+        .service-main-btn i {
+            transition: transform 0.28s ease;
+        }
+        .smart-customer-service.active .service-main-btn {
+            transform: translateY(-2px) scale(1.04);
+            background: linear-gradient(135deg, #fb923c, #ec4899 55%, #4f46e5);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+        }
+        .smart-customer-service.active .service-main-btn i {
+            transform: rotate(12deg) scale(1.05);
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.38); }
+            70% { box-shadow: 0 0 0 14px rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+        }
+        @media (max-width: 768px) {
+            .smart-customer-service {
+                bottom: 110px; /* 避免擋住手機版購物車浮窗 */
+                right: 16px;
+            }
+            .service-item {
+                font-size: 13px;
+                padding: 11px 16px;
+            }
+            .service-main-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 21px;
             }
         }
     </style>
 
-    <!-- Schema.org Product + AggregateOffer -->
+    <!-- Schema.org 結構化數據 (SEO神主牌，保持完整名稱) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "香港戲谷卡",
+      "name": "香港戲谷卡 (Funtown HK Point Card)",
       "image": "https://www.uiduid.com/images/funtown-point-card-tw-hk.webp",
-      "description": "在uiduid.com購買香港戲谷卡，支持多種面額選擇，使用FPS、Alipay HK、WeChat Pay HK付款後即買即開通，安全快速。香港合法公司營運，正規渠道。",
+      "description": "在uiduid.com購買香港戲谷卡（K-Fun / i-Fun），支持50至3000點等多種面額選擇，使用FPS、Alipay HK、WeChat Pay HK付款後即買即發碼。適用於香港區戲谷遊戲如《跑Online香港版》，安全快速。香港合法公司營運，正規渠道。",
       "brand": {"@type": "Brand", "name": "戲谷娛樂館"},
       "sku": "Funtown-HK-POINT",
+      "category": "Digital Gift Card",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
-        "reviewCount": "856"
+        "reviewCount": "856",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "offers": {
         "@type": "AggregateOffer",
@@ -97,16 +357,75 @@
         "lowPrice": "22",
         "highPrice": "868",
         "offerCount": "7",
+        "seller": {"@type": "Organization", "name": "uiduid.com"},
         "offers": [
-            {"@type": "Offer", "price": "22", "priceCurrency": "HKD", "name": "戲谷卡 50點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}},
-            {"@type": "Offer", "price": "55", "priceCurrency": "HKD", "name": "戲谷卡 150點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}},
-            {"@type": "Offer", "price": "102", "priceCurrency": "HKD", "name": "戲谷卡 300點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}},
-            {"@type": "Offer", "price": "148", "priceCurrency": "HKD", "name": "戲谷卡 450點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}},
-            {"@type": "Offer", "price": "180", "priceCurrency": "HKD", "name": "戲谷卡 600點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}},
-            {"@type": "Offer", "price": "305", "priceCurrency": "HKD", "name": "戲谷卡 1000點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}},
-            {"@type": "Offer", "price": "868", "priceCurrency": "HKD", "name": "戲谷卡 3000點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "uiduid.com"}}
+            {"@type": "Offer", "price": "22", "priceCurrency": "HKD", "name": "香港戲谷卡 50點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"},
+            {"@type": "Offer", "price": "55", "priceCurrency": "HKD", "name": "香港戲谷卡 150點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"},
+            {"@type": "Offer", "price": "102", "priceCurrency": "HKD", "name": "香港戲谷卡 300點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"},
+            {"@type": "Offer", "price": "148", "priceCurrency": "HKD", "name": "香港戲谷卡 450點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"},
+            {"@type": "Offer", "price": "180", "priceCurrency": "HKD", "name": "香港戲谷卡 600點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"},
+            {"@type": "Offer", "price": "305", "priceCurrency": "HKD", "name": "香港戲谷卡 1000點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"},
+            {"@type": "Offer", "price": "868", "priceCurrency": "HKD", "name": "香港戲谷卡 3000點", "availability": "https://schema.org/InStock", "url": "https://www.uiduid.com/buy-funtown-point-card.html", "priceValidUntil": "2026-12-31", "itemCondition": "https://schema.org/NewCondition"}
         ]
       }
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "香港戲谷卡可以用來玩哪些遊戲？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "主要適用於戲谷香港區推出的網絡遊戲，例如《跑Online》（Tales Runner）香港版及其他香港伺服器遊戲。請以官方支援列表為準。注意：2023年《戲谷港式麻將》手機版已結束營運，PC版及其他遊戲持續更新。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "香港戲谷卡與台灣戲谷卡有何不同？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "香港版僅限香港伺服器/帳號使用，不可跨區儲值台灣戲谷帳號；台灣版則相反。購買前務必確認遊戲地區版本。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "儲值後點數有效期多久？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般開卡後點數有效期約為1年，序號本身通常有18個月使用期限，請盡快儲值並使用。逾期作廢不可補發。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "是否需要實名認證才能使用？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "部分遊戲或功能（如大額兌換戰地通點等）可能需先完成帳號實名認證。建議購買前或儲值前先登入官方會員中心完成驗證。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "購買後多久可以收到卡密？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "付款成功後1-5分鐘內序號會發送電子卡號與密碼至您 WhatsApp、WeChat、LINE（HOGAME）或 Discord（@55360181），即買即發，無需等待。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以用在Steam、PSN或其他平台嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不支援。香港戲谷卡僅限戲谷香港官方遊戲平台使用。"
+          }
+        }
+      ]
     }
     </script>
 
@@ -126,16 +445,16 @@
 <body style="background-image: url('/images/apple.webp'); background-size: cover; background-attachment: fixed;">
 
     <!-- 頂部導航 -->
-    <div class="top-nav">
-        <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
-        <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <nav class="top-nav" aria-label="主要導航">
+        <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com 遊戲點卡商城首頁" style="height:32px;display:block;"></a>
+        <div class="menu-btn" onclick="toggleSidebar()" aria-label="開啟選單">☰</div>
         <div class="nav-actions">
             <button class="nav-btn" id="openPaymentModal">官方渠道</button>
         </div>
-    </div>
+    </nav>
 
     <!-- 側邊欄 -->
-    <div class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar" aria-label="側邊欄選單">
         <div class="nav-group">
             <div class="nav-group-title">商品分類</div>
             <a href="/game-card.html"><i class="fas fa-credit-card"></i> 遊戲點卡</a>
@@ -150,202 +469,313 @@
             <a href="/privacy.html">🔒 隱私政策</a>
             <a href="/content-policy.html">🚫 禁止內容政策</a>
         </div>
-    </div>
+    </aside>
 
     <main class="product-detail">
-        <div class="product-info">
+        <article class="product-info">
             <div class="back-links">
                 <a href="/game-card.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲點卡</a>
                 <a href="/hot-topup.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲儲值</a>
                 <a href="/ai-membership.html" class="back-link"><i class="fas fa-chevron-left"></i> Ai會員</a>
             </div>
 
+            <!-- 前台俐落標題 -->
             <h1 class="product-name">
-                <i class="fa-solid fa-cart-shopping"></i> 香港戲谷卡
+                <i class="fa-solid fa-cart-shopping"></i> 香港戲谷卡 (K-Fun / i-Fun)
             </h1>
 
-            <!-- 頂部醒目介紹框 -->
-            <div style="background:rgba(0,0,0,0.6); color:#fff; padding:20px; margin:20px 0; border-radius:12px; text-align:center; font-size:1.1em; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
-                <strong style="font-size:1.4em; color:#ff9800;">香港戲谷卡</strong><br><br>
-                支援多種面額選擇，使用 FPS、Alipay HK、WeChat Pay HK 付款後<br>
-                <strong>即買即發碼</strong>，無需信用卡、超級便宜<br>
-                ⚠️ 香港區戲谷娛樂館專用，不可跨區儲值台灣版戲谷帳號<br><br>
-                安全可靠 · 正規管道 · 庫存充足
+            <!-- 頂部介紹框 -->
+            <div style="background:rgba(0,0,0,0.6); color:#fff; padding:20px; margin:20px 0; border-radius:12px; text-align:center; font-size:1.1em; box-shadow:0 4px 20px rgba(0,0,0,0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                <strong style="font-size:1.4em; color:#ff9800;">香港區官方點數卡</strong><br><br>
+                支援多種面額 · FPS / 轉數快 / 電子錢包即時處理<br>
+                <span style="color: #ffc107;">⚡ 專人手動發貨 (1-5分鐘) · 100% 正品保障</span><br><br>
+                <span style="font-size:0.9em; color:#bbb;">⚠️ 僅限儲值香港戲谷帳號，不適用於台灣區</span>
             </div>
 
             <!-- 商品主圖 -->
-            <img src="/images/funtown-point-card-tw-hk.webp" alt="香港戲谷卡 商品圖 - 戲谷 K-Fun / i-Fun 即時開通" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
+            <img src="/images/funtown-point-card-tw-hk.webp" alt="香港戲谷卡官方正版點數卡禮品卡 - uiduid商城即時發卡" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
 
             <p class="product-desc" style="text-align:center; color:#ccc; font-size:14px; margin:10px 0 25px;">
-                <a href="https://www.funtown.com.hk/" target="_blank" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:15px;">
+                <a href="https://www.funtown.com.hk/" target="_blank" rel="noopener noreferrer" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:15px;">
                     <i class="fas fa-globe-asia" style="margin-right:6px;"></i>戲谷香港官網
                 </a>
             </p>
 
-            <!-- 面額選擇 -->
-            <div class="spec-section">
-                <h2 class="spec-title"><i class="fas fa-tags"></i> 選擇商品</h2>
-                <div class="price-list-container" style="overflow-x:auto;">
-                    <table class="price-table" aria-label="香港戲谷卡 價格表" style="width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed;">
-                       <caption class="sr-only">香港戲谷卡 即時價格表（HKD） - 2026年6月15日更新</caption>
-                                            <colgroup>
-                                                        <col style="width:40%;">
-                                                        <col style="width:24%;">
-                                                        <col style="width:36%;">
-                                                </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col" style="text-align:center; padding:12px 10px;">面額</th>
-                                <th scope="col" style="text-align:center; padding:12px 10px;">價格（HKD）</th>
-                                <th scope="col" style="text-align:center; padding:12px 10px;">數量</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 50點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 22</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 150點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 55</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 300點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 102</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 450點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 148</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 600點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 180</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 1000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 305</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">戲谷卡 3000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 868</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                        </tbody>
-                    </table>
+            <!-- 選擇商品面額區 -->
+            <section class="spec-section" aria-labelledby="spec-title">
+                <h2 id="spec-title" class="spec-title"><i class="fas fa-tags"></i> 選擇商品面額 (HKD 報價)</h2>
+                
+                <div class="price-cards-container">
+                    
+                    <!-- 50點 -->
+                    <div class="price-card-item" data-id="50">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 50點">50點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 22</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-50" class="price-item-qty-input" value="1" min="1" readonly aria-label="50點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 150點 -->
+                    <div class="price-card-item" data-id="150">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 150點">150點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 55</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-150" class="price-item-qty-input" value="1" min="1" readonly aria-label="150點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 300點 -->
+                    <div class="price-card-item" data-id="300">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 300點">300點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 102</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-300" class="price-item-qty-input" value="1" min="1" readonly aria-label="300點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 450點 -->
+                    <div class="price-card-item" data-id="450">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 450點">450點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 148</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-450" class="price-item-qty-input" value="1" min="1" readonly aria-label="450點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 600點 -->
+                    <div class="price-card-item" data-id="600">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 600點">600點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 180</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-600" class="price-item-qty-input" value="1" min="1" readonly aria-label="600點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1000點 -->
+                    <div class="price-card-item" data-id="1000">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 1000點">1000點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 305</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-1000" class="price-item-qty-input" value="1" min="1" readonly aria-label="1000點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3000點 -->
+                    <div class="price-card-item" data-id="3000">
+                        <div class="card-left">
+                            <span class="price-item-name" aria-label="香港戲谷卡 3000點">3000點</span>
+                        </div>
+                        <div class="card-center">
+                            <div class="card-price-row">
+                                <span class="card-price class-price-text">HK $ 868</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="price-item-qty">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-minus" aria-label="減少數量">-</button>
+                                <input type="number" id="qty-3000" class="price-item-qty-input" value="1" min="1" readonly aria-label="3000點 數量">
+                                <button type="button" class="price-item-qty-btn price-item-qty-btn-plus" aria-label="增加數量">+</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+            </section>
 
             <div class="product-attr">
                 <div class="meihua-attr">
                     <div class="meihua-attr-item">
                         <i class="fas fa-gift"></i>
-                        <div class="meihua-attr-label">虛擬商品</div>
+                        <div class="meihua-attr-label">虛擬商品 (卡密/序號)</div>
                     </div>
                     <div class="meihua-attr-item">
                         <i class="fas fa-bolt"></i>
-                        <div class="meihua-attr-label">即買即開</div>
+                        <div class="meihua-attr-label">專人即發 (1-5分鐘)</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 購買注意事項（完全不變） -->
-            <div class="notice-section">
-<h2 class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買須知與交易安全聲明</h2>
-<ul class="notice-list">
-    <li><strong>1. 不設退換</strong>：遊戲點卡屬即時發貨的數位商品，一經發出或儲值成功，概不退款、退貨。請下單前確認清楚。</li>
-    
-    <li><strong>2. 首次大額交易核實 (KYC)</strong>：為保障交易安全，並配合銀行對大額交易的監管要求，本站對首次大額交易採取以下分級審核機制：
-        <ul style="margin: 8px 0; padding-left: 20px;">
-            <li style="color: #ff6b6b; font-weight: 600;">⚠️ <strong>觸發條件</strong>：單筆或當天累計交易滿 <span style="background: #fff3cd; padding: 2px 6px; border-radius: 4px; font-weight: bold;">HK$10,000 或以上</span></li>
-            
-            <li><strong>HK$10,000 至 HK$19,999：</strong> 需提供有效身份文件（只需首次提交）</li>
-            
-            <li>
-                <strong>HK$20,000 或以上：</strong> 需手持身份證自拍 + 手寫日期紙條（只需首次提交）
-                <div style="margin-top:10px;">
-                    <a href="https://uiduid.com/images/hkid.webp" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-decoration:none;">
-                        <img src="https://uiduid.com/images/hkid.webp" alt="身份證與手寫日期紙條示例" loading="lazy" style="max-width:240px; width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.25); box-shadow:0 6px 14px rgba(0,0,0,0.25);" />
-                    </a>
-                    <div style="margin-top:6px; font-size:12px; opacity:0.85;">示例圖片（可點擊放大）</div>
-                </div>
-            </li>
-            
-            <li>轉數快 (FPS) 付款人姓名必須與核實證件姓名 100% 吻合</li>
-            
-            <li style="color: #28a745; font-weight: 600;">✓ 首次核實成功後，日後大額購買無需重複提交。如有需要，本店保留要求再次提交文件進行核實的權利。</li>
-        </ul>
-    </li>
-    
-    <li><strong>3. 嚴防網絡詐騙</strong>：本店只接受本人為個人遊戲帳號使用而購買遊戲點卡。我們不接受代轉帳或接受第三者指示購買的情況。購買後請勿將點卡序號或充值給他人，以免造成損失。如有可疑情況，本店有權拒絕受理。請透過 WhatsApp 或 WeChat 聯絡我們。</li>
-</ul>
-            </div>
+            <!-- 購買注意事項與大額認證機制 -->
+            <section class="notice-section" aria-labelledby="notice-title">
+                <h2 id="notice-title" class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買須知與交易安全聲明</h2>
+                <ul class="notice-list">
+                    <li><strong>1. 不設退換</strong>：遊戲點卡屬即時發貨的數位商品，一經發出或儲值成功，概不退款、退貨。請下單前確認清楚。</li>
+                    <li><strong>2. 首次大額交易核實 (KYC)</strong>：為保障交易安全，並配合銀行對大額交易的監管要求，本站對首次大額交易採取以下分級審核機制：
+                        <ul style="margin: 8px 0; padding-left: 20px;">
+                            <li style="color: #ff6b6b; font-weight: 600;">⚠️ <strong>觸發條件</strong>：單筆或當天累計交易滿 <span style="background: #fff3cd; padding: 2px 6px; border-radius: 4px; font-weight: bold; color:#000;">HK$10,000 或以上</span></li>
+                            <li><strong>HK$10,000 至 HK$19,999：</strong> 需提供有效身份文件（只需首次提交）</li>
+                            <li>
+                                <strong>HK$20,000 或以上：</strong> 需手持身份證自拍 + 手寫日期紙條（只需首次提交）
+                                <div style="margin-top:10px;">
+                                    <a href="https://uiduid.com/images/hkid.webp" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-decoration:none;">
+                                        <img src="https://uiduid.com/images/hkid.webp" alt="身份證與手寫日期紙條示例" loading="lazy" style="max-width:240px; width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.25); box-shadow:0 6px 14px rgba(0,0,0,0.25);" />
+                                    </a>
+                                </div>
+                            </li>
+                            <li>轉數快 (FPS) 付款人姓名必須與核實證件姓名 100% 吻合</li>
+                            <li style="color: #28a745; font-weight: 600;">✓ 首次核實成功後，日後大額購買無需重複提交。如有需要，本店保留要求再次提交文件進行核實的權利。</li>
+                        </ul>
+                    </li>
+                    <li><strong>3. 嚴防網絡詐騙</strong>：本店只接受本人為個人遊戲帳號使用而購買遊戲點卡。我們不接受代轉帳或接受第三者指示購買的情況。購買後請勿將點卡序號或充值給他人，以免造成損失。如有可疑情況，本店有權拒絕受理。請透過 WhatsApp 或 WeChat 聯絡我們。</li>
+                </ul>
+            </section>
 
-            <!-- ======================== 手機專用美化後的「產品特色優勢」區塊 ======================== -->
-            <h2 style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> 產品特色優勢</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>即買即發</h3>
-                    <p>付款成功後1~5分鐘發送卡號與密碼至您的 WhatsApp、WeChat、Line </p>
+            <!-- 產品特色優勢 -->
+            <section aria-labelledby="features-title">
+                <h2 id="features-title" style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> 產品特色優勢</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>即買即發</h3>
+                        <p>付款成功後1~5分鐘發送卡號與密碼至您的 WhatsApp、WeChat、LINE（HOGAME）、Discord（@55360181）</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-building"></i>
+                        <h3>香港合法公司</h3>
+                        <p>由 HOGAME ONLINE ENTERTAINMENT LIMITED 營運</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>100% 正規渠道</h3>
+                        <p>全新未啟用官方點數卡，安全有保障</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>多種付款方式</h3>
+                        <p>支援香港 FPS 轉數快、Alipay HK、WeChat Pay HK、澳門中銀 等</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24小時客服</h3>
+                        <p>任何問題立即協助，專業售後服務</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-building"></i>
-                    <h3>香港合法公司</h3>
-                    <p>由 HOGAME ONLINE ENTERTAINMENT LIMITED 營運</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>100% 正規渠道</h3>
-                    <p>全新未啟用官方點數卡，安全有保障</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>多種付款方式</h3>
-                    <p>支援香港 FPS 轉數快、Alipay HK、WeChat Pay HK、澳門中銀 等</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>24小時客服</h3>
-                    <p>任何問題立即協助，專業售後服務</p>
-                </div>
-            </div>
-            <!-- ======================== 美化區塊結束 ======================== -->
+            </section>
 
             <!-- 重要使用限制與注意事項 -->
-            <h2><i class="fas fa-exclamation-triangle"></i> 重要使用限制與注意事項（請務必詳閱）</h2>
-            <ul style="line-height:1.8; font-size:1.05em;">
-                <li><strong>香港區專用</strong>：僅限用於支援「香港區戲谷娛樂館」遊戲或平台（如跑Online香港版等），<strong>無法儲值台灣版戲谷會員帳號或跨區使用</strong></li>
-                <li><strong>版本對應</strong>：請確認您的遊戲是否接受「香港戲谷卡」點數，僅適用香港伺服器</li>
-                <li><strong>儲值方式</strong>：需登入香港官方會員中心（memberpool.funtown.com.hk）或遊戲內選擇點數卡/ K-Fun / i-Fun 進行儲值</li>
-                <li><strong>不支援</strong>：台灣戲谷、Steam、PSN、Google Play 等非合作平台</li>
-            </ul>
+            <section aria-labelledby="limits-title">
+                <h2 id="limits-title"><i class="fas fa-exclamation-triangle"></i> 重要使用限制與注意事項</h2>
+                <ul style="line-height:1.8; font-size:1.05em;">
+                    <li><strong>香港區專用</strong>：僅限用於支援「香港區戲谷娛樂館」遊戲或平台（如跑Online香港版等），<strong>無法儲值台灣版戲谷會員帳號或跨區使用</strong></li>
+                    <li><strong>版本對應</strong>：請確認您的遊戲是否接受「香港戲谷卡」點數，僅適用香港伺服器</li>
+                    <li><strong>儲值方式</strong>：需登入香港官方會員中心（memberpool.funtown.com.hk）或遊戲內選擇點數卡/ K-Fun / i-Fun 進行儲值</li>
+                    <li><strong>不支援</strong>：台灣戲谷、Steam、PSN、Google Play 等非合作平台</li>
+                </ul>
+            </section>
 
-            <!-- 如何儲值 -->
-            <h2><i class="fas fa-book"></i> 如何儲值 香港戲谷卡（簡單教學）</h2>
-            <ol style="line-height:1.8; font-size:1.05em;">
-                <li>登入您的戲谷香港帳號（memberpool.funtown.com.hk 或遊戲官網）</li>
-                <li>進入儲值 / 點數卡 / K-Fun / i-Fun 頁面</li>
-                <li>選擇「點數卡」或「戲谷卡」作為支付方式</li>
-                <li>輸入收到的<strong>卡號（序號）</strong>與<strong>密碼</strong></li>
-                <li>確認無誤後提交即可到帳</li>
-            </ol>
-            <p><strong>小提醒</strong>：輸入時請勿加入多餘空格，確認為香港區帳號及支援的遊戲。部分遊戲需先完成實名認證。</p>
+            <!-- 如何儲值教學 -->
+            <section aria-labelledby="guide-title">
+                <h2 id="guide-title"><i class="fas fa-book"></i> 如何儲值 香港戲谷卡（簡單教學）</h2>
+                <ol style="line-height:1.8; font-size:1.05em;">
+                    <li>登入您的戲谷香港帳號（memberpool.funtown.com.hk 或遊戲官網）</li>
+                    <li>進入儲值 / 點數卡 / K-Fun / i-Fun 頁面</li>
+                    <li>選擇「點數卡」或「戲谷卡」作為支付方式</li>
+                    <li>輸入收到的<strong>卡號（序號）</strong>與<strong>密碼</strong></li>
+                    <li>確認無誤後提交即可到帳</li>
+                </ol>
+            </section>
 
-            <!-- 香港版 vs 台灣版 -->
-            <h2><i class="fas fa-info-circle"></i> 香港版 vs 台灣版 區別</h2>
-            <ul style="line-height:1.8; font-size:1.05em;">
-                <li><strong>香港版</strong>：只能直接儲值支援香港區戲谷遊戲，無法進入台灣戲谷會員帳號</li>
-                <li><strong>台灣版</strong>：可儲值進台灣戲谷會員帳號</li>
-                <li>購買前請先確認您的遊戲或服務支援哪一版本</li>
-            </ul>
+            <!-- 地區版本區別 -->
+            <section aria-labelledby="compare-title">
+                <h2 id="compare-title"><i class="fas fa-info-circle"></i> 香港版 vs 台灣版 區別</h2>
+                <ul style="line-height:1.8; font-size:1.05em;">
+                    <li><strong>香港版</strong>：只能直接儲值支援香港區戲谷遊戲，無法進入台灣戲谷會員帳號</li>
+                    <li><strong>台灣版</strong>：可儲值進台灣戲谷會員帳號</li>
+                </ul>
+            </section>
 
             <!-- 香港戲谷卡常見問題（FAQ） -->
-            <h2><i class="fas fa-question-circle"></i> 香港戲谷卡常見問題（FAQ）</h2>
-            <ul style="line-height:1.8; font-size:1.05em; margin-bottom:30px;">
-                <li><strong>Q1: 香港戲谷卡可以用來玩哪些遊戲？</strong><br>
-                A: 主要適用於戲谷香港區推出的網絡遊戲，例如《跑Online》（Tales Runner）香港版及其他香港伺服器遊戲。請以官方支援列表為準。注意：2023年《戲谷港式麻將》手機版已結束營運，PC版及其他遊戲持續更新。</li>
-                
-                <li><strong>Q2: 香港戲谷卡與台灣戲谷卡有何不同？</strong><br>
-                A: 香港版僅限香港伺服器/帳號使用，不可跨區儲值台灣戲谷帳號；台灣版則相反。購買前務必確認遊戲地區版本。</li>
-                
-                <li><strong>Q3: 儲值後點數有效期多久？</strong><br>
-                A: 一般開卡後點數有效期約為1年，序號本身通常有18個月使用期限，請盡快儲值並使用。逾期作廢不可補發。</li>
-                
-                <li><strong>Q4: 是否需要實名認證才能使用？</strong><br>
-                A: 部分遊戲或功能（如大額兌換戰地通點等）可能需先完成帳號實名認證。建議購買前或儲值前先登入官方會員中心完成驗證。</li>
-                
-                <li><strong>Q5: 購買後多久可以收到卡密？</strong><br>
-                A: 付款成功後1-5分鐘內序號會發送電子卡號與密碼至您 WhatsApp 或 WeChat 或 LINE ，即買即發，無需等待。</li>
-                
-                <li><strong>Q6: 可以用在Steam、PSN或其他平台嗎？</strong><br>
-                A: 不支援。香港戲谷卡僅限戲谷香港官方遊戲平台使用。</li>
-            </ul>
+            <section aria-labelledby="faq-title">
+                <h2 id="faq-title"><i class="fas fa-question-circle"></i> 香港戲谷卡常見問題（FAQ）</h2>
+                <ul style="line-height:1.8; font-size:1.05em; margin-bottom:30px;">
+                    <li><strong>Q1: 香港戲谷卡可以用來玩哪些遊戲？</strong><br>
+                    A: 主要適用於戲谷香港區推出的網絡遊戲，例如《跑Online》（Tales Runner）香港版及其他香港伺服器遊戲。請以官方支援列表為準。注意：2023年《戲谷港式麻將》手機版已結束營運，PC版及其他遊戲持續更新。</li>
+                    
+                    <li><strong>Q2: 香港戲谷卡與台灣戲谷卡有何不同？</strong><br>
+                    A: 香港版僅限香港伺服器/帳號使用，不可跨區儲值台灣戲谷帳號；台灣版則相反。購買前務必確認遊戲地區版本。</li>
+                    
+                    <li><strong>Q3: 儲值後點數有效期多久？</strong><br>
+                    A: 一般開卡後點數有效期約為1年，序號本身通常有18個月使用期限，請盡快儲值並使用。逾期作廢不可補發。</li>
+                    
+                    <li><strong>Q4: 是否需要實名認證才能使用？</strong><br>
+                    A: 部分遊戲或功能（如大額兌換戰地通點等）可能需先完成帳號實名認證。建議購買前或儲值前先登入官方會員中心完成驗證。</li>
+                    
+                    <li><strong>Q5: 購買後多久可以收到卡密？</strong><br>
+                    A: 付款成功後1-5分鐘內序號會發送電子卡號與密碼至您 WhatsApp、WeChat、LINE（HOGAME）或 Discord（@55360181），即買即發，無需等待。</li>
+                    
+                    <li><strong>Q6: 可以用在Steam、PSN或其他平台嗎？</strong><br>
+                    A: 不支援。香港戲谷卡僅限戲谷香港官方遊戲平台使用。</li>
+                </ul>
+            </section>
 
-            <!-- 聯繫客服 -->
+            <!-- 聯繫客服與支付管道 -->
             <div class="contact-section">
                 <div class="contact-section-beauty">
                     <div class="contact-list-ys">
                         <div class="contact-main-item">
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/85255360181" class="contact-main-value" target="_blank">+852 55360181</a>
+                            <a href="https://wa.me/85255360181" class="contact-main-value" target="_blank" rel="noopener noreferrer">+852 55360181</a>
                         </div>
                         <div class="contact-main-item">
                             <i class="fab fa-weixin"></i>
@@ -354,6 +784,10 @@
                         <div class="contact-main-item">
                             <i class="fab fa-line"></i>
                             <span class="contact-main-value">HOGAME</span>
+                        </div>
+                        <div class="contact-main-item">
+                            <i class="fab fa-discord"></i>
+                            <span class="contact-main-value">@55360181</span>
                         </div>
                     </div>
                 </div>
@@ -371,108 +805,182 @@
             </div>
 
             <a href="https://www.uiduid.com" class="back-home-btn"><i class="fas fa-home"></i> 返回首頁</a>
-        </div>
+        </article>
     </main>
 
     <!-- 浮動購物車 -->
     <div id="floating-cart">
         <div class="floating-cart-header">
-            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 香港戲谷卡（總價）</div>
+            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選商品（總價）</div>
             <div class="floating-total">HKD $ 0</div>
         </div>
         <div class="floating-items" id="floatingItemsList"></div>
         <button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button>
     </div>
 
+    <!-- Apple 風格懸浮客服（多入口） -->
+    <div class="smart-customer-service" id="smartService">
+        <div class="service-menu">
+            <a href="https://wa.me/85255360181" target="_blank" rel="noopener noreferrer" class="service-item whatsapp" aria-label="聯繫 WhatsApp 客服">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+            </a>
+            <div class="service-item wechat" onclick="copyText('HOGAME')" role="button" tabindex="0" aria-label="複製微信號 HOGAME" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyText('HOGAME');}">
+                <i class="fab fa-weixin" style="color:#07C160;"></i> 微信: HOGAME (點擊複製)
+            </div>
+            <a href="https://line.me/ti/p/~HOGAME" target="_blank" rel="noopener noreferrer" class="service-item line" aria-label="聯繫 LINE HOGAME">
+                <i class="fab fa-line" style="color:#ffffff;"></i> LINE: HOGAME
+            </a>
+            <a href="https://discord.com/users/55360181" target="_blank" rel="noopener noreferrer" class="service-item discord" aria-label="聯繫 Discord @55360181">
+                <i class="fab fa-discord" style="color:#ffffff;"></i> Discord: @55360181
+            </a>
+        </div>
+        <div class="service-main-btn" onclick="toggleService()" role="button" tabindex="0" aria-label="開啟客服選單" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleService();}">
+            <i class="fas fa-headset"></i>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-desc">最後更新：2026年07月8日｜本商城由香港合法公司 HOGAME ONLINE ENTERTAINMENT LIMITED 營運</p>
+            <p class="footer-desc">最後更新：2026年7月19日｜本商城由香港合法公司 HOGAME ONLINE ENTERTAINMENT LIMITED 營運</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript 腳本邏輯 -->
     <script>
+        function toggleService() {
+            const service = document.getElementById('smartService');
+            if (!service) return;
+            service.classList.toggle('active');
+            const icon = service.querySelector('.service-main-btn i');
+            if (icon) {
+                icon.className = service.classList.contains('active') ? 'fas fa-xmark' : 'fas fa-headset';
+            }
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('微信號已複製：' + text);
+            }).catch(() => {
+                alert('複製失敗，請手動複製：' + text);
+            });
+        }
+
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("active");
         }
+        
         document.addEventListener('click', function(e) {
             const sidebar = document.getElementById("sidebar");
             const menuBtn = document.querySelector('.menu-btn');
-            if (sidebar.classList.contains('active') && 
+            const smartService = document.getElementById('smartService');
+            if (sidebar && sidebar.classList.contains('active') && 
                 !sidebar.contains(e.target) && 
                 !menuBtn.contains(e.target)) {
                 sidebar.classList.remove('active');
             }
+
+            if (smartService && smartService.classList.contains('active') && !smartService.contains(e.target)) {
+                smartService.classList.remove('active');
+                const icon = smartService.querySelector('.service-main-btn i');
+                if (icon) icon.className = 'fas fa-headset';
+            }
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const cardsContainer = document.querySelector('.price-cards-container');
+            if (cardsContainer) {
+                // 點擊整行卡片進行選取
+                cardsContainer.addEventListener('click', function(e) {
+                    const card = e.target.closest('.price-card-item');
+                    if (!card) return;
+
+                    if (e.target.closest('.price-item-qty')) {
+                        return;
+                    }
+
+                    card.classList.toggle('selected');
+                    updateSelectedItems();
+                });
+
+                // 處理加減按鈕點擊
+                cardsContainer.addEventListener('click', function(e) {
+                    const minusBtn = e.target.closest('.price-item-qty-btn-minus');
+                    const plusBtn = e.target.closest('.price-item-qty-btn-plus');
+                    
+                    if (!minusBtn && !plusBtn) return;
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const card = e.target.closest('.price-card-item');
+                    const input = card.querySelector('.price-item-qty-input');
+                    let value = parseInt(input.value) || 1;
+                    
+                    if (minusBtn) {
+                        value = value > 1 ? value - 1 : 1;
+                    } else if (plusBtn) {
+                        value += 1;
+                    }
+                    
+                    input.value = value;
+                    
+                    if (!card.classList.contains('selected')) {
+                        card.classList.add('selected');
+                    }
+                    
+                    updateSelectedItems();
+                });
+            }
+
+            // 結賬按鈕邏輯
             const checkoutBtn = document.getElementById('checkoutBtn');
             if (checkoutBtn) {
                 checkoutBtn.addEventListener('click', function() {
-                    const selectedItems = document.querySelectorAll('.price-item-row.selected');
-                    if (selectedItems.length === 0) {
-                        alert('請先選擇商品');
+                    const selectedCards = document.querySelectorAll('.price-card-item.selected');
+                    if (selectedCards.length === 0) {
+                        alert('請先選擇商品面額');
                         return;
                     }
                     const products = [];
-                    selectedItems.forEach(item => {
-                        const name = item.querySelector('.price-item-name').textContent.trim();
-                        const priceText = item.querySelector('.price-item-discount').textContent;
+                    selectedCards.forEach(card => {
+                        const name = "香港戲谷卡 " + card.querySelector('.price-item-name').textContent.trim();
+                        const priceText = card.querySelector('.class-price-text').textContent;
                         const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
-                        const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
+                        const qty = parseInt(card.querySelector('.price-item-qty-input').value) || 1;
                         const subtotal = Math.round(price * qty);
                         products.push({ name, qty, price, subtotal });
                     });
-                    let mainProduct = '';
-                    const cartTitle = document.querySelector('.floating-cart-title');
-                    if (cartTitle) {
-                        mainProduct = cartTitle.textContent.replace(/^[^已]*已選\s*/,'').replace(/（.*$/,'').trim();
-                    }
+                    let mainProduct = '香港戲谷卡 (K-Fun / i-Fun)';
                     const productsStr = encodeURIComponent(JSON.stringify(products));
-                    const url = `/fpspay.html?products=${productsStr}` + (mainProduct ? `&mainProduct=${encodeURIComponent(mainProduct)}` : '');
+                    const url = `/fpspay.html?products=${productsStr}&mainProduct=${encodeURIComponent(mainProduct)}`;
                     window.location.href = url;
                 });
             }
         });
 
-        function selectItem(element) {
-            element.classList.toggle('selected');
-            updateSelectedItems();
-        }
-
-        function changeQty(event, button, change) {
-            event.preventDefault();
-            event.stopPropagation();
-            const container = button.closest('.price-item-qty');
-            const input = container.querySelector('.price-item-qty-input');
-            let value = parseInt(input.value) || 1;
-            value += change;
-            if (value < 1) value = 1;
-            input.value = value;
-            input.blur();
-            updateSelectedItems();
-        }
-
+        // 更新購物車懸浮窗數據的函數
         function updateSelectedItems() {
-            const selectedItems = document.querySelectorAll('.price-item-row.selected');
+            const selectedCards = document.querySelectorAll('.price-card-item.selected');
             const floatingCart = document.getElementById('floating-cart');
             const floatingItemsList = document.getElementById('floatingItemsList');
-            const floatingTotal = floatingCart.querySelector('.floating-total');
+            const floatingTotal = floatingCart ? floatingCart.querySelector('.floating-total') : null;
             let total = 0;
 
-            if (selectedItems.length === 0) {
+            if (!floatingCart || !floatingItemsList || !floatingTotal) return;
+
+            if (selectedCards.length === 0) {
                 floatingCart.classList.remove('show');
                 return;
             }
 
             floatingItemsList.innerHTML = '';
-            selectedItems.forEach(item => {
-                const name = item.querySelector('.price-item-name').textContent.trim();
-                const priceText = item.querySelector('.price-item-discount').textContent;
+            selectedCards.forEach(card => {
+                const name = "香港戲谷卡 " + card.querySelector('.price-item-name').textContent.trim();
+                const priceText = card.querySelector('.class-price-text').textContent;
                 const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
-                const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
+                const qty = parseInt(card.querySelector('.price-item-qty-input').value) || 1;
                 const subtotal = price * qty;
                 total += subtotal;
 
@@ -489,18 +997,5 @@
             floatingCart.classList.add('show');
         }
     </script>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e145a9527773e0d832c3ff6/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </body>
 </html>
