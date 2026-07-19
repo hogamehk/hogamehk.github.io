@@ -6,6 +6,7 @@
     <title>隱私政策 - uiduid.com</title>
     <link rel="stylesheet" href="https://bootcdn.net" />
     <style>
+        /* 複用上方相同樣式 */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body {
             background: #1a1a1a;
@@ -36,122 +37,7 @@
             gap: 8px;
         }
         .nav-btn {
-            padding: 6px 10px;
-            border: 1px solid #ff8c00;
-            border-radius: 4px;
-            color: #ff8c00;
-            text-decoration: none;
-            font-size: 12px;
-            white-space: nowrap;
-            transition: all 0.3s;
-        }
-        .nav-btn:hover {
-            background: #ff8c00;
-            color: #fff;
-        }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
-        .page-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff8c00;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section {
-            margin-bottom: 25px;
-        }
-        .section h2 {
-            font-size: 18px;
-            color: #ff8c00;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .section p {
-            color: #ccc;
-            margin-bottom: 12px;
-            text-align: justify;
-        }
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #242424;
-            padding: 15px 0;
-            text-align: center;
-            border-top: 2px solid #ff8c00;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-            z-index: 998;
-        }
-        .footer-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        .footer-text {
-            color: #ccc;
-            font-size: 12px;
-        }
-        .footer-text span {
-            color: #ff8c00;
-            font-weight: bold;
-        }
-        .back-to-top {
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            width: 45px;
-            height: 45px;
-            background: #ff8c00;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #fff;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(255,140,0,0.5);
-            transition: all 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-        }
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .back-to-top:hover {
-            background: #ff6700;
-            transform: translateY(-3px);
-        }
-        .notice-box {
-            background: rgba(255, 140, 0, 0.05);
-            border-left: 4px solid #ff8c00;
-            padding: 15px;
-            border-radius: 0 6px 6px 0;
-            margin-top: 15px;
-        }
-        .notice-box p {
-            margin-bottom: 8px !important;
-        }
-        .notice-box p:last-child {
-            margin-bottom: 0 !important;
-        }
-        .text-highlight {
-            color: #ff8c00;
-            font-weight: bold;
-        }
-    </style>
+            padding: 6px 10px; border: 1px solid #ff8c00; border-radius: 4px; color: #ff8c00; text-decoration: none; font-size: 12px; white-space: nowrap; transition: all 0.3s; } .nav-btn:hover { background: #ff8c00; color: #fff; } .container { max-width: 900px; margin: 30px auto; padding: 0 15px; } .page-title { font-size: 24px; font-weight: bold; color: #ff8c00; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 10px; } .section { margin-bottom: 25px; } .section h2 { font-size: 18px; color: #ff8c00; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; } .section p { color: #ccc; margin-bottom: 12px; text-align: justify; } .footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #242424; padding: 15px 0; text-align: center; border-top: 2px solid #ff8c00; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 998; } .footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; } .footer-text { color: #ccc; font-size: 12px; } .footer-text span { color: #ff8c00; font-weight: bold; } .back-to-top { position: fixed; bottom: 70px; right: 20px; width: 45px; height: 45px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; cursor: pointer; box-shadow: 0 3px 10px rgba(255,140,0,0.5); transition: all 0.3s; opacity: 0; visibility: hidden; z-index: 999; } .back-to-top.show { opacity: 1; visibility: visible; } .back-to-top:hover { background: #ff6700; transform: translateY(-3px); } .notice-box { background: rgba(255, 140, 0, 0.05); border-left: 4px solid #ff8c00; padding: 15px; border-radius: 0 6px 6px 0; margin-top: 15px; } .notice-box p { margin-bottom: 8px !important; } .notice-box p:last-child { margin-bottom: 0 !important; } .text-highlight { color: #ff8c00; font-weight: bold; } </style>
 </head>
 <body>
     <div class="top-nav">
@@ -176,7 +62,7 @@
             <div class="notice-box">
                 <p>• <span class="text-highlight">單筆或當日累計達港幣 10,000 元（含）以上</span>：Didit 將收集您所上傳的<span class="text-highlight">政府核發身份證明文件</span>（如香港身份證、護照或駕駛執照），用以識別交易者真實身份。</p>
                 <p>• <span class="text-highlight">單筆或當日累計達港幣 20,000 元（含）以上</span>：Didit 將額外收集您的<span class="text-highlight">動態活體檢測（Liveness Check）數據與面部生物特徵比對數據</span>，用以即時判定是否為證件持有者本人親自操作。</p>
-                <p>• <span class="text-highlight">本商城「零儲存」絕對私隱承諾</span>：上述所有身份證明文件圖檔、面部生物特徵及活體檢測數據，均直接透過 Didit 的獨立加密通道進行端到端傳輸與 AI 比對審核。<span class="text-highlight">本商城（uiduid.com）伺服器端絕不儲存、記錄或留存任何您的原始證件圖檔及生物特徵資料</span>，本商城僅接收 Didit 系統回傳之「驗證通過」或「驗證失敗」之最终安全狀態結果。</p>
+                <p>• <span class="text-highlight">國際合規與零資料留存承諾</span>：Didit 乃符合香港及歐盟等國際私隱法規（如 GDPR、香港《個人資料（私隱）條例》）之合規安全認證技術機構。上述所有身份數據均直接透過 Didit 的獨立加密通道進行端到端傳輸與 AI 比對審核。<span class="text-highlight">本商城（uiduid.com）伺服器端絕不儲存、記錄或留存任何您的原始證件圖檔及生物特徵資料</span>，全力捍衛您的個人私隱。</p>
             </div>
         </div>
 
@@ -199,7 +85,7 @@
 
         <div class="section">
             <h2><i class="fas fa-key"></i> 5. 資訊安全</h2>
-            <p>我們採用 SSL 加密傳輸、本地存儲、定期安全審計等措施保護您的資料。你的常規交易信息（如訂單、手機號碼等）會本地存儲 90 天，到期自動清理。然而，網際網路傳輸無法保證 100% 安全，請妥善保管您的帳號密碼。再次重申，您的核心身份證件圖檔及人臉生物特徵均由 Didit 進行安全處理，本商城不作任何本地留存。</p>
+            <p>我們採用 SSL 加密傳輸、本地存儲、定期安全審計等措施保護您的資料。你的常規交易信息（如訂單、手機號碼等）會本地存儲 90 天，到期自動清理。然而，網際網路傳輸無法保證 100% 安全，請妥善保管您的帳號密碼。再次重申，您的核心身份證件圖檔及人臉生物特徵均由國際合規機構 Didit 進行安全處理，本商城不作任何本地留存。</p>
         </div>
 
         <div class="section">
@@ -210,8 +96,7 @@
 
     <div class="footer">
         <div class="footer-content">
-            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-desc">本商城僅提供數位商品，所有商標及版權歸原廠所有</p>
+            <p class="footer-text">© 2026 <span>uiduid.com</span> 遊戲點卡商城 版權所有</p>
         </div>
     </div>
 
