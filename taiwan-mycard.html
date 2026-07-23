@@ -704,7 +704,7 @@
         <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com 遊戲點卡商城首頁" style="height:32px;display:block;"></a>
         <div class="menu-btn" onclick="toggleSidebar()" aria-label="開啟選單">☰</div>
         <div class="nav-actions">
-            <button class="nav-btn" id="openPaymentModal">官方渠道</button>
+            <button class="nav-btn" id="openPaymentModal">官方正品</button>
         </div>
     </nav>
 
@@ -794,8 +794,8 @@
                             <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard2500點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 563</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
                             <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard3000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 673</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
                             <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard3290點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 740</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard5000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 1,118</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard10000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 2,235</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard5000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 1118</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">台灣MyCard10000點</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 2235</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -946,7 +946,7 @@
                 </div>
             </div>
 
-            <a href="https://www.uiduid.com" class="back-home-btn"><i class="fas fa-home"></i> 返回首頁</a>
+            <a href="#" class="back-home-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" aria-label="回到頁面頂部"><i class="fas fa-home"></i> 回到頂部按鈕</a>
         </article>
     </main>
 
@@ -984,7 +984,7 @@
     <footer class="footer">
         <div class="footer-content">
             <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-desc">最後更新：2026年7月19日｜本商城所有商標及版權歸原廠所有</p>
+            <p class="footer-desc">最後更新：2026年7月23日｜本商城所有商標及版權歸原廠所有</p>
         </div>
     </footer>
 
