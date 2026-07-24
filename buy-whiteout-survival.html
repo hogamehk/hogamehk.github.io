@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18339974234"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18339974234');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     
-    <!-- SEO & AI 搜尋極致優化 -->
-    <title>寒霜啟示錄 充值（寒霜之星 / 禮包） - 即時代儲 | uiduid.com</title>
-    <meta name="description" content="寒霜啟示錄 Whiteout Survival 充值 / 寒霜之星代儲，支援香港、台灣、國際服。原價8$～788$禮包 + 9999寒霜之星，即時到帳。FPS、PayMe、Alipay HK、WeChat Pay 24小時處理，安全快速不黑號。">
+    <!-- 後台 SEO & AI 搜尋極致優化 -->
+    <title>寒霜啟示錄 Whiteout Survival 儲值｜官方遊戲內購禮包 即時充值 | uiduid.com</title>
+    <meta name="description" content="寒霜啟示錄 Whiteout Survival 遊戲儲值服務，提供多種 HKD 內購禮包選擇。UIDUID.COM 快速代儲，安全方便，立即提升遊戲體驗。">
+    <meta name="keywords" content="寒霜啟示錄 儲值, Whiteout Survival 儲值, Whiteout Survival 充值, 寒霜啟示錄 HK, Whiteout Survival HKD, Whiteout Survival 禮包, Whiteout Survival 代儲, UIDUID Whiteout Survival">
     
     <!-- Canonical（統一版本） -->
-    <link rel="canonical" href="https://www.uiduid.com/buy-whiteout-survival.html">
+    <link rel="canonical" href="https://uiduid.com/buy-whiteout-survival.html">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="寒霜啟示錄 充值 - 寒霜之星即時代儲">
-    <meta property="og:description" content="寒霜啟示錄 Whiteout Survival 禮包 & 寒霜之星充值，超低價即時到帳。支援全球伺服器，FPS / PayMe / AlipayHK / WeChat Pay 秒處理。">
-    <meta property="og:image" content="https://www.uiduid.com/images/WhiteoutSurvival.webp">
-    <meta property="og:url" content="https://www.uiduid.com/buy-whiteout-survival.html">
+    <meta property="og:title" content="寒霜啟示錄 Whiteout Survival 儲值｜遊戲內購禮包快速充值 | uiduid.com">
+    <meta property="og:description" content="寒霜啟示錄 Whiteout Survival 遊戲儲值服務，提供多種 HKD 內購禮包選擇，快速代儲、安全方便。">
+    <meta property="og:image" content="https://www.uiduid.com/images/whiteout-survival.webp">
+    <meta property="og:url" content="https://uiduid.com/buy-whiteout-survival.html">
     <meta property="og:type" content="product">
 
     <!-- Font Awesome -->
@@ -26,128 +36,596 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/678-page.css">
 
+    <!-- 手機專用美化與全新卡片佈局 CSS -->
     <style>
-        .spec-section .price-list-container {
-            background: transparent;
-            border: none;
-            border-radius: 24px;
-            padding: 10px;
+        /* 手機專用特色優勢卡片 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 24px 0 30px 0;
         }
-
-        .spec-section .price-table {
-            border-collapse: separate !important;
-            border-spacing: 0;
-            border-radius: 18px;
-            overflow: hidden;
-            background: transparent;
+        .feature-card {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 20px 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.15);
         }
-
-        .spec-section .price-table thead th {
-            background: transparent;
-            color: inherit;
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(255,152,0,0.3);
         }
-
-        .spec-section .price-table thead th:first-child {
-            border-top-left-radius: 999px;
-            border-bottom-left-radius: 999px;
-        }
-
-        .spec-section .price-table thead th:last-child {
-            border-top-right-radius: 999px;
-            border-bottom-right-radius: 999px;
-        }
-
-        .spec-section .price-item-row.selected .price-item-discount {
+        .feature-card i {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            display: block;
             color: #ff9800;
-            font-weight: 700;
+        }
+        .feature-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.15em;
+            color: #fff;
+        }
+        .feature-card p {
+            margin: 0;
+            color: #e0e0e0;
+            line-height: 1.55;
+            font-size: 1.02em;
         }
 
-        .spec-section .price-item-row {
+        /* 全新卡片式面額佈局 - 確保完美橫向一排過且絕不撐爆螢幕 */
+        .price-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .price-card-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 20px 24px;
+            min-height: 90px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
             cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+        @media (max-width: 600px) {
+            .price-card-item {
+                padding: 16px 14px;
+                min-height: 80px;
+                gap: 8px;
+            }
+        }
+        .price-card-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 152, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        .price-card-item.selected {
+            background: rgba(255, 152, 0, 0.12) !important;
+            border: 1px solid #ff9800 !important;
+            box-shadow: 0 4px 20px rgba(255, 152, 0, 0.25);
+        }
+        
+        /* 左側點數區：支持彈性縮小與省略號，確保小螢幕完美相容 */
+        .card-left {
+            flex: 1.5;
+            min-width: 0; /* 關鍵：防撐爆 */
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+        }
+        @media (max-width: 480px) {
+            .card-left {
+                font-size: 1.1em;
+            }
+        }
+        .price-item-name {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* 中間價格區 */
+        .card-center {
+            flex: 1.5;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 0 8px;
+        }
+        .card-price-row {
+            display: flex;
+            align-items: center;
+        }
+        .card-price {
+            font-size: 1.25em;
+            font-weight: 800;
+            color: #ff9800;
+            white-space: nowrap;
+        }
+        @media (max-width: 480px) {
+            .card-price {
+                font-size: 1.15em;
+            }
         }
 
-        /* 保持選中時不要改變整行背景 */
-        .spec-section .price-table .price-item-row.selected {
-            background: transparent !important;
-            box-shadow: none !important;
+        /* 右側數量按鈕區 */
+        .card-right {
+            flex: 0 0 auto; /* 固定大小不被壓縮 */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .price-item-qty {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            padding: 2px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .price-item-qty-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price-item-qty-input {
+            width: 35px;
+            text-align: center;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+        }
+        .price-list-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .price-table {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .price-table {
+                min-width: 100% !important;
+                table-layout: fixed;
+            }
+            .price-table th,
+            .price-table td {
+                padding: 10px 6px !important;
+            }
+            .price-item-qty {
+                min-width: 88px;
+                justify-content: space-between;
+                padding: 1px;
+            }
+            .price-item-qty-btn {
+                width: 24px;
+                height: 24px;
+                font-size: 14px;
+            }
+            .price-item-qty-input {
+                width: 24px;
+                font-size: 13px;
+            }
         }
 
-        .spec-section .price-table .price-item-row th[scope="row"] {
+        /* 購買須知區塊美化 */
+        .notice-section {
+            margin-top: 28px;
+            padding: 22px 20px;
+            border-radius: 20px;
+            background:
+                radial-gradient(120% 160% at 0% 0%, rgba(255, 160, 42, 0.18), transparent 42%),
+                radial-gradient(120% 160% at 100% 100%, rgba(255, 83, 112, 0.14), transparent 44%),
+                rgba(15, 23, 42, 0.58);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(10px);
+        }
+        .notice-title {
+            margin: 0 0 14px 0;
+            color: #fff3df;
+            font-size: 1.35rem;
+            letter-spacing: 0.4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .notice-title i {
+            color: #ffb347;
+        }
+        .notice-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .notice-list > li {
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 4px solid rgba(255, 179, 71, 0.85);
+            border-radius: 14px;
+            padding: 14px 14px 14px 16px;
+            color: #f6f8ff;
+            line-height: 1.72;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+        }
+        .notice-list > li strong {
+            color: #ffe2ae;
+        }
+        .notice-sublist {
+            list-style: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+            display: grid;
+            gap: 8px;
+        }
+        .notice-sublist li {
+            background: rgba(6, 10, 20, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 12px;
+            line-height: 1.65;
+        }
+        .notice-sublist li::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd166, #ff7a59);
+            box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.16);
+            transform: translateY(-1px);
+        }
+        @media (max-width: 768px) {
+            .notice-section {
+                margin-top: 22px;
+                padding: 16px 14px;
+                border-radius: 16px;
+            }
+            .notice-title {
+                font-size: 1.1rem;
+            }
+            .notice-list > li {
+                padding: 12px;
+                line-height: 1.66;
+            }
+            .notice-sublist li {
+                padding: 9px 10px;
+            }
+        }
+
+        /* 使用限制、教學、比較、FAQ 區塊美化 */
+        .info-section {
+            margin-top: 28px;
+            padding: 22px 20px;
+            border-radius: 20px;
+            background:
+                linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03)),
+                rgba(15, 23, 42, 0.54);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(10px);
+        }
+        .info-title {
+            margin: 0 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f9fbff;
+            font-size: 1.28rem;
+            letter-spacing: 0.3px;
+        }
+        .info-title i {
+            color: #5eead4;
+        }
+        .info-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+            color: #eaf1ff;
+        }
+        .info-list li {
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(6, 10, 20, 0.34);
+            padding: 11px 13px;
+            line-height: 1.7;
+        }
+        .info-list strong {
+            color: #8be9d4;
+        }
+        .guide-steps {
+            list-style: none;
+            counter-reset: whiteoutGuide;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+        .guide-steps li {
+            counter-increment: whiteoutGuide;
             position: relative;
+            padding: 12px 12px 12px 52px;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            background: linear-gradient(120deg, rgba(37, 99, 235, 0.14), rgba(20, 184, 166, 0.08));
+            color: #eff8ff;
+            line-height: 1.7;
         }
-
-        .spec-section .price-table .price-item-row.selected th[scope="row"]::after {
-            content: '✓' !important;
+        .guide-steps li::before {
+            content: counter(whiteoutGuide);
             position: absolute;
-            right: -14px;
+            left: 14px;
             top: 50%;
             transform: translateY(-50%);
-            color: #22c55e;
-            font-size: 16px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #38bdf8, #14b8a6);
+            color: #03232a;
             font-weight: 800;
-            background: transparent;
-            border: 0;
-            box-shadow: none;
-            width: auto;
-            height: auto;
-            display: inline;
+            font-size: 0.88rem;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
         }
-
-        .spec-section .price-item-row.selected::after {
-            content: none !important;
-            display: none !important;
+        .compare-list li {
+            border-left: 4px solid #60a5fa;
+            background: linear-gradient(120deg, rgba(96, 165, 250, 0.14), rgba(59, 130, 246, 0.06));
         }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
+        .faq-list {
+            list-style: none;
+            margin: 0;
             padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
+            display: grid;
+            gap: 12px;
+        }
+        .faq-item {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.68), rgba(30, 41, 59, 0.5));
+            padding: 12px 14px;
+        }
+        .faq-q {
+            margin: 0;
+            color: #fef3c7;
+            font-weight: 700;
+            line-height: 1.55;
+        }
+        .faq-a {
+            margin: 8px 0 0 0;
+            color: #e6f0ff;
+            line-height: 1.7;
+        }
+        .faq-a strong {
+            color: #7dd3fc;
+        }
+        @media (max-width: 768px) {
+            .info-section {
+                margin-top: 22px;
+                padding: 16px 14px;
+                border-radius: 16px;
+            }
+            .info-title {
+                font-size: 1.08rem;
+            }
+            .guide-steps li {
+                padding: 10px 10px 10px 46px;
+            }
+            .guide-steps li::before {
+                left: 12px;
+            }
+        }
+
+        /* Apple 風格懸浮客服選單（進階美化） */
+        .smart-customer-service {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .service-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 14px;
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.32s ease, transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1);
+            transform-origin: bottom right;
+        }
+        .smart-customer-service.active .service-menu {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+            backdrop-filter: blur(18px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
             white-space: nowrap;
-            border: 0;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(8px);
+            opacity: 0;
+            transition: transform 0.28s ease, background 0.24s ease, box-shadow 0.24s ease, opacity 0.24s ease;
+        }
+        .smart-customer-service.active .service-item {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .smart-customer-service.active .service-item:nth-child(1) { transition-delay: 0.04s; }
+        .smart-customer-service.active .service-item:nth-child(2) { transition-delay: 0.08s; }
+        .smart-customer-service.active .service-item:nth-child(3) { transition-delay: 0.12s; }
+        .smart-customer-service.active .service-item:nth-child(4) { transition-delay: 0.16s; }
+        .service-item:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+        }
+        .service-item.whatsapp {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.88), rgba(22, 163, 74, 0.84));
+            border-color: rgba(167, 243, 208, 0.65);
+        }
+        .service-item.whatsapp:hover {
+            background: linear-gradient(135deg, rgba(52, 231, 123, 0.95), rgba(22, 163, 74, 0.9));
+        }
+        .service-item.wechat {
+            background: linear-gradient(135deg, rgba(7, 193, 96, 0.88), rgba(5, 150, 105, 0.84));
+            border-color: rgba(167, 243, 208, 0.55);
+        }
+        .service-item.wechat:hover {
+            background: linear-gradient(135deg, rgba(16, 216, 112, 0.95), rgba(5, 150, 105, 0.9));
+        }
+        .service-item.discord {
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.9), rgba(59, 130, 246, 0.85));
+            border-color: rgba(191, 219, 254, 0.65);
+        }
+        .service-item.discord:hover {
+            background: linear-gradient(135deg, rgba(112, 125, 255, 0.96), rgba(59, 130, 246, 0.92));
+        }
+        .service-item.line {
+            background: linear-gradient(135deg, rgba(6, 199, 85, 0.9), rgba(5, 150, 70, 0.86));
+            border-color: rgba(187, 247, 208, 0.65);
+        }
+        .service-item.line:hover {
+            background: linear-gradient(135deg, rgba(23, 218, 103, 0.96), rgba(5, 150, 70, 0.92));
+        }
+        .service-main-btn {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 26px rgba(17, 24, 39, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+            animation: none;
+        }
+        .service-main-btn::before {
+            content: none;
+        }
+        .service-main-btn i {
+            transition: transform 0.28s ease;
+        }
+        .smart-customer-service.active .service-main-btn {
+            transform: translateY(-2px) scale(1.04);
+            background: linear-gradient(135deg, #fb923c, #ec4899 55%, #4f46e5);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+        }
+        .smart-customer-service.active .service-main-btn i {
+            transform: rotate(12deg) scale(1.05);
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            70% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+        }
+        @media (max-width: 768px) {
+            .smart-customer-service {
+                bottom: 110px; /* 避免擋住手機版購物車浮窗 */
+                right: 16px;
+            }
+            .service-item {
+                font-size: 13px;
+                padding: 11px 16px;
+            }
+            .service-main-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 21px;
+            }
         }
     </style>
 
-    <!-- Schema.org Product + AggregateOffer -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "寒霜啟示錄 Whiteout Survival 充值（寒霜之星 / 禮包）",
-  "image": "https://www.uiduid.com/images/WhiteoutSurvival.webp",
-  "description": "寒霜啟示錄官方禮包及寒霜之星代儲，支援香港、台灣、國際服。安全即時到帳，最低價正規代充平台。",
-  "brand": {"@type": "Brand", "name": "Whiteout Survival"},
-  "sku": "HK-WHITEOUT-SURVIVAL",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "856"
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "HKD",
-    "lowPrice": "8",
-    "highPrice": "883",
-    "offerCount": "11",
-    "offers": [
-      {"@type": "Offer", "price": "8", "priceCurrency": "HKD", "name": "原價8$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "14", "priceCurrency": "HKD", "name": "原價15$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "21", "priceCurrency": "HKD", "name": "原價23$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "28", "priceCurrency": "HKD", "name": "原價28$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "35", "priceCurrency": "HKD", "name": "原價38$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "70", "priceCurrency": "HKD", "name": "原價78$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "140", "priceCurrency": "HKD", "name": "原價158$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "345", "priceCurrency": "HKD", "name": "原價398$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "518", "priceCurrency": "HKD", "name": "原價588$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "660", "priceCurrency": "HKD", "name": "原價788$禮包", "availability": "https://schema.org/InStock"},
-      {"@type": "Offer", "price": "883", "priceCurrency": "HKD", "name": "9999 寒霜之星", "availability": "https://schema.org/InStock"}
-    ]
-  }
-}
-</script>
+    <!-- Schema.org 結構化數據 (SEO神主牌，保持完整名稱) -->
+    <script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "@id": "https://uiduid.com/buy-whiteout-survival.html#product",
+            "name": "寒霜啟示錄 Whiteout Survival 儲值",
+            "image": [
+                "https://www.uiduid.com/images/whiteout-survival.webp"
+            ],
+            "description": "寒霜啟示錄 Whiteout Survival 遊戲儲值服務，提供多種 HKD 內購禮包選擇。UIDUID.COM 快速代儲，安全方便，立即提升遊戲體驗。",
+            "brand": {
+                "@type": "Brand",
+                "name": "Whiteout Survival"
+            },
+            "sku": "WOS-HK-TOPUP",
+            "category": "Game Top Up",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://uiduid.com/buy-whiteout-survival.html"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "216",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "offers": {
+                "@type": "AggregateOffer",
+                "url": "https://uiduid.com/buy-whiteout-survival.html",
+                "priceCurrency": "HKD",
+                "lowPrice": "8",
+                "highPrice": "700",
+                "offerCount": "10",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2026-12-31",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "uiduid.com"
+                }
+            }
+    }
+    </script>
 
     <!-- FAQPage Schema -->
     <script type="application/ld+json">
@@ -157,23 +635,43 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "寒霜啟示錄充值多少錢？",
-          "acceptedAnswer": {"@type": "Answer", "text": "原價8$禮包 HK$8、15$ HK$14、23$ HK$21、28$ HK$28、38$ HK$35、78$ HK$70、158$ HK$140、398$ HK$345、588$ HK$518、788$ HK$660、9999寒霜之星 HK$883（以頁面最新價格為準）。"}
+                    "name": "寒霜啟示錄 Whiteout Survival 是什麼遊戲？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+                                                "text": "Whiteout Survival（寒霜啟示錄）是一款冰雪末日生存策略遊戲，玩家需要管理城市、探索世界並帶領倖存者生存。"
+          }
         },
         {
           "@type": "Question",
-          "name": "寒霜啟示錄支援哪些伺服器？",
-          "acceptedAnswer": {"@type": "Answer", "text": "支援香港、台灣、國際服（Google / Facebook / 全球伺服器）。"}
+                                        "name": "購買後多久完成充值？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+                                                "text": "付款確認並收到正確遊戲資料後，將安排快速完成充值。"
+          }
         },
         {
           "@type": "Question",
-          "name": "寒霜啟示錄充值多久到帳？",
-          "acceptedAnswer": {"@type": "Answer", "text": "付款成功後通常30秒至50分鐘內到帳，客服會透過 WhatsApp 或 WeChat 通知您。"}
+                                        "name": "需要提供什麼資料？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+                                                "text": "通常需要提供遊戲 UID、伺服器資訊及相關充值資料。"
+          }
         },
         {
           "@type": "Question",
-          "name": "寒霜啟示錄代儲安全嗎？",
-          "acceptedAnswer": {"@type": "Answer", "text": "我們使用正規安全管道，多年老店，絕不黑號。數位商品一經發送無法退款，請確認後再付款。"}
+                                        "name": "可以充值其他地區帳號嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+                                                "text": "不同地區及伺服器可能存在限制，購買前請確認遊戲帳號資訊。"
+          }
+        },
+        {
+          "@type": "Question",
+                                        "name": "充值後可以退款嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+                                                "text": "遊戲充值屬數位商品，一旦完成充值後恕無法退款。"
+          }
         }
       ]
     }
@@ -186,29 +684,30 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "首頁", "item": {"@id": "https://www.uiduid.com/"}},
-        {"@type": "ListItem", "position": 2, "name": "遊戲儲值", "item": {"@id": "https://www.uiduid.com/hot-topup.html"}},
-        {"@type": "ListItem", "position": 3, "name": "寒霜啟示錄充值", "item": {"@id": "https://www.uiduid.com/buy-whiteout-survival.html"}}
+        {"@type": "ListItem", "position": 2, "name": "點卡列表", "item": {"@id": "https://www.uiduid.com/game-card.html"}},
+                                {"@type": "ListItem", "position": 3, "name": "寒霜啟示錄 Whiteout Survival 儲值", "item": {"@id": "https://uiduid.com/buy-whiteout-survival.html"}}
       ]
     }
     </script>
 </head>
-<body style="background-image: url('/images/WhiteoutSurvivalShop.webp'); background-size: cover; background-attachment: fixed;">
+<body style="background-image: url('/images/apple.webp'); background-size: cover; background-attachment: fixed;">
 
     <!-- 頂部導航 -->
-    <div class="top-nav">
-        <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
-        <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <nav class="top-nav" aria-label="主要導航">
+        <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com 遊戲點卡商城首頁" style="height:32px;display:block;"></a>
+        <div class="menu-btn" onclick="toggleSidebar()" aria-label="開啟選單">☰</div>
         <div class="nav-actions">
-            <button class="nav-btn" id="openPaymentModal">儲值頁面</button>
+            <button class="nav-btn" id="openPaymentModal">官方正品</button>
         </div>
-    </div>
+    </nav>
 
     <!-- 側邊欄 -->
-    <div class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar" aria-label="側邊欄選單">
         <div class="nav-group">
             <div class="nav-group-title">商品分類</div>
             <a href="/game-card.html"><i class="fas fa-credit-card"></i> 遊戲點卡</a>
             <a href="/hot-topup.html"><i class="fas fa-coins"></i> 遊戲儲值</a>
+            <a href="/ai-membership.html"><i class="fas fa-brain"></i> AI會員訂閱</a>
         </div>
         <div class="nav-group">
             <div class="nav-group-title">政策條款</div>
@@ -218,41 +717,47 @@
             <a href="/privacy.html">🔒 隱私政策</a>
             <a href="/content-policy.html">🚫 禁止內容政策</a>
         </div>
-    </div>
+    </aside>
 
     <main class="product-detail">
-        <div class="product-info">
+        <article class="product-info">
             <div class="back-links">
-                <a href="/hot-topup.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲列表</a>
-                <a href="/game-card.html" class="back-link"><i class="fas fa-chevron-left"></i> 點卡列表</a>
+                <a href="/game-card.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲點卡</a>
+                <a href="/hot-topup.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲儲值</a>
+                <a href="/ai-membership.html" class="back-link"><i class="fas fa-chevron-left"></i> Ai會員</a>
             </div>
 
+            <!-- 前台俐落標題 -->
             <h1 class="product-name">
-                <i class="fa-solid fa-cart-shopping"></i> 寒霜啟示錄 充值
+                <i class="fa-solid fa-cart-shopping"></i> 寒霜啟示錄 Whiteout Survival 儲值｜遊戲內購禮包快速充值
             </h1>
 
-            <!-- 頂部醒目介紹框 -->
-            <div style="background:rgba(0,0,0,0.6); color:#fff; padding:20px; margin:20px 0; border-radius:12px; text-align:center; font-size:1.1em; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
-                <strong style="font-size:1.4em; color:#ff9800;">（寒霜啟示錄 / Whiteout Survival 專用）</strong><br><br>
-                寒霜之星 + 各檔官方禮包代儲<br>
-                下單後 <strong>30 秒～50分鐘即時到帳</strong>，全網最低價<br>
-                ⚠️ 支援香港・台灣・國際服（Google / Facebook）<br><br>
-                安全可靠 · 放心買 · 24小時客服在線
+            <!-- 頂部介紹框 -->
+            <div style="background:rgba(0,0,0,0.6); color:#fff; padding:20px; margin:20px 0; border-radius:12px; text-align:center; font-size:1.1em; box-shadow:0 4px 20px rgba(0,0,0,0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                <strong style="font-size:1.4em; color:#ff9800;">寒霜啟示錄 Whiteout Survival 儲值｜官方遊戲內購禮包 即時充值</strong><br><br>
+                《寒霜啟示錄 Whiteout Survival》是一款末日冰雪生存策略遊戲，玩家需要建立城市、招募英雄並帶領倖存者在極寒世界中生存。UIDUID.COM 提供快速、安全的遊戲內購儲值服務，多種面額禮包可供選擇，付款後即可完成充值。<br><br>
+                <span style="color: #ffc107;">⚡ 遊戲內購快速代儲 · 安全方便 · 即時安排充值</span>
             </div>
 
             <!-- 商品主圖 -->
-            <img src="/images/WhiteoutSurvival.webp" alt="寒霜啟示錄 Whiteout Survival 充值 商品圖" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
+            <img src="/images/whiteout-survival.webp" alt="寒霜啟示錄 Whiteout Survival 儲值 - uiduid商城即時充值" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
 
-            <!-- 面額選擇 -->
-            <div class="spec-section">
-                <h2 class="spec-title"><i class="fas fa-tags"></i> 選擇充值禮包</h2>
+            <p class="product-desc" style="text-align:center; color:#ccc; font-size:14px; margin:10px 0 25px;">
+                <span style="color:#f3f0ed; font-weight:bold; font-size:15px;">
+                    <i class="fas fa-globe-asia" style="margin-right:6px;"></i>Whiteout Survival 遊戲內購儲值服務
+                </span>
+            </p>
+
+            <!-- 選擇商品面額區 -->
+            <section class="spec-section" aria-labelledby="spec-title">
+                <h2 id="spec-title" class="spec-title"><i class="fas fa-tags"></i> 選擇商品面額 (HKD 報價)</h2>
                 <div class="price-list-container" style="overflow-x:auto;">
-                    <table class="price-table" aria-label="寒霜啟示錄 充值價格表" style="width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed;">
-                        <caption class="sr-only">寒霜啟示錄充值即時價格表，單位為 HKD</caption>
+                    <table class="price-table" aria-label="寒霜啟示錄 Whiteout Survival 儲值 價格表" style="width:100%; border-collapse:collapse; table-layout:fixed;">
+                        <caption class="sr-only">寒霜啟示錄 Whiteout Survival 儲值即時價格表（HKD）</caption>
                         <colgroup>
-                            <col style="width:30%;">
-                            <col style="width:28%;">
-                            <col style="width:42%;">
+                            <col style="width:40%;">
+                            <col style="width:24%;">
+                            <col style="width:36%;">
                         </colgroup>
                         <thead>
                             <tr>
@@ -262,21 +767,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">8$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 8</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">15$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 14</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">23$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 21</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">28$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 28</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">38$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 35</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">78$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 70</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">158$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 140</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">398$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 345</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">588$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 518</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">788$禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 660</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
-                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">9999寒霜之星</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">HK $ 883</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 8 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 7</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 15 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 15</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 23 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 21</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 28 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 29</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 38 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 36</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 78 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 72</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 158 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 142</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 398 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 345</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 588 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 525</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">Whiteout Survival 內購 788 HKD 禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 605</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </section>
 
             <div class="product-attr">
                 <div class="meihua-attr">
@@ -286,53 +790,116 @@
                     </div>
                     <div class="meihua-attr-item">
                         <i class="fas fa-bolt"></i>
-                        <div class="meihua-attr-label">即買即充</div>
+                        <div class="meihua-attr-label">即時發貨</div>
                     </div>
                 </div>
             </div>
 
-<!-- 購買注意事項 -->
-<div class="notice-section">
-    <h2 class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買及防騙須知</h2>
-    <ul class="notice-list">
-        <li><strong>無法退款</strong>：遊戲儲值屬於虛擬數位商品，一經充值即無法退款、退貨或換貨。購買前請務必確認伺服器與金額。</li>
-        <li><strong>防騙須知</strong>：只儲值本人的遊戲帳號儲值，絕不幫他人帳號儲值；不貪小便宜，拒絕一切要求使用「USDT支付的儲值方式」。</li>
-    </ul>
-</div>
+            <!-- 購買注意事項與大額認證機制 -->
+            <section class="notice-section" aria-labelledby="notice-title">
+                <h2 id="notice-title" class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買須知</h2>
+                <ul class="notice-list">
+                    <li>本商品為《寒霜啟示錄 Whiteout Survival》遊戲內購儲值服務。</li>
+                    <li>購買前請確認提供正確的遊戲帳號資料。</li>
+                    <li>請確認遊戲伺服器及地區資訊正確。</li>
+                    <li>充值完成後，如因玩家提供錯誤資料導致問題，恕無法退款。</li>
+                    <li>遊戲商品價格及內容可能依官方調整而變更。</li>
+                    <li>儲值完成後，遊戲內商品將直接發送至指定帳號。</li>
+                </ul>
+            </section>
 
-<section class="faq-section" aria-labelledby="faq-title">
-    <h2 id="faq-title"><i class="fas fa-question-circle"></i> 寒霜啟示錄充值常見問題（FAQ）</h2>
-    <div class="faq-list">
-        <details class="faq-item" open>
-            <summary class="faq-question"><i class="fas fa-circle-question"></i> 寒霜啟示錄怎麼充值？</summary>
-            <p>選擇金額 → 聯繫客服付款 → 付款成功後客服會將寒霜之星或禮包直接充值到您的帳號。</p>
-        </details>
-        <details class="faq-item" open>
-            <summary class="faq-question"><i class="fas fa-circle-question"></i> 支援哪些伺服器？</summary>
-            <p>支援香港、台灣及國際服（Google / Facebook / 全球伺服器）。</p>
-        </details>
-        <details class="faq-item" open>
-            <summary class="faq-question"><i class="fas fa-circle-question"></i> 充值多久到帳？</summary>
-            <p>付款成功後通常30秒～5分鐘內到帳，客服會即時通知。</p>
-        </details>
-        <details class="faq-item">
-            <summary class="faq-question"><i class="fas fa-circle-question"></i> 可以退款嗎？</summary>
-            <p>數位儲值商品一經成功充值即無法退款，請務必確認帳號及金額。</p>
-        </details>
-        <details class="faq-item">
-            <summary class="faq-question"><i class="fas fa-circle-question"></i> 支援哪些支付方式？</summary>
-            <p>支援FPS（轉數快）、PayMe、Alipay HK、WeChat Pay HK、銀行轉帳等，24小時即時處理。</p>
-        </details>
-    </div>
-</section>
+            <!-- 產品特色優勢 -->
+            <section aria-labelledby="features-title">
+                <h2 id="features-title" style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> 產品特色優勢</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>官方遊戲儲值服務</h3>
+                        <p>支援《寒霜啟示錄 Whiteout Survival》遊戲內購買，快速補充遊戲資源。</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>快速完成充值</h3>
+                        <p>提供多種遊戲內購禮包選擇，付款確認後即可安排儲值。</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>安全可靠交易</h3>
+                        <p>UIDUID.COM 提供專業遊戲儲值服務，玩家無需繁複操作即可完成充值。</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>多種面額選擇</h3>
+                        <p>從小額禮包到大型內購方案，滿足不同玩家需求。</p>
+                    </div>
+                </div>
+            </section>
 
-            <!-- 聯繫客服 -->
+            <!-- 重要使用限制與注意事項 -->
+            <section class="info-section" aria-labelledby="limits-title">
+                <h2 id="limits-title" class="info-title"><i class="fas fa-credit-card"></i> 支援付款方式</h2>
+                <ul class="info-list">
+                    <li><strong>即時支付：</strong> 轉數快 ( FPS )</li>
+                    <li><strong>電子錢包：</strong> AlipayHK、WeChat Pay HK、Tap &amp; Go、PayMe</li>
+                    <li><strong>銀行轉賬：</strong> 澳門中銀、螞蟻銀行</li>
+                    <li><strong>實體店鋪：</strong> 掃碼增值、7-Eleven、OK便利店</li>
+                </ul>
+            </section>
+
+            <!-- 如何儲值教學 -->
+            <section class="info-section" aria-labelledby="guide-title">
+                <h2 id="guide-title" class="info-title"><i class="fas fa-book"></i> Whiteout Survival 儲值流程</h2>
+                <ol class="guide-steps">
+                    <li><strong>Step 1：</strong>選擇需要購買的 Whiteout Survival 內購禮包。</li>
+                    <li><strong>Step 2：</strong>提供正確的遊戲 UID或遊戲資料、伺服器資訊及相關資料。</li>
+                    <li><strong>Step 3：</strong>選擇 uiduid.com 支援付款方式完成交易。</li>
+                    <li><strong>Step 4：</strong>確認資料無誤後，儲值內容將充值至指定遊戲帳號。</li>
+                </ol>
+            </section>
+
+            <!-- 地區版本區別 -->
+            <section class="info-section" aria-labelledby="compare-title">
+                <h2 id="compare-title" class="info-title"><i class="fas fa-info-circle"></i> 充值服務提醒</h2>
+                <ul class="info-list compare-list">
+                    <li><strong>帳號資料</strong>：請務必提供正確 UID 或遊戲資料與伺服器，避免充值延誤或失敗。</li>
+                    <li><strong>地區限制</strong>：不同地區及伺服器可能存在限制，購買前請先確認帳號資訊。</li>
+                </ul>
+            </section>
+
+            <!-- 寒霜啟示錄 Whiteout Survival 常見問題（FAQ） -->
+            <section class="info-section" aria-labelledby="faq-title">
+                <h2 id="faq-title" class="info-title"><i class="fas fa-question-circle"></i> 寒霜啟示錄 Whiteout Survival 常見問題（FAQ）</h2>
+                <ul class="faq-list" style="margin-bottom:30px;">
+                    <li class="faq-item">
+                        <p class="faq-q">Q1: 寒霜啟示錄 Whiteout Survival 是什麼遊戲？</p>
+                        <p class="faq-a"><strong>A:</strong> 《Whiteout Survival（寒霜啟示錄）》是一款冰雪末日生存策略遊戲，玩家需要管理城市、探索世界並帶領倖存者生存。</p>
+                    </li>
+                    <li class="faq-item">
+                        <p class="faq-q">Q2: 購買後多久完成充值？</p>
+                        <p class="faq-a"><strong>A:</strong> 付款確認並收到正確遊戲資料後，將安排快速完成充值。</p>
+                    </li>
+                    <li class="faq-item">
+                        <p class="faq-q">Q3: 需要提供什麼資料？</p>
+                        <p class="faq-a"><strong>A:</strong> 通常需要提供遊戲 UID、伺服器資訊及相關充值資料。</p>
+                    </li>
+                    <li class="faq-item">
+                        <p class="faq-q">Q4: 可以充值其他地區帳號嗎？</p>
+                        <p class="faq-a"><strong>A:</strong> 不同地區及伺服器可能存在限制，購買前請確認遊戲帳號資訊。</p>
+                    </li>
+                    <li class="faq-item">
+                        <p class="faq-q">Q5: 充值後可以退款嗎？</p>
+                        <p class="faq-a"><strong>A:</strong> 遊戲充值屬數位商品，一旦完成充值後恕無法退款。</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 聯繫客服與支付管道 -->
             <div class="contact-section">
                 <div class="contact-section-beauty">
                     <div class="contact-list-ys">
                         <div class="contact-main-item">
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/85255360181" class="contact-main-value" target="_blank">+852 55360181</a>
+                            <a href="https://wa.me/85255360181" class="contact-main-value" target="_blank" rel="noopener noreferrer">+852 55360181</a>
                         </div>
                         <div class="contact-main-item">
                             <i class="fab fa-weixin"></i>
@@ -342,14 +909,18 @@
                             <i class="fab fa-line"></i>
                             <span class="contact-main-value">HOGAME</span>
                         </div>
+                        <div class="contact-main-item">
+                            <i class="fab fa-discord"></i>
+                            <span class="contact-main-value">@55360181</span>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-desc" style="background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; margin-top:15px;">
                     <p style="font-size:1.15em; margin:0 0 15px 0;"><strong>💳 支援支付方式 (24/7 即時處理)</strong></p>
                     <ul style="text-align:left; margin:0 0 20px 0; padding-left:20px; color:#fff; line-height:1.8;">
                         <li><strong>即時支付：</strong> 轉數快 ( FPS )</li>
-                        <li><strong>電子錢包：</strong> PayMe, AlipayHK, WeChat Pay HK</li>
-                        <li><strong>銀行轉賬：</strong> 澳門中銀</li>
+                        <li><strong>電子錢包：</strong> AlipayHK, WeChat Pay HK, Tap & Go, PayMe </li>
+                        <li><strong>銀行轉賬：</strong> 澳門中銀、螞蟻銀行</li>
                         <li><strong>實體店鋪：</strong> 掃碼增值、7-Eleven、OK便利店</li>
                     </ul>
                     <p style="margin:0; font-weight:600;"><strong>📢 購買流程：</strong></p>
@@ -357,81 +928,111 @@
                 </div>
             </div>
 
-            <a href="https://www.uiduid.com" class="back-home-btn"><i class="fas fa-home"></i> 返回首頁</a>
-        </div>
+            <a href="#" class="back-home-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" aria-label="回到頁面頂部"><i class="fas fa-home"></i> 回到頂部按鈕</a>
+        </article>
     </main>
 
     <!-- 浮動購物車 -->
     <div id="floating-cart">
         <div class="floating-cart-header">
-            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 寒霜啟示錄（總價）</div>
-            <div class="floating-total">HK $ 0</div>
+            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選商品（總價）</div>
+            <div class="floating-total">HKD $ 0</div>
         </div>
         <div class="floating-items" id="floatingItemsList"></div>
         <button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button>
     </div>
 
+    <!-- Apple 風格懸浮客服（多入口） -->
+    <div class="smart-customer-service" id="smartService">
+        <div class="service-menu">
+            <a href="https://wa.me/85255360181" target="_blank" rel="noopener noreferrer" class="service-item whatsapp" aria-label="聯繫 WhatsApp 客服">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+            </a>
+            <div class="service-item wechat" onclick="copyText('HOGAME')" role="button" tabindex="0" aria-label="複製微信號 HOGAME" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyText('HOGAME');}">
+                <i class="fab fa-weixin" style="color:#07C160;"></i> 微信: HOGAME (點擊複製)
+            </div>
+            <a href="https://line.me/ti/p/~HOGAME" target="_blank" rel="noopener noreferrer" class="service-item line" aria-label="聯繫 LINE HOGAME">
+                <i class="fab fa-line" style="color:#ffffff;"></i> LINE: HOGAME
+            </a>
+            <a href="https://discord.com/users/55360181" target="_blank" rel="noopener noreferrer" class="service-item discord" aria-label="聯繫 Discord @55360181">
+                <i class="fab fa-discord" style="color:#ffffff;"></i> Discord: @55360181
+            </a>
+        </div>
+        <div class="service-main-btn" onclick="toggleService()" role="button" tabindex="0" aria-label="開啟客服選單" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleService();}">
+            <i class="fas fa-headset"></i>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-desc">本商城僅提供數位商品之交付與兌換，所有商標及版權歸原廠所有</p>
+            <p class="footer-desc">最後更新：2026年7月23日｜本商城所有商標及版權歸原廠所有</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript 腳本邏輯 -->
     <script>
+        function toggleService() {
+            const service = document.getElementById('smartService');
+            if (!service) return;
+            service.classList.toggle('active');
+            const icon = service.querySelector('.service-main-btn i');
+            if (icon) {
+                icon.className = service.classList.contains('active') ? 'fas fa-xmark' : 'fas fa-headset';
+            }
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('微信號已複製：' + text);
+            }).catch(() => {
+                alert('複製失敗，請手動複製：' + text);
+            });
+        }
+
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("active");
         }
+        
         document.addEventListener('click', function(e) {
             const sidebar = document.getElementById("sidebar");
             const menuBtn = document.querySelector('.menu-btn');
-            if (sidebar.classList.contains('active') && 
+            const smartService = document.getElementById('smartService');
+            if (sidebar && sidebar.classList.contains('active') && 
                 !sidebar.contains(e.target) && 
                 !menuBtn.contains(e.target)) {
                 sidebar.classList.remove('active');
             }
+
+            if (smartService && smartService.classList.contains('active') && !smartService.contains(e.target)) {
+                smartService.classList.remove('active');
+                const icon = smartService.querySelector('.service-main-btn i');
+                if (icon) icon.className = 'fas fa-headset';
+            }
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            const ENABLE_OFFICIAL_TOPUP = true;
-            const officialTopupUrl = 'https://store.centurygames.com/wos';
-            const openPaymentModalBtn = document.getElementById('openPaymentModal');
-            if (openPaymentModalBtn) {
-                if (ENABLE_OFFICIAL_TOPUP) {
-                    openPaymentModalBtn.addEventListener('click', function () {
-                        window.open(officialTopupUrl, '_blank', 'noopener,noreferrer');
-                    });
-                } else {
-                    openPaymentModalBtn.title = '官網儲值已開啟';
-                }
-            }
-
             const checkoutBtn = document.getElementById('checkoutBtn');
             if (checkoutBtn) {
                 checkoutBtn.addEventListener('click', function() {
                     const selectedItems = document.querySelectorAll('.price-item-row.selected');
                     if (selectedItems.length === 0) {
-                        alert('請先選擇商品');
+                        alert('請先選擇商品面額');
                         return;
                     }
                     const products = [];
                     selectedItems.forEach(item => {
                         const name = item.querySelector('.price-item-name').textContent.trim();
                         const priceText = item.querySelector('.price-item-discount').textContent;
-                        const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
+                        const price = parseFloat((priceText.match(/[\d,.]+/)?.[0] || '0').replace(/,/g, ''));
                         const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
                         const subtotal = Math.round(price * qty);
                         products.push({ name, qty, price, subtotal });
                     });
-                    let mainProduct = '';
-                    const cartTitle = document.querySelector('.floating-cart-title');
-                    if (cartTitle) {
-                        mainProduct = cartTitle.textContent.replace(/^[^已]*已選\s*/,'').replace(/（.*$/,'').trim();
-                    }
+                    let mainProduct = '寒霜啟示錄 Whiteout Survival 儲值｜官方遊戲內購禮包 即時充值';
                     const productsStr = encodeURIComponent(JSON.stringify(products));
-                    const url = `/fpspay.html?products=${productsStr}` + (mainProduct ? `&mainProduct=${encodeURIComponent(mainProduct)}` : '');
+                    const url = `/fpspay.html?products=${productsStr}&mainProduct=${encodeURIComponent(mainProduct)}`;
                     window.location.href = url;
                 });
             }
@@ -455,12 +1056,15 @@
             updateSelectedItems();
         }
 
+        // 更新購物車懸浮窗數據的函數
         function updateSelectedItems() {
             const selectedItems = document.querySelectorAll('.price-item-row.selected');
             const floatingCart = document.getElementById('floating-cart');
             const floatingItemsList = document.getElementById('floatingItemsList');
-            const floatingTotal = floatingCart.querySelector('.floating-total');
+            const floatingTotal = floatingCart ? floatingCart.querySelector('.floating-total') : null;
             let total = 0;
+
+            if (!floatingCart || !floatingItemsList || !floatingTotal) return;
 
             if (selectedItems.length === 0) {
                 floatingCart.classList.remove('show');
@@ -471,7 +1075,7 @@
             selectedItems.forEach(item => {
                 const name = item.querySelector('.price-item-name').textContent.trim();
                 const priceText = item.querySelector('.price-item-discount').textContent;
-                const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
+                const price = parseFloat((priceText.match(/[\d,.]+/)?.[0] || '0').replace(/,/g, ''));
                 const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
                 const subtotal = price * qty;
                 total += subtotal;
@@ -480,29 +1084,15 @@
                 itemDiv.className = 'floating-item';
                 itemDiv.innerHTML = `
                     <span>${name}</span>
-                    <span>x ${qty} · HK $ ${Math.round(subtotal)}</span>
+                    <span>x ${qty} · HKD $ ${Math.round(subtotal)}</span>
                 `;
                 floatingItemsList.appendChild(itemDiv);
             });
 
-            floatingTotal.textContent = `HK $ ${Math.round(total)}`;
+            floatingTotal.textContent = `HKD $ ${Math.round(total)}`;
             floatingCart.classList.add('show');
         }
     </script>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5e145a9527773e0d832c3ff6/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
-
 </body>
 </html>
+
