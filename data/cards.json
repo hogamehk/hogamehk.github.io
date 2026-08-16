@@ -4,6 +4,7 @@
   { "name": "香港 iTunes Gift Card", "image": "/images/hk-apple-gift-card.webp", "region": "twhkmo", "hot": true, "order": 3, "link": "hk-apple-gift-card.html" },
   { "name": "美國 iTunes Gift Card", "image": "/images/itunescard.webp", "region": "global", "hot": true, "order": 3, "link": "buy-us-apple-gift-card.html" },
   { "name": "FLAI金幣", "image": "/images/flai-topup.webp", "region": "global", "hot": true, "order": 3, "link": "flai-topup.html" },
+    { "name": "9Card HK", "image": "/images/buy-9card.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "buy-9card.html" },
   { "name": "台灣 iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "twhkmo", "hot": true, "order": 3, "link": "buy-tw-apple-gift-card.html" },
   { "name": "土耳其 iTunes Gift Card", "image": "/images/turkey-apple-gift-card-all-denominations-comparison.webp", "region": "global", "hot": true, "order": 3, "link": "buy-tr-apple-gift-card.html" },
   { "name": "台灣 MyCard", "image": "/images/taiwan-mycard.webp", "region": "twhkmo", "hot": false, "order": 4, "link": "taiwan-mycard.html" },
