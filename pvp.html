@@ -442,7 +442,11 @@
                 </ol>
                 <p style="margin-top:18px; font-size:0.98em; color:#ccc; background:rgba(0,0,0,0.25); padding:12px 16px; border-radius:8px;">
                     <i class="fas fa-shield-alt" style="color:#4ade80;"></i> 
-                    <strong>適用點數：</strong>中國 iTunes Gift Card、騰訊Q幣。
+                    <strong>適用點數：</strong>
+                    <a href="#" class="applicable-point-link" data-point-key="itunes" target="_blank" rel="noopener noreferrer" style="color:#ffd27a; text-decoration:underline; font-weight:600;">中國 iTunes Gift Card</a>
+                    、
+                    <a href="#" class="applicable-point-link" data-point-key="qcoin" target="_blank" rel="noopener noreferrer" style="color:#ffd27a; text-decoration:underline; font-weight:600;">騰訊Q幣</a>
+                    
                 </p>
             </section>
 
@@ -519,7 +523,7 @@
                     <details class="faq-item" open><summary class="faq-question"><i class="fas fa-circle-question"></i> Q1：這是什麼商品？</summary><p>此商品為王者榮耀（國服）點券，多種面額可選。</p></details>
                     <details class="faq-item" open><summary class="faq-question"><i class="fas fa-circle-question"></i> Q2：有哪些面額？</summary><p>目前支援 60、450、680、1180、1980、3480、6480、8980、12980 點券。</p></details>
                     <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q3：付款後多久處理？</summary><p>完成付款後通常會在幾分鐘內安排，繁忙時段可能稍有延遲。</p></details>
-                    <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q4：適用點數是什麼？</summary><p>適用點數：中國 iTunes Gift Card 與騰訊Q幣。</p></details>
+                    <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q4：適用點數是什麼？</summary><p>適用點數：<a href="#" class="applicable-point-link" data-point-key="itunes" target="_blank" rel="noopener noreferrer">中國 iTunes Gift Card</a> 與 <a href="#" class="applicable-point-link" data-point-key="qcoin" target="_blank" rel="noopener noreferrer">騰訊Q幣</a>。</p></details>
                     <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q5：可以退款嗎？</summary><p>數位商品一經發送或儲值成功，原則上不接受退款，請確認需求後再下單。</p></details>
                 </div>
             </section>
@@ -587,6 +591,25 @@
     </footer>
 
     <script>
+        function setupApplicablePointLinks() {
+            // 在這裡填入你要導向的目標連結
+            const pointLinkMap = {
+                itunes: 'https://uiduid.com/buy-cn-apple-gift-card.html',
+                qcoin: 'https://uiduid.com/qqcard.html'
+            };
+
+            const linkElements = document.querySelectorAll('.applicable-point-link');
+            linkElements.forEach(link => {
+                const key = link.getAttribute('data-point-key');
+                const targetUrl = (pointLinkMap[key] || '').trim();
+                link.setAttribute('href', targetUrl);
+                if (!targetUrl) {
+                    link.setAttribute('href', '#');
+                    link.setAttribute('title', '請先設定此連結');
+                }
+            });
+        }
+
         function toggleService() {
             const service = document.getElementById('smartService');
             if (!service) return;
@@ -626,6 +649,8 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            setupApplicablePointLinks();
+
             const checkoutBtn = document.getElementById('checkoutBtn');
             if (checkoutBtn) {
                 checkoutBtn.addEventListener('click', function() {
