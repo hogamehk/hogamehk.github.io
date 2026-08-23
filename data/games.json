@@ -11,5 +11,5 @@
   { "name": "RO仙境傳說：世界之旅",       "image": "/images/rosjzl.webp", "region": "tw", "hot": true,  "order": 1, "link": "rosjzl.html" },
   { "name": "Honor of Kings Tokens",       "image": "/images/buy-honor-of-kings-tokens-top-up.webp", "region": "global", "hot": true,  "order": 1, "link": "buy-honor-of-kings-tokens-top-up.html" },
     { "name": "漫威爭鋒 Marvel Rivals",       "image": "/images/marvel-rivals-lattice-topup.webp", "region": "global", "hot": true,  "order": 3, "link": "marvel-rivals-lattice-topup.html" },
-  { "name": "PUBG MOBILE",       "image": "/images/pubg.webp", "region": "global", "hot": true,  "order": 1, "link": "pubg.html" }
+  { "name": "PUBG MOBILE",       "image": "/images/pubgm.webp", "region": "global", "hot": true,  "order": 1, "link": "pubgm.html" }
 ]
