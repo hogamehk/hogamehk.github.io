@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <title>德州撲克繁體（Texas Poker:EN）儲值 - 即時發貨 | uiduid.com</title>
+    <meta name="description" content="在 uiduid.com 購買德州撲克繁體（Texas Poker:EN）儲值，支援 MyCard 與 MYR 面額，快速發貨。">
+    <meta name="keywords" content="德州撲克繁體,Texas Poker,博雅,遊戲幣,博雅幣,MyCard,MYR,儲值">
+    
+    <link rel="canonical" href="https://www.uiduid.com/boyaa-hk-top-up.html">
+    
+    <meta property="og:title" content="德州撲克繁體（Texas Poker:EN）儲值 - 即時發貨 | uiduid.com">
+    <meta property="og:description" content="德州撲克繁體多面額選擇，支援 MyCard 與 MYR，付款後快速處理。">
+    <meta property="og:image" content="https://www.uiduid.com/images/boyaatopup.webp">
+    <meta property="og:url" content="https://www.uiduid.com/boyaa-hk-top-up.html">
+    <meta property="og:type" content="product">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/678-page.css">
+
+    <style>
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 24px 0 30px 0;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 20px 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(255,152,0,0.3);
+        }
+        .feature-card i {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            display: block;
+            color: #ff9800;
+        }
+        .feature-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.15em;
+            color: #fff;
+        }
+        .feature-card p {
+            margin: 0;
+            color: #e0e0e0;
+            line-height: 1.55;
+            font-size: 1.02em;
+        }
+        .member-intro {
+            margin: 30px 0 10px 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 16px 18px;
+            color: #fff;
+            line-height: 1.75;
+        }
+        .member-feature-list {
+            margin: 10px 0 0 0;
+            padding-left: 18px;
+            color: #e8f0ff;
+            line-height: 1.7;
+        }
+        .member-feature-list li {
+            margin: 2px 0;
+        }
+
+        .smart-customer-service {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .service-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 14px;
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.32s ease, transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1);
+            transform-origin: bottom right;
+        }
+        .smart-customer-service.active .service-menu {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+            backdrop-filter: blur(18px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(8px);
+            opacity: 0;
+            transition: transform 0.28s ease, background 0.24s ease, box-shadow 0.24s ease, opacity 0.24s ease;
+        }
+        .smart-customer-service.active .service-item {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .smart-customer-service.active .service-item:nth-child(1) { transition-delay: 0.04s; }
+        .smart-customer-service.active .service-item:nth-child(2) { transition-delay: 0.08s; }
+        .smart-customer-service.active .service-item:nth-child(3) { transition-delay: 0.12s; }
+        .smart-customer-service.active .service-item:nth-child(4) { transition-delay: 0.16s; }
+        .service-item:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+        }
+        .service-item.whatsapp {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.88), rgba(22, 163, 74, 0.84));
+            border-color: rgba(167, 243, 208, 0.65);
+        }
+        .service-item.whatsapp:hover {
+            background: linear-gradient(135deg, rgba(52, 231, 123, 0.95), rgba(22, 163, 74, 0.9));
+        }
+        .service-item.wechat {
+            background: linear-gradient(135deg, rgba(7, 193, 96, 0.88), rgba(5, 150, 105, 0.84));
+            border-color: rgba(167, 243, 208, 0.55);
+        }
+        .service-item.wechat:hover {
+            background: linear-gradient(135deg, rgba(16, 216, 112, 0.95), rgba(5, 150, 105, 0.9));
+        }
+        .service-item.discord {
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.9), rgba(59, 130, 246, 0.85));
+            border-color: rgba(191, 219, 254, 0.65);
+        }
+        .service-item.discord:hover {
+            background: linear-gradient(135deg, rgba(112, 125, 255, 0.96), rgba(59, 130, 246, 0.92));
+        }
+        .service-item.line {
+            background: linear-gradient(135deg, rgba(6, 199, 85, 0.9), rgba(5, 150, 70, 0.86));
+            border-color: rgba(187, 247, 208, 0.65);
+        }
+        .service-item.line:hover {
+            background: linear-gradient(135deg, rgba(23, 218, 103, 0.96), rgba(5, 150, 70, 0.92));
+        }
+        .service-main-btn {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 26px rgba(17, 24, 39, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+            animation: none;
+        }
+        .service-main-btn::before {
+            content: none;
+        }
+        .service-main-btn i {
+            transition: transform 0.28s ease;
+        }
+        .smart-customer-service.active .service-main-btn {
+            transform: translateY(-2px) scale(1.04);
+            background: linear-gradient(135deg, #fb923c, #ec4899 55%, #4f46e5);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+        }
+        .smart-customer-service.active .service-main-btn i {
+            transform: rotate(12deg) scale(1.05);
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            70% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+        }
+
+        .notice-section {
+            margin-top: 28px;
+            padding: 22px 20px;
+            border-radius: 20px;
+            background:
+                radial-gradient(120% 160% at 0% 0%, rgba(255, 160, 42, 0.18), transparent 42%),
+                radial-gradient(120% 160% at 100% 100%, rgba(255, 83, 112, 0.14), transparent 44%),
+                rgba(15, 23, 42, 0.58);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(10px);
+        }
+        .notice-title {
+            margin: 0 0 14px 0;
+            color: #fff3df;
+            font-size: 1.35rem;
+            letter-spacing: 0.4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .notice-title i {
+            color: #ffb347;
+        }
+        .notice-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .notice-list > li {
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 4px solid rgba(255, 179, 71, 0.85);
+            border-radius: 14px;
+            padding: 14px 14px 14px 16px;
+            color: #f6f8ff;
+            line-height: 1.72;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+        }
+        .notice-list > li strong {
+            color: #ffe2ae;
+        }
+        .notice-sublist {
+            list-style: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+            display: grid;
+            gap: 8px;
+        }
+        .notice-sublist li {
+            background: rgba(6, 10, 20, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 12px;
+            line-height: 1.65;
+        }
+        .notice-sublist li::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd166, #ff7a59);
+            box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.16);
+            transform: translateY(-1px);
+        }
+        @media (max-width: 768px) {
+            .smart-customer-service {
+                bottom: 110px;
+                right: 16px;
+            }
+            .service-item {
+                font-size: 13px;
+                padding: 11px 16px;
+            }
+            .service-main-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 21px;
+            }
+            .notice-section {
+                margin-top: 22px;
+                padding: 16px 14px;
+                border-radius: 16px;
+            }
+            .notice-title {
+                font-size: 1.1rem;
+            }
+            .notice-list > li {
+                padding: 12px;
+                line-height: 1.66;
+            }
+            .notice-sublist li {
+                padding: 9px 10px;
+            }
+        }
+    </style>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "uiduid.com",
+      "url": "https://www.uiduid.com",
+      "logo": "https://www.uiduid.com/images/logo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+852-5536-0181",
+        "contactType": "customer service",
+        "availableLanguage": ["zh-HK", "zh-TW", "en"]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+        "name": "德州撲克繁體（Texas Poker:EN）",
+    "image": "https://www.uiduid.com/images/boyaatopup.webp",
+        "description": "在 uiduid.com 購買德州撲克繁體（Texas Poker:EN）儲值，多遊戲幣，博雅幣，寶石都可以儲值，快速發貨。",
+            "brand": {"@type": "Brand", "name": "Boyaa"},
+            "sku": "BOYAA-HK-TOPUP",
+            "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.uiduid.com/boyaa-hk-top-up.html"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "928"},
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "HKD",
+                                                                                                                                "lowPrice": "8",
+                                                                                                                                "highPrice": "2322",
+                                                                                                                                "offerCount": "54",
+        "offers": [
+                                                                                                                                                                {"@type":"Offer","price":"8","priceCurrency":"HKD","name":"30 MyCard點（3.45萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"13","priceCurrency":"HKD","name":"50 MyCard點（5.75萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"38","priceCurrency":"HKD","name":"150 MyCard點（21.85萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"42","priceCurrency":"HKD","name":"170 MyCard點（25萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"75","priceCurrency":"HKD","name":"300 MyCard點（50.6萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"87","priceCurrency":"HKD","name":"350 MyCard點（62.1萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"100","priceCurrency":"HKD","name":"400 MyCard點（72.45萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"104","priceCurrency":"HKD","name":"450 MyCard點（82.8萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"116","priceCurrency":"HKD","name":"500 MyCard點（94.3萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"232","priceCurrency":"HKD","name":"1000 MyCard點（220.8萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"267","priceCurrency":"HKD","name":"1150 MyCard點（262.2萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"346","priceCurrency":"HKD","name":"1490 MyCard點（357.3萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"392","priceCurrency":"HKD","name":"1690 MyCard點（390萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"464","priceCurrency":"HKD","name":"2000 MyCard點（517.5萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"580","priceCurrency":"HKD","name":"2500 MyCard點（650萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"696","priceCurrency":"HKD","name":"3000 MyCard點（839.5萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"764","priceCurrency":"HKD","name":"3290 MyCard點（925萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"1161","priceCurrency":"HKD","name":"5000 MyCard點（1,564萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"2322","priceCurrency":"HKD","name":"10000 MyCard點（3,499.91萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"12","priceCurrency":"HKD","name":"50 MyCard點（10博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"37","priceCurrency":"HKD","name":"150 MyCard點（32博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"86","priceCurrency":"HKD","name":"350 MyCard點（80博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"100","priceCurrency":"HKD","name":"400 MyCard點（93博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"110","priceCurrency":"HKD","name":"450 MyCard點（106博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"123","priceCurrency":"HKD","name":"500 MyCard點（120博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"230","priceCurrency":"HKD","name":"1000 MyCard點（250博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"346","priceCurrency":"HKD","name":"1490 MyCard點（380博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"464","priceCurrency":"HKD","name":"2000 MyCard點（525博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"696","priceCurrency":"HKD","name":"3000 MyCard點（810博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"10","priceCurrency":"HKD","name":"5 MYR（4.968萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"20","priceCurrency":"HKD","name":"10 MYR（11.664萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"37","priceCurrency":"HKD","name":"20 MYR（27.648萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"57","priceCurrency":"HKD","name":"30 MYR（42.12萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"75","priceCurrency":"HKD","name":"40 MYR（60.48萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"95","priceCurrency":"HKD","name":"50 MYR（83.16萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"190","priceCurrency":"HKD","name":"100 MYR（194.4萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"380","priceCurrency":"HKD","name":"200 MYR（453.6萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"970","priceCurrency":"HKD","name":"500 MYR（1,324萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"1900","priceCurrency":"HKD","name":"1,000 MYR（2,764.8萬遊戲幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"10","priceCurrency":"HKD","name":"5 MYR（9博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"20","priceCurrency":"HKD","name":"10 MYR（20博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"38","priceCurrency":"HKD","name":"20 MYR（42博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"58","priceCurrency":"HKD","name":"30 MYR（63博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"76","priceCurrency":"HKD","name":"40 MYR（86博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"95","priceCurrency":"HKD","name":"50 MYR（110博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"190","priceCurrency":"HKD","name":"100 MYR（235博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                {"@type":"Offer","price":"380","priceCurrency":"HKD","name":"200 MYR（500博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                                                                                                                                                                                {"@type":"Offer","price":"970","priceCurrency":"HKD","name":"500 MYR（1,325博雅幣）","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                                                                                                                                                                                {"@type":"Offer","price":"374","priceCurrency":"HKD","name":"每週金幣包","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                                                                                                                                                                                {"@type":"Offer","price":"753","priceCurrency":"HKD","name":"每月金幣包","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                                                                                                                                                                                {"@type":"Offer","price":"125","priceCurrency":"HKD","name":"銀戒禮包","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                                                                                                                                                                                {"@type":"Offer","price":"502","priceCurrency":"HKD","name":"鑽戒禮包","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"},
+                                                                                                                                                                                                                                                                                                                                {"@type":"Offer","price":"12","priceCurrency":"HKD","name":"青梅酒禮包","availability":"https://schema.org/InStock","url":"https://www.uiduid.com/boyaa-hk-top-up.html"}
+        ]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+            "mainEntity": [
+                {"@type":"Question","name":"這是什麼商品？","acceptedAnswer":{"@type":"Answer","text":"這是德州撲克繁體（Texas Poker:EN）儲值商品，提供遊戲幣與博雅幣面額。"}},
+                {"@type":"Question","name":"有哪些面額可以選擇？","acceptedAnswer":{"@type":"Answer","text":"支援 MyCard 與 MYR 的多種面額，對應遊戲幣與博雅幣。"}},
+                {"@type":"Question","name":"付款後多久可以收到？","acceptedAnswer":{"@type":"Answer","text":"一般付款完成後會快速處理，通常幾分鐘內可完成。"}},
+                {"@type":"Question","name":"適用哪些方式？","acceptedAnswer":{"@type":"Answer","text":"本頁提供 MyCard 與 MYR 面額方案，請依需求選擇。"}},
+                {"@type":"Question","name":"可以退款嗎？","acceptedAnswer":{"@type":"Answer","text":"數位商品一經發送或儲值成功，原則上不接受退款。"}}
+            ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首頁", "item": {"@id": "https://www.uiduid.com/"}},
+        {"@type": "ListItem", "position": 2, "name": "點卡列表", "item": {"@id": "https://www.uiduid.com/game-card.html"}},
+                                {"@type": "ListItem", "position": 3, "name": "德州撲克繁體（Texas Poker:EN）", "item": {"@id": "https://www.uiduid.com/boyaa-hk-top-up.html"}}
+      ]
+    }
+    </script>
+</head>
+<body style="background-image: url('/images/uidbj.webp'); background-size: cover; background-attachment: fixed;">
+
+    <div class="top-nav">
+        <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+        <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+        <div class="nav-actions">
+            <button class="nav-btn" id="openPaymentModal">官方渠道</button>
+        </div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="nav-group">
+            <div class="nav-group-title">商品分類</div>
+            <a href="/game-card.html"><i class="fas fa-credit-card"></i> 遊戲點卡</a>
+            <a href="/hot-topup.html"><i class="fas fa-coins"></i> 遊戲儲值</a>
+            <a href="/ai-membership.html"><i class="fas fa-brain"></i> AI會員訂閱</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">政策條款</div>
+            <a href="/payment.html" id="payment-link">💳 支付方式</a>
+            <a href="/terms.html">📜 使用條款</a>
+            <a href="/sales-terms.html">🛒 銷售條款</a>
+            <a href="/privacy.html">🔒 隱私政策</a>
+            <a href="/content-policy.html">🚫 禁止內容政策</a>
+        </div>
+    </div>
+
+    <main class="product-detail">
+        <div class="product-info">
+            <div class="back-links">
+                <a href="/game-card.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲點卡</a>
+                <a href="/hot-topup.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲儲值</a>
+                <a href="/ai-membership.html" class="back-link"><i class="fas fa-chevron-left"></i> Ai會員</a>
+            </div>
+
+            <h1 class="product-name">
+                <i class="fa-solid fa-cart-shopping"></i> 德州撲克繁體（Texas Poker:EN）
+            </h1>
+
+            <div style="background:rgba(0,0,0,0.6); color:#fff; padding:20px; margin:20px 0; border-radius:12px; text-align:center; font-size:1.1em; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+                <strong style="font-size:1.4em; color:#ff9800;">德州撲克繁體（Texas Poker:EN）</strong><br><br>
+                遊戲幣博雅幣寶石均可儲值<br>
+                安全穩定 · 24小時客服在線
+            </div>
+
+            <p style="background:rgba(255,152,0,0.14); border:1px solid rgba(255,152,0,0.35); color:#ffe8c2; padding:14px 16px; border-radius:10px; line-height:1.8; margin:0 0 20px 0; text-align:center;">
+                uiduid.com 為所有沒有信用卡、受到蘋果充值額度限制、越獄機器等無法在 App Store 充值的 iPhone、iPad、安卓用戶提供博雅德州撲克遊戲幣充值途徑！
+            </p>
+
+            <img src="/images/boyaatopup.webp" alt="德州撲克繁體商品圖" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
+
+            <p class="product-desc" style="text-align:center; color:#ccc; font-size:14px; margin:10px 0 25px;">
+                <a href="https://www.facebook.com/boyaapoker" target="_blank" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:15px;">
+                    <i class="fas fa-globe-asia" style="margin-right:6px;"></i>德州撲克繁體官方主頁
+                </a>
+            </p>
+
+            <p class="product-desc" style="text-align:center; color:#ccc; font-size:14px; margin:4px 0 25px;">
+                <a href="https://poker.boyaa.com/tw/pay" target="_blank" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:15px;">
+                    <i class="fab fa-app-store-ios" style="margin-right:6px;"></i>官方儲值入口
+                </a>
+            </p>
+
+            <!-- 如何購買步驟 -->
+            <section class="howto-section" style="margin:30px 0; background:rgba(255,255,255,0.08); padding:25px; border-radius:12px; border:1px solid rgba(255,152,0,0.3);">
+                <h2 style="color:#ff9800; margin-bottom:18px; font-size:1.35em;">
+                    <i class="fas fa-list-ol"></i> 如何購買德州撲克繁體儲值？（3 步驟）
+                </h2>
+                <ol style="line-height:2; padding-left:22px; color:#eee; font-size:1.05em;">
+                    <li><strong>選擇要購買的面額；</strong></li>
+                    <li><strong>完成付款後即安排儲值；</strong></li>
+                    <li><strong>儲值流程：提供遊戲ID即可儲值。</strong></li>
+                </ol>
+                <p style="margin-top:18px; font-size:0.98em; color:#ccc; background:rgba(0,0,0,0.25); padding:12px 16px; border-radius:8px;">
+                    <i class="fas fa-shield-alt" style="color:#4ade80;"></i> 
+                    <strong>適用點數：</strong>
+                    <a href="#" class="applicable-point-link" data-point-key="mycard" target="_blank" rel="noopener noreferrer" style="color:#ffd27a; text-decoration:underline; font-weight:600;">MyCard</a>
+                </p>
+            </section>
+
+            <!-- 價格表 -->
+            <div class="spec-section">
+                <h2 class="spec-title"><i class="fas fa-tags"></i> 德州撲克繁體（Texas Poker:EN）價格</h2>
+                <div class="price-list-container" style="overflow-x:auto;">
+                    <table class="price-table" style="width:100%; min-width:640px; border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; padding:12px 10px;">商品內容</th>
+                                <th style="text-align:center; padding:12px 10px;">價格（HKD）</th>
+                                <th style="text-align:center; padding:12px 10px;">數量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th colspan="3" style="text-align:left; padding:12px 10px; background:rgba(255,152,0,0.16); color:#ffd27a;">MyCard 遊戲幣</th></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">30 MyCard點（3.45萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 8</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">50 MyCard點（5.75萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 13</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">150 MyCard點（21.85萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 38</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">170 MyCard點（25萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 42</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">300 MyCard點（50.6萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 75</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">350 MyCard點（62.1萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 87</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">400 MyCard點（72.45萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 100</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">450 MyCard點（82.8萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 104</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">500 MyCard點（94.3萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 116</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1000 MyCard點（220.8萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 232</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1150 MyCard點（262.2萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 267</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1490 MyCard點（357.3萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 346</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1690 MyCard點（390萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 392</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">2000 MyCard點（517.5萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 464</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">2500 MyCard點（650萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 580</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">3000 MyCard點（839.5萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 696</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">3290 MyCard點（925萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 764</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">5000 MyCard點（1,564萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 1161</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">10000 MyCard點（3,499.91萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 2322</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+
+                            <tr><th colspan="3" style="text-align:left; padding:12px 10px; background:rgba(255,152,0,0.16); color:#ffd27a;">MyCard 博雅幣</th></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">50 MyCard點（10博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 12</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">150 MyCard點（32博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 37</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">350 MyCard點（80博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 86</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">400 MyCard點（93博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 100</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">450 MyCard點（106博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 110</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">500 MyCard點（120博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 123</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1000 MyCard點（250博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 230</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1490 MyCard點（380博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 346</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">2000 MyCard點（525博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 464</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">3000 MyCard點（810博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 696</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+
+                            <tr><th colspan="3" style="text-align:left; padding:12px 10px; background:rgba(255,152,0,0.16); color:#ffd27a;">MYR 遊戲幣</th></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">5 MYR（4.968萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 10</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">10 MYR（11.664萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 20</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">20 MYR（27.648萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 37</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">30 MYR（42.12萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 57</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">40 MYR（60.48萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 75</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">50 MYR（83.16萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 95</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">100 MYR（194.4萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 190</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">200 MYR（453.6萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 380</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">500 MYR（1,324萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 970</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">1,000 MYR（2,764.8萬遊戲幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 1900</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+
+                            <tr><th colspan="3" style="text-align:left; padding:12px 10px; background:rgba(255,152,0,0.16); color:#ffd27a;">MYR 博雅幣</th></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">5 MYR（9博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 10</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">10 MYR（20博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 20</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">20 MYR（42博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 38</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">30 MYR（63博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 58</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">40 MYR（86博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 76</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">50 MYR（110博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 95</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">100 MYR（235博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 190</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">200 MYR（500博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 380</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">500 MYR（1,325博雅幣）</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 970</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+
+                            <tr><th colspan="3" style="text-align:left; padding:12px 10px; background:rgba(255,152,0,0.16); color:#ffd27a;">禮包</th></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">每週金幣包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 374</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">每月金幣包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 753</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">銀戒禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 125</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">鑽戒禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 502</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                            <tr class="price-item-row" onclick="selectItem(this)"><th scope="row" style="padding:12px 10px;"><div class="price-item-name">青梅酒禮包</div></th><td style="text-align:center; padding:12px 10px;"><span class="price-item-discount">$ 12</span></td><td style="text-align:center; padding:12px 10px;"><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="product-attr">
+                <div class="meihua-attr">
+                    <div class="meihua-attr-item"><i class="fas fa-gift"></i><div class="meihua-attr-label">虛擬商品</div></div>
+                    <div class="meihua-attr-item"><i class="fas fa-bolt"></i><div class="meihua-attr-label">即買即開</div></div>
+                </div>
+            </div>
+
+            <!-- 購買注意事項與大額認證機制 -->
+            <section class="notice-section" aria-labelledby="notice-title">
+                <h2 id="notice-title" class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買須知與交易安全聲明</h2>
+                <ul class="notice-list">
+<li><strong>1.管道正規</strong>：本網站提供德州撲克繁體（Texas Poker:EN）儲值商品，面額清晰透明。</li>
+<li><strong>2.不設退換</strong>：數位商品一經發送或儲值成功，即不設退款，請下單前確認清楚。</li>
+<li><strong>3.防第三方詐騙</strong>：遊戲儲值請勿幫陌生人或第三者購買操作，避免交易風險。</li>
+<li><strong>4.防騙貼士</strong>：請特別留意價格是否遠低於市價，以及對方能否提供可核實的公司資料。社交平台粉絲多並不代表可靠（假帳號可買粉絲），若有懷疑請提高警惕。</li>
+                </ul>
+            </section>
+
+<!-- 產品特色優勢 -->
+<section aria-labelledby="features-title">
+    <h2 id="features-title" style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> UidUid 特色優勢</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>即買即儲</h3>
+            <p>付款成功後快速處理，即時安排儲值。</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-building"></i>
+            <h3>香港合法公司</h3>
+            <p>由香港註冊公司 HOGAME ONLINE ENTERTAINMENT LIMITED 營運，交易更有保障。</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-credit-card"></i>
+            <h3>多種付款方式</h3>
+            <p>支援香港轉數快（FPS）、Alipay HK、WeChat Pay HK 等本地常用支付方式。</p>
+        </div>
+    </div>
+</section>
+            <!-- FAQ -->
+            <section class="faq-section" aria-labelledby="faq-title">
+                <h2 id="faq-title"><i class="fas fa-question-circle"></i> 德州撲克繁體常見問題（FAQ）</h2>
+                <div class="faq-list">
+                    <details class="faq-item" open><summary class="faq-question"><i class="fas fa-circle-question"></i> Q1：這是什麼商品？</summary><p>此商品為德州撲克繁體（Texas Poker:EN）儲值，支援遊戲幣與博雅幣方案。</p></details>
+                    <details class="faq-item" open><summary class="faq-question"><i class="fas fa-circle-question"></i> Q2：有哪些面額？</summary><p>目前支援 MyCard 與 MYR 多種面額，請參考上方完整價格表。</p></details>
+                    <details class="faq-item" open><summary class="faq-question"><i class="fas fa-circle-question"></i> Q3：如何獲取我的遊戲ID？</summary><p>點擊你點頭像即可獲取遊戲ID或者UID。</p></details>
+                    <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q4：付款後多久處理？</summary><p>完成付款後通常會在幾分鐘內安排，繁忙時段可能稍有延遲。</p></details>
+                    <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q5：官方入口在哪裡？</summary><p>儲值入口可參考本頁提供的 <a href="https://my24.tw/39016web" target="_blank" rel="noopener noreferrer"></a>https://my24.tw/39016web</a> 連結。</p></details>
+                    <details class="faq-item"><summary class="faq-question"><i class="fas fa-circle-question"></i> Q6：儲值完成後可以退款嗎？</summary><p>數位商品一經發送或儲值成功，不接受退款，請確認需求後再下單。</p></details>
+                </div>
+            </section>
+
+            <!-- 聯繫客服 -->
+            <div class="contact-section">
+                <div class="contact-section-beauty">
+                    <div class="contact-list-ys">
+                        <div class="contact-main-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/85255360181" class="contact-main-value" target="_blank">+852 55360181</a></div>
+                        <div class="contact-main-item"><i class="fab fa-weixin"></i><span class="contact-main-value">HOGAME</span></div>
+                        <div class="contact-main-item"><i class="fab fa-line"></i><span class="contact-main-value">HOGAME</span></div>
+                    </div>
+                </div>
+                <div class="contact-desc" style="background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; margin-top:15px;">
+                    <p style="font-size:1.15em; margin:0 0 15px 0;"><strong>💳 支援支付方式 (24/7 即時處理，全球適用)</strong></p>
+                    <ul style="text-align:left; margin:0 0 20px 0; padding-left:20px; color:#fff; line-height:1.8;">
+                        <li><strong>即時支付：</strong> 轉數快 ( FPS )</li>
+                        <li><strong>電子錢包：</strong> PayMe, AlipayHK, WeChat Pay HK</li>
+                        <li><strong>銀行轉賬：</strong> 澳門中銀、螞蟻銀行</li>
+                        <li><strong>實體店鋪：</strong> 掃碼增值、7-Eleven、OK便利店</li>
+                    </ul>
+                    <p style="margin:0; font-weight:600;"><strong>📢 購買流程：</strong>請截圖已選商品，聯繫 24 小時在線客服確認最新價格並完成支付。</p>
+                </div>
+            </div>
+
+            <a href="#" class="back-home-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" aria-label="回到頁面頂部"><i class="fas fa-home"></i> 回到頂部按鈕</a>
+        </div>
+    </main>
+
+    <!-- 浮動購物車 -->
+    <div id="floating-cart">
+        <div class="floating-cart-header">
+            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 德州撲克繁體（總價）</div>
+            <div class="floating-total">HKD $ 0</div>
+        </div>
+        <div class="floating-items" id="floatingItemsList"></div>
+        <button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button>
+    </div>
+
+    <div class="smart-customer-service" id="smartService">
+        <div class="service-menu">
+            <a href="https://wa.me/85255360181" target="_blank" rel="noopener noreferrer" class="service-item whatsapp" aria-label="聯繫 WhatsApp 客服">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+            </a>
+            <div class="service-item wechat" onclick="copyText('HOGAME')" role="button" tabindex="0" aria-label="複製微信號 HOGAME" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyText('HOGAME');}">
+                <i class="fab fa-weixin" style="color:#07C160;"></i> 微信: HOGAME (點擊複製)
+            </div>
+            <a href="https://line.me/ti/p/~HOGAME" target="_blank" rel="noopener noreferrer" class="service-item line" aria-label="聯繫 LINE HOGAME">
+                <i class="fab fa-line" style="color:#ffffff;"></i> LINE: HOGAME
+            </a>
+            <a href="https://discord.com/users/55360181" target="_blank" rel="noopener noreferrer" class="service-item discord" aria-label="聯繫 Discord @55360181">
+                <i class="fab fa-discord" style="color:#ffffff;"></i> Discord: @55360181
+            </a>
+        </div>
+        <div class="service-main-btn" onclick="toggleService()" role="button" tabindex="0" aria-label="開啟客服選單" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleService();}">
+            <i class="fas fa-headset"></i>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
+            <p class="footer-desc">最後更新：2026年8月28日｜本商城所有商標及版權歸原廠所有</p>
+        </div>
+    </footer>
+
+    <script>
+        function setupApplicablePointLinks() {
+            // 在這裡填入你要導向的目標連結
+            const pointLinkMap = {
+                mycard: 'https://uiduid.com/taiwan-mycard.html',
+            };
+
+            const linkElements = document.querySelectorAll('.applicable-point-link');
+            linkElements.forEach(link => {
+                const key = link.getAttribute('data-point-key');
+                const targetUrl = (pointLinkMap[key] || '').trim();
+                link.setAttribute('href', targetUrl);
+                if (!targetUrl) {
+                    link.setAttribute('href', '#');
+                    link.setAttribute('title', '請先設定此連結');
+                }
+            });
+        }
+
+        function toggleService() {
+            const service = document.getElementById('smartService');
+            if (!service) return;
+            service.classList.toggle('active');
+            const icon = service.querySelector('.service-main-btn i');
+            if (icon) {
+                icon.className = service.classList.contains('active') ? 'fas fa-xmark' : 'fas fa-headset';
+            }
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('微信號已複製：' + text);
+            }).catch(() => {
+                alert('複製失敗，請手動複製：' + text);
+            });
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById("sidebar");
+            const menuBtn = document.querySelector('.menu-btn');
+            const smartService = document.getElementById('smartService');
+            if (sidebar && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+
+            if (smartService && smartService.classList.contains('active') && !smartService.contains(e.target)) {
+                smartService.classList.remove('active');
+                const icon = smartService.querySelector('.service-main-btn i');
+                if (icon) icon.className = 'fas fa-headset';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setupApplicablePointLinks();
+
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', function() {
+                    const selectedItems = document.querySelectorAll('.price-item-row.selected');
+                    if (selectedItems.length === 0) { alert('請先選擇商品'); return; }
+                    const products = [];
+                    selectedItems.forEach(item => {
+                        const name = item.querySelector('.price-item-name').textContent.trim();
+                        const priceText = item.querySelector('.price-item-discount').textContent;
+                        const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
+                        const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
+                        const subtotal = Math.round(price * qty);
+                        products.push({ name, qty, price, subtotal });
+                    });
+                    let mainProduct = '';
+                    const cartTitle = document.querySelector('.floating-cart-title');
+                    if (cartTitle) mainProduct = cartTitle.textContent.replace(/^[^已]*已選\s*/,'').replace(/（.*$/,'').trim();
+                    const productsStr = encodeURIComponent(JSON.stringify(products));
+                    window.location.href = `/fpspay.html?products=${productsStr}` + (mainProduct ? `&mainProduct=${encodeURIComponent(mainProduct)}` : '');
+                });
+            }
+        });
+
+        function selectItem(element) { element.classList.toggle('selected'); updateSelectedItems(); }
+        function changeQty(event, button, change) {
+            event.preventDefault(); event.stopPropagation();
+            const container = button.closest('.price-item-qty');
+            const input = container.querySelector('.price-item-qty-input');
+            let value = parseInt(input.value) || 1;
+            value += change; if (value < 1) value = 1;
+            input.value = value; input.blur(); updateSelectedItems();
+        }
+        function updateSelectedItems() {
+            const selectedItems = document.querySelectorAll('.price-item-row.selected');
+            const floatingCart = document.getElementById('floating-cart');
+            const floatingItemsList = document.getElementById('floatingItemsList');
+            const floatingTotal = floatingCart.querySelector('.floating-total');
+            let total = 0;
+            if (selectedItems.length === 0) { floatingCart.classList.remove('show'); return; }
+            floatingItemsList.innerHTML = '';
+            selectedItems.forEach(item => {
+                const name = item.querySelector('.price-item-name').textContent.trim();
+                const priceText = item.querySelector('.price-item-discount').textContent;
+                const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
+                const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
+                const subtotal = price * qty; total += subtotal;
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'floating-item';
+                itemDiv.innerHTML = `<span>${name}</span><span>x ${qty} · HKD $ ${Math.round(subtotal)}</span>`;
+                floatingItemsList.appendChild(itemDiv);
+            });
+            floatingTotal.textContent = `HKD $ ${Math.round(total)}`;
+            floatingCart.classList.add('show');
+        }
+    </script>
+</body>
+</html>
