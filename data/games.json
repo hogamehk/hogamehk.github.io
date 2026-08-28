@@ -1,7 +1,7 @@
 [
   { "name": "王者榮耀",           "image": "/images/pvp.webp","region": "global","hot": true,  "order": 1, "link": "pvp.html" },
     { "name": "德州撲克繁體",           "image": "/images/boyaatopup.webp","region": "global","hot": true,  "order": 2, "link": "boyaa-hk-top-up.html" },
-  { "name": "塔塔冒險隊",           "image": "/images/farlightgames-cc-top-up","region": "global","hot": true,  "order": 2, "link": "farlightgames-cc-top-up.html" },
+  { "name": "塔塔冒險隊",           "image": "/images/farlightgames-cc-top-up.webp","region": "global","hot": true,  "order": 2, "link": "farlightgames-cc-top-up.html" },
   { "name": "蛋仔派對(Eggy Party)", "image": "/images/buy-eggyparty-topup.webp", "region": "global","hot": true,  "order": 2, "link": "buy-eggyparty-topup.html" },
   { "name": "崩壞：星穹鐵道", "image": "/images/honkai.webp", "region": "global","hot": true,  "order": 2, "link": "honkai.html" },
   { "name": "第五人格Identity V", "image": "/images/identity-v-topup.webp", "region": "global","hot": true,  "order": 1, "link": "buy-identity-v-topup.html" },
