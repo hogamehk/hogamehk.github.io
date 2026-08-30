@@ -3,6 +3,7 @@
     { "name": "德州撲克繁體",           "image": "/images/boyaatopup.webp","region": "global","hot": true,  "order": 2, "link": "boyaa-hk-top-up.html" },
   { "name": "塔塔冒險隊",           "image": "/images/farlightgames-cc-top-up.webp","region": "global","hot": true,  "order": 2, "link": "farlightgames-cc-top-up.html" },
   { "name": "英雄傳說 卡卡布三部曲",       "image": "/images/legendofheroes.webp", "region": "tw", "hot": true,  "order": 2, "link": "legendofheroes-topup.html" },
+    { "name": "王牌競速",       "image": "/images/aceracer-game.webp", "region": "tw", "hot": true,  "order": 2, "link": "aceracer-game-topup.html" },
     { "name": "最強塔塔",       "image": "/images/ttmxd.webp", "region": "tw", "hot": true,  "order": 2, "link": "ttmxd-topup.html" },
   { "name": "蛋仔派對(Eggy Party)", "image": "/images/buy-eggyparty-topup.webp", "region": "global","hot": true,  "order": 2, "link": "buy-eggyparty-topup.html" },
   { "name": "崩壞：星穹鐵道", "image": "/images/honkai.webp", "region": "global","hot": true,  "order": 2, "link": "honkai.html" },
