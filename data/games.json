@@ -5,6 +5,7 @@
   { "name": "英雄傳說 卡卡布三部曲",       "image": "/images/legendofheroes.webp", "region": "twhkmo", "hot": true,  "order": 2, "link": "legendofheroes-topup.html" },
   { "name": "逆水寒",       "image": "/images/swordofjustice.webp", "region": "twhkmo", "hot": true,  "order": 2, "link": "swordofjustice-topup.html" },
     { "name": "別砸了！是精靈啦","image": "/images/sqbbgat.webp", "region": "twhkmo", "hot": true,  "order": 2, "link": "sqbbgat-topup.html" },
+      { "name": "三國觀滄海","image": "/images/buy-sggch-topup.webp", "region": "twhkmo", "hot": true,  "order": 2, "link": "sggch-topup.html" },
   { "name": "SD鋼彈G世代永恆","image": "/images/ggetmycard-topup.webp", "region": "twhkmo", "hot": true,  "order": 2, "link": "ggetmycard-topup.html" },
     { "name": "王牌競速",       "image": "/images/aceracer-game.webp", "region": "twhkmo", "hot": true,  "order": 2, "link": "aceracer-game-topup.html" },
     { "name": "最強塔塔",       "image": "/images/ttmxd.webp", "region": "tw", "hot": true,  "order": 2, "link": "ttmxd-topup.html" },
