@@ -16,7 +16,7 @@
   { "name": "全境封鎖：曙光", "image": "/images/buy-the-division-resurgence-credits.webp", "region": "global","hot": true,  "order": 1, "link": "buy-the-division-resurgence-credits.html" },
   { "name": "寒霜啟示錄 / Whiteout Survival", "image": "/images/WhiteoutSurvival.webp", "region": "global","hot": true,  "order": 2, "link": "whiteoutsurvival-topup.html" },
   { "name": "Aion2",       "image": "/images/aion2.webp", "region": "tw", "hot": true,  "order": 5, "link": "aion2.html" },
-    { "name": "新瑪奇Mabinogi",       "image": "/images/mabinogi.webp", "region": "twhkmo", "hot": true,  "order": 5, "link": "mabinogi.html" },
+    { "name": "新瑪奇Mabinogi",       "image": "/images/mabinogi-pc.webp", "region": "twhkmo", "hot": true,  "order": 5, "link": "mabinogi.html" },
   { "name": "燕雲十六聲",       "image": "/images/wherewindsmeetgame.webp", "region": "twhkmo", "hot": true,  "order": 6, "link": "wherewindsmeetgame.html" },
    { "name": "菇勇者傳說",       "image": "/images/mushroomhero.webp", "region": "twhkmo", "hot": true,  "order": 6, "link": "tw-mushroomhero-topup.html" },
   { "name": "RO仙境傳說:世界之旅",       "image": "/images/buy-gnjoy-hk-ro.webp", "region": "twhkmo", "hot": true,  "order": 1, "link": "roworld-gravity-topup.html" },
