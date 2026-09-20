@@ -24,7 +24,7 @@
   { "name": "怪物彈珠專用卡", "image": "/images/MonsterStrikeGash.webp", "hot": true, "region": "twhkmo", "order": 10, "link": "buy-monsterstrikegash.html" },
   { "name": "香港 PlayStation兌換碼 (PSN)", "image": "/images/hong-kong-psn-card.webp", "region": "twhkmo", "hot": true, "order": 10, "link": "hong-kong-psn-card.html" },
   { "name": "日本 PlayStation兌換碼 (PSN)", "image": "/images/jp-psn-gift-card.webp", "region": "jp", "hot": true, "order": 10, "link": "japan-psn-gift-card.html" },  
-  { "name": "美國 PlayStation兌換碼 (PSN)", "image": "/images/ubuy-psn-usd.webp", "region": "global", "order": 10, "link": "buy-us-psn.html" },
+  { "name": "美國 PlayStation兌換碼 (PSN)", "image": "/images/buy-psn-usd.webp", "region": "global", "order": 10, "link": "buy-us-psn.html" },
   { "name": "英國 PlayStation兌換碼 (PSN)", "image": "/images/ukpsn.webp", "region": "global",  "order": 10, "link": "ukpsn.html" },
   { "name": "馬來 PlayStation兌換碼 (PSN)", "image": "/images/mypsn.webp", "region": "sea","order": 10, "link": "mypsn.html" },
   { "name": "日本 Nintendo 任天堂 eShop", "image": "/images/jpnintendo.webp", "region": "jp", "hot": true, "order": 11, "link": "jpnintendo.html" },
