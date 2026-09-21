@@ -122,6 +122,7 @@
         .service-item.line { background: linear-gradient(135deg, rgba(6,199,85,.9), rgba(5,150,70,.86)); }
         .service-item.discord { background: linear-gradient(135deg, rgba(88,101,242,.9), rgba(59,130,246,.85)); }
         .service-main-btn { width: 60px; height: 60px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1); color: #fff; font-size: 24px; cursor: pointer; box-shadow: 0 12px 26px rgba(17,24,39,.42); }
+        .floating-control-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         .back-home-wrap { position: fixed; right: 24px; bottom: 100px; z-index: 1000; margin-top: 0; }
         @media (max-width: 768px) { .notice-section, .info-section { padding: 16px 14px; border-radius: 16px; } .smart-customer-service { bottom: 110px; left: 16px; } .service-main-btn { width: 52px; height: 52px; font-size: 21px; } .service-item { padding: 11px 16px; font-size: 13px; } .back-home-wrap { right: 16px; bottom: 100px; } }
     </style>
@@ -597,6 +598,8 @@
         function updateSelectedItems() {
             const selectedItems = document.querySelectorAll('.price-item-row.selected');
             const floatingCart = document.getElementById('floating-cart');
+            const smartService = document.getElementById('smartService');
+            const backHome = document.querySelector('.back-home-wrap');
             if (!floatingCart) return;
             const floatingItemsList = document.getElementById('floatingItemsList');
             const floatingTotal = floatingCart.querySelector('.floating-total');
@@ -605,11 +608,18 @@
             let total = 0;
             if (selectedItems.length === 0) {
                 floatingCart.classList.remove('show');
+                smartService?.classList.remove('floating-control-hidden', 'active');
+                backHome?.classList.remove('floating-control-hidden');
+                const serviceIcon = smartService?.querySelector('.service-main-btn i');
+                if (serviceIcon) serviceIcon.className = 'fas fa-headset';
                 floatingItemsList.innerHTML = '';
                 floatingTotal.textContent = 'HK$ 0';
                 return;
             }
 
+            smartService?.classList.add('floating-control-hidden');
+            smartService?.classList.remove('active');
+            backHome?.classList.add('floating-control-hidden');
             floatingItemsList.innerHTML = '';
             selectedItems.forEach(item => {
                 const name = item.querySelector('.price-item-name')?.textContent.trim() || '商品';
