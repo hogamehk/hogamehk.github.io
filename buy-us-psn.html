@@ -122,7 +122,8 @@
         .service-item.line { background: linear-gradient(135deg, rgba(6,199,85,.9), rgba(5,150,70,.86)); }
         .service-item.discord { background: linear-gradient(135deg, rgba(88,101,242,.9), rgba(59,130,246,.85)); }
         .service-main-btn { width: 60px; height: 60px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1); color: #fff; font-size: 24px; cursor: pointer; box-shadow: 0 12px 26px rgba(17,24,39,.42); }
-        @media (max-width: 768px) { .notice-section, .info-section { padding: 16px 14px; border-radius: 16px; } .smart-customer-service { bottom: 110px; left: 16px; } .service-main-btn { width: 52px; height: 52px; font-size: 21px; } .service-item { padding: 11px 16px; font-size: 13px; } }
+        .back-home-wrap { position: fixed; right: 24px; bottom: 100px; z-index: 1000; margin-top: 0; }
+        @media (max-width: 768px) { .notice-section, .info-section { padding: 16px 14px; border-radius: 16px; } .smart-customer-service { bottom: 110px; left: 16px; } .service-main-btn { width: 52px; height: 52px; font-size: 21px; } .service-item { padding: 11px 16px; font-size: 13px; } .back-home-wrap { right: 16px; bottom: 100px; } }
     </style>
 <script type="application/ld+json">
 {
@@ -450,11 +451,11 @@
                     <p style="margin:8px 0 0 0;">請截圖已選商品，聯繫 24 小時在線客服確認最新價格並完成支付。</p>
                 </div>
             </div>
-            <div class="back-home-wrap">
-                <a href="#top" class="back-home-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" aria-label="緩慢回到頁面頂部"><i class="fas fa-arrow-up"></i> 回到頂部</a>
-            </div>
         </div>
     </main>
+    <div class="back-home-wrap">
+        <a href="#top" class="back-home-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" aria-label="緩慢回到頁面頂部"><i class="fas fa-arrow-up"></i> 回到頂部</a>
+    </div>
     <div id="floating-cart">
         <div class="floating-cart-header">
             <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選美國 PSN 點卡（總價）</div>
