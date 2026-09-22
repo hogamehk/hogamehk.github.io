@@ -30,7 +30,7 @@
   { "name": "日本 Nintendo 任天堂 eShop", "image": "/images/jpnintendo.webp", "region": "jp", "hot": true, "order": 11, "link": "jpnintendo.html" },
   { "name": "香港 Nintendo 任天堂 eShop", "image": "/images/hknintendo.webp", "hot": true, "region": "twhkmo", "order": 11, "link": "hknintendo.html" },
   { "name": "美國 任天堂點卡", "image": "/images/usnintendo.webp", "region": "global",  "order": 11, "link": "usnintendo.html" },
-  { "name": "日本 DMM Point Code", "image": "/images/japan-dmm-points.webp", "region": "jp", "hot": true, "order": 12, "link": "japan-dmm-points.html" },
+  { "name": "日本 DMM Point Code", "image": "/images/dmm-prepaid-card.webp", "region": "jp", "hot": true, "order": 12, "link": "japan-dmm-points.html" },
   { "name": "日本 DLsite 點數卡", "image": "/images/dlsite-gift-card.webp", "region": "jp","order": 12, "link": "buy-dlsite-points.html" },
     { "name": "日本Amazon禮品卡", "image": "/images/amazon-co-jp-gift-cards.webp", "region": "jp","order": 12, "link": "buy-amazon-co-jp-gift-cards.html" },
   { "name": "貝殼幣Garena", "image": "/images/taiwan-garena-shells.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "taiwan-garena-shells.html" },
