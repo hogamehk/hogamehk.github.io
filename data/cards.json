@@ -12,7 +12,7 @@
   { "name": "香港 MyCard", "image": "/images/buyhkmycard.webp", "region": "twhkmo", "hot": true, "order": 5, "link": "hongkong-mycard.html" },
   { "name": "Razer Gold HK", "image": "/images/razergold-hk.webp", "region": "twhkmo", "hot": true, "order": 5, "link": "buy-razergold-hk.html" },
   { "name": "Tinder會員", "image": "/images/buy-tinder-gold.webp", "region": "global", "hot": true, "order": 5, "link": "buy-tinder-gold.html" },
-  { "name": "香港 Steam wallet卡", "image": "/images/hksteam.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "hksteam.html" },
+  { "name": "Steam HK 禮物卡", "image": "/images/steam-card-hk-buy.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "steam-card-hk-buy.html" },
   { "name": "台灣 Steam wallet卡", "image": "/images/twsteam.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "twsteam.html" },
   { "name": "日本 Steam wallet卡", "image": "/images/jpsteam.webp", "region": "jp","order": 6, "link": "jpsteam.html" },
   { "name": "Uber/UberEats Gift Card 日本", "image": "/images/Japan-Uber-Redeem-Code.webp", "region": "jp","order": 6, "link": "Buy-Japan-Uber-Redeem-Code.html" },
