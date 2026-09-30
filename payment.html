@@ -24,6 +24,13 @@
 		.notice-box p { color: #ccc; margin-bottom: 8px !important; }
 		.notice-box p:last-child { margin-bottom: 0 !important; }
 		.text-highlight { color: #ff8c00; font-weight: bold; }
+		.payment-method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 15px; }
+		.payment-group { min-width: 0; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid #ff8c00; background: #222; }
+		.payment-group h3 { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; color: #fff; font-size: 14px; }
+		.payment-group h3 i { width: 18px; color: #ff8c00; text-align: center; }
+		.payment-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+		.payment-tag { padding: 5px 9px; border: 1px solid rgba(255,140,0,0.26); border-radius: 4px; background: rgba(255,140,0,0.08); color: #f0e5d6; font-size: 12px; line-height: 1.5; }
+		@media (max-width: 600px) { .payment-method-grid { grid-template-columns: 1fr; gap: 9px; } }
 		.footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #242424; padding: 15px 0; border-top: 2px solid #ff8c00; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 998; }
 		.footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; text-align: center; }
 		.footer-text { color: #ccc; font-size: 12px; margin: 0; padding: 0; display: block; }
@@ -49,13 +56,42 @@
 
 		<div class="section">
 			<h2><i class="fas fa-wallet"></i> 1. 支援之支付管道</h2>
-			<p>本商城目前支援以下合法支付方式（實際可用管道以結帳頁面顯示為準）：</p>
-			<div class="notice-box">
-				<p><span class="text-highlight">轉數快 (FPS)</span> / 銀行轉賬 / 澳門中銀銀行轉賬</p>
-				<p><span class="text-highlight">支付寶（Alipay / AlipayHK）</span> / <span class="text-highlight">微信支付（WeChat Pay / WeChat Pay HK）</span></p>
-				<p><span class="text-highlight">PayMe</span> / <span class="text-highlight">Tap &amp; Go</span> / <span class="text-highlight">LINE Pay</span></p>
-				<p><span class="text-highlight">7-Eleven</span> / <span class="text-highlight">OK便利店</span></p>
-				<p><span class="text-highlight">Boost</span> / <span class="text-highlight">PayNow</span> / <span class="text-highlight">Touch'n Go eWallet</span> / <span class="text-highlight">Kredivo</span></p>
+			<p>本商城目前支援以下合法支付方式（如有其他方式支付需求請向客服查詢）：</p>
+			<div class="payment-method-grid">
+				<div class="payment-group">
+					<h3><i class="fas fa-building-columns"></i> 銀行及轉賬</h3>
+					<div class="payment-tags">
+						<span class="payment-tag">轉數快 (FPS)</span>
+						<span class="payment-tag">銀行轉賬</span>
+						<span class="payment-tag">澳門中銀銀行轉賬</span>
+					</div>
+				</div>
+				<div class="payment-group">
+					<h3><i class="fas fa-wallet"></i> 電子錢包</h3>
+					<div class="payment-tags">
+						<span class="payment-tag">支付寶（Alipay / AlipayHK）</span>
+						<span class="payment-tag">微信支付（WeChat Pay / WeChat Pay HK）</span>
+						<span class="payment-tag">PayMe</span>
+						<span class="payment-tag">Tap &amp; Go</span>
+					</div>
+				</div>
+				<div class="payment-group">
+					<h3><i class="fas fa-globe-asia"></i> 其他地區支付</h3>
+					<div class="payment-tags">
+						<span class="payment-tag">LINE Pay</span>
+						<span class="payment-tag">Boost</span>
+						<span class="payment-tag">PayNow</span>
+						<span class="payment-tag">Touch'n Go eWallet</span>
+						<span class="payment-tag">Kredivo</span>
+					</div>
+				</div>
+				<div class="payment-group">
+					<h3><i class="fas fa-store"></i> 便利店付款</h3>
+					<div class="payment-tags">
+						<span class="payment-tag">7-Eleven</span>
+						<span class="payment-tag">OK便利店</span>
+					</div>
+				</div>
 			</div>
 		</div>
 
