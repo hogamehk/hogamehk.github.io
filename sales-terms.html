@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>銷售條款 - uiduid.com</title>
+    <title>條款及細則與服務條款 - uiduid.com</title>
     <link rel="stylesheet" href="https://bootcdn.net" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background: #1a1a1a; color: #fff; font-size: 14px; line-height: 1.7; padding-bottom: 140px; }
@@ -27,9 +28,10 @@
         .footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; text-align: center; }
         .footer-text { color: #ccc; font-size: 12px; margin: 0; padding: 0; display: block; }
         .footer-text span { color: #ff8c00; font-weight: bold; }
-        .back-to-top { position: fixed; bottom: 70px; right: 20px; width: 45px; height: 45px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; cursor: pointer; box-shadow: 0 3px 10px rgba(255,140,0,0.5); transition: all 0.3s; opacity: 0; visibility: hidden; z-index: 999; }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: #ff6700; transform: translateY(-3px); }
+        .back-home-wrap { position: fixed; right: 24px; bottom: 100px; z-index: 1000; }
+        .back-home-btn { display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #ff8c00 0%, #ff6700 100%); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+        .back-home-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+        @media (max-width: 768px) { .back-home-wrap { right: 16px; bottom: 100px; } }
     </style>
 </head>
 <body>
@@ -39,60 +41,75 @@
     </div>
 
     <div class="container">
-        <h1 class="page-title"><i class="fas fa-receipt"></i> 銷售條款</h1>
+        <h1 class="page-title"><i class="fas fa-receipt"></i> 條款及細則與服務條款</h1>
 
-        <div class="section">
-            <h2><i class="fas fa-tag"></i> 1. 商品性質</h2>
-            <p>本商城所售商品均為數位虛擬產品（如遊戲點卡、遊戲儲值、代充服務），一經人工或系統自動發放即視為完成交付，非因本商城錯誤，恕不接受退換或退款。</p>
+        <div class="notice-box">
+            <p><span class="text-highlight">特別提示：</span>本網站（uiduid.com）由香港註冊公司營運。於本商城進行任何下單、查詢、身分核驗或付款行為，即代表閣下已完全閱讀、理解並同意受以下全數條款約束。</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-shield-alt"></i> 2. 大額與高風險交易安全審核規範</h2>
-            <p>為防範第三方詐騙及冒用人頭帳戶等行為，本商城實施金額分級安全驗證。不論選擇何種支付方式，凡交易達到以下門檻，或涉及特定高風險行為，客戶必須於發卡前配合完成驗證：</p>
+            <h2><i class="fas fa-tag"></i> 1. 商品性質與地區限制</h2>
+            <p>本商城所售商品均為數位虛擬產品（如遊戲點卡、預付卡、遊戲儲值、代充服務）。</p>
+            <p><span class="text-highlight">交付與不可逆性：</span>電子序號或儲值服務一經透過系統自動、電郵或客服人工私訊發放，即視為商品已交付完畢並使用完畢。非因本商城錯誤，恕不接受任何理由之退換、退貨、更換或取消訂單要求。</p>
+            <p><span class="text-highlight">地區限制：</span>買家有責任於購買前自行核對帳戶地區及遊戲伺服器。因買家跨區、帳戶地區不符或個人帳戶問題致無法兌換，本商城概不承擔任何責任。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-user-check"></i> 2. 民事行為能力與年齡聲明</h2>
+            <p>本商城服務僅向年滿 18 歲或具備完全民事行為能力之人士提供。</p>
+            <p>未滿 18 歲之買家，必須在父母或法定監護人明確同意、指導及監督下方可進行購買。</p>
+            <p>買家凡進行下單及付款，即視為已向本商城聲明並保證符合此資格。如買家隱瞞或虛報年齡，相關法律責任及損失由買家及其監護人自行承擔，本商城不接受事後以「未成年人無行為能力」為由要求索償或退款。</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-shield-alt"></i> 3. 大額與高風險交易安全審核規範</h2>
+            <p>為配合香港及澳門防範網絡詐騙與三方洗錢條例，本商城實施金額分級安全驗證。付款帳戶持有人姓名必須與聯繫下單及身份核驗之本人一致，本商城嚴禁任何形式之第三方代付或詐騙資金轉賬。不論選擇何種支付方式，凡交易達到以下門檻，或涉及特定高風險行為，客戶必須於發卡前配合完成驗證：</p>
             <div class="notice-box">
-                <p>• <span class="text-highlight">單筆或當日累計達港幣 10,000 元（含）以上</span>：客戶須配合完成國際合規第三方認證平台 <span class="text-highlight">Didit 官方身份證件</span>（香港身份證或有效身份證明文件）之上傳驗證。</p>
-                <p>• <span class="text-highlight">單筆或當日累計達港幣 20,000 元（含）以上</span>：客戶除須上傳身份證件外，<span class="text-highlight">強制加做 Didit 活體檢測（Liveness Check）與人臉比對驗證</span>。</p>
-                <p>• <span class="text-highlight">禮品卡/點卡類特別風控</span>：鑑於虛擬點卡類商品極易被用於金融套現與欺詐，<span class="text-highlight">本商城保留隨時對任意金額之「禮品卡/點卡交易」發起隨機抽查、並要求進行 Didit 身份核驗的絕對權利</span>。誠信交易與老客戶通常免驗，若觸發風控或客服判定有合理疑慮時強制執行。</p>
-                <p>• <span class="text-highlight">零資料留存承諾</span>：Didit 為通過 ISO 27001 認證之專業機構。所有驗證數據均經加密處理，<span class="text-highlight">本商城伺服器絕對不會記錄、儲存或留存</span>您的任何原始身份證圖檔及面部生物特徵。</p>
+                <p><span class="text-highlight">單筆或當日累計達港幣 10,000 元（含）以上：</span>客戶須配合完成國際合規第三方認證平台 Didit 官方身份證件（香港身份證或有效身份證明文件）之上傳驗證。</p>
+                <p><span class="text-highlight">單筆或當日累計達港幣 20,000 元（含）以上：</span>客戶除須上傳身份證件外，強制加做 Didit 活體檢測（Liveness Check）與人臉比對驗證。</p>
+                <p><span class="text-highlight">禮品卡/點卡類特別風控：</span>鑑於虛擬點卡類商品極易被用於金融套現與欺詐，本商城保留隨時對任意金額之「禮品卡/點卡交易」發起隨機抽查、並要求進行 Didit 身份核驗的絕對權利。誠信交易與老客戶通常免驗，若觸發風控或客服判定有合理疑慮時強制執行。</p>
+                <p><span class="text-highlight">執法機關配合：</span>如發現資金來源存疑、拒絕配合驗證或存在高風險洗錢疑慮，本商城有權拒絕服務並暫停發貨，保留將相關對話紀錄、轉賬資料及 IP 等資訊提交予執法機關（如香港警務處反詐騙協調中心 ADCC 或澳門司法警察局）之權利。</p>
+                <p><span class="text-highlight">零資料留存承諾：</span>Didit 為通過 ISO 27001 認證之專業機構。所有驗證數據均經加密處理，本商城伺服器絕對不會記錄、儲存或留存您的任何原始身份證圖檔及面部生物特徵。</p>
             </div>
-            <p style="margin-top: 12px;">若因客戶拒絕配合上述安全核驗（包含點卡類隨機抽查之核驗要求）、驗證未通過、或非本商城原因引致需要取消交易及退款，本商城將<span class="text-highlight">從退款金額中扣除每筆交易 0.75% + HK$2.00 的行政及平台操作手續費</span>。如因本商城原因導致無法發卡，則獲豁免此手續費並全額退款。</p>
+            <p>若因客戶拒絕配合上述安全核驗（包含點卡類隨機抽查之核驗要求）、驗證未通過、或非本商城原因引致需要取消交易，本商城將予以辦理訂單取消並全額退款。</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-clock"></i> 3. 發放時間</h2>
-            <p>98% 以上訂單可在付款成功（如需驗證則須在通過 Didit 安全審核後）5 分鐘內會發放成功。若超過 30 分鐘未收到，請立即聯繫客服並提供付款記錄以供查詢。</p>
+            <h2><i class="fas fa-clock"></i> 4. 發放時間與序號保管責任</h2>
+            <p><span class="text-highlight">發放效率：</span>98% 以上訂單可在付款成功（如需驗證則須在通過 Didit 安全審核後）5 分鐘內發放成功。若超過 30 分鐘未收到，請立即聯繫客服並提供付款記錄以供查詢。</p>
+            <p><span class="text-highlight">序號保管與第三方詐騙免責：</span>序號發送後，買家須自行妥善保管。切勿私下將序號轉交、洩漏予任何其他人（如聲稱能提供「代辦服務、帳號解封、遊戲幣換購」之第三方）。如因買家保管不當或遭第三方騙取序號，本商城概不承擔任何補償或賠償責任。</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-exclamation-triangle"></i> 4. 用戶責任</h2>
+            <h2><i class="fas fa-user"></i> 5. 用戶責任與帳號資料</h2>
             <p>用戶須確保提供之遊戲帳號資訊正確無誤。因填寫錯誤導致充值失敗或發放至錯誤帳號，本商城客服不承擔責任。</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-hand-holding-usd"></i> 5. 價格與促銷</h2>
-            <p>所有價格以網站顯示為準，可能因市場波動調整。本公司保留最終解釋權。</p>
+            <h2><i class="fas fa-hand-holding-usd"></i> 6. 價格、促銷與退款政策</h2>
+            <p>所有價格以網站顯示為準，可能因市場波動調整。</p>
+            <p>退款說明：凡符合退款條件之訂單，本商城均實施全額退款政策（退款將原路退回至原支付帳戶，處理時間約 1–30 個工作天）：</p>
+            <p><span class="text-highlight">商城方原因：</span>系統故障導致未發放商品且無法補發、重複支付之訂單，全額退款。</p>
+            <p><span class="text-highlight">用戶方原因 / 風控不通過：</span>因客戶拒絕配合身份核驗、未能通過 Didit 身份審核，或因個人原因（如買錯地區、未發卡前申請取消訂單等），本商城在確認序號未發出後辦理全額退款。</p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-redo"></i> 6. 退款政策</h2>
-            <p>僅在以下情況可申請退款，退款將原路退回至支付帳戶，處理時間約 1–30 個工作天：</p>
-            <p>• <span class="text-highlight">商城方原因（全額退款）</span>：系統故障導致未發放商品且無法補發、重複支付的訂單。此情況可獲免除手續費。</p>
-            <p>• <span class="text-highlight">用戶方原因（扣除手續費）</span>：因客戶拒絕配合身份核驗（含未滿萬元點卡抽查之核驗要求）、未能通過 Didit 身份審核，或因個人原因申請取消訂單。此情況退款將<span class="text-highlight">強制扣除每筆交易金額的 0.75% 另加港幣 2.00 元（0.75% + HK$2.00）</span>作為行政操作手續費。</p>
+            <h2><i class="fas fa-gavel"></i> 7. 法律管轄與爭議處理</h2>
+            <p>本服務條款受中華人民共和國香港特別行政區法律管轄並按其解釋。</p>
+            <p>任何因本商城服務或本條款引起的爭議，均受香港特別行政區法院之獨家管轄權管轄。本公司保留隨時修改上述條款之最終決定權與解釋權。</p>
         </div>
     </div>
 
     <div class="footer">
         <div class="footer-content">
             <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-text" style="font-size: 11px; color: #8f8f8f; margin-top: 4px;">本商城僅提供數位商品，所有商標及版權歸原廠所有</p>
         </div>
     </div>
 
-    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+    <div class="back-home-wrap"><a href="#top" class="back-home-btn" id="backToTop" aria-label="回到頁面頂部"><i class="fas fa-arrow-up"></i> 回到頂部</a></div>
     <script>
         const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 300); });
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        backToTop.addEventListener('click', (event) => { event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     </script>
 </body>
 </html>
