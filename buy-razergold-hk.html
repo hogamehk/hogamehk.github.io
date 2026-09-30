@@ -127,7 +127,7 @@
 </article></main>
 <div class="back-home-wrap"><a aria-label="回到頁面頂部" class="back-home-btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="fas fa-arrow-up"></i> 回到頂部</a></div>
 <div id="floating-cart"><div class="floating-cart-header"><div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 MyCard 港澳專屬（總價）</div><div class="floating-total">HK$ 0</div></div><div class="floating-items" id="floatingItemsList"></div><button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button></div>
-<div class="smart-customer-service" id="smartService"><div class="service-menu"><a aria-label="聯繫 WhatsApp 客服" class="service-item whatsapp" href="https://wa.me/85255360181" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><div aria-label="複製微信號 HOGAME" class="service-item wechat" data-copy="HOGAME" role="button" tabindex="0"><i class="fab fa-weixin"></i> 微信: HOGAME</div><a aria-label="聯繫 LINE HOGAME" class="service-item line" href="https://line.me/ti/p/~HOGAME" rel="noopener noreferrer" target="_blank"><i class="fab fa-line"></i> LINE: HOGAME</a><a aria-label="聯繫 Discord @55360181" class="service-item discord" href="https://discord.com/users/55360181" rel="noopener noreferrer" target="_blank"><i class="fab fa-discord"></i> Discord: @55360181</a></div><div aria-label="開啟客服選單" class="service-main-btn" role="button" tabindex="0"><i class="fas fa-headset"></i></div></div>
+
 <footer class="footer"><div class="footer-content"><p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p><p class="footer-desc">MyCard 港澳專屬｜本商城所有商標及版權歸原廠所有</p></div></footer>
 <script>
 const fallbackSearchData=[{name:'遊戲點卡',link:'/game-card.html'},{name:'遊戲儲值',link:'/hot-topup.html'},{name:'AI 會員訂閱',link:'/ai-membership.html'},{name:'香港 MyCard',link:'/hongkong-mycard.html'},{name:'台灣 MyCard',link:'/taiwan-mycard.html'},{name:'Steam 充值卡',link:'/hksteam.html'},{name:'Telegram Stars',link:'/buy-telegram-stars.html'},{name:'Tinder Gold',link:'/buy-tinder-gold.html'}];
@@ -142,5 +142,25 @@ function updateSelectedItems(){const selected=document.querySelectorAll('.price-
 function handleSearchInput(){const input=document.querySelector('.search-input');const dropdown=document.getElementById('searchDropdown');const query=input.value.trim().toLowerCase();if(!query){dropdown.innerHTML='';dropdown.classList.remove('show');return}const results=searchData.filter(item=>(item.name||'').toLowerCase().includes(query)).slice(0,12);if(!results.length){dropdown.innerHTML='<div class="search-result-item">無匹配商品</div>';dropdown.classList.add('show');return}dropdown.innerHTML=results.map(item=>'<a class="search-result-item" href="'+item.link+'">'+item.name+'</a>').join('');dropdown.classList.add('show')}
 document.addEventListener('DOMContentLoaded',function(){loadSearchData();const menu=document.querySelector('.menu-btn');const serviceButton=document.querySelector('.service-main-btn');const sidebar=document.getElementById('sidebar');const service=document.getElementById('smartService');const search=document.querySelector('.search-input');if(search)search.addEventListener('input',handleSearchInput);menu.addEventListener('click',toggleSidebar);menu.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleSidebar(e)}});serviceButton.addEventListener('click',toggleService);serviceButton.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleService(e)}});document.querySelectorAll('.service-item[data-copy]').forEach(item=>item.addEventListener('click',()=>copyText(item.dataset.copy)));document.addEventListener('click',e=>{if(!e.target.closest('.search-box'))document.getElementById('searchDropdown').classList.remove('show');if(sidebar.classList.contains('active')&&!e.target.closest('.sidebar')&&!e.target.closest('.menu-btn'))sidebar.classList.remove('active');if(service.classList.contains('active')&&!e.target.closest('.smart-customer-service')){service.classList.remove('active');service.querySelector('.service-main-btn i').className='fas fa-headset'}});document.getElementById('checkoutBtn').addEventListener('click',function(){const selected=document.querySelectorAll('.price-item-row.selected');if(!selected.length){alert('請先選擇商品面額');return}const products=[...selected].map(item=>{const price=Number(item.querySelector('.price-item-discount').textContent.replace(/[^0-9]/g,''));const qty=Number(item.querySelector('.price-item-qty-input').value)||1;return{name:item.querySelector('.price-item-name').textContent.trim(),price,qty,subtotal:price*qty}});location.href='/fpspay.html?products='+encodeURIComponent(JSON.stringify(products))+'&mainProduct='+encodeURIComponent('MyCard 港澳專屬')})})
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.customStyle = {
+  visibility: {
+    desktop: { position: "bl", xOffset: 18, yOffset: 18 },
+    mobile: { position: "bl", xOffset: 12, yOffset: 12 }
+  }
+};
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src="https://embed.tawk.to/5e145a9527773e0d832c3ff6/default";
+s1.charset="UTF-8";
+s1.setAttribute("crossorigin","*");
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
