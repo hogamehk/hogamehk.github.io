@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="zh-hk">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>使用條款 - uiduid.com</title>
-    <link rel="stylesheet" href="https://bootcdn.net" />
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background: #1a1a1a; color: #fff; font-size: 14px; line-height: 1.7; padding-bottom: 140px; }
-        .top-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: #242424; position: sticky; top: 0; z-index: 999; gap: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .logo { font-size: 18px; font-weight: bold; color: #ff8c00; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .nav-btn { padding: 6px 10px; border: 1px solid #ff8c00; border-radius: 4px; color: #ff8c00; text-decoration: none; font-size: 12px; white-space: nowrap; transition: all 0.3s; }
-        .nav-btn:hover { background: #ff8c00; color: #fff; }
-        .container { max-width: 900px; margin: 30px auto; padding: 0 15px; }
-        .page-title { font-size: 24px; font-weight: bold; color: #ff8c00; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 10px; }
-        .section { margin-bottom: 25px; }
-        .section h2 { font-size: 18px; color: #ff8c00; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .section p { color: #ccc; margin-bottom: 12px; text-align: justify; }
-        .text-highlight { color: #ff8c00; font-weight: bold; }
-        
-        /* 設定固定底部版權聲明區塊強制全置中 */
-        .footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #242424; padding: 15px 0; border-top: 2px solid #ff8c00; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 998; }
-        .footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; text-align: center; }
-        .footer-text { color: #ccc; font-size: 12px; margin: 0; padding: 0; display: block; }
-        .footer-text span { color: #ff8c00; font-weight: bold; }
-        .back-to-top { position: fixed; bottom: 70px; right: 20px; width: 45px; height: 45px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; cursor: pointer; box-shadow: 0 3px 10px rgba(255,140,0,0.5); transition: all 0.3s; opacity: 0; visibility: hidden; z-index: 999; }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: #ff6700; transform: translateY(-3px); }
-    </style>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="uiduid.com 網站服務使用條款，涵蓋服務範圍、帳戶安全、年齡聲明、智慧財產權及法律管轄。" />
+	<link rel="canonical" href="https://uiduid.com/terms.html" />
+	<title>網站服務使用條款 - uiduid.com</title>
+	<link rel="stylesheet" href="https://bootcdn.net" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+		body { background: #1a1a1a; color: #fff; font-size: 14px; line-height: 1.7; padding-bottom: 140px; }
+		.top-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: #242424; position: sticky; top: 0; z-index: 999; gap: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+		.logo { font-size: 18px; font-weight: bold; color: #ff8c00; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+		.nav-btn { padding: 6px 10px; border: 1px solid #ff8c00; border-radius: 4px; color: #ff8c00; text-decoration: none; font-size: 12px; white-space: nowrap; transition: all 0.3s; }
+		.nav-btn:hover { background: #ff8c00; color: #fff; }
+		.container { max-width: 900px; margin: 30px auto; padding: 0 15px; }
+		.page-title { font-size: 24px; font-weight: bold; color: #ff8c00; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 10px; }
+		.section { margin-bottom: 25px; }
+		.section h2 { font-size: 18px; color: #ff8c00; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+		.section p { color: #ccc; margin-bottom: 12px; text-align: justify; }
+		.notice-box { background: rgba(255, 140, 0, 0.05); border-left: 4px solid #ff8c00; padding: 15px; border-radius: 0 6px 6px 0; margin-top: 15px; }
+		.notice-box p { color: #ccc; margin-bottom: 8px !important; }
+		.notice-box p:last-child { margin-bottom: 0 !important; }
+		.text-highlight { color: #ff8c00; font-weight: bold; }
+		.footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #242424; padding: 15px 0; border-top: 2px solid #ff8c00; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 998; }
+		.footer-content { max-width: 900px; margin: 0 auto; padding: 0 15px; text-align: center; }
+		.footer-text { color: #ccc; font-size: 12px; margin: 0; padding: 0; display: block; }
+		.footer-text span { color: #ff8c00; font-weight: bold; }
+		.back-home-wrap { position: fixed; right: 24px; bottom: 100px; z-index: 1000; }
+		.back-home-btn { display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #ff8c00 0%, #ff6700 100%); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+		.back-home-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+		@media (max-width: 768px) { .back-home-wrap { right: 16px; bottom: 100px; } }
+	</style>
 </head>
 <body>
-    <div class="top-nav">
-        <a href="https://uiduid.com" class="logo"><i class="fas fa-gamepad"></i> uiduid.com</a>
-        <a href="https://uiduid.com" class="nav-btn">返回首頁</a>
-    </div>
+	<div class="top-nav">
+		<a href="https://uiduid.com" class="logo"><i class="fas fa-gamepad"></i> uiduid.com</a>
+		<a href="https://uiduid.com" class="nav-btn">返回首頁</a>
+	</div>
 
-    <div class="container">
-        <h1 class="page-title"><i class="fas fa-file-contract"></i> 使用條款</h1>
+	<div class="container">
+		<h1 class="page-title"><i class="fas fa-file-contract"></i> 網站服務使用條款</h1>
 
-        <div class="section">
-            <h2><i class="fas fa-user-check"></i> 1. 接受條款</h2>
-            <p>當您使用 uiduid.com（以下簡稱「本商城」）所提供之服務時，即表示您已閱讀、理解並同意遵守本使用條款之所有內容。本商城保留隨時拒絕向違反本條款之用戶提供服務的權利。若您不同意本條款，請勿使用本服務。</p>
-        </div>
+		<div class="notice-box">
+			<p><span class="text-highlight">特別提示：</span>歡迎造訪本網站（uiduid.com）。本網站由香港註冊公司 <span class="text-highlight">HOGAME ONLINE ENTERTAINMENT LIMITED</span>（公司註冊編號：2243519，以下簡稱「本公司」或「本商城」）營運。閣下造訪、瀏覽或使用本網站任何服務，即代表閣下已無條件同意受本使用條款約束。</p>
+		</div>
 
-        <div class="section">
-            <h2><i class="fas fa-ban"></i> 2. 禁止行為與安全風控</h2>
-            <p>用戶不得利用本服務從事任何違法、侵害他人權益或違反公序良俗之行為，包括但不限於：</p>
-            <p>• 提供虛假個人資料、冒用他人身份、使用非本人持有之支付帳戶付款</p>
-            <p>• 惡意拆分訂單以規避本商城設定之 <span class="text-highlight">Didit 安全身份驗證機制</span>（包含單筆、當日累計滿額限制，以及本商城針對點卡品類保留之隨機核驗抽查規則）</p>
-            <p>• 利用系統漏洞進行詐欺、盜刷信用卡或洗錢行為</p>
-            <p>凡違反上述禁止行為或拒絕配合風控驗證抽查引致交易取消，本商城將依《銷售條款》從退款中<span class="text-highlight">強制扣除每筆交易金額的 0.75% 另加港幣 2.00 元（0.75% + HK$2.00）</span>作為行政操作手續費。</p>
-        </div>
+		<div class="section">
+			<h2><i class="fas fa-store"></i> 1. 服務範圍與帳戶安全</h2>
+			<p>本網站提供數位遊戲點卡、預付卡、遊戲儲值及代充等相關資訊與銷售服務。</p>
+			<p>用戶於本網站建立帳戶或提供資料時，須確保資料真實、準確。用戶有責任妥善保管個人帳戶及密碼，凡經由該帳戶發出之指令，均視為用戶本人之操作。</p>
+		</div>
 
-        <div class="section">
-            <h2><i class="fas fa-exchange-alt"></i> 3. 商品性質</h2>
-            <p>本商城僅提供遊戲點卡及遊戲代充服務，所有商品均為數位虛擬產品。一經人工或系統自動發放即視為完成交付。除本商城自身系統錯誤外，恕不接受任何理由的退換或退款。</p>
-        </div>
+		<div class="section">
+			<h2><i class="fas fa-user-check"></i> 2. 民事行為能力與年齡聲明</h2>
+			<p>本網站服務僅向年滿 18 歲或具備完全民事行為能力之人士提供。</p>
+			<p>未滿 18 歲之用戶，必須在父母或法定監護人明確同意、指導及監督下方可使用本網站服務或進行購買。</p>
+			<p><span class="text-highlight">用戶凡使用本網站，即視為已向本公司聲明並保證符合此資格。</span>如用戶隱瞞或虛報年齡，相關法律責任及損失由用戶及其監護人自行承擔，本公司不接受事後以「未成年人無行為能力」為由要求索償。</p>
+		</div>
 
-        <div class="section">
-            <h2><i class="fas fa-shield-alt"></i> 4. 免責聲明</h2>
-            <p>因不可抗力或<span class="text-highlight">因用戶未能通過第三方 Didit 平台之身份安全核驗（包含購買任意金額禮品卡/點卡觸發之隨機安全核驗抽查）</span>而導致的服務中斷、發卡延遲或訂單取消，本商城不承擔任何損失賠償或違約責任。</p>
-        </div>
+		<div class="section">
+			<h2><i class="fas fa-copyright"></i> 3. 智慧財產權聲明</h2>
+			<p>本網站內包含的所有內容（包括但不限於文字、標誌、圖表、圖像、頁面設計、程式碼及軟體）之智慧財產權，均屬本公司或相關權利人所有，受香港及國際智慧財產權法律保護。</p>
+			<p>未經本公司事前書面許可，任何人不得私自複製、轉載、修改、散佈或作任何商業用途。</p>
+		</div>
 
-        <div class="section">
-            <h2><i class="fas fa-sync"></i> 5. 條款修改</h2>
-            <p>本商城保留隨時修訂本條款之權利，修訂後將公布於網站上。繼續使用本服務即視為接受最新版本條款。</p>
-        </div>
-    </div>
+		<div class="section">
+			<h2><i class="fas fa-triangle-exclamation"></i> 4. 免責聲明與服務變更</h2>
+			<p>本公司致力於提供穩定之網站服務，但對因電訊網路故障、第三方系統維護、不可抗力事件或第三方攻擊致網站暫時中斷不承擔任何賠償責任。</p>
+			<p>本公司保留隨時修改、暫停或終止本網站部分或全部服務，以及修訂本條款之權利，修訂後之內容自公佈於本網站起立即生效。</p>
+		</div>
 
-    <div class="footer">
-        <div class="footer-content">
-            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-text" style="font-size: 11px; color: #8f8f8f; margin-top: 4px;">本商城僅提供數位商品，所有商標及版權歸原廠所有</p>
-        </div>
-    </div>
+		<div class="section">
+			<h2><i class="fas fa-gavel"></i> 5. 法律管轄與爭議處理</h2>
+			<p>本使用條款受<span class="text-highlight">中華人民共和國香港特別行政區法律</span>管轄並按其解釋。</p>
+			<p>任何因本網站服務引起的爭議，均受香港特別行政區法院之獨家管轄權管轄。</p>
+		</div>
+	</div>
 
-    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
-    <script>
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 300); });
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    </script>
+	<div class="footer">
+		<div class="footer-content">
+			<p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
+			<p class="footer-text" style="font-size: 11px; color: #8f8f8f; margin-top: 4px;">營運主體：HOGAME ONLINE ENTERTAINMENT LIMITED (CR: 2243519)</p>
+		</div>
+	</div>
+
+	<div class="back-home-wrap"><a href="#top" class="back-home-btn" id="backToTop" aria-label="回到頁面頂部"><i class="fas fa-arrow-up"></i> 回到頂部</a></div>
+	<script>
+		const backToTop = document.getElementById('backToTop');
+		backToTop.addEventListener('click', (event) => { event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+	</script>
 </body>
 </html>
