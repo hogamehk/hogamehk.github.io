@@ -35,6 +35,7 @@
     { "name": "日本Amazon禮品卡", "image": "/images/amazon-co-jp-gift-cards.webp", "region": "jp","order": 12, "link": "buy-amazon-co-jp-gift-cards.html" },
   { "name": "貝殼幣Garena", "image": "/images/taiwan-garena-shells.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "taiwan-garena-shells.html" },
   { "name": "元氣卡", "image": "/images/xlegend.webp", "region": "twhkmo",  "order": 14, "link": "xlegend.html" },
+   { "name": "GC CARD", "image": "/images/gccard.webp", "region": "twhkmo",  "order": 14, "link": "buy-gc-points.html" },
   { "name": "香港 Google Play 卡", "image": "/images/google-play-gift-card-hk-all-denominations.webp", "region": "twhkmo", "order": 15, "link": "buy-google-play-gift-card-hong-kong.html" },
   { "name": "雷爵通用卡", "image": "/images/lager-ez-point-card.webp", "region": "twhkmo", "hot": true, "order": 16, "link": "buy-lager-ez-card-online.html" },
   { "name": "大馬Garena Shells", "image": "/images/mygarena.webp", "region": "sea", "hot": true, "order": 13, "link": "mygarena.html" },  
