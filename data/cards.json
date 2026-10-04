@@ -57,5 +57,6 @@
   { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "global", "hot": true, "order": 17, "link": "roblox.html" },
   { "name": "Netflix Gift Card (香港)", "image": "/images/netflix-gift-card-hongkong.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "netflix-gift-card-hongkong.html" },
   { "name": "抖音 Douyin 鑽石儲值", "image": "/images/douyin.webp", "region": "cn", "hot": true, "order": 13, "link": "douyin.html" },
-  { "name": "探探 Tantan 探鑽儲值", "image": "/images/tantan.webp", "region": "cn", "hot": true, "order": 13, "link": "tantan.html" }
+  { "name": "探探 Tantan 探鑽儲值", "image": "/images/tantan.webp", "region": "cn", "hot": true, "order": 13, "link": "tantan.html" },
+  { "name": "韓國 NCSOFT NCoin", "image": "/images/buy-ncsoft-ncoin-korea.webp", "region": "kr", "hot": true, "order": 13, "link": "buy-ncsoft-ncoin-korea.html" }
 ]
