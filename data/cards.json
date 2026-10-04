@@ -21,7 +21,7 @@
   { "name": "中國 Steam wallet卡", "image": "/images/cnsteam.webp", "region": "cn", "hot": true, "order": 6, "link": "cnsteam.html" },
   { "name": "馬來西亞 Steam wallet卡", "image": "/images/mysteam.webp", "region": "sea", "hot": true, "order": 6, "link": "mysteam.html" },
   { "name": "日本Bitcash卡", "image": "/images/bitcash-hong-kong-buy.webp", "region": "jp", "hot": true, "order": 7, "link": "buy-bitcash-hk.html" },
-  { "name": "台灣 GASH卡", "image": "/images/twgash.webp", "region": "twhkmo", "hot": true, "order": 8, "link": "gash.html" },
+  { "name": "台灣GASH 樂點儲值", "image": "/images/buy-gash-card-tw.webp", "region": "twhkmo", "hot": true, "order": 8, "link": "buy-gash-card-tw.html" },
   { "name": "香港GASH 樂點儲值", "image": "/images/buy-gash-card-hongkong.webp", "region": "twhkmo", "hot": true, "order": 9, "link": "buy-gash-card-hongkong.html" },
   { "name": "怪物彈珠專用卡", "image": "/images/MonsterStrikeGash.webp", "hot": true, "region": "twhkmo", "order": 10, "link": "buy-monsterstrikegash.html" },
   { "name": "Xbox Gift Card (HK)", "image": "/images/xbox-card-buy-online.webp", "region": "twhkmo", "hot": true, "order": 10, "link": "xbox-card-buy-online.html" },
