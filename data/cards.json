@@ -55,5 +55,6 @@
   { "name": "PikPak 會員", "image": "/images/pikpak-membership.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak-membership.html" }, 
    { "name": "Telegram 星星", "image": "/images/buytelegramstars.webp", "hot": true, "region": "global", "order": 11, "link": "buy-telegram-stars.html" },
   { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "global", "hot": true, "order": 17, "link": "roblox.html" },
-  { "name": "Netflix Gift Card (香港)", "image": "/images/netflix-gift-card-hongkong.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "netflix-gift-card-hongkong.html" }
+  { "name": "Netflix Gift Card (香港)", "image": "/images/netflix-gift-card-hongkong.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "netflix-gift-card-hongkong.html" },
+  { "name": "抖音 Douyin 鑽石儲值", "image": "/images/douyin.webp", "region": "cn", "hot": true, "order": 13, "link": "douyin.html" }
 ]
