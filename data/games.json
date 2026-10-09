@@ -25,5 +25,6 @@
   { "name": "漫威爭鋒 Marvel Rivals", "image": "/images/marvel-rivals-lattice-topup.webp", "region": "global", "hot": true, "order": 3, "link": "marvel-rivals-lattice-topup.html" },
   { "name": "PUBG MOBILE", "image": "/images/pubgm.webp", "region": "global", "hot": true, "order": 1, "link": "pubgm.html" },
   { "name": "瑪奇Mobile", "image": "/images/mabinogimobile.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "mabinogimobile.html" },
-  { "name": "明日方舟：終末地 國際服", "image": "/images/arknights-endfield-global.webp", "region": "global", "hot": true, "order": 2, "link": "arknights-endfield-global.html" }
+  { "name": "明日方舟：終末地 國際服", "image": "/images/arknights-endfield-global.webp", "region": "global", "hot": true, "order": 2, "link": "arknights-endfield-global.html" },
+  { "name": "我想成為影之強者 港澳服", "image": "/images/shadow-eminence-hkmo.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "shadow-eminence-hkmo.html" }
 ]
