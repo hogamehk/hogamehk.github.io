@@ -30,5 +30,6 @@
   { "name": "三國志戰略版 港澳服", "image": "/images/sanguozhi-strategy-hkmo.webp", "region": "hkmo", "hot": true, "order": 2, "link": "sanguozhi-strategy-hkmo.html" },
   { "name": "無畏契約：源能行動 陸服", "image": "/images/fearless-covenant-cn.webp", "region": "cn", "hot": true, "order": 2, "link": "fearless-covenant-cn.html" },
   { "name": "三角洲行動 陸服", "image": "/images/delta-force-cn.webp", "region": "cn", "hot": true, "order": 3, "link": "delta-force-cn.html" },
-  { "name": "和平精英 陸服", "image": "/images/peace-elite-cn.webp", "region": "cn", "hot": true, "order": 4, "link": "peace-elite-cn.html" }
+  { "name": "和平精英 陸服", "image": "/images/peace-elite-cn.webp", "region": "cn", "hot": true, "order": 4, "link": "peace-elite-cn.html" },
+  { "name": "金鏟鏟之戰 陸服", "image": "/images/jinchanchan-cn.webp", "region": "cn", "hot": true, "order": 5, "link": "jinchanchan-cn.html" }
 ]
