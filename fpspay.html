@@ -45,8 +45,6 @@
         .mandatory-agree label { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #51483c; line-height: 1.65; cursor: pointer; }
         .mandatory-agree input[type="checkbox"] { width: 17px; height: 17px; flex: 0 0 auto; margin: 3px 0 0; accent-color: var(--brand-color); cursor: pointer; }
         .mandatory-agree a { color: var(--brand-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-        .didit-note { margin-top: 12px; padding: 12px; border-left: 3px solid #c68f3d; border-radius: 4px; background: #e4e8e2; color: #464e46; font-size: 12px; line-height: 1.65; }
-        .didit-note strong { color: #754b13; }
         .primary-btn { width: 100%; min-height: 52px; padding: 14px 18px; border: 0; border-radius: 8px; background: var(--brand-color); color: #fff; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.18s ease, box-shadow 0.18s ease; box-shadow: 0 5px 14px rgba(185, 91, 8, 0.18); }
         .primary-btn:hover:not(:disabled) { background: var(--brand-dark); box-shadow: 0 7px 18px rgba(185, 91, 8, 0.22); }
         .primary-btn:focus-visible, .secondary-btn:focus-visible, .copy-btn:focus-visible, .wa-btn:focus-visible { outline: 3px solid rgba(232, 130, 19, 0.35); outline-offset: 2px; }
@@ -130,7 +128,7 @@
         <div class="notice-list">
             <div class="notice-item">
                 <div class="notice-icon"><i class="fas fa-circle-check"></i></div>
-                <div><strong>官方正貨｜Official Source</strong><p>全經由正規管道進貨，保證即時到帳。<small>100% official codes. Safe and reliable.</small></p></div>
+                <div><strong>官方正貨｜Official Source</strong><p>全經由正規管道進貨，保證即時到帳，帳號長期安全。<small>100% official codes. Safe and reliable.</small></p></div>
             </div>
             <div class="notice-item">
                 <div class="notice-icon"><i class="fas fa-rotate-left"></i></div>
@@ -169,12 +167,8 @@
     <div class="mandatory-agree">
         <label for="termsForceCheck">
             <input type="checkbox" id="termsForceCheck">
-            <span>我已閱讀並同意 <a href="/sales-terms.html" target="_blank" rel="noopener noreferrer">銷售條款</a> 與 <a href="/privacy.html" target="_blank" rel="noopener noreferrer">隱私政策</a>，並理解單筆或當日累計交易滿 HK$19,000 須配合 Didit 身份核驗。</span>
+            <span>我已閱讀並同意 <a href="http://127.0.0.1:5500/sales-terms.html" target="_blank" rel="noopener noreferrer">銷售條款</a> 與 <a href="http://127.0.0.1:5500/privacy.html" target="_blank" rel="noopener noreferrer">隱私政策</a>，並理解。</span>
         </label>
-        <div class="didit-note">
-            <strong>💡 為什麼需要 Didit 驗證？</strong><br>
-            Didit 是一家<strong>國際合規的第三方數碼身份驗證平台</strong>，專門為全球電商提供銀行級別的反洗錢（AML）與客戶身份審查（KYC）。uiduid.com 透過 Didit 進行加密比對，本站全程<strong>「零儲存」</strong>您的證件個資，安全且符合私隱條例，請安心完成驗證。
-        </div>
     </div>
 
     <button id="showPayBtn" class="primary-btn" disabled>前往付款</button>
