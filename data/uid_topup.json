@@ -14,5 +14,13 @@
     "hot": true,
     "order": 2,
     "link": "boyaa-hk-top-up.html"
+  },
+  {
+    "name": "夢幻西遊網頁版",
+    "image": "/images/fantasy-westward-journey-web.webp",
+    "region": "global",
+    "hot": true,
+    "order": 3,
+    "link": "fantasy-westward-journey-web-topup.html"
   }
 ]
