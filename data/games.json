@@ -1,35 +1,274 @@
 [
-  { "name": "王者榮耀", "image": "/images/pvp.webp", "region": "cn", "hot": true, "order": 1, "link": "pvp.html" },
-  { "name": "Kingshot", "image": "/images/Kingshot-topup.webp", "region": "global", "hot": true, "order": 1, "link": "Kingshot-topup.html" },
-  { "name": "德州撲克繁體", "image": "/images/boyaatopup.webp", "region": "global", "hot": true, "order": 2, "link": "boyaa-hk-top-up.html" },
-  { "name": "塔塔冒險隊", "image": "/images/farlightgames-cc-top-up.webp", "region": "global", "hot": true, "order": 2, "link": "farlightgames-cc-top-up.html" },
-  { "name": "英雄傳說 卡卡布三部曲", "image": "/images/legendofheroes.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "legendofheroes-topup.html" },
-  { "name": "伊莫", "image": "/images/aniimo-topup-games.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "aniimo-topup-games.html" },
-  { "name": "Aniimo", "image": "/images/aniimo-topup-uid.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "aniimo-topup-uid.html" },
-  { "name": "逆水寒", "image": "/images/swordofjustice.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "swordofjustice-topup.html" },
-  { "name": "別砸了！是精靈啦", "image": "/images/sqbbgat.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "sqbbgat-topup.html" },
-  { "name": "三國觀滄海", "image": "/images/buy-sggch-topup.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "sggch-topup.html" },
-  { "name": "SD鋼彈G世代永恆", "image": "/images/ggetmycard-topup.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "ggetmycard-topup.html" },
-  { "name": "王牌競速", "image": "/images/aceracer-game.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "aceracer-game-topup.html" },
-  { "name": "最強塔塔", "image": "/images/ttmxd.webp", "region": "tw", "hot": true, "order": 2, "link": "ttmxd-topup.html" },
-  { "name": "蛋仔派對(Eggy Party)", "image": "/images/EggyParty.webp", "region": "global", "hot": true, "order": 2, "link": "buy-eggyparty-topup.html" },
-  { "name": "崩壞：星穹鐵道", "image": "/images/honkai.webp", "region": "global", "hot": true, "order": 2, "link": "honkai.html" },
-  { "name": "第五人格Identity V", "image": "/images/IdentityV.webp", "region": "global", "hot": true, "order": 1, "link": "identityv-hk-topup.html" },
-  { "name": "全境封鎖：曙光", "image": "/images/buy-the-division-resurgence-credits.webp", "region": "global", "hot": true, "order": 1, "link": "buy-the-division-resurgence-credits.html" },
-  { "name": "寒霜啟示錄 / Whiteout Survival", "image": "/images/WhiteoutSurvival.webp", "region": "global", "hot": true, "order": 2, "link": "whiteoutsurvival-topup.html" },
-  { "name": "新瑪奇Mabinogi", "image": "/images/mabinogi-pc.webp", "region": "twhkmo", "hot": true, "order": 5, "link": "mabinogi.html" },
-  { "name": "燕雲十六聲", "image": "/images/wherewindsmeetgame.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "wherewindsmeetgame.html" },
-  { "name": "菇勇者傳說", "image": "/images/mushroomhero.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "tw-mushroomhero-topup.html" },
-  { "name": "RO仙境傳說:世界之旅", "image": "/images/buy-gnjoy-hk-ro.webp", "region": "twhkmo", "hot": true, "order": 1, "link": "roworld-gravity-topup.html" },
-  { "name": "Honor of Kings Tokens", "image": "/images/HonorofKings.webp", "region": "global", "hot": true, "order": 1, "link": "buy-honor-of-kings-tokens-top-up.html" },
-  { "name": "漫威爭鋒 Marvel Rivals", "image": "/images/marvel-rivals-lattice-topup.webp", "region": "global", "hot": true, "order": 3, "link": "marvel-rivals-lattice-topup.html" },
-  { "name": "PUBG MOBILE", "image": "/images/pubgm.webp", "region": "global", "hot": true, "order": 1, "link": "pubgm.html" },
-  { "name": "瑪奇Mobile", "image": "/images/mabinogimobile.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "mabinogimobile.html" },
-  { "name": "明日方舟：終末地 國際服", "image": "/images/arknights-endfield-global.webp", "region": "global", "hot": true, "order": 2, "link": "arknights-endfield-global.html" },
-  { "name": "我想成為影之強者 港澳服", "image": "/images/shadow-eminence-hkmo.webp", "region": "twhkmo", "hot": true, "order": 2, "link": "shadow-eminence-hkmo.html" },
-  { "name": "三國志戰略版 港澳服", "image": "/images/sanguozhi-strategy-hkmo.webp", "region": "hkmo", "hot": true, "order": 2, "link": "sanguozhi-strategy-hkmo.html" },
-  { "name": "無畏契約：源能行動 陸服", "image": "/images/fearless-covenant-cn.webp", "region": "cn", "hot": true, "order": 2, "link": "fearless-covenant-cn.html" },
-  { "name": "三角洲行動 陸服", "image": "/images/delta-force-cn.webp", "region": "cn", "hot": true, "order": 3, "link": "delta-force-cn.html" },
-  { "name": "和平精英 陸服", "image": "/images/peace-elite-cn.webp", "region": "cn", "hot": true, "order": 4, "link": "peace-elite-cn.html" },
-  { "name": "金鏟鏟之戰 陸服", "image": "/images/jinchanchan-cn.webp", "region": "cn", "hot": true, "order": 5, "link": "jinchanchan-cn.html" }
+  {
+    "name": "王者榮耀",
+    "image": "/images/pvp.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 1,
+    "link": "pvp.html"
+  },
+  {
+    "name": "Kingshot",
+    "image": "/images/Kingshot-topup.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "Kingshot-topup.html"
+  },
+  {
+    "name": "德州撲克繁體",
+    "image": "/images/boyaatopup.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "boyaa-hk-top-up.html"
+  },
+  {
+    "name": "塔塔冒險隊",
+    "image": "/images/farlightgames-cc-top-up.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "farlightgames-cc-top-up.html"
+  },
+  {
+    "name": "英雄傳說 卡卡布三部曲",
+    "image": "/images/legendofheroes.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "legendofheroes-topup.html"
+  },
+  {
+    "name": "伊莫",
+    "image": "/images/aniimo-topup-games.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "aniimo-topup-games.html"
+  },
+  {
+    "name": "Aniimo",
+    "image": "/images/aniimo-topup-uid.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "aniimo-topup-uid.html"
+  },
+  {
+    "name": "逆水寒",
+    "image": "/images/swordofjustice.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "swordofjustice-topup.html"
+  },
+  {
+    "name": "別砸了！是精靈啦",
+    "image": "/images/sqbbgat.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "sqbbgat-topup.html"
+  },
+  {
+    "name": "三國觀滄海",
+    "image": "/images/buy-sggch-topup.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "sggch-topup.html"
+  },
+  {
+    "name": "SD鋼彈G世代永恆",
+    "image": "/images/ggetmycard-topup.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "ggetmycard-topup.html"
+  },
+  {
+    "name": "王牌競速",
+    "image": "/images/aceracer-game.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "aceracer-game-topup.html"
+  },
+  {
+    "name": "最強塔塔",
+    "image": "/images/ttmxd.webp",
+    "region": "tw",
+    "hot": true,
+    "order": 2,
+    "link": "ttmxd-topup.html"
+  },
+  {
+    "name": "蛋仔派對(Eggy Party)",
+    "image": "/images/EggyParty.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "buy-eggyparty-topup.html"
+  },
+  {
+    "name": "崩壞：星穹鐵道",
+    "image": "/images/honkai.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "honkai.html"
+  },
+  {
+    "name": "第五人格Identity V",
+    "image": "/images/IdentityV.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "identityv-hk-topup.html"
+  },
+  {
+    "name": "全境封鎖：曙光",
+    "image": "/images/buy-the-division-resurgence-credits.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "buy-the-division-resurgence-credits.html"
+  },
+  {
+    "name": "寒霜啟示錄 / Whiteout Survival",
+    "image": "/images/WhiteoutSurvival.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "whiteoutsurvival-topup.html"
+  },
+  {
+    "name": "新瑪奇Mabinogi",
+    "image": "/images/mabinogi-pc.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 5,
+    "link": "mabinogi.html"
+  },
+  {
+    "name": "燕雲十六聲",
+    "image": "/images/wherewindsmeetgame.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 6,
+    "link": "wherewindsmeetgame.html"
+  },
+  {
+    "name": "菇勇者傳說",
+    "image": "/images/mushroomhero.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 6,
+    "link": "tw-mushroomhero-topup.html"
+  },
+  {
+    "name": "RO仙境傳說:世界之旅",
+    "image": "/images/buy-gnjoy-hk-ro.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "roworld-gravity-topup.html"
+  },
+  {
+    "name": "Honor of Kings Tokens",
+    "image": "/images/HonorofKings.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "buy-honor-of-kings-tokens-top-up.html"
+  },
+  {
+    "name": "漫威爭鋒 Marvel Rivals",
+    "image": "/images/marvel-rivals-lattice-topup.webp",
+    "region": "global",
+    "hot": true,
+    "order": 3,
+    "link": "marvel-rivals-lattice-topup.html"
+  },
+  {
+    "name": "PUBG MOBILE",
+    "image": "/images/pubgm.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "pubgm.html"
+  },
+  {
+    "name": "瑪奇Mobile",
+    "image": "/images/mabinogimobile.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "mabinogimobile.html"
+  },
+  {
+    "name": "明日方舟：終末地 國際服",
+    "image": "/images/arknights-endfield-global.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "arknights-endfield-global.html"
+  },
+  {
+    "name": "我想成為影之強者 港澳服",
+    "image": "/images/shadow-eminence-hkmo.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 2,
+    "link": "shadow-eminence-hkmo.html"
+  },
+  {
+    "name": "三國志戰略版 港澳服",
+    "image": "/images/sanguozhi-strategy-hkmo.webp",
+    "region": "hkmo",
+    "hot": true,
+    "order": 2,
+    "link": "sanguozhi-strategy-hkmo.html"
+  },
+  {
+    "name": "無畏契約：源能行動 陸服",
+    "image": "/images/fearless-covenant-cn.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 2,
+    "link": "fearless-covenant-cn.html"
+  },
+  {
+    "name": "三角洲行動 陸服",
+    "image": "/images/delta-force-cn.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 3,
+    "link": "delta-force-cn.html"
+  },
+  {
+    "name": "和平精英 陸服",
+    "image": "/images/peace-elite-cn.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 4,
+    "link": "peace-elite-cn.html"
+  },
+  {
+    "name": "金鏟鏟之戰 陸服",
+    "image": "/images/jinchanchan-cn.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 5,
+    "link": "jinchanchan-cn.html"
+  },
+  {
+    "name": "心動小鎮",
+    "image": "/images/heartopia-topup.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "heartopia-topup.html"
+  }
 ]

@@ -22,13 +22,5 @@
     "hot": true,
     "order": 3,
     "link": "fantasy-westward-journey-web-topup.html"
-  },
-  {
-    "name": "心動小鎮",
-    "image": "/images/heartopia-topup.webp",
-    "region": "global",
-    "hot": true,
-    "order": 4,
-    "link": "heartopia-topup.html"
   }
 ]
