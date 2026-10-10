@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "name": "德州撲克繁體",
+    "image": "/images/boyaatopup.webp",
+    "region": "global",
+    "hot": true,
+    "order": 2,
+    "link": "boyaa-hk-top-up.html"
+  }
+]
