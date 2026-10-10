@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>UID TOP UP - uiduid.com</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="uiduid.com UID TOP UP 專區，提供所有使用 UID 儲值的遊戲代充服務。只需提供遊戲 UID，不上帳號即可入帳，即買即充，24小時快速到貨。">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="UID TOP UP - uiduid.com">
+    <meta property="og:description" content="使用 UID 儲值的遊戲代充專區，只需提供 UID 即可入帳。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uiduid.com/uid-topup.html">
+    
+    <link rel="canonical" href="https://uiduid.com/uid-topup.html">
+    
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="css/gametopups.css" />
+
+    <!-- JSON-LD 結構化資料（UID TOP UP） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "UID TOP UP 商品列表",
+      "description": "uiduid.com 提供多款使用 UID 儲值的遊戲代充服務",
+      "numberOfItems": 0,
+      "itemListElement": []
+    }
+    </script>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="https://www.uiduid.com" class="logo"><img src="images/logo.webp" alt="uiduid.com" style="height:32px;display:block;"></a>
+        <a href="https://www.uiduid.com" class="nav-btn">返回首頁</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title"><i class="fas fa-id-badge"></i> UID TOP UP</h1>
+
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜遊戲（如：Aniimo）..." />
+            </div>
+            <select class="filter-select" id="regionFilter">
+                <option value="">全部地區</option>
+                <option value="global">國際服 (Global)</option>
+                <option value="twhkmo">TW/HK/MO</option>
+                <option value="hkmo">限港澳 (HK/MO)</option>
+                <option value="tw">限台服 (TW)</option>
+                <option value="jp">日服 (JP)</option>
+                <option value="kr">韓服 (KR)</option>
+                <option value="sea">東南亞服 (SEA)</option>
+                <option value="cn">陸服 (CN)</option>
+                <option value="na">美服 (NA)</option> 
+                <option value="eu">歐服 (EU)</option> 
+            </select>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid">
+            <!-- 商品將從 js/uid_topup.js 載入 -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+         <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <script src="js/uid_topup.js"></script>
+</body>
+</html>
