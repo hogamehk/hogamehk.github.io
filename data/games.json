@@ -1,5 +1,21 @@
 [
   {
+    "name": "絕區零",
+    "image": "/images/zenless-zone-zero.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "zenless-zone-zero-topup.html"
+  },
+  {
+    "name": "鳴潮",
+    "image": "/images/wuthering-waves.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "wuthering-waves-topup.html"
+  },
+  {
     "name": "王者榮耀",
     "image": "/images/pvp.webp",
     "region": "cn",

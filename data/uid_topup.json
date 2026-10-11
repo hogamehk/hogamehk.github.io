@@ -1,5 +1,21 @@
 [
   {
+    "name": "絕區零",
+    "image": "/images/zenless-zone-zero.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "zenless-zone-zero-topup.html"
+  },
+  {
+    "name": "鳴潮",
+    "image": "/images/wuthering-waves.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "wuthering-waves-topup.html"
+  },
+  {
     "name": "燕雲十六聲",
     "image": "/images/wherewindsmeetgame.webp",
     "region": "twhkmo",
