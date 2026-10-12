@@ -5,6 +5,72 @@
   const DATA = window.XUEAIOK_DATA;
   const CART_KEY = "xueaiok_cart_v1";
   const ORDER_KEY = "xueaiok_last_order_v1";
+  const API = "/api";
+
+  let currentUser = null; // { username } | null
+  let authReady = false;
+
+  async function api(path, opts = {}) {
+    const res = await fetch(API + path, {
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json", ...(opts.headers || {}) },
+      ...opts,
+    });
+    let body = null;
+    try {
+      body = await res.json();
+    } catch {
+      body = null;
+    }
+    return { ok: res.ok, status: res.status, body };
+  }
+
+  async function refreshAuth() {
+    try {
+      const { ok, body } = await api("/me");
+      currentUser = ok && body?.username ? { username: body.username } : null;
+    } catch {
+      currentUser = null;
+    }
+    authReady = true;
+    updateAuthUI();
+  }
+
+  function updateAuthUI() {
+    const slot = $("#auth-slot");
+    if (slot) {
+      if (currentUser) {
+        slot.innerHTML = `
+          <span class="auth-user" title="${escapeHtml(currentUser.username)}">${escapeHtml(currentUser.username)}</span>
+          <button type="button" class="auth-link auth-logout" id="logout-btn">登出</button>`;
+        $("#logout-btn")?.addEventListener("click", async () => {
+          await api("/logout", { method: "POST", body: "{}" });
+          currentUser = null;
+          updateAuthUI();
+          toast("已登出");
+          const route = parseHash();
+          if (route.page === "login" || route.page === "register") navigate("/");
+          else render();
+        });
+      } else {
+        slot.innerHTML = `
+          <a class="auth-link" href="#/login">登入</a>
+          <a class="btn btn-accent btn-sm auth-register" href="#/register">註冊</a>`;
+      }
+    }
+    $$("[data-auth]").forEach((el) => {
+      const mode = el.dataset.auth;
+      if (mode === "guest") el.hidden = !!currentUser;
+      if (mode === "user") {
+        el.hidden = !currentUser;
+        if (currentUser && el.id === "mobile-user") {
+          el.textContent = currentUser.username;
+          el.href = "#/";
+        }
+      }
+    });
+  }
+
 
   const $ = (sel, el = document) => el.querySelector(sel);
   const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
@@ -131,6 +197,8 @@
     if (parts[0] === "cart") return { page: "cart" };
     if (parts[0] === "checkout") return { page: "checkout" };
     if (parts[0] === "order") return { page: "order" };
+    if (parts[0] === "login") return { page: "login" };
+    if (parts[0] === "register") return { page: "register" };
     return { page: "home" };
   }
 
@@ -611,6 +679,137 @@
     });
   }
 
+
+  function renderLogin() {
+    if (currentUser) {
+      navigate("/");
+      return "";
+    }
+    return `
+      <div class="container">
+        <div class="auth-page">
+          <div class="form-card auth-card">
+            <h1>登入</h1>
+            <p class="auth-lead">使用你的英文用戶名登入 XueAiOK</p>
+            <form id="auth-form" data-mode="login" novalidate>
+              <div class="form-group">
+                <label>用戶名 <span class="req">*</span></label>
+                <input type="text" name="username" required autocomplete="username"
+                  placeholder="your_name" pattern="[A-Za-z0-9_]{3,20}" maxlength="20" />
+                <div class="form-hint">3–20 個英文字母、數字或底線</div>
+              </div>
+              <div class="form-group">
+                <label>密碼 <span class="req">*</span></label>
+                <input type="password" name="password" required autocomplete="current-password"
+                  placeholder="至少 6 個字元" minlength="6" />
+              </div>
+              <div class="auth-error" id="auth-error" hidden></div>
+              <button type="submit" class="btn btn-accent btn-block btn-lg" id="auth-submit">登入</button>
+            </form>
+            <p class="auth-switch">還沒有帳號？ <a href="#/register">立即註冊</a></p>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function renderRegister() {
+    if (currentUser) {
+      navigate("/");
+      return "";
+    }
+    return `
+      <div class="container">
+        <div class="auth-page">
+          <div class="form-card auth-card">
+            <h1>註冊</h1>
+            <p class="auth-lead">自訂英文用戶名，無需電郵驗證</p>
+            <form id="auth-form" data-mode="register" novalidate>
+              <div class="form-group">
+                <label>用戶名 <span class="req">*</span></label>
+                <input type="text" name="username" required autocomplete="username"
+                  placeholder="your_name" pattern="[A-Za-z0-9_]{3,20}" maxlength="20" />
+                <div class="form-hint">3–20 個英文字母、數字或底線 · 不區分大小寫唯一</div>
+              </div>
+              <div class="form-group">
+                <label>密碼 <span class="req">*</span></label>
+                <input type="password" name="password" required autocomplete="new-password"
+                  placeholder="至少 6 個字元" minlength="6" />
+              </div>
+              <div class="form-group">
+                <label>確認密碼 <span class="req">*</span></label>
+                <input type="password" name="password2" required autocomplete="new-password"
+                  placeholder="再輸入一次" minlength="6" />
+              </div>
+              <div class="auth-error" id="auth-error" hidden></div>
+              <button type="submit" class="btn btn-accent btn-block btn-lg" id="auth-submit">建立帳號</button>
+            </form>
+            <p class="auth-switch">已有帳號？ <a href="#/login">前往登入</a></p>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function bindAuthForm() {
+    const form = $("#auth-form");
+    if (!form) return;
+    const mode = form.dataset.mode;
+    const errEl = $("#auth-error");
+    const btn = $("#auth-submit");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errEl.hidden = true;
+      errEl.textContent = "";
+      const username = form.username.value.trim();
+      const password = form.password.value;
+      const USERNAME_RE = /^[A-Za-z0-9_]{3,20}$/;
+
+      if (!USERNAME_RE.test(username)) {
+        errEl.textContent = "用戶名須為 3–20 個英文字母、數字或底線";
+        errEl.hidden = false;
+        return;
+      }
+      if (password.length < 6) {
+        errEl.textContent = "密碼至少 6 個字元";
+        errEl.hidden = false;
+        return;
+      }
+      if (mode === "register") {
+        const password2 = form.password2.value;
+        if (password !== password2) {
+          errEl.textContent = "兩次輸入的密碼不一致";
+          errEl.hidden = false;
+          return;
+        }
+      }
+
+      btn.disabled = true;
+      btn.textContent = mode === "register" ? "註冊中…" : "登入中…";
+      try {
+        const path = mode === "register" ? "/register" : "/login";
+        const { ok, body, status } = await api(path, {
+          method: "POST",
+          body: JSON.stringify({ username, password }),
+        });
+        if (!ok) {
+          errEl.textContent = (body && body.error) || (status === 0 ? "無法連線伺服器" : "操作失敗");
+          errEl.hidden = false;
+          return;
+        }
+        currentUser = { username: body.username };
+        updateAuthUI();
+        toast(mode === "register" ? "註冊成功，已自動登入" : "登入成功");
+        navigate("/");
+      } catch (err) {
+        errEl.textContent = "無法連線伺服器，請稍後再試";
+        errEl.hidden = false;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = mode === "register" ? "建立帳號" : "登入";
+      }
+    });
+  }
+
   function renderOrder() {
     let order = null;
     try {
@@ -695,16 +894,24 @@
       case "order":
         html = renderOrder();
         break;
+      case "login":
+        html = renderLogin();
+        break;
+      case "register":
+        html = renderRegister();
+        break;
       default:
         html = renderHome();
     }
     app.innerHTML = html;
     updateCartBadge();
+    updateAuthUI();
     window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
 
     if (route.page === "product") bindProductPage();
     if (route.page === "cart") bindCartPage();
     if (route.page === "checkout") bindCheckoutPage();
+    if (route.page === "login" || route.page === "register") bindAuthForm();
 
     $(".mobile-nav")?.classList.remove("open");
   }
@@ -715,7 +922,7 @@
       $(".mobile-nav")?.classList.toggle("open");
     });
     window.addEventListener("hashchange", render);
-    render();
+    refreshAuth().finally(() => render());
   }
 
   if (document.readyState === "loading") {

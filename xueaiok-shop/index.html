@@ -26,6 +26,10 @@
         <a href="#/catalog/mobile">手遊直充</a>
       </nav>
       <div class="header-actions">
+        <div class="auth-slot" id="auth-slot">
+          <a class="auth-link" href="#/login">登入</a>
+          <a class="btn btn-accent btn-sm auth-register" href="#/register">註冊</a>
+        </div>
         <a class="cart-btn" href="#/cart" aria-label="購物車">
           <span aria-hidden="true">🛒</span>
           <span class="cart-label">購物車</span>
@@ -42,6 +46,9 @@
     <a href="#/catalog/giftcard">點卡禮品</a>
     <a href="#/catalog/mobile">手遊直充</a>
     <a href="#/cart">購物車</a>
+    <a href="#/login" data-auth="guest">登入</a>
+    <a href="#/register" data-auth="guest">註冊</a>
+    <a href="#/" data-auth="user" id="mobile-user" hidden>帳戶</a>
   </nav>
 
   <main id="app"></main>
