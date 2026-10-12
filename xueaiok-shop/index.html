@@ -2,8 +2,9 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="XueAiOK — 乾淨好買的遊戲充值與點卡。香港點卡禮品、手遊直充演示商城。" />
+  <meta name="theme-color" content="#f5f5f7" />
   <title>XueAiOK — 遊戲充值與點卡</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +14,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a class="logo" href="#/" aria-label="XueAiOK 首頁">
         <span class="logo-mark">X</span>
         <span class="logo-text">XueAi<span>OK</span></span>
@@ -30,12 +31,12 @@
           <span class="cart-label">購物車</span>
           <span class="cart-count" data-count="0"></span>
         </a>
-        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="開啟選單">☰</button>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="開啟選單" hidden>☰</button>
       </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="手機選單">
+  <nav class="mobile-nav" aria-label="手機選單" hidden>
     <a href="#/">首頁</a>
     <a href="#/catalog">全部商品</a>
     <a href="#/catalog/giftcard">點卡禮品</a>
@@ -44,6 +45,16 @@
   </nav>
 
   <main id="app"></main>
+
+  <nav class="bottom-nav" aria-label="底部導覽">
+    <a href="#/" data-nav="home"><span class="bn-icon" aria-hidden="true">🏠</span>首頁</a>
+    <a href="#/catalog" data-nav="catalog"><span class="bn-icon" aria-hidden="true">🎮</span>商店</a>
+    <a href="#/catalog/giftcard" data-nav="giftcard"><span class="bn-icon" aria-hidden="true">🎁</span>點卡</a>
+    <a class="bn-cart" href="#/cart" data-nav="cart">
+      <span class="bn-icon" aria-hidden="true">🛒</span>購物車
+      <span class="cart-count" data-count="0"></span>
+    </a>
+  </nav>
 
   <footer class="site-footer">
     <div class="container">

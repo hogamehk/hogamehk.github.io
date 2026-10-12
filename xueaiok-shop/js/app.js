@@ -9,7 +9,6 @@
   const $ = (sel, el = document) => el.querySelector(sel);
   const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-  /* —— Helpers —— */
   function money(n) {
     return "HK$" + Number(n).toLocaleString("en-HK", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
@@ -29,10 +28,9 @@
   }
 
   function thumbStyle(product) {
-    return `background: linear-gradient(145deg, ${product.color}ee, ${product.color}99);`;
+    return `background: linear-gradient(145deg, ${product.color}ee, ${product.color}88);`;
   }
 
-  /* —— Cart (localStorage) —— */
   function loadCart() {
     try {
       return JSON.parse(localStorage.getItem(CART_KEY)) || [];
@@ -83,7 +81,7 @@
   }
 
   function updateQty(key, qty) {
-    let cart = loadCart();
+    const cart = loadCart();
     const item = cart.find((i) => i.key === key);
     if (!item) return;
     item.qty = Math.max(1, Math.min(99, qty));
@@ -106,7 +104,6 @@
     });
   }
 
-  /* —— Toast —— */
   function toast(msg) {
     let wrap = $(".toast-wrap");
     if (!wrap) {
@@ -125,11 +122,9 @@
     }, 2400);
   }
 
-  /* —— Router —— */
   function parseHash() {
     const raw = (location.hash || "#/").replace(/^#/, "") || "/";
     const parts = raw.split("/").filter(Boolean);
-    // #/  #/catalog  #/catalog/giftcard  #/product/mycard-hk  #/cart  #/checkout  #/order
     if (parts.length === 0) return { page: "home" };
     if (parts[0] === "catalog") return { page: "catalog", category: parts[1] || null };
     if (parts[0] === "product" && parts[1]) return { page: "product", id: parts[1] };
@@ -143,24 +138,36 @@
     location.hash = path.startsWith("#") ? path : "#" + path;
   }
 
-  function setActiveNav(page) {
+  function setActiveNav(page, category) {
     $$(".nav-links a, .mobile-nav a").forEach((a) => {
       const href = a.getAttribute("href") || "";
       let active = false;
       if (page === "home" && (href === "#/" || href === "#")) active = true;
-      if (page === "catalog" && href.includes("catalog")) active = true;
+      if (page === "catalog" && href === "#/catalog" && !category) active = true;
+      if (page === "catalog" && category && href === "#/catalog/" + category) active = true;
+      if (page === "catalog" && !category && href.includes("catalog") && href !== "#/catalog") active = false;
       if ((page === "cart" || page === "checkout") && href.includes("cart")) active = true;
+      a.classList.toggle("active", active);
+    });
+
+    $$(".bottom-nav a").forEach((a) => {
+      const nav = a.dataset.nav;
+      let active = false;
+      if (nav === "home" && page === "home") active = true;
+      if (nav === "catalog" && page === "catalog" && category !== "giftcard") active = true;
+      if (nav === "giftcard" && page === "catalog" && category === "giftcard") active = true;
+      if (nav === "cart" && (page === "cart" || page === "checkout" || page === "order")) active = true;
       a.classList.toggle("active", active);
     });
   }
 
-  /* —— Views —— */
-  function productCardHTML(p) {
+  function productCardHTML(p, extraClass) {
     const cheapest = Math.min(...p.options.map((o) => o.sale));
     const cheapestList = p.options.find((o) => o.sale === cheapest)?.list;
     const cat = getCategory(p.category);
+    const cls = extraClass ? `product-card ${extraClass}` : "product-card";
     return `
-      <article class="product-card">
+      <article class="${cls}">
         <a href="#/product/${p.id}">
           <div class="product-thumb" style="${thumbStyle(p)}">
             ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ""}
@@ -179,16 +186,31 @@
       </article>`;
   }
 
+  function shelfHTML(title, link, products) {
+    if (!products.length) return "";
+    return `
+      <section class="shelf">
+        <div class="section-head">
+          <h2>${title}</h2>
+          <a href="${link}">查看全部</a>
+        </div>
+        <div class="shelf-track">
+          ${products.map((p) => productCardHTML(p, "shelf-card")).join("")}
+        </div>
+      </section>`;
+  }
+
   function renderHome() {
-    const featured = DATA.products.filter((p) => p.hot).concat(
-      DATA.products.filter((p) => !p.hot)
-    ).slice(0, 8);
+    const giftcards = DATA.products.filter((p) => p.category === "giftcard");
+    const mobile = DATA.products.filter((p) => p.category === "mobile");
+    const hot = DATA.products.filter((p) => p.hot);
+    const featured = (hot.length ? hot : DATA.products).slice(0, 8);
 
     return `
       <section class="hero">
         <div class="container">
           <div class="hero-card">
-            <div class="hero-eyebrow">✨ 香港玩家首選 · 演示商城</div>
+            <div class="hero-eyebrow">Today · XueAiOK</div>
             <h1>${DATA.brand.tagline}</h1>
             <p>點卡禮品、手遊直充，一次買齊。簡潔介面、透明價錢、即時下單。</p>
             <div class="hero-actions">
@@ -215,26 +237,40 @@
           </div>
         </div>
 
-        <div class="section-head">
-          <h2>商品分類</h2>
-        </div>
         <div class="chips">
-          <a class="chip" href="#/catalog">全部</a>
+          <a class="chip active" href="#/catalog">全部</a>
           ${DATA.categories
-            .map(
-              (c) =>
-                `<a class="chip" href="#/catalog/${c.id}">${c.icon} ${c.name}</a>`
-            )
+            .map((c) => `<a class="chip" href="#/catalog/${c.id}">${c.icon} ${c.name}</a>`)
             .join("")}
         </div>
 
-        <div class="section-head">
-          <h2>精選商品</h2>
-          <a href="#/catalog">查看全部 →</a>
+        <div class="featured-row">
+          <a class="editorial-card" href="#/catalog/giftcard" style="background:linear-gradient(135deg,#0d9488,#14b8a6 50%,#5eead4)">
+            <div class="ed-label">精選專區</div>
+            <h3>熱門點卡禮品</h3>
+            <p>MyCard、PSN、iTunes 等即買即用</p>
+            <span class="ed-cta">立即選購 →</span>
+          </a>
+          <a class="editorial-card" href="#/catalog/mobile" style="background:linear-gradient(135deg,#ea580c,#fb923c 55%,#fdba74)">
+            <div class="ed-label">手遊直充</div>
+            <h3>熱門遊戲一鍵充</h3>
+            <p>王者、絕區零、鳴潮等 UID 直充</p>
+            <span class="ed-cta">去看看 →</span>
+          </a>
         </div>
-        <div class="product-grid">
-          ${featured.map(productCardHTML).join("")}
-        </div>
+
+        ${shelfHTML("熱門點卡", "#/catalog/giftcard", giftcards)}
+        ${shelfHTML("手遊直充", "#/catalog/mobile", mobile)}
+
+        <section class="section">
+          <div class="section-head">
+            <h2>我們在玩什麼</h2>
+            <a href="#/catalog">查看全部</a>
+          </div>
+          <div class="product-grid">
+            ${featured.map((p) => productCardHTML(p)).join("")}
+          </div>
+        </section>
       </div>`;
   }
 
@@ -263,7 +299,7 @@
             .join("")}
         </div>
         <div class="product-grid">
-          ${list.map(productCardHTML).join("")}
+          ${list.map((p) => productCardHTML(p)).join("")}
         </div>
       </div>`;
   }
@@ -636,10 +672,9 @@
       .replace(/"/g, "&quot;");
   }
 
-  /* —— Render —— */
   function render() {
     const route = parseHash();
-    setActiveNav(route.page);
+    setActiveNav(route.page, route.category);
     const app = $("#app");
     if (!app) return;
 
@@ -671,7 +706,6 @@
     if (route.page === "cart") bindCartPage();
     if (route.page === "checkout") bindCheckoutPage();
 
-    // close mobile nav
     $(".mobile-nav")?.classList.remove("open");
   }
 
