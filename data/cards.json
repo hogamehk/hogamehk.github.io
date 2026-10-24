@@ -1,63 +1,485 @@
 [
-  { "name": "日本 iTunes Gift Card", "image": "/images/buy-japan-itunes-gift-card-hk-mo.webp", "region": "jp", "hot": true, "order": 1, "link": "japan-itunes-gift-card.html" },
-  { "name": "中國 App Store 充值卡", "image": "/images/capple-gift-card-china.webp", "region": "cn", "hot": true, "order": 2, "link": "buy-cn-apple-gift-card.html" },
-  { "name": "香港 iTunes Gift Card", "image": "/images/hk-apple-gift-card.webp", "region": "twhkmo", "hot": true, "order": 3, "link": "hk-apple-gift-card.html" },
-  { "name": "美國 iTunes Gift Card", "image": "/images/buy-us-apple-gift-card.webp", "region": "global", "hot": true, "order": 3, "link": "buy-us-apple-gift-card.html" },
-  { "name": "FLAI金幣", "image": "/images/flai-topup.webp", "region": "global", "hot": true, "order": 3, "link": "flai-topup.html" },
-    { "name": "PlayStation香港 (PSN HK) ", "image": "/images/psn-hk.webp", "region": "twhkmo", "hot": true, "order": 3, "link": "buy-psn-hk.html" },
-    { "name": "9Card HK", "image": "/images/9Card.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "buy-9card.html" },
-  { "name": "台灣 iTunes Gift Card", "image": "/images/buy-itunes-gift-card-taiwan.webp", "region": "twhkmo", "hot": true, "order": 3, "link": "buy-tw-apple-gift-card.html" },
-  { "name": "土耳其 iTunes Gift Card", "image": "/images/turkey-apple-gift-card-all-denominations-comparison.webp", "region": "global", "hot": true, "order": 3, "link": "buy-tr-apple-gift-card.html" },
-  { "name": "台灣 MyCard", "image": "/images/taiwan-mycard.webp", "region": "twhkmo", "hot": false, "order": 4, "link": "taiwan-mycard.html" },
-  { "name": "香港 MyCard", "image": "/images/buyhkmycard.webp", "region": "twhkmo", "hot": true, "order": 5, "link": "hongkong-mycard.html" },
-  { "name": "Razer Gold HK", "image": "/images/razergold-hk.webp", "region": "twhkmo", "hot": true, "order": 5, "link": "buy-razergold-hk.html" },
-  { "name": "Tinder會員", "image": "/images/buy-tinder-gold.webp", "region": "global", "hot": true, "order": 5, "link": "buy-tinder-gold.html" },
-  { "name": "Steam HK 禮物卡", "image": "/images/steam-card-hk-buy.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "steam-card-hk-buy.html" },
-  { "name": "台灣 Steam wallet卡", "image": "/images/twsteam.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "twsteam.html" },
-  { "name": "日本 Steam wallet卡", "image": "/images/jpsteam.webp", "region": "jp","order": 6, "link": "jpsteam.html" },
-  { "name": "Uber/UberEats Gift Card 日本", "image": "/images/Japan-Uber-Redeem-Code.webp", "region": "jp","order": 6, "link": "Buy-Japan-Uber-Redeem-Code.html" },
-  { "name": "A-Card|Alta", "image": "/images/alta-a-card.webp", "region": "twhkmo", "hot": true, "order": 10, "link": "alta-a-card.html" },
-  { "name": "美國 Steam wallet卡", "image": "/images/buy-steam-gift-card.webp", "region": "global", "hot": true, "order": 6, "link": "buy-steam-gift-card.html" },
-  { "name": "中國 Steam wallet卡", "image": "/images/cnsteam.webp", "region": "cn", "hot": true, "order": 6, "link": "cnsteam.html" },
-  { "name": "馬來西亞 Steam wallet卡", "image": "/images/mysteam.webp", "region": "sea", "hot": true, "order": 6, "link": "mysteam.html" },
-  { "name": "日本Bitcash卡", "image": "/images/bitcash-hong-kong-buy.webp", "region": "jp", "hot": true, "order": 7, "link": "buy-bitcash-hk.html" },
-  { "name": "台灣GASH 樂點儲值", "image": "/images/buy-gash-card-tw.webp", "region": "twhkmo", "hot": true, "order": 8, "link": "buy-gash-card-tw.html" },
-  { "name": "香港GASH 樂點儲值", "image": "/images/buy-gash-card-hongkong.webp", "region": "twhkmo", "hot": true, "order": 9, "link": "buy-gash-card-hongkong.html" },
-  { "name": "怪物彈珠專用卡", "image": "/images/MonsterStrikeGash.webp", "hot": true, "region": "twhkmo", "order": 10, "link": "buy-monsterstrikegash.html" },
-  { "name": "Xbox Gift Card (HK)", "image": "/images/xbox-card-buy-online.webp", "region": "twhkmo", "hot": true, "order": 10, "link": "xbox-card-buy-online.html" },
-  { "name": "日本 PlayStation兌換碼 (PSN)", "image": "/images/jp-psn-gift-card.webp", "region": "jp", "hot": true, "order": 10, "link": "japan-psn-gift-card.html" },  
-  { "name": "美國 PlayStation兌換碼 (PSN)", "image": "/images/buy-psn-usd.webp", "region": "global", "order": 10, "link": "buy-us-psn.html" },
-  { "name": "英國 PlayStation兌換碼 (PSN)", "image": "/images/ukpsn.webp", "region": "global",  "order": 10, "link": "ukpsn.html" },
-  { "name": "馬來 PlayStation兌換碼 (PSN)", "image": "/images/mypsn.webp", "region": "sea","order": 10, "link": "mypsn.html" },
-  { "name": "日本 Nintendo 任天堂 eShop", "image": "/images/jpnintendo.webp", "region": "jp", "hot": true, "order": 11, "link": "jpnintendo.html" },
-  { "name": "香港 Nintendo 任天堂 eShop", "image": "/images/hknintendo.webp", "hot": true, "region": "twhkmo", "order": 11, "link": "hknintendo.html" },
-  { "name": "美國 任天堂點卡", "image": "/images/usnintendo.webp", "region": "global",  "order": 11, "link": "usnintendo.html" },
-  { "name": "日本 DMM Point Code", "image": "/images/dmm-prepaid-card.webp", "region": "jp", "hot": true, "order": 12, "link": "japan-dmm-points.html" },
-  { "name": "日本 DLsite 點數卡", "image": "/images/dlsite-gift-card.webp", "region": "jp","order": 12, "link": "buy-dlsite-points.html" },
-    { "name": "日本Amazon禮品卡", "image": "/images/amazon-co-jp-gift-cards.webp", "region": "jp","order": 12, "link": "buy-amazon-co-jp-gift-cards.html" },
-  { "name": "貝殼幣Garena", "image": "/images/taiwan-garena-shells.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "taiwan-garena-shells.html" },
-  { "name": "元氣卡", "image": "/images/xlegend.webp", "region": "twhkmo",  "order": 14, "link": "xlegend.html" },
-   { "name": "GC CARD", "image": "/images/gccard.webp", "region": "twhkmo",  "order": 14, "link": "buy-gc-points.html" },
-  { "name": "香港 Google Play 卡", "image": "/images/google-play-gift-card-hk-all-denominations.webp", "region": "twhkmo", "order": 15, "link": "buy-google-play-gift-card-hong-kong.html" },
-  { "name": "雷爵通用卡", "image": "/images/lager-ez-point-card.webp", "region": "twhkmo", "hot": true, "order": 16, "link": "buy-lager-ez-card-online.html" },
-  { "name": "大馬Garena Shells", "image": "/images/mygarena.webp", "region": "sea", "hot": true, "order": 13, "link": "mygarena.html" },  
-  { "name": "Razer Gold (MY)", "image": "/images/myrazergold.webp", "region": "sea", "order": 13, "link": "myrazergold.html" },
-   { "name": "Razer Gold (US)", "image": "/images/usrazergold.webp", "region": "global", "order": 13, "link": "usrazergold.html" },
-  { "name": "Riot Games Gift Card", "image": "/images/myriotgiftcard.webp", "region": "sea", "hot": true, "order": 13, "link": "myriotgiftcard.html" },  
-  { "name": "TNG Reload Pin", "image": "/images/tngreload.webp", "region": "sea", "hot": true, "order": 13, "link": "tngreload.html" }, 
-  { "name": "Riot 點數卡", "image": "/images/riotgames.webp", "region": "global", "hot": true, "order": 13, "link": "riotgames.html" }, 
-    { "name": "Xbox Game Pass", "image": "/images/buy-xbox-gamepass-ultimate.webp", "region": "global", "hot": true, "order": 13, "link": "buy-xbox-gamepass-ultimate.html" }, 
-  { "name": "韓國 Culture Land", "image": "/images/korea-cultureland-gift-card.webp", "region": "kr", "hot": true, "order": 13, "link": "buy-korea-cultureland-gift-card.html" }, 
-  { "name": "騰訊QQ卡", "image": "/images/qqcard.webp", "region": "cn", "hot": true, "order": 13, "link": "qqcard.html" }, 
-    { "name": "香港戲谷卡", "image": "/images/buy-funtown-point-card.webp", "region": "twhkmo", "hot": true, "order": 6, "link": "buy-funtown-point-card.html" },
-  { "name": "NetEase Pay（日本）", "image": "/images/jpneteasepay.webp", "region": "jp", "hot": true, "order": 13, "link": "jpneteasepay.html" }, 
-  { "name": "NetEase Pay", "image": "/images/neteasepay.webp", "region": "global", "hot": true, "order": 13, "link": "neteasepay.html" }, 
-  { "name": "PikPak 會員", "image": "/images/pikpak-membership.webp", "region": "global", "hot": true, "order": 13, "link": "pikpak-membership.html" }, 
-   { "name": "Telegram 星星", "image": "/images/buytelegramstars.webp", "hot": true, "region": "global", "order": 11, "link": "buy-telegram-stars.html" },
-  { "name": "roblox 點數卡", "image": "/images/roblox.webp", "region": "global", "hot": true, "order": 17, "link": "roblox.html" },
-  { "name": "Netflix Gift Card (香港)", "image": "/images/netflix-gift-card-hongkong.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "netflix-gift-card-hongkong.html" },
-  { "name": "抖音 Douyin 鑽石儲值", "image": "/images/douyin.webp", "region": "cn", "hot": true, "order": 13, "link": "douyin.html" },
-  { "name": "探探 Tantan 探鑽儲值", "image": "/images/tantan.webp", "region": "cn", "hot": true, "order": 13, "link": "tantan.html" },
-  { "name": "韓國 NCSOFT NCoin", "image": "/images/buy-ncsoft-ncoin-korea.webp", "region": "kr", "hot": true, "order": 13, "link": "buy-ncsoft-ncoin-korea.html" },
-  { "name": "台灣 Razer Gold", "image": "/images/buy-razer-gold-taiwan.webp", "region": "twhkmo", "hot": true, "order": 13, "link": "buy-razer-gold-taiwan.html" }
+  {
+    "name": "日本 iTunes Gift Card",
+    "image": "/images/buy-japan-itunes-gift-card-hk-mo.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 1,
+    "link": "japan-itunes-gift-card.html"
+  },
+  {
+    "name": "中國 App Store 充值卡",
+    "image": "/images/capple-gift-card-china.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 2,
+    "link": "buy-cn-apple-gift-card.html"
+  },
+  {
+    "name": "香港 iTunes Gift Card",
+    "image": "/images/hk-apple-gift-card.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 3,
+    "link": "hk-apple-gift-card.html"
+  },
+  {
+    "name": "美國 iTunes Gift Card",
+    "image": "/images/buy-us-apple-gift-card.webp",
+    "region": "global",
+    "hot": true,
+    "order": 3,
+    "link": "buy-us-apple-gift-card.html"
+  },
+  {
+    "name": "FLAI金幣",
+    "image": "/images/flai-topup.webp",
+    "region": "global",
+    "hot": true,
+    "order": 3,
+    "link": "flai-topup.html"
+  },
+  {
+    "name": "PlayStation香港 (PSN HK) ",
+    "image": "/images/psn-hk.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 3,
+    "link": "buy-psn-hk.html"
+  },
+  {
+    "name": "9Card HK",
+    "image": "/images/9Card.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 13,
+    "link": "buy-9card.html"
+  },
+  {
+    "name": "台灣 iTunes Gift Card",
+    "image": "/images/buy-itunes-gift-card-taiwan.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 3,
+    "link": "buy-tw-apple-gift-card.html"
+  },
+  {
+    "name": "土耳其 iTunes Gift Card",
+    "image": "/images/turkey-apple-gift-card-all-denominations-comparison.webp",
+    "region": "global",
+    "hot": true,
+    "order": 3,
+    "link": "buy-tr-apple-gift-card.html"
+  },
+  {
+    "name": "台灣 MyCard",
+    "image": "/images/taiwan-mycard.webp",
+    "region": "twhkmo",
+    "hot": false,
+    "order": 4,
+    "link": "taiwan-mycard.html"
+  },
+  {
+    "name": "香港 MyCard",
+    "image": "/images/buyhkmycard.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 5,
+    "link": "hongkong-mycard.html"
+  },
+  {
+    "name": "Razer Gold HK",
+    "image": "/images/razergold-hk.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 5,
+    "link": "buy-razergold-hk.html"
+  },
+  {
+    "name": "Tinder會員",
+    "image": "/images/buy-tinder-gold.webp",
+    "region": "global",
+    "hot": true,
+    "order": 5,
+    "link": "buy-tinder-gold.html"
+  },
+  {
+    "name": "Steam HK 禮物卡",
+    "image": "/images/steam-card-hk-buy.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 6,
+    "link": "steam-card-hk-buy.html"
+  },
+  {
+    "name": "台灣 Steam wallet卡",
+    "image": "/images/twsteam.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 6,
+    "link": "twsteam.html"
+  },
+  {
+    "name": "日本 Steam wallet卡",
+    "image": "/images/jpsteam.webp",
+    "region": "jp",
+    "order": 6,
+    "link": "jpsteam.html"
+  },
+  {
+    "name": "Uber/UberEats Gift Card 日本",
+    "image": "/images/Japan-Uber-Redeem-Code.webp",
+    "region": "jp",
+    "order": 6,
+    "link": "Buy-Japan-Uber-Redeem-Code.html"
+  },
+  {
+    "name": "A-Card|Alta",
+    "image": "/images/alta-a-card.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 10,
+    "link": "alta-a-card.html"
+  },
+  {
+    "name": "美國 Steam wallet卡",
+    "image": "/images/buy-steam-gift-card.webp",
+    "region": "global",
+    "hot": true,
+    "order": 6,
+    "link": "buy-steam-gift-card.html"
+  },
+  {
+    "name": "中國 Steam wallet卡",
+    "image": "/images/cnsteam.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 6,
+    "link": "cnsteam.html"
+  },
+  {
+    "name": "馬來西亞 Steam wallet卡",
+    "image": "/images/mysteam.webp",
+    "region": "sea",
+    "hot": true,
+    "order": 6,
+    "link": "mysteam.html"
+  },
+  {
+    "name": "日本Bitcash卡",
+    "image": "/images/bitcash-hong-kong-buy.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 7,
+    "link": "buy-bitcash-hk.html"
+  },
+  {
+    "name": "台灣GASH 樂點儲值",
+    "image": "/images/buy-gash-card-tw.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 8,
+    "link": "buy-gash-card-tw.html"
+  },
+  {
+    "name": "香港GASH 樂點儲值",
+    "image": "/images/buy-gash-card-hongkong.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 9,
+    "link": "buy-gash-card-hongkong.html"
+  },
+  {
+    "name": "怪物彈珠專用卡",
+    "image": "/images/MonsterStrikeGash.webp",
+    "hot": true,
+    "region": "twhkmo",
+    "order": 10,
+    "link": "buy-monsterstrikegash.html"
+  },
+  {
+    "name": "Xbox Gift Card (HK)",
+    "image": "/images/xbox-card-buy-online.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 10,
+    "link": "xbox-card-buy-online.html"
+  },
+  {
+    "name": "日本 Xbox Live Gift Card",
+    "image": "/images/xbox-card-buy-online.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 10,
+    "link": "japan-xbox-live-gift-card.html"
+  },
+  {
+    "name": "日本 PlayStation兌換碼 (PSN)",
+    "image": "/images/jp-psn-gift-card.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 10,
+    "link": "japan-psn-gift-card.html"
+  },
+  {
+    "name": "美國 PlayStation兌換碼 (PSN)",
+    "image": "/images/buy-psn-usd.webp",
+    "region": "global",
+    "order": 10,
+    "link": "buy-us-psn.html"
+  },
+  {
+    "name": "英國 PlayStation兌換碼 (PSN)",
+    "image": "/images/ukpsn.webp",
+    "region": "global",
+    "order": 10,
+    "link": "ukpsn.html"
+  },
+  {
+    "name": "馬來 PlayStation兌換碼 (PSN)",
+    "image": "/images/mypsn.webp",
+    "region": "sea",
+    "order": 10,
+    "link": "mypsn.html"
+  },
+  {
+    "name": "日本 Nintendo 任天堂 eShop",
+    "image": "/images/jpnintendo.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 11,
+    "link": "jpnintendo.html"
+  },
+  {
+    "name": "香港 Nintendo 任天堂 eShop",
+    "image": "/images/hknintendo.webp",
+    "hot": true,
+    "region": "twhkmo",
+    "order": 11,
+    "link": "hknintendo.html"
+  },
+  {
+    "name": "美國 任天堂點卡",
+    "image": "/images/usnintendo.webp",
+    "region": "global",
+    "order": 11,
+    "link": "usnintendo.html"
+  },
+  {
+    "name": "日本 DMM Point Code",
+    "image": "/images/dmm-prepaid-card.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 12,
+    "link": "japan-dmm-points.html"
+  },
+  {
+    "name": "日本 DLsite 點數卡",
+    "image": "/images/dlsite-gift-card.webp",
+    "region": "jp",
+    "order": 12,
+    "link": "buy-dlsite-points.html"
+  },
+  {
+    "name": "日本Amazon禮品卡",
+    "image": "/images/amazon-co-jp-gift-cards.webp",
+    "region": "jp",
+    "order": 12,
+    "link": "buy-amazon-co-jp-gift-cards.html"
+  },
+  {
+    "name": "貝殼幣Garena",
+    "image": "/images/taiwan-garena-shells.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 13,
+    "link": "taiwan-garena-shells.html"
+  },
+  {
+    "name": "元氣卡",
+    "image": "/images/xlegend.webp",
+    "region": "twhkmo",
+    "order": 14,
+    "link": "xlegend.html"
+  },
+  {
+    "name": "GC CARD",
+    "image": "/images/gccard.webp",
+    "region": "twhkmo",
+    "order": 14,
+    "link": "buy-gc-points.html"
+  },
+  {
+    "name": "香港 Google Play 卡",
+    "image": "/images/google-play-gift-card-hk-all-denominations.webp",
+    "region": "twhkmo",
+    "order": 15,
+    "link": "buy-google-play-gift-card-hong-kong.html"
+  },
+  {
+    "name": "雷爵通用卡",
+    "image": "/images/lager-ez-point-card.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 16,
+    "link": "buy-lager-ez-card-online.html"
+  },
+  {
+    "name": "大馬Garena Shells",
+    "image": "/images/mygarena.webp",
+    "region": "sea",
+    "hot": true,
+    "order": 13,
+    "link": "mygarena.html"
+  },
+  {
+    "name": "Razer Gold (MY)",
+    "image": "/images/myrazergold.webp",
+    "region": "sea",
+    "order": 13,
+    "link": "myrazergold.html"
+  },
+  {
+    "name": "Razer Gold (US)",
+    "image": "/images/usrazergold.webp",
+    "region": "global",
+    "order": 13,
+    "link": "usrazergold.html"
+  },
+  {
+    "name": "Riot Games Gift Card",
+    "image": "/images/myriotgiftcard.webp",
+    "region": "sea",
+    "hot": true,
+    "order": 13,
+    "link": "myriotgiftcard.html"
+  },
+  {
+    "name": "TNG Reload Pin",
+    "image": "/images/tngreload.webp",
+    "region": "sea",
+    "hot": true,
+    "order": 13,
+    "link": "tngreload.html"
+  },
+  {
+    "name": "Riot 點數卡",
+    "image": "/images/riotgames.webp",
+    "region": "global",
+    "hot": true,
+    "order": 13,
+    "link": "riotgames.html"
+  },
+  {
+    "name": "Xbox Game Pass",
+    "image": "/images/buy-xbox-gamepass-ultimate.webp",
+    "region": "global",
+    "hot": true,
+    "order": 13,
+    "link": "buy-xbox-gamepass-ultimate.html"
+  },
+  {
+    "name": "韓國 Culture Land",
+    "image": "/images/korea-cultureland-gift-card.webp",
+    "region": "kr",
+    "hot": true,
+    "order": 13,
+    "link": "buy-korea-cultureland-gift-card.html"
+  },
+  {
+    "name": "騰訊QQ卡",
+    "image": "/images/qqcard.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 13,
+    "link": "qqcard.html"
+  },
+  {
+    "name": "香港戲谷卡",
+    "image": "/images/buy-funtown-point-card.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 6,
+    "link": "buy-funtown-point-card.html"
+  },
+  {
+    "name": "NetEase Pay（日本）",
+    "image": "/images/jpneteasepay.webp",
+    "region": "jp",
+    "hot": true,
+    "order": 13,
+    "link": "jpneteasepay.html"
+  },
+  {
+    "name": "NetEase Pay",
+    "image": "/images/neteasepay.webp",
+    "region": "global",
+    "hot": true,
+    "order": 13,
+    "link": "neteasepay.html"
+  },
+  {
+    "name": "PikPak 會員",
+    "image": "/images/pikpak-membership.webp",
+    "region": "global",
+    "hot": true,
+    "order": 13,
+    "link": "pikpak-membership.html"
+  },
+  {
+    "name": "Telegram 星星",
+    "image": "/images/buytelegramstars.webp",
+    "hot": true,
+    "region": "global",
+    "order": 11,
+    "link": "buy-telegram-stars.html"
+  },
+  {
+    "name": "roblox 點數卡",
+    "image": "/images/roblox.webp",
+    "region": "global",
+    "hot": true,
+    "order": 17,
+    "link": "roblox.html"
+  },
+  {
+    "name": "Netflix Gift Card (香港)",
+    "image": "/images/netflix-gift-card-hongkong.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 13,
+    "link": "netflix-gift-card-hongkong.html"
+  },
+  {
+    "name": "抖音 Douyin 鑽石儲值",
+    "image": "/images/douyin.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 13,
+    "link": "douyin.html"
+  },
+  {
+    "name": "探探 Tantan 探鑽儲值",
+    "image": "/images/tantan.webp",
+    "region": "cn",
+    "hot": true,
+    "order": 13,
+    "link": "tantan.html"
+  },
+  {
+    "name": "韓國 NCSOFT NCoin",
+    "image": "/images/buy-ncsoft-ncoin-korea.webp",
+    "region": "kr",
+    "hot": true,
+    "order": 13,
+    "link": "buy-ncsoft-ncoin-korea.html"
+  },
+  {
+    "name": "台灣 Razer Gold",
+    "image": "/images/buy-razer-gold-taiwan.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 13,
+    "link": "buy-razer-gold-taiwan.html"
+  }
 ]
