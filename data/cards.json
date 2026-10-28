@@ -481,5 +481,13 @@
     "hot": true,
     "order": 13,
     "link": "buy-razer-gold-taiwan.html"
+  },
+  {
+    "name": "Crunchyroll Mega Fan",
+    "image": "/images/crunchyroll-mega-fan.webp",
+    "region": "global",
+    "hot": true,
+    "order": 5,
+    "link": "crunchyroll-mega-fan.html"
   }
 ]
