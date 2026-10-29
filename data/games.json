@@ -1,5 +1,13 @@
 [
   {
+    "name": "魔物獵人：旅人 UID（港澳台服）",
+    "image": "/images/mh-outlanders-hktw-uid.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "mh-outlanders-hktw-uid.html"
+  },
+  {
     "name": "絕區零",
     "image": "/images/zenless-zone-zero.webp",
     "region": "twhkmo",
