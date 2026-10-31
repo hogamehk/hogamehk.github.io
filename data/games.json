@@ -1,5 +1,13 @@
 [
   {
+    "name": "新熱血江湖：世界",
+    "image": "/images/yulgang-world-topup.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "yulgang-world-topup.html"
+  },
+  {
     "name": "魔物獵人：旅人 UID（港澳台服）",
     "image": "/images/mh-outlanders-hktw-uid.webp",
     "region": "twhkmo",
