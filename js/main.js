@@ -131,7 +131,7 @@ const allProducts = [
     { id: 'roblox', name: 'roblox', desc: '官方卡密，全球通用，支持所有roblox賬戶', link: 'roblox.html' },
     { id: '香港iTunes Gift Card ', name: '香港iTunes Gift Card', desc: '適用於香港 Apple ID，可用於 App Store、iTunes、Apple Music 等服務', link: 'hkitunes.html' },
     { id: '日本BitCash點卡 ', name: '日本BitCash點卡', desc: '適用於日本BitCash點卡充值服務', link: 'bitcash.html' },
-    { id: '日本任天堂ホームページ ', name: '日本任天堂Nintendo Switch', desc: '適用於日本任天堂ホームページ點卡充值服務', link: 'jpnintendo.html' },
+    { id: '日本任天堂ホームページ ', name: '日本任天堂Nintendo Switch', desc: '適用於日本任天堂ホームページ點卡充值服務', link: 'nintendo-jp.html' },
     { id: 'aion2', name: 'aion2 / 永恆之塔', desc: '秒充到賬，穩定可靠，支持所有伺服器', link: 'aion2.html' },
     { id: 'GASH卡', name: 'GASH卡', desc: '秒充到賬，穩定可靠，支持所有伺服器', link: 'gash.html' },
     { id: '日本 iTunes Gift Card', name: '日本 iTunes Gift Card', desc: '官方卡密，穩定可靠，支持所有appleid戶口', link: 'jpitunes.html' },

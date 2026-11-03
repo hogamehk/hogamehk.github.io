@@ -172,7 +172,7 @@ const allProducts = [
         id: '日本任天堂ホームページ ',
         name: '日本任天堂Nintendo Switch',
         desc: '適用於日本任天堂ホームページ點卡充值服務',
-        link: 'jpnintendo.html'
+        link: 'nintendo-jp.html'
     },
     {
         id: 'aion2',
