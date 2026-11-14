@@ -1,5 +1,10 @@
 [
   {
+    "name": "Kingshot",
+    "desc": "遊戲內禮包登入儲值",
+    "link": "Kingshot-topup.html"
+  },
+  {
     "name": "PUBG MOBILE",
     "desc": "國際服 UC UID 直儲",
     "link": "pubg-mobile.html"

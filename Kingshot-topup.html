@@ -1,482 +1,211 @@
 <!DOCTYPE html>
+
 <html lang="zh-HK">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    
-    <!-- SEO & AI  -->
-    <title>Kingshot 儲值 - 即時發貨 | uiduid.com</title>
-    <meta name="description" content="Kingshot 官方禮包儲值，使用台灣 MyCard 點數快速完成儲值。">
-    <meta name="keywords" content="Kingshot儲值, Kingshot禮包, Kingshot MyCard, Kingshot課金">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://uiduid.com/Kingshot-topup.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Kingshot 儲值 - 官方禮包儲值 | uiduid.com">
-    <meta property="og:description" content="Kingshot 官方禮包儲值，使用台灣 MyCard 點數快速完成儲值。">
-    <meta property="og:image" content="https://uiduid.com/images/Kingshot-topup.webp">
-    <meta property="og:url" content="https://uiduid.com/Kingshot-topup.html">
-    <meta property="og:type" content="product">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- 自訂 CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/sp.css">
-    <style>
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-            margin: 24px 0 30px;
-        }
-        .feature-card, .notice-section, .info-section {
-            background: rgba(15, 23, 42, 0.58);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
-            backdrop-filter: blur(10px);
-        }
-        .feature-card {
-            border-radius: 16px;
-            padding: 20px 18px;
-        }
-        .feature-card i { color: #ff9800; font-size: 2.4rem; margin-bottom: 12px; display: block; }
-        .feature-card h3 { margin: 0 0 8px; color: #fff; font-size: 1.15em; }
-        .feature-card p { margin: 0; color: #e0e0e0; line-height: 1.55; }
-        .notice-section, .info-section { margin-top: 28px; padding: 22px 20px; border-radius: 20px; }
-        .notice-title, .info-title { margin: 0 0 14px; display: flex; align-items: center; gap: 10px; color: #f9fbff; font-size: 1.28rem; }
-        .notice-title i { color: #ffb347; }
-        .info-title i { color: #5eead4; }
-        .notice-list, .info-list, .guide-steps, .faq-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-        .notice-list > li, .info-list li, .guide-steps li, .faq-item {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            background: rgba(6, 10, 20, 0.34);
-            padding: 11px 13px;
-            color: #eaf1ff;
-            line-height: 1.7;
-        }
-        .notice-list > li { border-left: 4px solid rgba(255, 179, 71, 0.85); }
-        .notice-list strong { color: #ffe2ae; }
-        .info-list strong, .faq-a strong { color: #8be9d4; }
-        .guide-steps { counter-reset: kingshotGuide; }
-        .guide-steps li { counter-increment: kingshotGuide; position: relative; padding-left: 52px; background: linear-gradient(120deg, rgba(37, 99, 235, 0.14), rgba(20, 184, 166, 0.08)); }
-        .guide-steps li::before { content: counter(kingshotGuide); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, #38bdf8, #14b8a6); color: #03232a; font-weight: 800; }
-        .faq-q { margin: 0; color: #fef3c7; font-weight: 700; line-height: 1.55; }
-        .faq-a { margin: 8px 0 0; color: #e6f0ff; line-height: 1.7; }
-        .smart-customer-service { position: fixed; bottom: 24px; right: 24px; z-index: 99999; display: flex; flex-direction: column; align-items: flex-end; }
-        .service-menu { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; opacity: 0; transform: translateY(16px) scale(.96); pointer-events: none; transition: opacity .32s ease, transform .32s ease; transform-origin: bottom right; }
-        .smart-customer-service.active .service-menu { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-        .service-item { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border: 1px solid rgba(255,255,255,.34); border-radius: 30px; color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 28px rgba(0,0,0,.26); }
-        .service-item.whatsapp { background: linear-gradient(135deg, rgba(37,211,102,.88), rgba(22,163,74,.84)); }
-        .service-item.wechat { background: linear-gradient(135deg, rgba(7,193,96,.88), rgba(5,150,105,.84)); }
-        .service-item.line { background: linear-gradient(135deg, rgba(6,199,85,.9), rgba(5,150,70,.86)); }
-        .service-item.discord { background: linear-gradient(135deg, rgba(88,101,242,.9), rgba(59,130,246,.85)); }
-        .service-main-btn { width: 60px; height: 60px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f97316, #ec4899 52%, #6366f1); color: #fff; font-size: 24px; cursor: pointer; box-shadow: 0 12px 26px rgba(17,24,39,.42); }
-        @media (max-width: 768px) { .notice-section, .info-section { padding: 16px 14px; border-radius: 16px; } .smart-customer-service { bottom: 110px; right: 16px; } .service-main-btn { width: 52px; height: 52px; font-size: 21px; } .service-item { padding: 11px 16px; font-size: 13px; } }
-    </style>
-<!-- Schema.org Product + AggregateOffer -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-    "name": "Kingshot 儲值",
-    "url": "https://uiduid.com/Kingshot-topup.html",
-    "image": "https://uiduid.com/images/Kingshot-topup.webp",
-    "description": "Kingshot 禮包儲值，提供多種面額選擇，付款確認後盡快處理。",
-    "brand": {"@type": "Brand", "name": "Kingshot"},
-    "sku": "KINGSHOT-TOPUP",
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "HKD",
-    "lowPrice": 8,
-    "highPrice": 703,
-    "offerCount": 7,
-    "offers": [
-    {"@type": "Offer", "price": 8, "priceCurrency": "HKD", "name": "原價 HK$8", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "price": 23, "priceCurrency": "HKD", "name": "原價 HK$23", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "price": 38, "priceCurrency": "HKD", "name": "原價 HK$38", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "price": 75, "priceCurrency": "HKD", "name": "原價 HK$78", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "price": 145, "priceCurrency": "HKD", "name": "原價 HK$158", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "price": 365, "priceCurrency": "HKD", "name": "原價 HK$398", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "price": 703, "priceCurrency": "HKD", "name": "原價 HK$788", "availability": "https://schema.org/InStock"}
-    ],
-    "seller": {"@type": "Organization", "name": "uiduid.com"}
-  }
-}
-</script>
-
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-    "name": "Kingshot 可以選擇哪些禮包？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "本頁提供原價 HK$8、HK$23、HK$38、HK$78、HK$158、HK$398 及 HK$788 禮包，可按需要選擇。"
-      }
-    },
-    {
-      "@type": "Question",
-    "name": "購買後多久可以完成 Kingshot 儲值？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "付款確認後會盡快處理，實際到帳時間會因訂單資料與遊戲系統狀況而異。"
-      }
-    },
-    {
-      "@type": "Question",
-    "name": "下單前需要確認甚麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "請確認 Kingshot 遊戲帳號、角色、伺服器及所選禮包面額；資料錯誤可能影響儲值處理。"
-      }
-    },
-    {
-      "@type": "Question",
-    "name": "Kingshot 儲值完成後可以申請退款嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-                "text": "數位虛擬商品與遊戲儲值一經完成，不支援退款或退貨；請於付款前確認商品內容及訂單資料。"
-      }
-    }
-  ]
-}
-</script>
-
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://uiduid.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Kingshot 儲值", "item": "https://uiduid.com/Kingshot-topup.html"}
-      ]
-    }
-    </script>
-</head>
-<body id="top" style="background-image: url('/images/Kingshot-topup.webp'); background-size: cover; background-attachment: fixed;">
-
-    <!-- 頂部導航 -->
-    <nav class="top-nav" aria-label="主要導航">
-        <a href="https://www.uiduid.com" class="logo"><img src="/images/logo.webp" alt="uiduid.com 遊戲點卡商城首頁" style="height:32px;display:block;"></a>
-        <div class="menu-btn" onclick="toggleSidebar()" aria-label="開啟選單">☰</div>
-        <div class="nav-actions">
-            <button class="nav-btn" id="openPaymentModal">官方正品</button>
-        </div>
-    </nav>
-
-    <!-- 側邊欄 -->
-    <aside class="sidebar" id="sidebar" aria-label="側邊欄選單">
-        <div class="nav-group">
-            <div class="nav-group-title">商品分類</div>
-            <a href="/game-card.html"><i class="fas fa-credit-card"></i> 遊戲點卡</a>
-            <a href="/hot-topup.html"><i class="fas fa-coins"></i> 遊戲儲值</a>
-            <a href="/uid-topup.html"><i class="fas fa-id-badge"></i> UID TOP UP</a>
-            <a href="/ai-membership.html"><i class="fas fa-brain"></i> AI會員訂閱</a>
-        </div>
-        <div class="nav-group">
-            <div class="nav-group-title">政策條款</div>
-            <a href="/payment.html" id="payment-link">💳 支付方式</a>
-            <a href="/terms.html">📜 使用條款</a>
-            <a href="/sales-terms.html">🛒 銷售條款</a>
-            <a href="/privacy.html">🔒 隱私政策</a>
-            <a href="/content-policy.html">🚫 禁止內容政策</a>
-        </div>
-    </aside>
-
-    <main class="product-detail">
-        <div class="product-info">
-            <div class="back-links">
-                <a href="/game-card.html" class="back-link"><i class="fas fa-chevron-left"></i> 點卡列表</a>
-                <a href="/hot-topup.html" class="back-link"><i class="fas fa-chevron-left"></i> 遊戲列表</a>
-            </div>
-
-            <h1 class="product-name">
-                <i class="fa-solid fa-cart-shopping"></i> Kingshot 儲值
-            </h1>
-
-<!-- 賣點 -->
-<div class="selling-points">
-    <div class="sell-point">
-        <i class="fas fa-bolt"></i>
-        即時儲值
-    </div>
-    <div class="sell-point">
-        <i class="fas fa-shield-alt"></i>
-        正規渠道
-    </div>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Kingshot 代儲／儲值 - 登入儲值｜港付 FPS／PayMe／AlipayHK | uiduid.com</title>
+<meta content="《Kingshot》遊戲內禮包登入儲值（非 UID 直充）。付款後請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成代儲入帳。禮包原價 HK$8–788，售價 HK$8 起。港幣付款，FPS／PayMe／AlipayHK。" name="description"/>
+<meta content="Kingshot儲值, Kingshot代儲, Kingshot登入儲值, Kingshot禮包, Kingshot課金" name="keywords"/>
+<meta content="uiduid.com" name="author"/>
+<meta content="zh-HK" name="language"/>
+<link href="https://uiduid.com/Kingshot-topup.html" rel="canonical"/>
+<meta content="Kingshot 代儲／儲值｜登入儲值" property="og:title"/>
+<meta content="《Kingshot》遊戲內禮包登入儲值（非 UID 直充）。付款後請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成代儲入帳。禮包原價 HK$8–788，售價 HK$8 起。港幣付款，FPS／PayMe／AlipayHK。" property="og:description"/>
+<meta content="https://uiduid.com/images/Kingshot-topup.webp" property="og:image"/>
+<meta content="https://uiduid.com/Kingshot-topup.html" property="og:url"/>
+<meta content="product" property="og:type"/>
+<meta content="uiduid.com" property="og:site_name"/>
+<meta content="zh_HK" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Kingshot 代儲／儲值｜登入儲值" name="twitter:title"/>
+<meta content="《Kingshot》遊戲內禮包登入儲值（非 UID 直充）。付款後請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成代儲入帳。禮包原價 HK$8–788，售價 HK$8 起。港幣付款，FPS／PayMe／AlipayHK。" name="twitter:description"/>
+<meta content="https://uiduid.com/images/Kingshot-topup.webp" name="twitter:image"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<link href="/css/sp.css" rel="stylesheet"/>
+<style>
+.top-nav{display:flex;align-items:center;gap:12px}.top-nav .search-box{position:relative;flex:1;min-width:0;max-width:520px}.top-nav .search-input{width:100%;height:36px;font-size:16px;border:1px solid rgba(255,255,255,.22);border-radius:20px;background:rgba(6,10,20,.55);color:#fff;padding:0 14px 0 36px;outline:none}.top-nav .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none}.top-nav .search-dropdown{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);max-height:280px;overflow:auto;background:rgba(10,16,28,.96);border:1px solid rgba(255,255,255,.16);border-radius:12px;z-index:1000}.top-nav .search-dropdown.show{display:block}.top-nav .search-result-item{display:block;padding:10px 14px;color:#eaf1ff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08)}.top-nav .search-result-item:hover{background:rgba(255,255,255,.08)}
+.product-usage-notice{margin:20px 0 24px;padding:18px 20px;border:1px solid rgba(255,179,71,.72);border-left:5px solid #ffb347;border-radius:14px;background:linear-gradient(135deg,rgba(120,72,12,.42),rgba(15,23,42,.72));color:#fff3df;box-shadow:0 12px 28px rgba(0,0,0,.22)}.product-usage-notice h2{margin:0 0 10px;color:#ffd28a;font-size:1.15rem}.product-usage-notice p{margin:7px 0;line-height:1.7}.product-usage-notice strong{color:#ffe0a8}
+.official-site-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border:1px solid rgba(255,193,7,.65);border-radius:999px;background:linear-gradient(135deg,rgba(255,152,0,.22),rgba(255,193,7,.08));color:#ffe0a8!important;text-decoration:none;font-size:16px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.16);transition:transform .2s ease,background .2s ease,box-shadow .2s ease}.official-site-link:hover,.official-site-link:focus-visible{background:linear-gradient(135deg,rgba(255,152,0,.42),rgba(255,193,7,.16));box-shadow:0 10px 24px rgba(255,152,0,.22),inset 0 1px 0 rgba(255,255,255,.2);transform:translateY(-2px);outline:none}.official-site-link i:first-child{color:#ffb300;font-size:1.2em}.official-site-link .external-icon{font-size:.78em;color:#fff0c2}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:24px 0 30px}.feature-card,.notice-section,.info-section{background:rgba(15,23,42,.58);border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 34px rgba(0,0,0,.24);backdrop-filter:blur(10px)}.feature-card{border-radius:16px;padding:20px 18px}.feature-card i{color:#ff9800;font-size:2.4rem;margin-bottom:12px;display:block}.feature-card h3{margin:0 0 8px;color:#fff;font-size:1.15em}.feature-card p{margin:0;color:#e0e0e0;line-height:1.55}.notice-section,.info-section{margin-top:28px;padding:22px 20px;border-radius:20px}.notice-title,.info-title{margin:0 0 14px;display:flex;align-items:center;gap:10px;color:#f9fbff;font-size:1.28rem}.notice-title i{color:#ffb347}.info-title i{color:#5eead4}.notice-list,.info-list,.guide-steps,.faq-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}.notice-list>li,.info-list li,.guide-steps li,.faq-item{border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(6,10,20,.34);padding:11px 13px;color:#eaf1ff;line-height:1.7}.notice-list>li{border-left:4px solid rgba(255,179,71,.85)}.notice-list strong{color:#ffe2ae}.info-list strong,.faq-a strong{color:#8be9d4}.guide-steps{counter-reset:kingshotGuide}.guide-steps li{counter-increment:kingshotGuide;position:relative;padding-left:52px;background:linear-gradient(120deg,rgba(37,99,235,.14),rgba(20,184,166,.08))}.guide-steps li:before{content:counter(kingshotGuide);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#38bdf8,#14b8a6);color:#03232a;font-weight:800}.faq-q{margin:0;color:#fef3c7;font-weight:700;line-height:1.55}.faq-a{margin:8px 0 0;color:#e6f0ff;line-height:1.7}.product-attr{margin:24px 0}.meihua-attr{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.meihua-attr-item{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(15,23,42,.58);color:#fff}.meihua-attr-item i{color:#ffb347;font-size:1.4rem}.meihua-attr-label{font-weight:700}.contact-section{margin-top:28px}.contact-section-beauty{padding:22px;border-radius:20px;background:rgba(15,23,42,.58);border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 34px rgba(0,0,0,.24);backdrop-filter:blur(10px)}.contact-list-ys{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.contact-main-item{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;color:#fff}.contact-main-item i{font-size:1.5rem;color:#8be9d4}.contact-main-value{color:#fff;text-decoration:none}.contact-desc{color:#fff}.contact-desc ul{margin:0 0 20px;padding-left:20px;line-height:1.8}.contact-desc p{line-height:1.7}
+.price-list-container{display:grid;gap:10px}.price-item-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(15,23,42,.62);cursor:pointer}.price-item-row.selected{border-color:#ff9800;background:rgba(255,152,0,.16)}.price-item-name{flex:1;color:#fff;font-weight:700}.price-item-prices{display:flex;align-items:center;gap:12px}.price-item-discount{color:#ffb347;font-weight:800;white-space:nowrap}.price-item-original{color:#9aa6b8;font-size:.9em;font-weight:600;text-decoration:line-through;white-space:nowrap}.price-item-discount-tag,.price-item-stock{color:#bdeee3;font-size:.85em}.price-item-actions,.price-item-qty{display:flex;align-items:center;gap:5px}.price-item-qty{padding:2px;border:1px solid rgba(255,255,255,.2);border-radius:6px}.price-item-qty-btn{width:26px;height:26px;border:0;background:transparent;color:#fff;cursor:pointer;font-weight:700}.price-item-qty-input{width:30px;border:0;background:transparent;color:#fff;text-align:center}.content-section{margin-top:28px;padding:22px 20px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(15,23,42,.62);color:#eaf1ff;line-height:1.7}.content-section h2{color:#fff;margin-top:0}.content-section li{margin:8px 0}@media(max-width:600px){.price-item-row{align-items:flex-start;flex-direction:column;gap:8px}.price-item-prices{width:100%;justify-content:space-between}}
+.smart-customer-service{position:fixed;bottom:24px;left:24px;z-index:99999;display:flex;flex-direction:column;align-items:flex-start}.service-menu{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;opacity:0;transform:translateY(16px) scale(.96);pointer-events:none;transition:opacity .32s ease,transform .32s ease;transform-origin:bottom left}.smart-customer-service.active .service-menu{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}.service-item{display:flex;align-items:center;gap:12px;padding:12px 20px;border:1px solid rgba(255,255,255,.34);border-radius:30px;color:#fff;text-decoration:none;font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap;box-shadow:0 10px 28px rgba(0,0,0,.26)}.service-item.whatsapp{background:linear-gradient(135deg,rgba(37,211,102,.88),rgba(22,163,74,.84))}.service-item.wechat{background:linear-gradient(135deg,rgba(7,193,96,.88),rgba(5,150,105,.84))}.service-item.line{background:linear-gradient(135deg,rgba(6,199,85,.9),rgba(5,150,70,.86))}.service-item.discord{background:linear-gradient(135deg,rgba(88,101,242,.9),rgba(59,130,246,.85))}.service-main-btn{width:60px;height:60px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f97316,#ec4899 52%,#6366f1);color:#fff;font-size:24px;cursor:pointer;box-shadow:0 12px 26px rgba(17,24,39,.42)}.floating-control-hidden{opacity:0;visibility:hidden;pointer-events:none}.back-home-wrap{position:fixed;right:24px;bottom:100px;z-index:1000}.back-home-btn{display:inline-flex;gap:8px;align-items:center}
+@media(max-width:768px){.smart-customer-service{bottom:110px;left:16px}.service-main-btn{width:52px;height:52px;font-size:21px}.service-item{padding:11px 16px;font-size:13px}.back-home-wrap{right:16px;bottom:100px}}
+@media(max-width:600px){.contact-list-ys{grid-template-columns:repeat(2,1fr);gap:8px}.contact-section-beauty{padding:16px 12px}.contact-main-item{font-size:13px;flex-direction:column;gap:4px}.meihua-attr{gap:8px}.meihua-attr-item{padding:12px 8px;font-size:13px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"OnlineStore","@id":"https://uiduid.com/#organization","name":"UIDUID.COM","url":"https://uiduid.com","image":"https://uiduid.com/images/logo.webp","address":{"@type":"PostalAddress","addressCountry":"HK","addressRegion":"Hong Kong","addressLocality":"Hong Kong"},"geo":{"@type":"GeoCoordinates","latitude":22.3193,"longitude":114.1694},"areaServed":[{"@type":"Country","name":"HK"},{"@type":"Country","name":"MO"}],"currenciesAccepted":"HKD","paymentAccepted":"FPS, AlipayHK, WeChat Pay HK, Tap & Go","availableLanguage":["zh-HK","zh-TW"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","@id":"https://uiduid.com/Kingshot-topup.html#product","name":"Kingshot 登入儲值","url":"https://uiduid.com/Kingshot-topup.html","image":"https://uiduid.com/images/Kingshot-topup.webp","description":"《Kingshot》遊戲內禮包登入儲值（非 UID 直充）。付款後請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成代儲入帳。禮包原價 HK$8–788，售價 HK$8 起。港幣付款，FPS／PayMe／AlipayHK。","brand":{"@type":"Brand","name":"Century Games"},"sku":"KINGSHOT-TOPUP","category":"Game Top-up","availableAtOrFrom":{"@type":"Place","name":"UIDUID.COM 香港","address":{"@type":"PostalAddress","addressCountry":"HK","addressRegion":"Hong Kong","addressLocality":"Hong Kong"},"geo":{"@type":"GeoCoordinates","latitude":22.3193,"longitude":114.1694}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://uiduid.com/Kingshot-topup.html"},"offers":{"@type":"AggregateOffer","url":"https://uiduid.com/Kingshot-topup.html","priceCurrency":"HKD","lowPrice":"8","highPrice":"703","offerCount":"7","availability":"https://schema.org/InStock","seller":{"@type":"Organization","@id":"https://uiduid.com/#organization","name":"UIDUID.COM","url":"https://uiduid.com","address":{"@type":"PostalAddress","addressCountry":"HK","addressRegion":"Hong Kong","addressLocality":"Hong Kong"},"geo":{"@type":"GeoCoordinates","latitude":22.3193,"longitude":114.1694},"areaServed":[{"@type":"Country","name":"HK"},{"@type":"Country","name":"MO"}]},"availableAtOrFrom":{"@type":"Place","name":"UIDUID.COM 香港","address":{"@type":"PostalAddress","addressCountry":"HK","addressRegion":"Hong Kong","addressLocality":"Hong Kong"},"geo":{"@type":"GeoCoordinates","latitude":22.3193,"longitude":114.1694}},"offers":[{"@type":"Offer","name":"原價 HK$8","price":"8","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"},{"@type":"Offer","name":"原價 HK$23","price":"23","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"},{"@type":"Offer","name":"原價 HK$38","price":"38","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"},{"@type":"Offer","name":"原價 HK$78","price":"75","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"},{"@type":"Offer","name":"原價 HK$158","price":"145","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"},{"@type":"Offer","name":"原價 HK$398","price":"365","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"},{"@type":"Offer","name":"原價 HK$788","price":"703","priceCurrency":"HKD","availability":"https://schema.org/InStock","url":"https://uiduid.com/Kingshot-topup.html"}]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"這是什麼商品？","acceptedAnswer":{"@type":"Answer","text":"《Kingshot》遊戲內禮包登入儲值（非 UID 直充）。付款核對後，請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成代儲入帳。"}},{"@type":"Question","name":"需要填 UID 嗎？","acceptedAnswer":{"@type":"Answer","text":"一般不需要。本商品為登入儲值，不是 UID 直儲。請於付款後向客服提供正確的遊戲登入資料、角色與伺服器。"}},{"@type":"Question","name":"下單需要提供什麼？","acceptedAnswer":{"@type":"Answer","text":"請提供遊戲登入資料，並確認角色名稱、伺服器及所選禮包面額。如需驗證碼，請保持在線配合客服。請只向本站客服提供登入資料，勿交給任何陌生人。"}},{"@type":"Question","name":"可以選擇哪些禮包？","acceptedAnswer":{"@type":"Answer","text":"本頁提供原價 HK$8、HK$23、HK$38、HK$78、HK$158、HK$398 及 HK$788 禮包，現售價分別為 HK$8、HK$23、HK$38、HK$75、HK$145、HK$365 及 HK$703。請按需要選擇，不拆散、不自訂金額。"}},{"@type":"Question","name":"為什麼需要登入？","acceptedAnswer":{"@type":"Answer","text":"本商品為登入儲值，客服需以你提供的遊戲登入資料完成對應禮包入帳。處理期間請按客服指示，避免同時登入以免中斷；如需驗證碼請保持在線配合。"}},{"@type":"Question","name":"付款後多久到帳？","acceptedAnswer":{"@type":"Answer","text":"一般於付款核對並完成登入儲值後到帳；實際時間視繁忙情況及驗證配合而定。到帳後請於遊戲內查看禮包。"}},{"@type":"Question","name":"可以退款嗎？","acceptedAnswer":{"@type":"Answer","text":"虛擬商品一經代儲完成，或成功下單即不退不換。因登入資料、角色或伺服器錯誤而儲錯帳號，恕不退款。下單前請確認登入資料、角色、伺服器及面額。"}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://uiduid.com/"},{"@type":"ListItem","position":2,"name":"遊戲儲值","item":"https://uiduid.com/hot-topup.html"},{"@type":"ListItem","position":3,"name":"Kingshot 登入儲值","item":"https://uiduid.com/Kingshot-topup.html"}]}</script></head>
+<body style="background-image:url('images/gamesbj.webp');background-repeat:no-repeat;background-position:center center;background-size:cover;background-attachment:fixed">
+<nav aria-label="主要導航" class="top-nav"><div aria-label="開啟選單" class="menu-btn" data-menu-toggle="true" role="button" tabindex="0">☰</div><div class="search-box"><span class="search-icon">🔍</span><input aria-label="搜尋商品" class="search-input" placeholder="搜商品" type="text"/><div class="search-dropdown" id="searchDropdown"></div></div><div class="nav-actions"><a class="nav-btn" href="https://uiduid.com/news.html">新聞公告</a></div></nav>
+<aside aria-label="側邊欄選單" class="sidebar" id="sidebar"><div class="nav-group"><div class="nav-group-title">商品分類</div><a href="/game-card.html"><i class="fas fa-credit-card"></i> 遊戲點卡</a><a href="/hot-topup.html"><i class="fas fa-coins"></i> 遊戲儲值</a><a href="/uid-topup.html"><i class="fas fa-id-badge"></i> UID TOP UP</a><a href="/ai-membership.html"><i class="fas fa-brain"></i> AI會員訂閱</a></div><div class="nav-group"><div class="nav-group-title">政策條款</div><a href="/payment.html" id="payment-link">💳 支付方式</a><a href="/terms.html">📜 使用條款</a><a href="/sales-terms.html">🛒 銷售條款</a><a href="/privacy.html">🔒 隱私政策</a><a href="/content-policy.html">🚫 禁止內容政策</a></div></aside>
+<main class="product-detail"><article class="product-info">
+<div class="back-links"><a class="back-link" href="/game-card.html">點卡列表</a><a class="back-link" href="/hot-topup.html">遊戲列表</a><a class="back-link" href="/uid-topup.html">UID TOP UP</a></div>
+<h1 class="product-name"><i class="fa-solid fa-cart-shopping"></i> Kingshot 登入儲值</h1>
+<div class="selling-points"><div class="sell-point"><i class="fas fa-right-to-bracket"></i> 需要登入儲值</div><div class="sell-point"><i class="fas fa-bolt"></i> 即時發貨</div><div class="sell-point"><i class="fas fa-shield-alt"></i> 官方正品</div></div>
+<img alt="Kingshot 登入儲值" loading="lazy" src="images/Kingshot-topup.webp" style="width:100%;max-width:600px;display:block;margin:20px auto;border-radius:8px"/>
+<section aria-labelledby="usage-notice-title" class="product-usage-notice"><h2 id="usage-notice-title"><i class="fas fa-circle-exclamation"></i> 使用前請特別注意</h2><p><strong>重要：</strong>本商品為《Kingshot》遊戲內禮包<strong>登入儲值</strong>（非 UID 直充）。付款核對後，請向客服提供<strong>遊戲登入資料</strong>，並確認<strong>角色與伺服器</strong>，由客服完成代儲入帳；如需驗證碼請保持在線配合。</p><p>請只向本站客服提供登入資料，勿交給任何陌生人。處理期間請按客服指示，避免同時登入以免中斷。一經儲值到帳<strong>不可退款、不可轉移</strong>，下單前請仔細核對登入資料、角色、伺服器與面額。</p></section>
+<section aria-labelledby="spec-title" class="spec-section"><h2 class="spec-title" id="spec-title"><i class="fas fa-tags"></i> 選擇禮包面額（HKD）</h2><div class="price-list-container"><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$8</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 8</span>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
 </div>
-
-            <!-- 商品主圖 -->
-            <img src="/images/Kingshot-topup.webp" alt="Kingshot 官方禮包儲值" loading="lazy" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px;">
-
-            <p class="product-desc" style="text-align:center; color:#ccc; font-size:15px; margin:10px 0 25px;">
-                <a href="https://uiduid.com/Kingshot-topup.html" style="color:#f3f0ed; text-decoration:none; font-weight:bold; font-size:16px;">
-                    <i class="fas fa-globe-asia" style="margin-right:6px;"></i>Kingshot 官方儲值
-                </a>
-            </p>
-
-            <p class="product-desc" style="text-align:center; color:#ccc; font-size:15px; margin:10px 0 25px;">請選擇所需禮包後結賬。</p>
-
-            <!-- 面額選擇 -->
-            <div class="spec-section">
-                <h2 class="spec-title"><i class="fas fa-tags"></i> 選擇虛擬商品</h2>
-                <div class="price-list-container price-table" data-price-group="mycard-tw" aria-label="Kingshot 禮包價格表">
-                    <div class="price-item-row" data-denomination="mycard-tw8" onclick="selectItem(this)"><div class="price-item-name">原價 HK$8</div><div class="price-item-prices"><span class="price-item-discount">HK$ 8</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                    <div class="price-item-row" data-denomination="mycard-tw23" onclick="selectItem(this)"><div class="price-item-name">原價 HK$23</div><div class="price-item-prices"><span class="price-item-discount">HK$ 23</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                    <div class="price-item-row" data-denomination="mycard-tw38" onclick="selectItem(this)"><div class="price-item-name">原價 HK$38</div><div class="price-item-prices"><span class="price-item-discount">HK$ 38</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                    <div class="price-item-row" data-denomination="mycard-tw78" onclick="selectItem(this)"><div class="price-item-name">原價 HK$78</div><div class="price-item-prices"><span class="price-item-discount">HK$ 75</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                    <div class="price-item-row" data-denomination="mycard-tw158" onclick="selectItem(this)"><div class="price-item-name">原價 HK$158</div><div class="price-item-prices"><span class="price-item-discount">HK$ 145</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                    <div class="price-item-row" data-denomination="mycard-tw398" onclick="selectItem(this)"><div class="price-item-name">原價 HK$398</div><div class="price-item-prices"><span class="price-item-discount">HK$ 365</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                    <div class="price-item-row" data-denomination="mycard-tw788" onclick="selectItem(this)"><div class="price-item-name">原價 HK$788</div><div class="price-item-prices"><span class="price-item-discount">HK$ 703</span><span class="price-item-discount-tag">禮包</span><div class="price-item-actions"><span class="price-item-stock">有</span><div class="price-item-qty"><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, -1)">-</button><input type="number" class="price-item-qty-input" value="1" min="1" readonly><button type="button" class="price-item-qty-btn" onclick="changeQty(event, this, 1)">+</button></div></div></div></div>
-                </div>
-            </div>
-
-            <div class="product-attr">
-                <div class="meihua-attr">
-                    <div class="meihua-attr-item">
-                        <i class="fas fa-gift"></i>
-                        <div class="meihua-attr-label">遊戲儲值</div>
-                    </div>
-                    <div class="meihua-attr-item">
-                        <i class="fas fa-bolt"></i>
-                        <div class="meihua-attr-label">即買即儲</div>
-                    </div>
-                </div>
-            </div>
-
-            <section class="notice-section" aria-labelledby="notice-title">
-                <h2 id="notice-title" class="notice-title"><i class="fas fa-exclamation-triangle"></i> 購買須知與交易安全聲明</h2>
-                <ul class="notice-list">
-<li><strong>👋 歡迎光臨 uiduid.com</strong>：為確保交易安全與服務效率，請於下單前仔細閱讀以下須知。</li>
-<li><strong>❌ 商品不設退換</strong>：數位儲值商品一經出貨或完成，即不接受退款或退貨；請於付款前務必確認購買意願與商品內容。</li>
-<li><strong>⚠️ 重要防詐騙聲明</strong>：請勿代陌生人或任何第三者購買；凡非本人親自使用者請勿購買，以防落入詐騙陷阱，保障自身財產安全。</li>
-<li><strong>🚨 核心防騙貼士</strong>：點數卡商品或禮包價格若遠低於市價，請務必提高警惕！「不貪小便宜，才是真省錢」，請玩家珍惜遊戲帳號。</li>
-
-                </ul>
-            </section>
-
-            <section aria-labelledby="features-title">
-                <h2 id="features-title" style="margin-top:40px; text-align:center; color:#fff;"><i class="fas fa-gem"></i> UidUid 平台優勢</h2>
-                <div class="features-grid">
-                    <div class="feature-card"><i class="fas fa-bolt"></i><h3>正規儲值</h3><p>玩家下單購買後，由客服協助您直接儲值入帳</p></div>
-                    <div class="feature-card"><i class="fas fa-shield-alt"></i><h3>合法公司</h3><p>由 HOGAME ONLINE ENTERTAINMENT LIMITED 運營</p></div>
-                    <div class="feature-card"><i class="fas fa-credit-card"></i><h3>多種付款方式</h3><p>支援香港 FPS、支付寶、WeChat、7-Eleven 與 澳門中銀 與 螞蟻銀行</p></div>
-                </div>
-            </section>
-
-            <section class="info-section" aria-labelledby="limits-title">
-                <h2 id="limits-title" class="info-title"><i class="fas fa-exclamation-triangle"></i> 重要使用限制與注意事項</h2>
-                <ul class="info-list">
-                    <li><strong>適用遊戲</strong>：本商品僅適用於 Kingshot雙平台系統，請在下單前確認遊戲帳號資料。</li>
-                    <li><strong>帳號確認</strong>：請使用Kingshot 官方儲值頁核對登入帳號、角色與伺服器。</li>
-                    <li><strong>禮包對應</strong>：請選擇與官方儲值或提供遊戲內購相符的禮包圖片；避免因選錯禮包商品面額而影響儲值。</li>
-                    <li><strong>官方規則</strong>：儲值資格、活動贈品及使用限制均以Kingshot 官方公告為準。</li>
-                </ul>
-            </section>
-
-            <section class="info-section" aria-labelledby="faq-title">
-                <h2 id="faq-title" class="info-title"><i class="fas fa-question-circle"></i> Kingshot 儲值常見問題（FAQ）</h2>
-                <ul class="faq-list">
-                    <li class="faq-item"><p class="faq-q">Q1: Kingshot 可以選擇哪些禮包？</p><p class="faq-a"><strong>A:</strong> 本頁提供 HK$8、HK$23、HK$38、HK$78、HK$158、HK$398 及 HK$788 禮包，請按需要選擇。</p></li>
-                    <li class="faq-item"><p class="faq-q">Q2: 購買後多久可以完成儲值？</p><p class="faq-a"><strong>A:</strong> 付款確認後會盡快處理。實際到帳時間會因訂單資料與遊戲系統狀況而異。</p></li>
-                    <li class="faq-item"><p class="faq-q">Q3: 下單前需要確認甚麼？</p><p class="faq-a"><strong>A:</strong> 請確認 Kingshot 遊戲帳號、角色、伺服器及所選禮包面額；資料錯誤可能影響儲值處理。</p></li>
-                    <li class="faq-item"><p class="faq-q">Q4: 儲值完成後可以申請退款嗎？</p><p class="faq-a"><strong>A:</strong> 數位虛擬商品與遊戲儲值一經完成，不支援退款或退貨；請於付款前確認商品內容及訂單資料。</p></li>
-                </ul>
-            </section>
-
-            <!-- 聯繫客服與支付管道 -->
-            <div class="contact-section">
-                <div class="contact-section-beauty">
-                    <div class="contact-list-ys">
-                        <div class="contact-main-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/85255360181" class="contact-main-value" target="_blank">+852 55360181</a>
-                        </div>
-                        <div class="contact-main-item">
-                            <i class="fab fa-weixin"></i>
-                            <span class="contact-main-value">HOGAME</span>
-                        </div>
-                        <div class="contact-main-item">
-                            <i class="fab fa-line"></i>
-                            <span class="contact-main-value">HOGAME</span>
-                        </div>
-                        <div class="contact-main-item">
-                            <i class="fab fa-discord"></i>
-                            <span class="contact-main-value">@55360181</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-desc" style="background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; margin-top:15px;">
-                    <p style="font-size:1.15em; margin:0 0 15px 0;"><strong>💳 支援支付方式 (24/7 即時處理)</strong></p>
-                    <ul style="text-align:left; margin:0 0 20px 0; padding-left:20px; color:#fff; line-height:1.8;">
-                        <li><strong>即時支付：</strong> 轉數快 (FPS)</li>
-                        <li><strong>電子錢包：</strong> AlipayHK、WeChat Pay HK、Tap &amp; Go、PayMe</li>
-                        <li><strong>銀行轉賬：</strong> 澳門中銀、螞蟻銀行</li>
-                        <li><strong>實體店鋪：</strong> 掃碼增值、7-Eleven、OK 便利店</li>
-                    </ul>
-                    <p style="margin:0; font-weight:600;"><strong>📢 購買流程：</strong></p>
-                    <p style="margin:8px 0 0 0;">請截圖已選商品，聯繫 24 小時在線客服確認最新價格並完成支付。</p>
-                </div>
-            </div>
-
-            <a href="#top" class="back-home-btn"><i class="fas fa-home"></i> 回到頂部</a>
-        </div>
-    </main>
-
-    <!-- 浮動購物車 -->
-    <div id="floating-cart">
-        <div class="floating-cart-header">
-            <div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 Kingshot 禮包（總價）</div>
-            <div class="floating-total">HK$ 0</div>
-        </div>
-        <div class="floating-items" id="floatingItemsList"></div>
-        <button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button>
-    </div>
-
-    <div class="smart-customer-service" id="smartService">
-        <div class="service-menu">
-            <a href="https://wa.me/85255360181" target="_blank" rel="noopener noreferrer" class="service-item whatsapp" aria-label="聯繫 WhatsApp 客服"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <div class="service-item wechat" onclick="copyText('HOGAME')" role="button" tabindex="0" aria-label="複製微信號 HOGAME"><i class="fab fa-weixin"></i> 微信: HOGAME</div>
-            <a href="https://line.me/ti/p/~HOGAME" target="_blank" rel="noopener noreferrer" class="service-item line" aria-label="聯繫 LINE HOGAME"><i class="fab fa-line"></i> LINE: HOGAME</a>
-            <a href="https://discord.com/users/55360181" target="_blank" rel="noopener noreferrer" class="service-item discord" aria-label="聯繫 Discord @55360181"><i class="fab fa-discord"></i> Discord: @55360181</a>
-        </div>
-        <div class="service-main-btn" onclick="toggleService()" role="button" tabindex="0" aria-label="開啟客服選單"><i class="fas fa-headset"></i></div>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p>
-            <p class="footer-desc">價格更新：2026年9月4日｜本商城所有商標及版權歸原廠所有</p>
-        </div>
-    </footer>
-
-    <script src="/js/shared-pricing.js" defer></script>
-
-    <!-- JavaScript -->
-    <script>
-        function toggleService() {
-            const service = document.getElementById('smartService');
-            if (!service) return;
-            service.classList.toggle('active');
-            const icon = service.querySelector('.service-main-btn i');
-            if (icon) icon.className = service.classList.contains('active') ? 'fas fa-xmark' : 'fas fa-headset';
-        }
-
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => alert('微信號已複製：' + text)).catch(() => alert('複製失敗，請手動複製：' + text));
-        }
-
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("active");
-        }
-        document.addEventListener('click', function(e) {
-            const sidebar = document.getElementById("sidebar");
-            const menuBtn = document.querySelector('.menu-btn');
-            const smartService = document.getElementById('smartService');
-            if (sidebar.classList.contains('active') && 
-                !sidebar.contains(e.target) && 
-                !menuBtn.contains(e.target)) {
-                sidebar.classList.remove('active');
-            }
-            if (smartService && smartService.classList.contains('active') && !smartService.contains(e.target)) {
-                smartService.classList.remove('active');
-                const icon = smartService.querySelector('.service-main-btn i');
-                if (icon) icon.className = 'fas fa-headset';
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const checkoutBtn = document.getElementById('checkoutBtn');
-            if (checkoutBtn) {
-                checkoutBtn.addEventListener('click', function() {
-                    const selectedItems = document.querySelectorAll('.price-item-row.selected');
-                    if (selectedItems.length === 0) {
-                        alert('請先選擇商品');
-                        return;
-                    }
-                    const products = [];
-                    selectedItems.forEach(item => {
-                        const name = item.querySelector('.price-item-name').textContent.trim();
-                        const priceText = item.querySelector('.price-item-discount').textContent;
-                        const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
-                        const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
-                        const subtotal = Math.round(price * qty);
-                        products.push({ name, qty, price, subtotal });
-                    });
-                    let mainProduct = '';
-                    const cartTitle = document.querySelector('.floating-cart-title');
-                    if (cartTitle) {
-                        mainProduct = cartTitle.textContent.replace(/^[^已]*已選\s*/,'').replace(/（.*$/,'').trim();
-                    }
-                    const productsStr = encodeURIComponent(JSON.stringify(products));
-                    const url = `/fpspay.html?products=${productsStr}` + (mainProduct ? `&mainProduct=${encodeURIComponent(mainProduct)}` : '');
-                    window.location.href = url;
-                });
-            }
-        });
-
-        function selectItem(element) {
-            element.classList.toggle('selected');
-            updateSelectedItems();
-        }
-
-        function changeQty(event, button, change) {
-            event.preventDefault();
-            event.stopPropagation();
-            const container = button.closest('.price-item-qty');
-            const input = container.querySelector('.price-item-qty-input');
-            let value = parseInt(input.value) || 1;
-            value += change;
-            if (value < 1) value = 1;
-            input.value = value;
-            input.blur();
-            updateSelectedItems();
-        }
-
-        function updateSelectedItems() {
-            const selectedItems = document.querySelectorAll('.price-item-row.selected');
-            const floatingCart = document.getElementById('floating-cart');
-            const floatingItemsList = document.getElementById('floatingItemsList');
-            const floatingTotal = floatingCart.querySelector('.floating-total');
-            let total = 0;
-
-            if (selectedItems.length === 0) {
-                floatingCart.classList.remove('show');
-                return;
-            }
-
-            floatingItemsList.innerHTML = '';
-            selectedItems.forEach(item => {
-                const name = item.querySelector('.price-item-name').textContent.trim();
-                const priceText = item.querySelector('.price-item-discount').textContent;
-                const price = parseFloat(priceText.match(/[\d.]+/)?.[0] || 0);
-                const qty = parseInt(item.querySelector('.price-item-qty-input').value) || 1;
-                const subtotal = price * qty;
-                total += subtotal;
-
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'floating-item';
-                itemDiv.innerHTML = `
-                    <span>${name}</span>
-                    <span>x ${qty} · HK$ ${Math.round(subtotal)}</span>
-                `;
-                floatingItemsList.appendChild(itemDiv);
-            });
-
-            floatingTotal.textContent = `HK$ ${Math.round(total)}`;
-            floatingCart.classList.add('show');
-        }
-    </script>
+</div>
+</div>
+</div><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$23</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 23</span>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$38</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 38</span>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$78</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 75</span>
+<s class="price-item-original">HK$ 78</s>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$158</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 145</span>
+<s class="price-item-original">HK$ 158</s>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$398</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 365</span>
+<s class="price-item-original">HK$ 398</s>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div><div class="price-item-row" onclick="selectItem(this)">
+<div class="price-item-name">原價 HK$788</div>
+<div class="price-item-prices">
+<span class="price-item-discount">HK$ 703</span>
+<s class="price-item-original">HK$ 788</s>
+<span class="price-item-discount-tag">登入儲值</span>
+<div class="price-item-actions">
+<span class="price-item-stock">現貨</span>
+<div class="price-item-qty">
+<button class="price-item-qty-btn" onclick="changeQty(event,this,-1)" type="button">-</button>
+<input class="price-item-qty-input" readonly="" value="1"/>
+<button class="price-item-qty-btn" onclick="changeQty(event,this,1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div></div></section>
+<div class="product-attr"><div class="meihua-attr"><div class="meihua-attr-item"><i class="fas fa-gift"></i><div class="meihua-attr-label">虛擬商品</div></div><div class="meihua-attr-item"><i class="fas fa-bolt"></i><div class="meihua-attr-label">即買即發</div></div></div></div>
+<section class="content-section" aria-labelledby="about-title"><h2 id="about-title">Kingshot 登入儲值說明</h2><p>《Kingshot》遊戲內禮包登入儲值，支援原價 HK$8 至 HK$788 多檔禮包。港幣標價；可用轉數快（FPS）、PayMe、AlipayHK、WeChat Pay HK 等付款。本站並非官方商店。承諾正品通路儲值，拒絕來路不明的黑卡。</p><p>本商品為登入儲值，不是 UID 直儲，亦不是寄送點卡序號。付款後請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成對應禮包入帳。請確認所登入的是要儲值的《Kingshot》帳號；因資料錯誤而儲錯帳號，恕不退款。</p></section>
+<section class="notice-section product-notice">
+<h2 class="notice-title">【購買須知】（下單即代表同意以下條款）</h2>
+<ul class="notice-list">
+<li>⚡ <strong>即時發貨：</strong> 數位商品一經發送／代儲完成即不退不換，請先確認面額、角色、伺服器與登入資料。</li>
+<li>🔞 <strong>年齡聲明：</strong> 請確認已年滿 18 歲或已取得監護人同意後方進行購買。</li>
+<li>🛡️ <strong>安全付款：</strong> 請使用買家本人的銀行/電子錢包付款（嚴禁幫親友或陌生人代付）；登入資料及付款憑證切勿私下轉交給任何陌生人（謹防網上詐騙）。</li>
+</ul>
+</section>
+<section aria-labelledby="features-title"><h2 id="features-title" style="margin-top:40px;text-align:center;color:#fff"><i class="fas fa-gem"></i> 我們的優勢</h2><div class="features-grid"><div class="feature-card"><i class="fas fa-right-to-bracket"></i><h3>登入代充</h3><p>付款核對後以你提供的遊戲登入資料完成入帳。需要驗證碼時請保持在線，方便快速完成。</p></div><div class="feature-card"><i class="fas fa-shield-alt"></i><h3>安全保障</h3><p>承諾官方通路儲值、拒絕黑卡。本站免註冊、不需預存資金，直接聯繫客服付款即買，簡單安全！請只向本站客服提供登入資料。</p></div><div class="feature-card"><i class="fas fa-credit-card"></i><h3>多種付款方式</h3><p>轉數快、PayMe、AlipayHK、WeChat Pay HK、Tap &amp; Go、澳門中銀、7-Eleven、OK便利店及 USD。</p></div></div></section>
+<section aria-labelledby="guide-title" class="info-section"><h2 class="info-title" id="guide-title"><i class="fas fa-book"></i> 儲值指南</h2><ol class="guide-steps"><li>確認係要儲值的《Kingshot》帳號，並準備好遊戲登入資料，同時核對角色與伺服器。</li><li>揀選本頁對應的禮包面額下單，不拆散、不自訂金額。</li><li>以港幣完成付款（FPS／PayMe／AlipayHK 等）後，向客服提供登入資料、角色與伺服器。</li><li>本商品<strong>需要登入儲值</strong>；處理期間請按客服指示，避免同時登入。如需驗證碼請保持在線配合。</li><li>完成後請自行登入遊戲核對禮包到帳。</li></ol></section>
+<section aria-labelledby="faq-title" class="info-section"><h2 class="info-title" id="faq-title"><i class="fas fa-question-circle"></i> Kingshot 登入儲值常見問題（FAQ）</h2><ul class="faq-list"><li class="faq-item"><div class="faq-q">Q：這是什麼商品？</div><div class="faq-a">《Kingshot》遊戲內禮包登入儲值（非 UID 直充）。付款核對後，請向客服提供遊戲登入資料，並確認角色與伺服器，由客服完成代儲入帳。</div></li><li class="faq-item"><div class="faq-q">Q：需要填 UID 嗎？</div><div class="faq-a">一般不需要。本商品為登入儲值，不是 UID 直儲。請於付款後向客服提供正確的遊戲登入資料、角色與伺服器。</div></li><li class="faq-item"><div class="faq-q">Q：下單需要提供什麼？</div><div class="faq-a">請提供遊戲登入資料，並確認角色名稱、伺服器及所選禮包面額。如需驗證碼，請保持在線配合客服。請只向本站客服提供登入資料，勿交給任何陌生人。</div></li><li class="faq-item"><div class="faq-q">Q：可以選擇哪些禮包？</div><div class="faq-a">本頁提供原價 HK$8、HK$23、HK$38、HK$78、HK$158、HK$398 及 HK$788 禮包，現售價分別為 HK$8、HK$23、HK$38、HK$75、HK$145、HK$365 及 HK$703。請按需要選擇，不拆散、不自訂金額。</div></li><li class="faq-item"><div class="faq-q">Q：為什麼需要登入？</div><div class="faq-a">本商品為登入儲值，客服需以你提供的遊戲登入資料完成對應禮包入帳。處理期間請按客服指示，避免同時登入以免中斷；如需驗證碼請保持在線配合。</div></li><li class="faq-item"><div class="faq-q">Q：付款後多久到帳？</div><div class="faq-a">一般於付款核對並完成登入儲值後到帳；實際時間視繁忙情況及驗證配合而定。到帳後請於遊戲內查看禮包。</div></li><li class="faq-item"><div class="faq-q">Q：可以退款嗎？</div><div class="faq-a">虛擬商品一經代儲完成，或成功下單即不退不換。因登入資料、角色或伺服器錯誤而儲錯帳號，恕不退款。下單前請確認登入資料、角色、伺服器及面額。</div></li></ul></section>
+<div class="contact-section"><div class="contact-section-beauty"><div class="contact-list-ys"><div class="contact-main-item"><i class="fab fa-whatsapp"></i><a class="contact-main-value" href="https://wa.me/85255360181" rel="noopener noreferrer" target="_blank">+852 55360181</a></div><div class="contact-main-item"><i class="fab fa-weixin"></i><span class="contact-main-value">HOGAME</span></div><div class="contact-main-item"><i class="fab fa-line"></i><span class="contact-main-value">HOGAME</span></div><div class="contact-main-item"><i class="fab fa-discord"></i><span class="contact-main-value">@55360181</span></div></div></div><div class="contact-desc" style="background:rgba(255,255,255,.1);padding:20px;border-radius:12px;margin-top:15px"><p style="font-size:1.15em;margin:0 0 15px"><strong>💳 支援支付方式 (24/7 即時處理)</strong></p><ul><li><strong>即時支付：</strong>轉數快 (FPS)</li><li><strong>電子錢包：</strong>PayMe、AlipayHK、WeChat Pay HK、Tap &amp; Go</li><li><strong>銀行轉賬：</strong>澳門中銀</li><li><strong>線下付款：</strong>掃碼增值、7-Eleven、OK便利店</li></ul><p style="margin:0;font-weight:600"><strong>📢 購買流程：</strong></p><p style="margin:8px 0 0">請截圖已選商品，聯繫 24 小時在線客服確認最新價格並完成支付。</p></div></div>
+</article></main>
+<div class="back-home-wrap"><a aria-label="回到頁面頂部" class="back-home-btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="fas fa-arrow-up"></i> 回到頂部</a></div>
+<div id="floating-cart"><div class="floating-cart-header"><div class="floating-cart-title"><i class="fas fa-shopping-cart"></i> 已選 Kingshot 登入儲值（總價）</div><div class="floating-total">HK$ 0</div></div><div class="floating-items" id="floatingItemsList"></div><button id="checkoutBtn" style="width:100%;margin:18px 0 0 0;padding:14px 0;background:#ff9800;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:50px;cursor:pointer;box-shadow:0 4px 15px rgba(255,152,0,0.18);">結賬並付款</button></div>
+<div class="smart-customer-service" id="smartService">
+<div class="service-menu">
+<a href="https://wa.me/85255360181" target="_blank" rel="noopener noreferrer" class="service-item whatsapp" aria-label="聯繫 WhatsApp 客服"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<div class="service-item wechat" data-copy="HOGAME" role="button" tabindex="0" aria-label="複製微信號 HOGAME"><i class="fab fa-weixin"></i> 微信: HOGAME</div>
+<a href="https://line.me/ti/p/~HOGAME" target="_blank" rel="noopener noreferrer" class="service-item line" aria-label="聯繫 LINE HOGAME"><i class="fab fa-line"></i> LINE: HOGAME</a>
+<a href="https://discord.com/users/55360181" target="_blank" rel="noopener noreferrer" class="service-item discord" aria-label="聯繫 Discord @55360181"><i class="fab fa-discord"></i> Discord: @55360181</a>
+</div>
+<div class="service-main-btn" role="button" tabindex="0" aria-label="開啟客服選單"><i class="fas fa-headset"></i></div>
+</div>
+<footer class="footer"><div class="footer-content"><p class="footer-text">© 2026 <span>uiduid.com</span> All Rights Reserved</p></div></footer>
+<script>
+const fallbackSearchData=[{name:'遊戲點卡',link:'/game-card.html'},{name:'遊戲儲值',link:'/hot-topup.html'},{name:'UID TOP UP',link:'/uid-topup.html'},{name:'AI 會員訂閱',link:'/ai-membership.html'},{name:'Kingshot 登入儲值',link:'/Kingshot-topup.html'},{name:'PUBG MOBILE 國際服 UC 儲值',link:'/pubg-mobile.html'},{name:'原神 港澳台服 UID 儲值',link:'/genshin-hktw-uid.html'},{name:'香港 MyCard',link:'/hongkong-mycard.html'},{name:'台灣 MyCard',link:'/taiwan-mycard.html'},{name:'Steam 充值卡',link:'/hksteam.html'},{name:'Telegram Stars',link:'/buy-telegram-stars.html'},{name:'Tinder Gold',link:'/buy-tinder-gold.html'}];
+let searchData=[...fallbackSearchData];
+async function loadSearchData(){try{const [cardsRes,gamesRes]=await Promise.all([fetch('/data/cards.json'),fetch('/data/games.json')]);const cards=cardsRes.ok?await cardsRes.json():[];const games=gamesRes.ok?await gamesRes.json():[];const merged=[...cards,...games].filter(item=>item&&item.name&&item.link);if(merged.length>0)searchData=merged.map(item=>({name:item.name,link:item.link}))}catch(error){searchData=[...fallbackSearchData]}}
+function toggleSidebar(event){if(event)event.stopPropagation();document.getElementById('sidebar').classList.toggle('active')}
+function toggleService(event){if(event)event.stopPropagation();const service=document.getElementById('smartService');if(!service)return;service.classList.toggle('active');const icon=service.querySelector('.service-main-btn i');if(icon)icon.className=service.classList.contains('active')?'fas fa-xmark':'fas fa-headset'}
+function copyText(text){if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(text).catch(()=>{})}
+function selectItem(item){item.classList.toggle('selected');updateSelectedItems()}
+function changeQty(event,button,change){event.preventDefault();event.stopPropagation();const input=button.closest('.price-item-qty').querySelector('.price-item-qty-input');input.value=Math.max(1,(parseInt(input.value,10)||1)+change);updateSelectedItems()}
+function updateSelectedItems(){const selected=document.querySelectorAll('.price-item-row.selected');const cart=document.getElementById('floating-cart');const service=document.getElementById('smartService');const backHome=document.querySelector('.back-home-wrap');const list=document.getElementById('floatingItemsList');let total=0;list.innerHTML='';selected.forEach(item=>{const price=Number(item.querySelector('.price-item-discount').textContent.replace(/[^0-9]/g,''));const qty=Number(item.querySelector('.price-item-qty-input').value)||1;total+=price*qty;list.insertAdjacentHTML('beforeend','<div class="floating-item"><span>'+item.querySelector('.price-item-name').textContent+'</span><span>x '+qty+' · HK$ '+price*qty+'</span></div>')});document.querySelector('.floating-total').textContent='HK$ '+total;cart.classList.toggle('show',selected.length>0);if(service){service.classList.toggle('floating-control-hidden',selected.length>0);service.classList.remove('active')}if(backHome)backHome.classList.toggle('floating-control-hidden',selected.length>0)}
+function handleSearchInput(){const input=document.querySelector('.search-input');const dropdown=document.getElementById('searchDropdown');const query=input.value.trim().toLowerCase();if(!query){dropdown.innerHTML='';dropdown.classList.remove('show');return}const results=searchData.filter(item=>(item.name||'').toLowerCase().includes(query)).slice(0,12);if(!results.length){dropdown.innerHTML='<div class="search-result-item">無匹配商品</div>';dropdown.classList.add('show');return}dropdown.innerHTML=results.map(item=>'<a class="search-result-item" href="'+item.link+'">'+item.name+'</a>').join('');dropdown.classList.add('show')}
+document.addEventListener('DOMContentLoaded',function(){loadSearchData();const menu=document.querySelector('.menu-btn');const serviceButton=document.querySelector('.service-main-btn');const sidebar=document.getElementById('sidebar');const service=document.getElementById('smartService');const search=document.querySelector('.search-input');if(search)search.addEventListener('input',handleSearchInput);if(menu){menu.addEventListener('click',toggleSidebar);menu.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleSidebar(e)}});}if(serviceButton){serviceButton.addEventListener('click',toggleService);serviceButton.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleService(e)}});}document.querySelectorAll('.service-item[data-copy]').forEach(item=>item.addEventListener('click',()=>copyText(item.dataset.copy)));document.addEventListener('click',e=>{const dd=document.getElementById('searchDropdown');if(dd&&!e.target.closest('.search-box'))dd.classList.remove('show');if(sidebar&&sidebar.classList.contains('active')&&!e.target.closest('.sidebar')&&!e.target.closest('.menu-btn'))sidebar.classList.remove('active');if(service&&service.classList.contains('active')&&!e.target.closest('.smart-customer-service')){service.classList.remove('active');const icon=service.querySelector('.service-main-btn i');if(icon)icon.className='fas fa-headset'}});document.getElementById('checkoutBtn').addEventListener('click',function(){const selected=document.querySelectorAll('.price-item-row.selected');if(!selected.length){alert('請先選擇商品面額');return}const products=[...selected].map(item=>{const price=Number(item.querySelector('.price-item-discount').textContent.replace(/[^0-9]/g,''));const qty=Number(item.querySelector('.price-item-qty-input').value)||1;return{name:item.querySelector('.price-item-name').textContent.trim(),price,qty,subtotal:price*qty}});location.href='fpspay.html?products='+encodeURIComponent(JSON.stringify(products))+'&mainProduct='+encodeURIComponent('Kingshot登入儲值')})})
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.customStyle = {
+  visibility: {
+    desktop: { position: "bl", xOffset: 18, yOffset: 18 },
+    mobile: { position: "bl", xOffset: 12, yOffset: 12 }
+  }
+};
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src="https://embed.tawk.to/5e145a9527773e0d832c3ff6/default";
+s1.charset="UTF-8";
+s1.setAttribute("crossorigin","*");
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
