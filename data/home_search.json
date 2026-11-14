@@ -1,5 +1,10 @@
 [
   {
+    "name": "PUBG MOBILE",
+    "desc": "國際服 UC UID 直儲",
+    "link": "pubg-mobile.html"
+  },
+  {
     "name": "原神",
     "desc": "港澳台服 UID 直儲創世結晶／事象凝核／空月祝福",
     "link": "genshin-hktw-uid.html"

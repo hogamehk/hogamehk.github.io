@@ -1,5 +1,13 @@
 [
   {
+    "name": "PUBG MOBILE UC（國際服）",
+    "image": "/images/pubgm.webp",
+    "region": "global",
+    "hot": true,
+    "order": 1,
+    "link": "pubg-mobile.html"
+  },
+  {
     "name": "原神 UID（港澳台服）",
     "image": "/images/genshin-hktw-uid.webp",
     "region": "twhkmo",
@@ -230,14 +238,6 @@
     "hot": true,
     "order": 3,
     "link": "marvel-rivals-lattice-topup.html"
-  },
-  {
-    "name": "PUBG MOBILE",
-    "image": "/images/pubgm.webp",
-    "region": "global",
-    "hot": true,
-    "order": 1,
-    "link": "pubgm.html"
   },
   {
     "name": "瑪奇Mobile",
