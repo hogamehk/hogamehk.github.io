@@ -1,5 +1,13 @@
 [
   {
+    "name": "原神 UID（港澳台服）",
+    "image": "/images/genshin-hktw-uid.webp",
+    "region": "twhkmo",
+    "hot": true,
+    "order": 1,
+    "link": "genshin-hktw-uid.html"
+  },
+  {
     "name": "魔物獵人：旅人 UID（港澳台服）",
     "image": "/images/mh-outlanders-hktw-uid.webp",
     "region": "twhkmo",

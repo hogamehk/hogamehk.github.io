@@ -1,5 +1,10 @@
 [
   {
+    "name": "原神",
+    "desc": "港澳台服 UID 直儲創世結晶／事象凝核／空月祝福",
+    "link": "genshin-hktw-uid.html"
+  },
+  {
     "name": "魔物獵人：旅人",
     "desc": "港澳台服 UID 直儲赤翎幣／福丸月刊",
     "link": "mh-outlanders-hktw-uid.html"
@@ -43,10 +48,5 @@
     "name": "傳説對決",
     "desc": "傳說對決充值",
     "link": "csdj.html"
-  },
-  {
-    "name": "原神",
-    "desc": "原神遊戲充值",
-    "link": "genshin.html"
   }
 ]
