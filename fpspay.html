@@ -174,18 +174,8 @@
     <button id="showPayBtn" class="primary-btn" disabled>前往付款</button>
 
     <div id="fpsSection" class="fps-area">
-        <div class="data-row">
-            <div><span class="label">FPS ID</span><br><span class="value" id="fpsPhone">2287134</span></div>
-            <button class="copy-btn" onclick="copyText('fpsPhone', 'ID')">Copy</button>
-        </div>
-        <div class="data-row">
-            <div><span class="label">收款名稱</span><br><span class="value">HOGAME ONLINE ENTERTAINMENT LIMITED</span></div>
-        </div>
-        
-        <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 轉帳後請點擊下方按鈕上傳截圖 👈</p>
-        
-        <!-- 請將下方的 85291234567 替換為你的 WhatsApp 號碼 -->
-        <a href="https://wa.me/85255360181?text=我已完成 FPS 轉帳，以下是截圖：" class="wa-btn" id="waBtn">提交線下訂單</a>
+        <p style="font-size: 13px; color: #ff9800; text-align:center; font-weight:bold; margin-top: 15px;">👉 請點擊下方按鈕聯絡客服購買 👈</p>
+        <a href="https://wa.me/85255360181?text=%E6%88%91%E6%83%B3%E8%81%AF%E7%B5%A1%E5%AE%A2%E6%9C%8D%E8%B3%BC%E8%B2%B7" class="wa-btn" id="waBtn">聯絡客服購買</a>
     </div>
 
     <div class="hint">確認付款即視為雙方電子契約成立，受《電子交易條例》及相關商務法律監管。
@@ -501,6 +491,14 @@
             } catch(e) {
                 document.getElementById('checkoutTotal').textContent = '資料錯誤';
             }
+        }
+        const waBtnLink = document.getElementById('waBtn');
+        if (waBtnLink) {
+            let msg = '我想聯絡客服購買';
+            if (mainProduct) msg += '：' + mainProduct;
+            const totalText = document.getElementById('checkoutTotal').textContent || '';
+            if (totalText && totalText !== 'HK$0' && totalText !== '資料錯誤') msg += '（' + totalText + '）';
+            waBtnLink.href = 'https://wa.me/85255360181?text=' + encodeURIComponent(msg);
         }
     });
 
