@@ -167,7 +167,7 @@
     <div class="mandatory-agree">
         <label for="termsForceCheck">
             <input type="checkbox" id="termsForceCheck">
-            <span>我已閱讀並同意 <a href="http://127.0.0.1:5500/sales-terms.html" target="_blank" rel="noopener noreferrer">銷售條款</a> 與 <a href="http://127.0.0.1:5500/privacy.html" target="_blank" rel="noopener noreferrer">隱私政策</a>，並理解。</span>
+            <span>我已閱讀並同意 <a href="https://uiduid.com/sales-terms.html" target="_blank" rel="noopener noreferrer">銷售條款</a> 與 <a href="https://uiduid.com/privacy.html" target="_blank" rel="noopener noreferrer">隱私政策</a>，並理解。</span>
         </label>
     </div>
 
@@ -475,30 +475,48 @@
         }
         const productsStr = getQueryParam('products');
         let total = 0;
+        let products = [];
         if (productsStr) {
             try {
-                const products = JSON.parse(decodeURIComponent(productsStr));
+                try {
+                    products = JSON.parse(productsStr);
+                } catch (parseErr) {
+                    products = JSON.parse(decodeURIComponent(productsStr));
+                }
+                if (!Array.isArray(products)) products = [];
                 const listDiv = document.getElementById('checkoutProductsList');
                 listDiv.innerHTML = '';
                 products.forEach(item => {
+                    const qty = Number(item && item.qty) || 1;
+                    const subtotal = (item && item.subtotal != null) ? Number(item.subtotal) : (Number(item && item.price) || 0) * qty;
                     const row = document.createElement('div');
                     row.className = 'data-row';
-                    row.innerHTML = `<span class='label'>${item.name} × ${item.qty}</span><span class='value'>HK$${item.subtotal}</span>`;
+                    row.innerHTML = `<span class='label'>${item.name} × ${qty}</span><span class='value'>HK$${subtotal}</span>`;
                     listDiv.appendChild(row);
-                    total += item.subtotal;
+                    total += subtotal;
                 });
                 document.getElementById('checkoutTotal').textContent = 'HK$' + total;
             } catch(e) {
+                products = [];
                 document.getElementById('checkoutTotal').textContent = '資料錯誤';
             }
         }
         const waBtnLink = document.getElementById('waBtn');
         if (waBtnLink) {
-            let msg = '我想聯絡客服購買';
-            if (mainProduct) msg += '：' + mainProduct;
+            const lines = ['我想聯絡客服購買' + (mainProduct ? '：' + mainProduct : '')];
+            products.forEach(item => {
+                const name = String((item && item.name) || '商品').trim();
+                const qty = Number(item && item.qty) || 1;
+                const subtotal = (item && item.subtotal != null) ? Number(item.subtotal) : (Number(item && item.price) || 0) * qty;
+                let line = name + ' × ' + qty;
+                if (!Number.isNaN(subtotal) && subtotal !== 0) line += '（HK$' + subtotal + '）';
+                lines.push(line);
+            });
             const totalText = document.getElementById('checkoutTotal').textContent || '';
-            if (totalText && totalText !== 'HK$0' && totalText !== '資料錯誤') msg += '（' + totalText + '）';
-            waBtnLink.href = 'https://wa.me/85255360181?text=' + encodeURIComponent(msg);
+            if (totalText && totalText !== 'HK$0' && totalText !== '資料錯誤') {
+                lines.push('合計 ' + totalText);
+            }
+            waBtnLink.href = 'https://wa.me/85255360181?text=' + encodeURIComponent(lines.join('\n'));
         }
     });
 
