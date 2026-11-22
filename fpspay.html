@@ -516,7 +516,8 @@
             if (totalText && totalText !== 'HK$0' && totalText !== '資料錯誤') {
                 lines.push('合計 ' + totalText);
             }
-            waBtnLink.href = 'https://wa.me/85255360181?text=' + encodeURIComponent(lines.join('\n'));
+            var waBase = (window.SITE_CONTACTS && window.SITE_CONTACTS.whatsapp && window.SITE_CONTACTS.whatsapp.url) || 'https://wa.me/85255360181';
+            waBtnLink.href = waBase + '?text=' + encodeURIComponent(lines.join('\n'));
         }
     });
 
@@ -548,5 +549,6 @@
     termsForceCheck.addEventListener('change', syncOfflineButtonState);
 </script>
 
+<script src="/js/site-contacts.js"></script>
 </body>
 </html>
