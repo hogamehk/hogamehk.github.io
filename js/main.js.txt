@@ -3,7 +3,7 @@ const productRoutes = {
     'mycard': 'mycard.html',
     'steam': 'steam.html',
     'psn': 'jppsn.html',
-    '日本 iTunes Gift Card': 'jpitunes.html',
+    '日本 iTunes Gift Card': 'japan-itunes-gift-card.html',
     '王者榮燿': 'wzry.html',
     'Ro仙境傳說世界之旅': 'rosjzl.html',
     '燕雲十六聲': 'wherewindsmeetgame.html',
@@ -190,7 +190,7 @@ const allProducts = [
         id: '日本 iTunes Gift Card',
         name: '日本 iTunes Gift Card',
         desc: '官方卡密，穩定可靠，支持所有appleid戶口',
-        link: 'jpitunes.html'
+        link: 'japan-itunes-gift-card.html'
     },
     {
         id: '中國 iTunes Gift Card',

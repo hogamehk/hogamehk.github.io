@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uiduid.com/sitemap.xml
