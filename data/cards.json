@@ -32,6 +32,14 @@
     "link": "buy-us-apple-gift-card.html"
   },
   {
+    "name": "美國 Amazon 禮品卡",
+    "image": "/images/us-amazon-gift-card.webp",
+    "region": "global",
+    "hot": true,
+    "order": 3,
+    "link": "us-amazon-gift-card.html"
+  },
+  {
     "name": "FLAI金幣",
     "image": "/images/flai-topup.webp",
     "region": "global",
